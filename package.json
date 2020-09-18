@@ -1,0 +1,65 @@
+{
+  "name": "gatsby-starter-nova",
+  "version": "1.0.0",
+  "description": "Nova is a gatsby starter made for quickly and easily launching SEO-friendly sites.",
+  "author": "With Pulp <hello@withpulp.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/withpulp/gatsby-starter-nova"
+  },
+  "bugs": {
+    "url": "https://github.com/withpulp/gatsby-starter-nova/issues"
+  },
+  "keywords": [
+    "gatsby",
+    "nova",
+    "purgecss",
+    "react",
+    "tailwind",
+    "withpulp"
+  ],
+  "scripts": {
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "dev": "gatsby develop",
+    "dev:netlify": "netlify dev",
+    "fix": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx}\"",
+    "serve": "gatsby serve",
+    "start": "yarn dev",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "latest",
+    "@mdx-js/react": "latest",
+    "classnames": "latest",
+    "final-form": "latest",
+    "gatsby": "latest",
+    "gatsby-image": "latest",
+    "gatsby-plugin-advanced-sitemap": "latest",
+    "gatsby-plugin-favicon": "latest",
+    "gatsby-plugin-google-gtag": "latest",
+    "gatsby-plugin-manifest": "latest",
+    "gatsby-plugin-mdx": "latest",
+    "gatsby-plugin-netlify-cache": "latest",
+    "gatsby-plugin-next-seo": "latest",
+    "gatsby-plugin-offline": "latest",
+    "gatsby-plugin-sharp": "latest",
+    "gatsby-remark-copy-linked-files": "latest",
+    "gatsby-remark-images": "latest",
+    "gatsby-source-filesystem": "latest",
+    "gatsby-transformer-sharp": "latest",
+    "gatsby-transformer-yaml": "latest",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-final-form": "latest",
+    "react-helmet-async": "latest",
+    "yup": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "latest",
+    "cssnano": "latest",
+    "prettier": "latest",
+    "tailwindcss": "latest"
+  }
+}
