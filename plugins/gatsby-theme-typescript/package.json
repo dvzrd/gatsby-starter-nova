@@ -1,0 +1,21 @@
+{
+  "name": "gatsby-theme-typescript",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "gatsby-plugin-typescript": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "gatsby": "latest"
+  },
+  "peerDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "gatsby": "latest"
+  }
+}
