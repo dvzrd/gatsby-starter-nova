@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-typescript",
+  "name": "gatsby-theme-tailwind",
   "version": "1.0.0",
   "license": "MIT",
   "main": "gatsby-config.js",
@@ -7,24 +7,19 @@
     "gatsby",
     "gatsby-plugin",
     "gatsby-theme",
-    "typescript"
+    "tailwind"
   ],
   "dependencies": {
-    "gatsby-plugin-typescript": "latest",
-    "typescript": "latest"
+    "gatsby-plugin-postcss": "latest",
+    "gatsby-plugin-purgecss": "latest",
+    "tailwindcss": "latest"
   },
   "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
     "gatsby": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "peerDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
     "gatsby": "latest",
     "react": "latest",
     "react-dom": "latest"

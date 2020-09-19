@@ -1,12 +1,12 @@
-const { manifest, metaData } = require("./site.config");
+// const { manifest, metaData } = require("./site.config.mjs");
+
+import { manifest, metaData } from "./site.config.mjs";
 
 module.exports = {
   plugins: [
     "gatsby-plugin-advanced-sitemap",
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-transformer-yaml",
     {
       resolve: "gatsby-plugin-favicon",
       options: {
@@ -37,6 +37,9 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
+    "gatsby-theme-tailwind",
+    "gatsby-transformer-sharp",
+    "gatsby-transformer-yaml",
   ],
   siteMetadata: metaData,
 };
