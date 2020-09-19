@@ -3,7 +3,6 @@ const { manifest, metaData } = require("./site.config");
 module.exports = {
   plugins: [
     "gatsby-plugin-advanced-sitemap",
-    "gatsby-plugin-netlify-cache",
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -23,26 +22,6 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: manifest,
-    },
-    {
-      resolve: "gatsby-plugin-mdx",
-      options: {
-        defaultLayouts: {
-          default: require.resolve("./src/templates/page/default/index.jsx"),
-        },
-        extensions: [".mdx", ".md"],
-        gatsbyRemarkPlugins: [
-          "gatsby-remark-copy-linked-files",
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 1280,
-              maxHeight: 720,
-              linkImagesToOriginal: false,
-            },
-          },
-        ],
-      },
     },
     {
       resolve: "gatsby-source-filesystem",
