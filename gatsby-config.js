@@ -1,4 +1,4 @@
-import { manifest, metaData } from "./site.config.mjs";
+const { manifest, metaData } = require("./site.config");
 
 module.exports = {
   plugins: [
@@ -29,7 +29,6 @@ module.exports = {
             preset: "default",
           }),
         ],
-        cssLoaderOptions,
       },
     },
     {

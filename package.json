@@ -27,11 +27,11 @@
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "dev": "gatsby develop",
     "dev:netlify": "netlify dev",
-    "fix": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx,md,mdx,ts,tsx}\"",
+    "fix": "prettier --write  \"**/*.{js,jsx,json,md,mdx,mjs,ts,tsx,yml}\"",
     "serve": "gatsby serve",
     "start": "yarn dev",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "type:check": "tsc --noEmit"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "classnames": "latest",
@@ -43,7 +43,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "autoprefixer": "latest",
+    "autoprefixer": "^9.8.6",
     "cssnano": "latest",
     "gatsby": "latest",
     "gatsby-image": "latest",

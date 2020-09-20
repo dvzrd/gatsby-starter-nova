@@ -1,8 +1,6 @@
 import React from "react";
 import { PageProps as GatsbyPageProps } from "gatsby";
 
-import "../styles/main.css";
-
 // define data props
 interface PageProps {}
 

@@ -1,8 +1,8 @@
-import { resolve } from "path";
+const { resolve } = require("path");
 
 const logo = resolve(__dirname, "data/assets/logo.png");
 
-export const metaData = {
+const metaData = {
   acronym: "GN",
   address: {
     locality: "Fake City",
@@ -16,7 +16,8 @@ export const metaData = {
     url: "https://damirvazgird.com",
   },
   copyright: "© Handmade by With Pulp.",
-  defaultDescription: "Nova is a gatsby starter made for quickly and easily launching SEO-friendly sites.",
+  defaultDescription:
+    "Nova is a gatsby starter made for quickly and easily launching SEO-friendly sites.",
   defaultTitle: "Launch a new site fast",
   hours: ["Mo-Fr 09:00-17:00", "Sa-Su 10:00-16:00"],
   image: logo,
@@ -33,7 +34,7 @@ export const metaData = {
   siteUrl: "https://withpulp.com/gatsby",
 };
 
-export const manifest = {
+const manifest = {
   background_color: "#fff",
   display: "minimal-ui",
   icon: logo,
@@ -43,7 +44,13 @@ export const manifest = {
   theme_color: "#4890ad",
 };
 
-export const socialMedia = {
+const socialMedia = {
   instagram: "_withpulp",
   twitter: "_withpulp",
+};
+
+module.exports = {
+  metaData,
+  manifest,
+  socialMedia,
 };
