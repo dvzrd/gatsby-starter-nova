@@ -1,12 +1,12 @@
-// const { manifest, metaData } = require("./site.config.mjs");
-
 import { manifest, metaData } from "./site.config.mjs";
 
 module.exports = {
   plugins: [
+    // plugins
     "gatsby-plugin-advanced-sitemap",
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-typescript",
     {
       resolve: "gatsby-plugin-favicon",
       options: {
@@ -20,9 +20,30 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        postCssPlugins: [
+          require("tailwindcss"),
+          require("autoprefixer"),
+          require("cssnano")({
+            preset: "default",
+          }),
+        ],
+        cssLoaderOptions,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        printRejected: true,
+        tailwind: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: manifest,
     },
+    // sources
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -37,7 +58,9 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
-    "gatsby-theme-tailwind",
+    // themes
+    // - add gatsby themes here.
+    // transformers
     "gatsby-transformer-sharp",
     "gatsby-transformer-yaml",
   ],

@@ -1,4 +1,4 @@
-const { resolve } = require("path");
+import { resolve } from "path";
 
 const logo = resolve(__dirname, "data/assets/logo.png");
 
@@ -10,10 +10,10 @@ export const metaData = {
     street: "123 Fake St.",
     zipcode: "12345",
   },
-  contact: {
-    email: "hello@withpulp.com",
-    location: "https://goo.gl/maps/E7y5XUH2NWt",
-    phone: "650-761-1372",
+  author: {
+    email: "damir@withpulp.com",
+    name: "Damir Vazgird",
+    url: "https://damirvazgird.com",
   },
   copyright: "© Handmade by With Pulp.",
   defaultDescription: "Nova is a gatsby starter made for quickly and easily launching SEO-friendly sites.",
@@ -24,7 +24,9 @@ export const metaData = {
   memorial: "In loving memory of Isam Machlovi (1986-2019).",
   name: "Gatsby Nova",
   organization: {
+    email: "hello@withpulp.com",
     name: "With Pulp",
+    telephone: "650-761-1372",
     url: "https://withpulp.com",
   },
   pathPrefix: "/",
@@ -44,10 +46,4 @@ export const manifest = {
 export const socialMedia = {
   instagram: "_withpulp",
   twitter: "_withpulp",
-};
-
-module.exports = {
-  manifest,
-  metaData,
-  socialMedia,
 };

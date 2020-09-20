@@ -1,7 +1,8 @@
 {
   "name": "gatsby-starter-nova",
-  "version": "1.0.0",
   "description": "Nova is a gatsby starter made for quickly and easily launching SEO-friendly sites.",
+  "version": "1.0.0",
+  "private": true,
   "author": "With Pulp <hello@withpulp.com>",
   "license": "MIT",
   "repository": {
@@ -13,9 +14,11 @@
   },
   "keywords": [
     "gatsby",
+    "mdx",
     "nova",
     "purgecss",
     "react",
+    "starter",
     "tailwind",
     "typescript",
     "withpulp"
@@ -24,13 +27,24 @@
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "dev": "gatsby develop",
     "dev:netlify": "netlify dev",
-    "fix": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx}\"",
+    "fix": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx,md,mdx,ts,tsx}\"",
     "serve": "gatsby serve",
     "start": "yarn dev",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "type:check": "tsc --noEmit"
   },
   "dependencies": {
     "classnames": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/classnames": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "cssnano": "latest",
     "gatsby": "latest",
     "gatsby-image": "latest",
     "gatsby-plugin-advanced-sitemap": "latest",
@@ -38,14 +52,16 @@
     "gatsby-plugin-google-gtag": "latest",
     "gatsby-plugin-manifest": "latest",
     "gatsby-plugin-offline": "latest",
+    "gatsby-plugin-postcss": "latest",
+    "gatsby-plugin-purgecss": "latest",
     "gatsby-plugin-sharp": "latest",
+    "gatsby-plugin-typescript": "latest",
     "gatsby-source-filesystem": "latest",
     "gatsby-transformer-sharp": "latest",
     "gatsby-transformer-yaml": "latest",
-    "react": "latest",
-    "react-dom": "latest"
-  },
-  "devDependencies": {
-    "prettier": "latest"
+    "prettier": "latest",
+    "tailwindcss": "latest",
+    "tsconfig-paths-webpack-plugin": "latest",
+    "typescript": "latest"
   }
 }

@@ -68,3 +68,7 @@ It's recommended you setup netlify cli and run this project locally with netlify
 - tailwind theme
 - tests
 - typescript
+
+## Typescript
+
+Configure typescript in [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
