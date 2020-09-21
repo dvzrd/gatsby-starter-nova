@@ -32,13 +32,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-purgecss",
-      options: {
-        printRejected: true,
-        tailwind: true,
-      },
-    },
-    {
       resolve: "gatsby-plugin-manifest",
       options: manifest,
     },

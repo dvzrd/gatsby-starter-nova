@@ -53,7 +53,6 @@
     "gatsby-plugin-manifest": "latest",
     "gatsby-plugin-offline": "latest",
     "gatsby-plugin-postcss": "latest",
-    "gatsby-plugin-purgecss": "latest",
     "gatsby-plugin-sharp": "latest",
     "gatsby-plugin-typescript": "latest",
     "gatsby-source-filesystem": "latest",
