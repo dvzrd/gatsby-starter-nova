@@ -9,12 +9,7 @@
       "@/*": ["./*"]
     },
     "target": "esnext",
-    "typeRoots": [
-      "./src/@types/",
-      ".src/**/@types/",
-      ".src/**/**/@types/",
-      "node_modules/@types/"
-    ],
+    "typeRoots": ["./src/@types/", "./src/**/@types/", "node_modules/@types/"],
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
