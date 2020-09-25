@@ -10,15 +10,15 @@ interface ThemeContext {
   setTheme: Dispatch<SetStateAction<string>>;
 }
 
-const defaultContext: ThemeContext = {
+const defaultState: ThemeContext = {
   theme: "default",
   setTheme: () => {},
 };
 
-export const { Consumer, Provider } = createContext(defaultContext);
+export const { Consumer, Provider } = createContext(defaultState);
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState(defaultContext.theme);
+  const [theme, setTheme] = useState(defaultState.theme);
 
   return <Provider value={{ theme, setTheme }}>{children}</Provider>;
 };

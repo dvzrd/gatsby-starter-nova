@@ -1,14 +1,14 @@
 import React from "react";
 import { PageProps } from "gatsby";
 
-import { Layout } from "@/layouts";
+import { DefaultLayout } from "@/layouts";
 
 const Page404: React.FC<PageProps> = () => (
-  <Layout>
+  <DefaultLayout>
     <header>
       <h1 className="text-4xl text-gray-900">404: Not Found</h1>
     </header>
-  </Layout>
+  </DefaultLayout>
 );
 
 export default Page404;

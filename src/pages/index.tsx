@@ -1,13 +1,16 @@
 import React from "react";
 import { PageProps as GatsbyPageProps } from "gatsby";
 
-import { Layout } from "@/layouts";
+import { DefaultLayout } from "@/layouts";
 
-// define data props
-interface PageProps {}
+// TODO:
+// - create page level components (header, section, footer, divider, etc)
+// - define props for any queried data
 
-const PageIndex: React.FC<GatsbyPageProps & PageProps> = () => (
-  <Layout>
+export interface PageProps extends GatsbyPageProps {}
+
+const PageIndex: React.FC<PageProps> = () => (
+  <DefaultLayout>
     <header>
       <h1 className="text-2xl text-gray-700">Page Header</h1>
     </header>
@@ -17,7 +20,7 @@ const PageIndex: React.FC<GatsbyPageProps & PageProps> = () => (
     <footer>
       <h2 className="text-xl text-gray-600">Page Footer</h2>
     </footer>
-  </Layout>
+  </DefaultLayout>
 );
 
 export default PageIndex;
