@@ -2,6 +2,10 @@
 
 // Tailwind config: https://tailwindcss.com/docs/configuration
 module.exports = {
+  future: {
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+  },
   purge: {
     content: [
       "./data/**/*.md",
