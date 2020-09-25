@@ -1,6 +1,6 @@
 const { resolve } = require("path");
 
-const logo = resolve(__dirname, "data/assets/logo.png");
+const logo = resolve(__dirname, "src/assets/images/logo.png");
 
 const metaData = {
   acronym: "GN",

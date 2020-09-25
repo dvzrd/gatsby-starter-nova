@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-favicon",
       options: {
-        logo: `${__dirname}/data/assets/logo.png`,
+        logo: `${__dirname}/src/assets/images/logo.png`,
       },
     },
     {
@@ -36,13 +36,6 @@ module.exports = {
       options: manifest,
     },
     // sources
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "data",
-        path: `${__dirname}/data`,
-      },
-    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
