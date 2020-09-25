@@ -3,12 +3,12 @@
     "baseUrl": "./src",
     "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "paths": {
       "@/*": ["./*"]
     },
-    "target": "esnext",
+    "target": "es6",
     "typeRoots": ["./src/@types/", "./src/**/@types/", "node_modules/@types/"],
     "allowJs": true,
     "checkJs": true,
@@ -23,6 +23,6 @@
     "skipLibCheck": true,
     "strict": true
   },
-  "exclude": ["node_modules"],
+  "exclude": ["./src/assets/*", "node_modules"],
   "include": ["./src/**/*"]
 }

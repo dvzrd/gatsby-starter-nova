@@ -1,6 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 
+import { ThemeSwitch, useThemeContext } from "@/contexts";
+
 export interface LayoutProps {
   className?: string;
 }
@@ -8,10 +10,22 @@ export interface LayoutProps {
 export const DefaultLayout: React.FC<LayoutProps> = ({
   children,
   className,
-}) => (
-  <div className={classNames("flex flex-col min-h-screen", className)}>
-    <header className="z-20">Layout Header</header>
-    <main className="flex-1">{children}</main>
-    <footer className="z-10">Layout Footer</footer>
-  </div>
-);
+}) => {
+  const { theme } = useThemeContext();
+
+  return (
+    <div
+      className={classNames(
+        "flex flex-col min-h-screen",
+        `theme-${theme}`,
+        className
+      )}
+    >
+      <header className="z-20">
+        <ThemeSwitch />
+      </header>
+      <main className="flex-1">{children}</main>
+      <footer className="z-10">Layout Footer</footer>
+    </div>
+  );
+};
