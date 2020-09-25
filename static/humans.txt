@@ -1,0 +1,26 @@
+/* TEAM */
+Owner: Damir Vazgird
+Site: damirvazgird.com
+Contact: damir [at] withpulp.com
+Twitter: @dvazgird
+From: Las Vegas, NV, USA
+
+/* THANKS */
+CSS Utility: TailwindCSS
+Twitter: @tailwindcss
+
+JS Framework: GatsbyJS
+Twitter: @gatsbyjs
+
+Language: TypeScript
+Twitter: @TypeScript
+
+Serverless Hosting: Netlify
+Twitter: @Netlify
+
+/* SITE */
+Last Update: 2020/09/24
+Language: English
+Doctype: HTML5
+IDE: VSC
+Software: GatsbyJS, React, TailwindCSS
