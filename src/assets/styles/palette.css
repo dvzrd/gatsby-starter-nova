@@ -18,14 +18,14 @@
 
 .theme-dark {
   /* dark theme primary colors*/
-  --color-primray-100: #fefae2;
-  --color-primray-200: #fcee97;
+  --color-primary-100: #fefae2;
+  --color-primary-200: #fcee97;
   --color-primary-300: #fbe76a;
   --color-primray-400: #fbe141;
   --color-primary-500: #fbda13;
-  --color-primray-600: #e6c605;
+  --color-primary-600: #e6c605;
   --color-primary-700: #c3a804;
-  --color-primray-800: #9e8905;
+  --color-primary-800: #9e8905;
   --color-primary-900: #665905;
   /* dark theme secondary colors */
   --color-secondary-100: #f2dafb;
@@ -41,15 +41,15 @@
 
 .theme-light {
   /* light theme primary colors */
-  --color-primray-100: #f2dafb;
-  --color-primray-200: #dea2f6;
-  --color-primray-300: #bf4aed;
-  --color-primray-400: #970fcc;
-  --color-primray-500: #7b0ca6;
-  --color-primray-600: #5f0981;
-  --color-primray-700: #38054c;
-  --color-primray-800: #190221;
-  --color-primray-900: #07010b;
+  --color-primary-100: #f2dafb;
+  --color-primary-200: #dea2f6;
+  --color-primary-300: #bf4aed;
+  --color-primary-400: #970fcc;
+  --color-primary-500: #7b0ca6;
+  --color-primary-600: #5f0981;
+  --color-primary-700: #38054c;
+  --color-primary-800: #190221;
+  --color-primary-900: #07010b;
   /* light theme secondary colors */
   --color-secondary-100: #fefae2;
   --color-secondary-200: #fcee97;

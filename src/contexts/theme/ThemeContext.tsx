@@ -13,7 +13,7 @@ export interface ThemeContextProps {
   toggleTheme: (event: MouseEvent) => void;
 }
 
-// get light mode information from OS
+// get dark mode information from OS
 const supportsDarkMode = () =>
   window.matchMedia("(prefers-color-scheme: dark)").matches === true;
 
