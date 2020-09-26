@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { PageProps as GatsbyPageProps } from "gatsby";
 
 import { DefaultLayout } from "@/layouts";
@@ -9,7 +9,7 @@ import { DefaultLayout } from "@/layouts";
 
 interface PageProps extends GatsbyPageProps {}
 
-const PageIndex: React.FC<PageProps> = () => (
+const PageIndex: FC<PageProps> = () => (
   <DefaultLayout>
     <header>
       <h1 className="text-2xl text-primary-500">Page Header</h1>

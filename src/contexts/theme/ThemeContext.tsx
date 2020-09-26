@@ -1,4 +1,5 @@
 import React, {
+  FC,
   MouseEvent,
   createContext,
   useContext,
@@ -22,7 +23,7 @@ const ThemeContext = createContext<ThemeContextProps>({
   toggleTheme: () => {},
 });
 
-export const ThemeProvider: React.FC = ({ children }) => {
+export const ThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = useState<Theme>("theme-light");
 
   useEffect(() => {
@@ -48,7 +49,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
   );
 };
 
-export const ThemeSwitch: React.FC<{}> = () => {
+export const ThemeSwitch: FC = () => {
   const { theme, toggleTheme } = useThemeContext();
 
   return (

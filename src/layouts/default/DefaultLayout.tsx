@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 
 import { ThemeSwitch, useThemeContext } from "@/contexts";
@@ -7,10 +7,7 @@ export interface LayoutProps {
   className?: string;
 }
 
-export const DefaultLayout: React.FC<LayoutProps> = ({
-  children,
-  className,
-}) => {
+export const DefaultLayout: FC<LayoutProps> = ({ children, className }) => {
   const { theme } = useThemeContext();
 
   return (
