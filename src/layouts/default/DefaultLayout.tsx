@@ -14,13 +14,7 @@ export const DefaultLayout: React.FC<LayoutProps> = ({
   const { theme } = useThemeContext();
 
   return (
-    <div
-      className={classNames(
-        "flex flex-col min-h-screen",
-        `theme-${theme}`,
-        className
-      )}
-    >
+    <div className={classNames("flex flex-col min-h-screen", theme, className)}>
       <header className="z-20">
         <ThemeSwitch />
       </header>

@@ -1,50 +1,58 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  MouseEvent,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-interface ThemeContext {
-  theme: string;
-  setTheme: (value: string) => void;
+export type Theme = "theme-dark" | "theme-light";
+
+export interface ThemeContextProps {
+  theme: Theme;
+  toggleTheme: (event: MouseEvent) => void;
 }
 
-const defaultState: ThemeContext = {
-  theme: "dark",
-  setTheme: () => {},
-};
-
 // get light mode information from OS
-const supportsLightMode = () =>
-  window.matchMedia("(prefers-color-scheme: light)").matches === true;
+const supportsDarkMode = () =>
+  window.matchMedia("(prefers-color-scheme: dark)").matches === true;
 
-const ThemeContext = createContext(defaultState);
+const ThemeContext = createContext<ThemeContextProps>({
+  theme: "theme-dark",
+  toggleTheme: () => {},
+});
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState(defaultState.theme);
+  const [theme, setTheme] = useState<Theme>("theme-light");
 
   useEffect(() => {
     // get theme value from localStorage
-    const storedTheme = localStorage.getItem("theme");
+    const storedTheme: Theme = localStorage.getItem("theme") as Theme;
     if (storedTheme !== null) {
-      setTheme(JSON.parse(storedTheme));
-    } else if (supportsLightMode()) {
-      setTheme("light");
+      setTheme(storedTheme);
+    } else if (supportsDarkMode()) {
+      setTheme("theme-dark");
     }
   }, []);
 
+  const toggleTheme = () => {
+    const isDark = theme === "theme-dark";
+    localStorage.setItem("theme", isDark ? "theme-light" : "theme-dark");
+    setTheme(isDark ? "theme-light" : "theme-dark");
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
 };
 
-// TODO: update theme switch to toggle multiple theme enum values
 export const ThemeSwitch: React.FC<{}> = () => {
-  const { theme, setTheme } = useThemeContext();
+  const { toggleTheme } = useThemeContext();
 
   return (
-    <button
-      type="button"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-    >
+    <button type="button" onClick={toggleTheme}>
       Switch Theme
     </button>
   );
@@ -53,7 +61,8 @@ export const ThemeSwitch: React.FC<{}> = () => {
 export const useThemeContext = () => {
   const context = useContext(ThemeContext);
   if (context === null) {
-    throw new Error("useTheme must be used inside ThemeProvider");
+    throw new Error("useThemeContext must be called inside ThemeProvider.");
   }
+
   return context;
 };
