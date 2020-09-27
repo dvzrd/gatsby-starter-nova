@@ -1,0 +1,9 @@
+.hero {
+  @apply py-4;
+
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  min-height: 25vh;
+}

@@ -1,0 +1,5 @@
+.navbar {
+  @apply py-4;
+
+  z-index: 20;
+}

@@ -27,6 +27,7 @@ module.exports = {
         primary: "var(--color-background-primary)",
         secondary: "var(--color-background-secondary)",
       },
+      black: "var(--color-black)",
       copy: {
         default: "var(--color-copy)",
         primary: "var(--color-copy-primary)",
@@ -75,6 +76,7 @@ module.exports = {
         pass: "var(--color-service-pass)",
         warn: "var(--color-service-warn)",
       },
+      white: "var(--color-white)",
     },
     container: {
       center: true,

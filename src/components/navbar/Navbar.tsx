@@ -1,18 +1,18 @@
 import React, { FC, HTMLAttributes } from "react";
 import classNames from "classnames";
 
-import styles from "./Hero.module.css";
+import styles from "./Navbar.module.css";
 
-export interface HeroProps extends HTMLAttributes<HTMLElement> {
+interface NavbarProps extends HTMLAttributes<HTMLElement> {
   containerClassName?: string;
 }
 
-export const Hero: FC<HeroProps> = ({
+export const Navbar: FC<NavbarProps> = ({
   children,
   className,
   containerClassName,
 }) => (
-  <header className={classNames(styles.hero, className)}>
+  <header className={classNames(styles.navbar, className)}>
     <figure className={classNames("container", containerClassName)}>
       {children}
     </figure>

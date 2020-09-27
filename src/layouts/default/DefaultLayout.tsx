@@ -1,6 +1,7 @@
 import React, { FC, HTMLAttributes } from "react";
 import classNames from "classnames";
 
+import { Navbar } from "@/components";
 import { ThemeSwitch, useThemeContext } from "@/contexts";
 
 export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {}
@@ -16,9 +17,9 @@ export const DefaultLayout: FC<LayoutProps> = ({ children, className }) => {
         className
       )}
     >
-      <header className="z-20">
+      <Navbar>
         <ThemeSwitch className="text-primary-500" />
-      </header>
+      </Navbar>
       <main className="flex-1">{children}</main>
       <footer className="z-10">Layout Footer</footer>
     </div>
