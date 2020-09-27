@@ -23,8 +23,11 @@ module.exports = {
       resolve: "gatsby-plugin-postcss",
       options: {
         postCssPlugins: [
+          require("postcss-import"),
           require("tailwindcss"),
-          require("autoprefixer"),
+          require("postcss-preset-env")({
+            stage: 1,
+          }),
           require("cssnano")({
             preset: "default",
           }),
