@@ -3,19 +3,19 @@ import classNames from "classnames";
 
 import { Element, ElementProps } from "@/components";
 
-import styles from "./Hero.module.css";
+import styles from "./Topbar.module.css";
 
-export interface HeroProps extends ElementProps {
+interface TopbarProps extends ElementProps {
   containerClassName?: string;
 }
 
-export const Hero: FC<HeroProps> = ({
+export const Topbar: FC<TopbarProps> = ({
   as = "header",
   children,
   className,
   containerClassName,
 }) => (
-  <Element as={as} className={classNames(styles.hero, className)}>
+  <Element as={as} className={classNames(styles.topbar, className)}>
     <figure className={classNames("container", containerClassName)}>
       {children}
     </figure>
