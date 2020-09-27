@@ -1,11 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, HTMLAttributes } from "react";
 import classNames from "classnames";
 
 import { ThemeSwitch, useThemeContext } from "@/contexts";
 
-export interface LayoutProps {
-  className?: string;
-}
+export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {}
 
 export const DefaultLayout: FC<LayoutProps> = ({ children, className }) => {
   const { theme } = useThemeContext();

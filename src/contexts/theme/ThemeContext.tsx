@@ -1,5 +1,6 @@
 import React, {
   FC,
+  HTMLAttributes,
   MouseEvent,
   createContext,
   useContext,
@@ -13,10 +14,6 @@ type Theme = "theme-dark" | "theme-light";
 interface ThemeContextProps {
   theme: Theme;
   toggleTheme: (event: MouseEvent) => void;
-}
-
-interface ThemeSwitchProps {
-  className?: string;
 }
 
 // get dark mode information from OS
@@ -54,7 +51,9 @@ export const ThemeProvider: FC = ({ children }) => {
   );
 };
 
-export const ThemeSwitch: FC<ThemeSwitchProps> = ({ className }) => {
+export const ThemeSwitch: FC<HTMLAttributes<HTMLButtonElement>> = ({
+  className,
+}) => {
   const { theme, toggleTheme } = useThemeContext();
 
   return (
