@@ -1,23 +1,21 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Element, ElementProps } from "@/components";
+import { Section, SectionProps } from "@/components";
 
 import styles from "./Topbar.module.css";
 
-interface TopbarProps extends ElementProps {
-  containerClassName?: string;
-}
-
-export const Topbar: FC<TopbarProps> = ({
+export const Topbar: FC<SectionProps> = ({
   as = "header",
   children,
   className,
   containerClassName,
 }) => (
-  <Element as={as} className={classNames(styles.topbar, className)}>
-    <figure className={classNames("container", containerClassName)}>
-      {children}
-    </figure>
-  </Element>
+  <Section
+    as={as}
+    className={classNames(styles.topbar, className)}
+    containerClassName={containerClassName}
+  >
+    {children}
+  </Section>
 );

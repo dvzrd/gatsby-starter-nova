@@ -1,0 +1,3 @@
+.section {
+  @apply content-start flex items-stretch justify-start overflow-hidden py-4 relative;
+}

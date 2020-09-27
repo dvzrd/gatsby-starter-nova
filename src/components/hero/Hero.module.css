@@ -1,5 +1,5 @@
 .hero {
-  @apply content-center flex items-center justify-center py-4;
+  @apply content-center items-center justify-center;
 
   min-height: 25vh;
 }
