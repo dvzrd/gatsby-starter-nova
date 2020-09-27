@@ -6,12 +6,17 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import classNames from "classnames";
 
-export type Theme = "theme-dark" | "theme-light";
+type Theme = "theme-dark" | "theme-light";
 
-export interface ThemeContextProps {
+interface ThemeContextProps {
   theme: Theme;
   toggleTheme: (event: MouseEvent) => void;
+}
+
+interface ThemeSwitchProps {
+  className?: string;
 }
 
 // get dark mode information from OS
@@ -49,11 +54,15 @@ export const ThemeProvider: FC = ({ children }) => {
   );
 };
 
-export const ThemeSwitch: FC = () => {
+export const ThemeSwitch: FC<ThemeSwitchProps> = ({ className }) => {
   const { theme, toggleTheme } = useThemeContext();
 
   return (
-    <button className="focus:outline-none" type="button" onClick={toggleTheme}>
+    <button
+      className={classNames("focus:outline-none", className)}
+      type="button"
+      onClick={toggleTheme}
+    >
       {theme === "theme-dark" ? (
         <svg
           className="fill-current w-6 h-6"

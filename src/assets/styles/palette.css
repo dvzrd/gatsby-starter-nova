@@ -1,14 +1,18 @@
 :root {
+  /* default colors */
+  --color-black: #000;
+  --color-white: #fff;
   /* default gray colors */
-  --color-gray-100: #f0f0ef;
-  --color-gray-200: #d0d0cd;
-  --color-gray-300: #b9b8b1;
-  --color-gray-400: #a1a097;
-  --color-gray-500: #88877c;
-  --color-gray-600: #75746c;
-  --color-gray-700: #5c5b57;
-  --color-gray-800: #454440;
-  --color-gray-900: #2a2a27;
+  --color-gray-50: #f0f0ef;
+  --color-gray-100: #d0d0cd;
+  --color-gray-200: #b9b8b1;
+  --color-gray-300: #a1a097;
+  --color-gray-400: #88877c;
+  --color-gray-500: #75746c;
+  --color-gray-600: #5c5b57;
+  --color-gray-700: #454440;
+  --color-gray-800: #2a2a27;
+  --color-gray-900: #121211;
   /* default service colors */
   --color-service-fail: #e00028;
   --color-service-info: #00dffc;
@@ -17,6 +21,19 @@
 }
 
 .theme-dark {
+  /* dark theme background colors */
+  --color-background: var(--color-gray-900);
+  --color-background-paper: var(--color-gray-500);
+  --color-background-primary: var(--color-gray-800);
+  --color-background-secondary: var(--color-secondary-900);
+  /* dark theme copy colors */
+  --color-copy: var(--color-white);
+  --color-copy-primary: var(--color-gray-50);
+  --color-copy-primary-dark: var(--color-gray-300);
+  --color-copy-primary-light: var(--color-gray-700);
+  --color-copy-secondary: var(--color-gray-300);
+  --color-copy-secondary-dark: var(--color-white);
+  --color-copy-secondary-light: var(--color-gray-700);
   /* dark theme primary colors*/
   --color-primary-100: #fefae2;
   --color-primary-200: #fcee97;
@@ -26,7 +43,7 @@
   --color-primary-600: #e6c605;
   --color-primary-700: #c3a804;
   --color-primary-800: #9e8905;
-  --color-primary-900: #665905;
+  --color-primary-900: #867504;
   /* dark theme secondary colors */
   --color-secondary-100: #f2dafb;
   --color-secondary-200: #dea2f6;
@@ -40,6 +57,19 @@
 }
 
 .theme-light {
+  /* dark theme background colors */
+  --color-background: var(--color-white);
+  --color-background-paper: var(--color-gray-50);
+  --color-background-primary: var(--color-primary-500);
+  --color-background-secondary: var(--color-secondary-500);
+  /* dark theme copy colors */
+  --color-copy: var(--color-gray-900);
+  --color-copy-primary: var(--color-gray-50);
+  --color-copy-primary-dark: var(--color-gray-100);
+  --color-copy-primary-light: var(--color-gray-700);
+  --color-copy-secondary: var(--color-gray-200);
+  --color-copy-secondary-dark: var(--color-gray-100);
+  --color-copy-secondary-light: var(--color-gray-700);
   /* light theme primary colors */
   --color-primary-100: #f2dafb;
   --color-primary-200: #dea2f6;

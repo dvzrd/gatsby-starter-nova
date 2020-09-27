@@ -8,8 +8,6 @@ module.exports = {
   },
   purge: {
     content: [
-      "./data/**/*.md",
-      "./data/**/*.mdx",
       "./src/**/*.js",
       "./src/**/*.jsx",
       "./src/**/*.md",
@@ -23,6 +21,21 @@ module.exports = {
   },
   theme: {
     colors: {
+      background: {
+        default: "var(--color-background)",
+        paper: "var(--color-background-paper)",
+        primary: "var(--color-background-primary)",
+        secondary: "var(--color-background-secondary)",
+      },
+      copy: {
+        default: "var(--color-copy)",
+        primary: "var(--color-copy-primary)",
+        "primary-dark": "var(--color-copy-primary-dark)",
+        "primary-light": "var(--color-copy-primary-light)",
+        secondary: "var(--color-copy-secondary)",
+        "secondary-dark": "var(--color-copy-secondary-dark)",
+        "secondary-light": "var(--color-copy-secondary-light)",
+      },
       gray: {
         "100": "var(--color-gray-100)",
         "200": "var(--color-gray-200)",
@@ -113,9 +126,6 @@ module.exports = {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      "2xl": "1440px",
-      "3xl": "1920px",
-      "4xl": "2560px",
     },
   },
   variants: {},
