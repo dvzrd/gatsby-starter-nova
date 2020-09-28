@@ -1,4 +1,15 @@
 @layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  p {
+    @apply text-copy;
+  }
+
   h1 {
     @apply text-4xl;
   }

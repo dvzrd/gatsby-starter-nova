@@ -22,7 +22,7 @@ export const DefaultLayout: FC<LayoutProps> = ({ children, className }) => {
       </Topbar>
       <main className="flex-1">{children}</main>
       <Section as="footer" className="z-10">
-        <p className="text-copy">Layout footer</p>
+        <p>Layout footer</p>
       </Section>
     </div>
   );

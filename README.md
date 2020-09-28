@@ -16,6 +16,7 @@ A new gatsby starter using the latest dependencies and standards.
 - MDX (Content)
 - Netlify (Server)
 - Tailwind (Styles)
+- TypeScript (Language)
 
 ## Gatsby
 
@@ -48,6 +49,8 @@ For info about gatsby plugins and themes, see the following:
 
 ## Netlify
 
+You can use netlify to host the build, for more info about Netlify, [visit their site](https://www.netlify.com/). If you prefer to host on your own service or another platform, just remove the netlify config file.
+
 ### Config
 
 Netlify allows for file configs of their host server - allowing devs to push changes to our builds without needing to login to the netlify app dashboard.
@@ -63,12 +66,6 @@ It's recommended you setup netlify cli and run this project locally with netlify
 
 ## Roadmap
 
-- lint
-- MDX content
-- tailwind theme
-- tests
-- typescript
-
-## Typescript
-
-Configure typescript in [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+- MDX
+- Lint
+- Tests
