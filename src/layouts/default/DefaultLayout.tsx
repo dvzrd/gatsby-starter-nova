@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes } from "react";
 import classNames from "classnames";
 
-import { Topbar } from "@/components";
+import { Section, Topbar } from "@/components";
 import { ThemeSwitch, useThemeContext } from "@/contexts";
 
 export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {}
@@ -21,7 +21,9 @@ export const DefaultLayout: FC<LayoutProps> = ({ children, className }) => {
         <ThemeSwitch className="text-primary-500" />
       </Topbar>
       <main className="flex-1">{children}</main>
-      <footer className="z-10">Layout Footer</footer>
+      <Section as="footer" className="z-10">
+        <p className="text-copy">Layout footer</p>
+      </Section>
     </div>
   );
 };
