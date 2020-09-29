@@ -1,4 +1,4 @@
-.hero {
+.header {
   @apply content-center items-center justify-center;
 
   min-height: 25vh;

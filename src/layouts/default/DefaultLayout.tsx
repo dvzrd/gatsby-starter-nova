@@ -17,9 +17,7 @@ export const DefaultLayout: FC<LayoutProps> = ({ children, className }) => {
         className
       )}
     >
-      <Topbar>
-        <ThemeSwitch className="text-primary-500" />
-      </Topbar>
+      <Topbar navRight={<ThemeSwitch className="text-primary-500" />} />
       <main className="flex-1">{children}</main>
       <Section as="footer" className="z-10">
         <p>Layout footer</p>

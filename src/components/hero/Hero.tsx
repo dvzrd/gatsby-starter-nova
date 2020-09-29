@@ -16,7 +16,7 @@ export const Hero: FC<SectionProps> = ({
 }) => (
   <Section
     as={as}
-    className={classNames(styles.hero, className)}
+    className={classNames(styles.header, className)}
     containerClassName={containerClassName}
   >
     {children}
