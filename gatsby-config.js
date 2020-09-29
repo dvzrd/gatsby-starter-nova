@@ -1,3 +1,5 @@
+const { join } = require("path");
+
 const { manifest, metaData } = require("./site.config");
 
 module.exports = {
@@ -37,6 +39,20 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: manifest,
+    },
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        components: join(__dirname, "src/components"),
+        contexts: join(__dirname, "src/contexts"),
+        layouts: join(__dirname, "src/layouts"),
+        pages: join(__dirname, "src/pages"),
+        src: join(__dirname, "src"),
+        styles: join(__dirname, "src/assets/styles"),
+        templates: join(__dirname, "src/templates"),
+        types: join(__dirname, "src/types"),
+        utils: join(__dirname, "src/utils"),
+      },
     },
     // sources
     {

@@ -1,16 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
-    "paths": {
-      "@/*": ["./*"]
-    },
-    "target": "es6",
-    "typeRoots": ["./src/@types/", "./src/**/@types/", "node_modules/@types/"],
+    "target": "es5",
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "checkJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -20,9 +17,11 @@
     "noUnusedParameters": true,
     "preserveConstEnums": true,
     "removeComments": false,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
+    "sourceMap": true,
     "strict": true
   },
-  "exclude": ["./src/assets/*", "node_modules"],
-  "include": ["./src/**/*"]
+  "exclude": ["src/assets/*", "node_modules"],
+  "include": ["src"]
 }

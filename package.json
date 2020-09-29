@@ -26,7 +26,6 @@
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "clean": "gatsby clean",
-    "clean:install": "rm -rf node_modules && yarn clean && yarn",
     "dev": "gatsby develop",
     "dev:netlify": "netlify dev",
     "fix": "prettier --write  \"**/*.{js,jsx,json,md,mdx,mjs,ts,tsx,yml}\"",
@@ -54,6 +53,7 @@
     "gatsby-plugin-manifest": "latest",
     "gatsby-plugin-offline": "latest",
     "gatsby-plugin-postcss": "latest",
+    "gatsby-plugin-root-import": "latest",
     "gatsby-plugin-sharp": "latest",
     "gatsby-plugin-typescript": "latest",
     "gatsby-source-filesystem": "latest",
@@ -63,7 +63,6 @@
     "postcss-preset-env": "latest",
     "prettier": "latest",
     "tailwindcss": "latest",
-    "tsconfig-paths-webpack-plugin": "latest",
     "typescript": "latest"
   }
 }

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Element, ElementProps } from "@/components";
+import { Element, ElementProps } from "components";
 
 import styles from "./Section.module.css";
 

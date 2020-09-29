@@ -5,7 +5,3 @@
 .nav {
   @apply flex flex-1;
 }
-
-.navRight {
-  @apply justify-end;
-}

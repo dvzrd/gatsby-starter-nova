@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { PageProps } from "gatsby";
 
-import { Hero } from "@/components";
-import { DefaultLayout } from "@/layouts";
+import { Hero } from "components";
+import { DefaultLayout } from "layouts";
 
 const Page404: FC<PageProps> = () => (
   <DefaultLayout>

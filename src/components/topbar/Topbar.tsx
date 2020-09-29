@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import classNames from "classnames";
 
-import { Section, SectionProps } from "@/components";
+import { Section, SectionProps } from "components";
 
 import styles from "./Topbar.module.css";
 
@@ -16,7 +16,7 @@ export const Topbar: FC<TopbarProps> = ({
   as = "header",
   children,
   className,
-  containerClassName,
+  containerClassName = "flex justify-between",
   navLeft,
   navLeftClassName,
   navRight,
@@ -32,9 +32,7 @@ export const Topbar: FC<TopbarProps> = ({
     )}
     {children}
     {navRight && (
-      <nav
-        className={classNames(styles.nav, styles.navRight, navRightClassName)}
-      >
+      <nav className={classNames(styles.nav, "justify-end", navRightClassName)}>
         {navRight}
       </nav>
     )}

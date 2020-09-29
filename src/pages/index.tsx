@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { PageProps as GatsbyPageProps } from "gatsby";
 
-import { Hero, Section } from "@/components";
-import { DefaultLayout } from "@/layouts";
+import { Hero, Section } from "components";
+import { DefaultLayout } from "layouts";
 
 interface PageProps extends GatsbyPageProps {}
 
