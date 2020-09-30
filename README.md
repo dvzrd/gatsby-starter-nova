@@ -2,7 +2,7 @@
 
 A new gatsby starter using the latest dependencies and standards.
 
-To whomever happens to stumble upon this, please note that this is currently a work in progress - use at your own risk.
+> Please note, this is currently a work in progress so use at your own risk.
 
 ## Basic Installation
 
