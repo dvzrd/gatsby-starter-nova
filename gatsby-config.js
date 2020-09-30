@@ -1,6 +1,6 @@
 const { join } = require("path");
 
-const { manifest, metaData } = require("./site.config");
+const { manifest, metaData, socialMedia } = require("./site.config");
 
 module.exports = {
   plugins: [
@@ -75,5 +75,8 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-transformer-yaml",
   ],
-  siteMetadata: metaData,
+  siteMetadata: {
+    ...metaData,
+    socialMedia,
+  },
 };

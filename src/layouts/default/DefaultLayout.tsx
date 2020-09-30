@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes } from "react";
+import React, { FC } from "react";
 import Img from "gatsby-image";
 import { Link, StaticQuery, graphql } from "gatsby";
 import classNames from "classnames";
@@ -6,9 +6,12 @@ import classNames from "classnames";
 import { Section, Topbar } from "components";
 import { ThemeSwitch, useThemeContext } from "contexts";
 
-export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {}
+import { DefaultLayoutProps, StaticQueryProps } from "../types";
 
-export const DefaultLayout: FC<LayoutProps> = ({ children, className }) => {
+export const DefaultLayout: FC<DefaultLayoutProps> = ({
+  children,
+  className,
+}) => {
   const { theme } = useThemeContext();
 
   return (
@@ -23,56 +26,58 @@ export const DefaultLayout: FC<LayoutProps> = ({ children, className }) => {
             }
           }
           site {
-            siteMetadata {
-              copyright
-              defaultDescription
-              defaultTitle
-              memorial
-              name
-              organization {
-                name
-                url
-              }
-              siteUrl
-            }
+            ...SiteMetadataFragment
           }
         }
       `}
-      render={({
-        logo,
-        site: {
-          siteMetadata: {
-            // copyright,
-            // defaultDescription,
-            // defaultTitle,
-            // memorial,
-            name,
-            // organization,
-            // siteUrl,
+      render={(data: StaticQueryProps) => {
+        const {
+          logo,
+          site: {
+            siteMetadata: {
+              copyright,
+              // defaultDescription,
+              // defaultTitle,
+              // memorial,
+              name,
+              // organization,
+              // siteUrl,
+              // socialMedia,
+            },
           },
-        },
-      }) => (
-        <div
-          className={classNames(
-            "bg-background flex flex-col min-h-screen",
-            theme,
-            className
-          )}
-        >
-          <Topbar
-            navLeft={
-              <Link to="/">
-                <Img className="w-10" alt={name} {...logo?.childImageSharp} />
-              </Link>
-            }
-            navRight={<ThemeSwitch className="text-primary-500" />}
-          />
-          <main className="flex-1">{children}</main>
-          <Section as="footer" className="z-10">
-            <p>Layout footer</p>
-          </Section>
-        </div>
-      )}
+        } = data;
+
+        return (
+          <div
+            className={classNames(
+              "bg-background flex flex-col min-h-screen",
+              theme,
+              className
+            )}
+          >
+            <Topbar
+              navLeft={
+                <>
+                  {logo?.childImageSharp && (
+                    <Link to="/">
+                      <Img
+                        className="w-10"
+                        alt={name}
+                        {...logo.childImageSharp}
+                      />
+                    </Link>
+                  )}
+                </>
+              }
+              navRight={<ThemeSwitch className="text-primary-500" />}
+            />
+            <main className="flex-1">{children}</main>
+            <Section as="footer" className="z-10">
+              <p>{copyright}</p>
+            </Section>
+          </div>
+        );
+      }}
     />
   );
 };
