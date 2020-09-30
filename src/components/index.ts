@@ -2,5 +2,4 @@
 export * from "./element";
 export * from "./section";
 /* compositional components */
-export * from "./topbar";
 export * from "./hero";

@@ -10,6 +10,14 @@
     @apply text-copy;
   }
 
+  a {
+    @apply text-primary-500;
+
+    &:hover {
+      @apply text-primary-600;
+    }
+  }
+
   h1 {
     @apply text-4xl;
   }

@@ -2,6 +2,8 @@
 
 A new gatsby starter using the latest dependencies and standards.
 
+To whomever happens to stumble upon this, please note that this is currently a work in progress - use at your own risk.
+
 ## Basic Installation
 
 1. Install the Gatsby CLI tool if you don't have it: `yarn global add gatsby-cli`
@@ -13,10 +15,11 @@ A new gatsby starter using the latest dependencies and standards.
 ## Stack
 
 - Gatsby (Client)
+- GraphQL (Data)
 - MDX (Content)
 - Netlify (Server)
 - Tailwind (Styles)
-- TypeScript (Language)
+- TypeScript (Types)
 
 ## Gatsby
 
@@ -33,6 +36,8 @@ For info about gatsby plugins and themes, see the following:
 
 ### Custom Plugins and Themes
 
+**Coming soon:**
+
 - Components with TailwindCSS
   - Compositional UI Components
   - Structural UI Components
@@ -41,7 +46,7 @@ For info about gatsby plugins and themes, see the following:
   - Mailchimp / Netlify Integration
   - React Final Form
   - Validation with Yup
-- MDX Posts
+- MDX
   - Blog
   - Case Studies
   - Portfolio
@@ -66,6 +71,7 @@ It's recommended you setup netlify cli and run this project locally with netlify
 
 ## Roadmap
 
-- MDX
-- Lint
-- Tests
+- [Hygen](https://github.com/jondot/hygen/)
+- [MDX](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/)
+- [Lint](https://www.gatsbyjs.com/docs/eslint/)
+- [Tests](https://www.gatsbyjs.com/docs/unit-testing/)

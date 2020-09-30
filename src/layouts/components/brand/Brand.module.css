@@ -1,0 +1,14 @@
+.link {
+  @apply content-center flex items-center;
+}
+
+.logo {
+  @apply w-10;
+
+  margin-top: -5px;
+  margin-left: -15px;
+}
+
+.name {
+  @apply inline-flex text-base uppercase;
+}

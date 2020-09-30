@@ -9,7 +9,7 @@ interface PageProps extends GatsbyPageProps {}
 const PageIndex: FC<PageProps> = () => (
   <DefaultLayout>
     <Hero>
-      <h1>This is the home page hero title</h1>
+      <h1>Build and deploy your site more quickly and easily!</h1>
     </Hero>
     <Section className="bg-background-paper">
       <p>Page section with paper background</p>
