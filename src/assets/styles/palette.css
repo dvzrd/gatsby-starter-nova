@@ -13,6 +13,26 @@
   --color-gray-700: #454440;
   --color-gray-800: #2a2a27;
   --color-gray-900: #121211;
+  /* default purple cololrs */
+  --color-purple-100: #f2dafb;
+  --color-purple-200: #dea2f6;
+  --color-purple-300: #bf4aed;
+  --color-purple-400: #970fcc;
+  --color-purple-500: #7b0ca6;
+  --color-purple-600: #5f0981;
+  --color-purple-700: #38054c;
+  --color-purple-800: #190221;
+  --color-purple-900: #0f0116;
+  /* default yellow colors */
+  --color-yellow-100: #fefae2;
+  --color-yellow-200: #fcee97;
+  --color-yellow-300: #fbe76a;
+  --color-yellow-400: #fbe141;
+  --color-yellow-500: #fbda13;
+  --color-yellow-600: #e6c605;
+  --color-yellow-700: #c3a804;
+  --color-yellow-800: #9e8905;
+  --color-yellow-900: #867504;
   /* default service colors */
   --color-service-fail: #e00028;
   --color-service-info: #00dffc;
@@ -35,25 +55,25 @@
   --color-copy-secondary-dark: var(--color-white);
   --color-copy-secondary-light: var(--color-gray-700);
   /* dark theme primary colors*/
-  --color-primary-100: #fefae2;
-  --color-primary-200: #fcee97;
-  --color-primary-300: #fbe76a;
-  --color-primray-400: #fbe141;
-  --color-primary-500: #fbda13;
-  --color-primary-600: #e6c605;
-  --color-primary-700: #c3a804;
-  --color-primary-800: #9e8905;
-  --color-primary-900: #867504;
+  --color-primary-100: var(--color-yellow-100);
+  --color-primary-200: var(--color-yellow-200);
+  --color-primary-300: var(--color-yellow-300);
+  --color-primray-400: var(--color-yellow-400);
+  --color-primary-500: var(--color-yellow-500);
+  --color-primary-600: var(--color-yellow-600);
+  --color-primary-700: var(--color-yellow-700);
+  --color-primary-800: var(--color-yellow-800);
+  --color-primary-900: var(--color-yellow-900);
   /* dark theme secondary colors */
-  --color-secondary-100: #f2dafb;
-  --color-secondary-200: #dea2f6;
-  --color-secondary-300: #bf4aed;
-  --color-secondary-400: #970fcc;
-  --color-secondary-500: #7b0ca6;
-  --color-secondary-600: #5f0981;
-  --color-secondary-700: #38054c;
-  --color-secondary-800: #190221;
-  --color-secondary-900: #07010b;
+  --color-secondary-100: var(--color-purple-100);
+  --color-secondary-200: var(--color-purple-200);
+  --color-secondary-300: var(--color-purple-300);
+  --color-secondary-400: var(--color-purple-400);
+  --color-secondary-500: var(--color-purple-500);
+  --color-secondary-600: var(--color-purple-600);
+  --color-secondary-700: var(--color-purple-700);
+  --color-secondary-800: var(--color-purple-800);
+  --color-secondary-900: var(--color-purple-900);
 }
 
 .theme-light {
@@ -71,23 +91,23 @@
   --color-copy-secondary-dark: var(--color-gray-100);
   --color-copy-secondary-light: var(--color-gray-700);
   /* light theme primary colors */
-  --color-primary-100: #f2dafb;
-  --color-primary-200: #dea2f6;
-  --color-primary-300: #bf4aed;
-  --color-primary-400: #970fcc;
-  --color-primary-500: #7b0ca6;
-  --color-primary-600: #5f0981;
-  --color-primary-700: #38054c;
-  --color-primary-800: #190221;
-  --color-primary-900: #07010b;
+  --color-primary-100: var(--color-purple-100);
+  --color-primary-200: var(--color-purple-200);
+  --color-primary-300: var(--color-purple-300);
+  --color-primary-400: var(--color-purple-400);
+  --color-primary-500: var(--color-purple-500);
+  --color-primary-600: var(--color-purple-600);
+  --color-primary-700: var(--color-purple-700);
+  --color-primary-800: var(--color-purple-800);
+  --color-primary-900: var(--color-purple-900);
   /* light theme secondary colors */
-  --color-secondary-100: #fefae2;
-  --color-secondary-200: #fcee97;
-  --color-secondary-300: #fbe76a;
-  --color-secondary-400: #fbe141;
-  --color-secondary-500: #fbda13;
-  --color-secondary-600: #e6c605;
-  --color-secondary-700: #c3a804;
-  --color-secondary-800: #9e8905;
-  --color-secondary-900: #867504;
+  --color-secondary-100: var(--color-yellow-100);
+  --color-secondary-200: var(--color-yellow-200);
+  --color-secondary-300: var(--color-yellow-300);
+  --color-secondary-400: var(--color-yellow-400);
+  --color-secondary-500: var(--color-yellow-500);
+  --color-secondary-600: var(--color-yellow-600);
+  --color-secondary-700: var(--color-yellow-700);
+  --color-secondary-800: var(--color-yellow-800);
+  --color-secondary-900: var(--color-yellow-900);
 }

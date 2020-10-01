@@ -10,5 +10,5 @@
 }
 
 .name {
-  @apply inline-flex text-base uppercase;
+  @apply font-bold inline-flex text-base text-purple-500 uppercase;
 }
