@@ -10,7 +10,7 @@ export const siteMetadataFragment = graphql`
         locality
         region
         street
-        ziocode
+        zipcode
       }
       author {
         email
