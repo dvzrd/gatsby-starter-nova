@@ -11,10 +11,6 @@ export interface BrandProps extends ElementProps {
   linkTo?: string;
 }
 
-// TODO:
-// - use props to render different brand variations
-//   - brand name only, logo only, short logo using acronym, no link, etc...
-
 export const Brand: FC<BrandProps> = ({ className, linkTo = "/" }) => {
   const { logo, name } = useBrandData();
 
