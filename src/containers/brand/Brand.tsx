@@ -2,11 +2,14 @@ import React, { FC } from "react";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
 
-import { Element } from "components";
+import { Element, ElementProps } from "components";
 
 import styles from "./Brand.module.css";
 import { useBrandData } from "./brand.gql";
-import { BrandProps } from "./types";
+
+export interface BrandProps extends ElementProps {
+  linkTo?: string;
+}
 
 // TODO:
 // - use props to render different brand variations

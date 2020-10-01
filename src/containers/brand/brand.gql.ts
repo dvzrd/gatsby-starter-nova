@@ -1,6 +1,19 @@
+import { FluidObject } from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 
-import { BrandDataProps } from "./types";
+export interface BrandDataProps {
+  logo: {
+    childImageSharp: {
+      fluid: FluidObject;
+    };
+  };
+  site: {
+    siteMetadata: {
+      acronym?: string;
+      name: string;
+    };
+  };
+}
 
 export const brandLogoFragment = graphql`
   fragment BrandLogoFragment on File {
