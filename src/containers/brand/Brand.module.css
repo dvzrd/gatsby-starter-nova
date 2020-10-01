@@ -1,0 +1,11 @@
+.link {
+  @apply content-center flex items-center;
+}
+
+.logo {
+  @apply -mt-2 -ml-4 w-10;
+}
+
+.name {
+  @apply font-semibold inline-flex text-xl text-purple-500 uppercase;
+}

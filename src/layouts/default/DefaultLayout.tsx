@@ -1,23 +1,27 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Section } from "components";
+import { ElementProps, Section } from "components";
+import { Brand } from "containers";
 import { ThemeSwitch, useThemeContext } from "contexts";
 
-import { Brand, Topbar } from "../components";
+import { Topbar } from "../components";
+import { useSiteMetadata } from "graphql";
 
-import { DefaultLayoutProps } from "./types";
-import { useSiteMetadata } from "./data.gql";
-
-// TODO:
-// - add navigation menu component
+export interface DefaultLayoutProps extends ElementProps {
+  seo?: {
+    description?: string;
+    image?: string;
+    title: string;
+  };
+}
 
 export const DefaultLayout: FC<DefaultLayoutProps> = ({
   children,
   className,
 }) => {
   const { theme } = useThemeContext();
-  const { copyright } = useSiteMetadata();
+  const { copyright, memorial } = useSiteMetadata();
 
   return (
     <div
@@ -28,20 +32,13 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
       )}
     >
       <Topbar
-        navLeft={
-          <>
-            <Brand />
-          </>
-        }
-        navRight={
-          <>
-            <ThemeSwitch className="text-primary-500" />
-          </>
-        }
+        navLeft={<Brand />}
+        navRight={<ThemeSwitch className="text-primary-500" />}
       />
       <main className="flex-1">{children}</main>
       <Section as="footer" className="z-10">
         <p className="text-sm">{copyright}</p>
+        <p className="text-sm">{memorial}</p>
       </Section>
     </div>
   );

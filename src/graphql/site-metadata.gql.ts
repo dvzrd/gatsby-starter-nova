@@ -1,23 +1,38 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-import { SiteMetadataProps } from "./types";
-
-// TODO: move thise to a global module so it can be used in other places
+import { SiteMetadataProps } from "types/site-metadata";
 
 export const siteMetadataFragment = graphql`
   fragment SiteMetadataFragment on Site {
     siteMetadata {
+      acronym
+      address {
+        locality
+        region
+        street
+        ziocode
+      }
+      author {
+        email
+        name
+        url
+      }
       copyright
       defaultDescription
       defaultTitle
+      hours
+      lang
       memorial
       name
       organization {
+        email
         name
+        telephone
         url
       }
       siteUrl
       socialMedia {
+        instagram
         twitter
       }
     }

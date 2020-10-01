@@ -1,5 +1,7 @@
 import { FluidObject } from "gatsby-image";
 
+import { ElementProps } from "components";
+
 export interface BrandDataProps {
   logo: {
     childImageSharp: {
@@ -12,4 +14,8 @@ export interface BrandDataProps {
       name: string;
     };
   };
+}
+
+export interface BrandProps extends ElementProps {
+  linkTo?: string;
 }

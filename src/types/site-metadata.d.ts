@@ -1,13 +1,3 @@
-import { ElementProps } from "components";
-
-export interface DefaultLayoutProps extends ElementProps {
-  seo?: {
-    description?: string;
-    image?: string;
-    title: string;
-  };
-}
-
 export interface SiteMetadataProps {
   site: {
     siteMetadata: {
@@ -31,13 +21,14 @@ export interface SiteMetadataProps {
       memorial: string;
       name: string;
       organization: {
+        email: string;
         name: string;
-        url: string;
         telephone: string;
         url: string;
       };
       siteUrl: string;
       socialMedia: {
+        instagram: string;
         twitter: string;
       };
     };

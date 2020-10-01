@@ -1,10 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import classNames from "classnames";
 
-import { Section } from "components";
+import { Section, SectionProps } from "components";
 
 import styles from "./Topbar.module.css";
-import { TopbarProps } from "./types";
+
+export interface TopbarProps extends SectionProps {
+  navLeft?: ReactNode;
+  navLeftClassName?: string;
+  navRight?: ReactNode;
+  navRightClassName?: string;
+}
 
 export const Topbar: FC<TopbarProps> = ({
   as = "header",
