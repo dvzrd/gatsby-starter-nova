@@ -38,13 +38,15 @@
   "dependencies": {
     "classnames": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-helmet-async": "latest"
   },
   "devDependencies": {
     "@types/classnames": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/react-helmet-async": "latest",
     "cssnano": "latest",
     "gatsby": "latest",
     "gatsby-image": "latest",
@@ -52,6 +54,7 @@
     "gatsby-plugin-favicon": "latest",
     "gatsby-plugin-google-gtag": "latest",
     "gatsby-plugin-manifest": "latest",
+    "gatsby-plugin-next-seo": "latest",
     "gatsby-plugin-offline": "latest",
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-root-import": "latest",

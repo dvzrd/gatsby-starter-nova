@@ -1,26 +1,21 @@
 import React, { FC } from "react";
+import { GatsbySeo, GatsbySeoProps } from "gatsby-plugin-next-seo";
 import classNames from "classnames";
 
 import { ElementProps } from "components";
 import { Brand } from "containers";
 import { ThemeSwitch, useThemeContext } from "contexts";
-// import { useSiteMetadata } from "graphql";
+import { useSiteMetadata } from "graphql";
 
 import { Footer, Topbar } from "../components";
 
 export interface DefaultLayoutProps extends ElementProps {
-  seo?: {
-    description?: string;
-    image?: string;
-    title: string;
-  };
   footerProps?: {
     className?: string;
     isHidden?: boolean;
   };
-  mainProps?: {
-    className?: string;
-  };
+  mainProps?: ElementProps;
+  seoProps?: GatsbySeoProps;
   topbarProps?: {
     className?: string;
     isHidden?: boolean;
@@ -32,10 +27,11 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   className,
   footerProps,
   mainProps,
+  seoProps,
   topbarProps,
 }) => {
   const { theme } = useThemeContext();
-  // const { defaultDescription, defaultTitle } = useSiteMetadata();
+  const { defaultDescription, defaultTitle, name, siteUrl } = useSiteMetadata();
 
   return (
     <div
@@ -45,6 +41,13 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
         className
       )}
     >
+      <GatsbySeo
+        title={defaultTitle}
+        titleTemplate={`%s | ${name}`}
+        description={defaultDescription}
+        canonical={siteUrl}
+        {...seoProps}
+      />
       <Topbar
         navLeft={<Brand />}
         navRight={<ThemeSwitch className="text-primary-500" />}

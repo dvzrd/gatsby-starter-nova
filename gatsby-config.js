@@ -6,6 +6,7 @@ module.exports = {
   plugins: [
     // plugins
     "gatsby-plugin-advanced-sitemap",
+    "gatsby-plugin-next-seo",
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
     "gatsby-plugin-typescript",
