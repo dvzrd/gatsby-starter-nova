@@ -24,6 +24,7 @@ export const Footer: FC<FooterProps> = ({
   showOrg = true,
 }) => {
   const { author, copyright, footnote, organization } = useSiteMetadata();
+  const currentYear = new Date().getFullYear();
 
   if (isHidden) return null;
 
@@ -43,7 +44,7 @@ export const Footer: FC<FooterProps> = ({
       {children}
       {copyright && (
         <p className="text-sm">
-          © {copyright.year! ? copyright.year : `${new Date()}`}.
+          © {copyright.year ? copyright.year : currentYear}.
           {copyright.message && ` ${copyright.message}`}
           {showOrg && <>{renderLink(organization)}.</>}
           {copyright.authorMessage && ` ${copyright.authorMessage}`}
