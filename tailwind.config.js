@@ -116,6 +116,14 @@ module.exports = {
       listStyleType: {
         square: "square",
       },
+      minHeight: {
+        "1/4": "25%",
+        "1/2": "50%",
+        "3/4": "75%",
+        "screen-1/4": "25vh",
+        "screen-1/2": "50vh",
+        "screen-3/4": "75vh",
+      },
     },
     fontFamily: {
       sans: [
@@ -142,11 +150,6 @@ module.exports = {
         "'Courier New'",
         "monospace",
       ],
-    },
-    minHeight: {
-      "1/4": "25vh",
-      "1/2": "50vh",
-      "3/4": "75vh",
     },
     screens: {
       xs: "480px",

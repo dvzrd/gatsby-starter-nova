@@ -4,4 +4,5 @@ Use Section to render various section components.
 
 ## Roadmap
 
-- More `SectionDesignPattern` types with appropriate styles.
+- Add more `SectionPattern` types with appropriate styles.
+- Add `minHeight` prop to set min-height.

@@ -12,17 +12,43 @@ const PageIndex: FC<PageProps> = () => {
 
   return (
     <DefaultLayout>
-      <Section as="header" designPattern="hero">
-        <h1 className="leading-tight text-primary-500">{defaultDescription}</h1>
+      <Section as="header" pattern="hero">
+        <h2 className="leading-tight my-8 lg:my-16 text-primary-500">
+          {defaultDescription}
+        </h2>
       </Section>
-      <Section className="bg-background-paper">
-        <p className="text-copy-paper">
+      <Section className="bg-background-paper" pattern="content">
+        <h4 className="leading-tight my-8 text-copy-paper">
           This is a page section with paper background and copy colors.
+        </h4>
+        <p className="mb-6 text-copy-paper">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus
+          massa vel risus commodo, bibendum faucibus ligula commodo. Sed
+          sollicitudin nec eros sed condimentum. Suspendisse eget viverra velit,
+          ac faucibus velit. Nulla eget semper leo. Curabitur tincidunt semper
+          erat, eu finibus elit auctor sed. Sed egestas tempor interdum. Etiam
+          eu massa euismod purus dictum faucibus.
+        </p>
+        <p className="mb-8 text-copy-paper">
+          Sed at felis fermentum, rutrum eros quis, sodales leo. Etiam porta,
+          ipsum quis sagittis mollis, massa metus vulputate neque, sit amet
+          convallis turpis leo ut nulla. Morbi sed gravida lectus. Pellentesque
+          sodales tincidunt diam ut tristique. Fusce venenatis ligula at erat
+          ultrices, et mattis neque fringilla. Vivamus ligula tortor, porttitor
+          a augue non, elementum facilisis odio.
         </p>
       </Section>
-      <Section as="footer" className="bg-background-primary">
-        <p className="text-copy-primary">
-          This is the page footer with primary background and copy colors.
+      <Section as="footer" className="bg-background-primary" pattern="content">
+        <h4 className="leading-tight my-8 text-copy-primary">
+          This is a page footer with primary background and copy colors.
+        </h4>
+        <p className="mb-8 text-copy-primary">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus
+          massa vel risus commodo, bibendum faucibus ligula commodo. Sed
+          sollicitudin nec eros sed condimentum. Suspendisse eget viverra velit,
+          ac faucibus velit. Nulla eget semper leo. Curabitur tincidunt semper
+          erat, eu finibus elit auctor sed. Sed egestas tempor interdum. Etiam
+          eu massa euismod purus dictum faucibus.
         </p>
       </Section>
     </DefaultLayout>

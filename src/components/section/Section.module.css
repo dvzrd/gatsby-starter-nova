@@ -2,6 +2,14 @@
   @apply content-start flex items-stretch justify-start overflow-hidden py-4 relative;
 }
 
+.section.content {
+  @apply py-8;
+}
+
+.section.feature {
+  @apply py-12;
+}
+
 .section.hero {
-  @apply content-center items-center justify-center min-h-1/4;
+  @apply content-center items-center justify-center min-h-screen-1/4;
 }
