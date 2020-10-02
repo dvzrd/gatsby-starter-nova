@@ -106,13 +106,10 @@ module.exports = {
       center: true,
       padding: {
         default: "1rem",
-        xs: "1rem",
         sm: "1.5rem",
-        lg: "2rem",
-        xl: "2.5rem",
-        "2xl": "3rem",
-        "3xl": "3.5rem",
-        "4xl": "4rem",
+        md: "3rem",
+        lg: "6rem",
+        xl: "12rem",
       },
     },
     extend: {

@@ -15,9 +15,14 @@ export interface DefaultLayoutProps extends ElementProps {
     title: string;
   };
   footerProps?: {
+    className?: string;
     isHidden?: boolean;
   };
+  mainProps?: {
+    className?: string;
+  };
   topbarProps?: {
+    className?: string;
     isHidden?: boolean;
   };
 }
@@ -26,6 +31,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   children,
   className,
   footerProps,
+  mainProps,
   topbarProps,
 }) => {
   const { theme } = useThemeContext();
@@ -44,7 +50,12 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
         navRight={<ThemeSwitch className="text-primary-500" />}
         {...topbarProps}
       />
-      <main className="flex-1">{children}</main>
+      <main
+        {...mainProps}
+        className={classNames("flex-1", mainProps?.className)}
+      >
+        {children}
+      </main>
       <Footer {...footerProps} />
     </div>
   );
