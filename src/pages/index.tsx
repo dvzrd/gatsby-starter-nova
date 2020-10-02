@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { PageProps as GatsbyPageProps } from "gatsby";
 
-import { Hero, Section } from "components";
+import { Section } from "components";
 import { DefaultLayout } from "layouts";
 import { useSiteMetadata } from "graphql";
 
@@ -12,9 +12,9 @@ const PageIndex: FC<PageProps> = () => {
 
   return (
     <DefaultLayout>
-      <Hero>
+      <Section as="header" designPattern="hero">
         <h1 className="leading-tight text-primary-500">{defaultDescription}</h1>
-      </Hero>
+      </Section>
       <Section className="bg-background-paper">
         <p className="text-copy-paper">
           This is a page section with paper background and copy colors.

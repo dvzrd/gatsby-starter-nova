@@ -143,6 +143,11 @@ module.exports = {
         "monospace",
       ],
     },
+    minHeight: {
+      "1/4": "25vh",
+      "1/2": "50vh",
+      "3/4": "75vh",
+    },
     screens: {
       xs: "480px",
       sm: "640px",

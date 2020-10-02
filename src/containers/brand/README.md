@@ -6,7 +6,7 @@ Currently only, this container allows for one variation to render but will be up
 
 ## Roadmap
 
-- Add variations prop to render different brand variations (string types may change):
+- Variations prop to render different brand variations:
   - "name" - renders brand name without logo.
   - "logo" - renders brand logo without name.
   - "short" - render brand name using acronym

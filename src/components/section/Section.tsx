@@ -5,8 +5,11 @@ import { Element, ElementProps } from "components";
 
 import styles from "./Section.module.css";
 
+export type SectionDesignPattern = "feature" | "hero";
+
 export interface SectionProps extends ElementProps {
   containerClassName?: string;
+  designPattern?: SectionDesignPattern;
 }
 
 export const Section: FC<SectionProps> = ({
@@ -14,8 +17,16 @@ export const Section: FC<SectionProps> = ({
   children,
   className,
   containerClassName,
+  designPattern,
 }) => (
-  <Element as={as} className={classNames(styles.section, className)}>
+  <Element
+    as={as}
+    className={classNames(
+      className,
+      styles.section,
+      designPattern === "hero" && styles.hero
+    )}
+  >
     <figure className={classNames("container", containerClassName)}>
       {children}
     </figure>
