@@ -43,15 +43,16 @@
 .theme-dark {
   /* dark theme background colors */
   --color-background: var(--color-gray-900);
-  --color-background-paper: var(--color-gray-700);
-  --color-background-primary: var(--color-gray-800);
-  --color-background-secondary: var(--color-secondary-900);
+  --color-background-paper: var(--color-gray-100);
+  --color-background-primary: var(--color-primary-500);
+  --color-background-secondary: var(--color-secondary-500);
   /* dark theme copy colors */
   --color-copy: var(--color-white);
-  --color-copy-primary: var(--color-gray-50);
+  --colot-copy-paper: var(--color-900);
+  --color-copy-primary: var(--color-gray-900);
   --color-copy-primary-dark: var(--color-gray-300);
   --color-copy-primary-light: var(--color-gray-700);
-  --color-copy-secondary: var(--color-gray-300);
+  --color-copy-secondary: var(--color-gray-50);
   --color-copy-secondary-dark: var(--color-white);
   --color-copy-secondary-light: var(--color-gray-700);
   /* dark theme primary colors*/
@@ -77,13 +78,14 @@
 }
 
 .theme-light {
-  /* dark theme background colors */
+  /* light theme background colors */
   --color-background: var(--color-white);
   --color-background-paper: var(--color-gray-50);
   --color-background-primary: var(--color-primary-500);
   --color-background-secondary: var(--color-secondary-500);
-  /* dark theme copy colors */
+  /* light theme copy colors */
   --color-copy: var(--color-gray-900);
+  --colot-copy-paper: var(--color-800);
   --color-copy-primary: var(--color-gray-50);
   --color-copy-primary-dark: var(--color-gray-100);
   --color-copy-primary-light: var(--color-gray-700);

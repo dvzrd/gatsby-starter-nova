@@ -7,5 +7,5 @@
 }
 
 .name {
-  @apply font-semibold inline-flex text-xl text-purple-500 uppercase;
+  @apply font-semibold inline-flex leading-none text-xl text-purple-500 tracking-tight uppercase;
 }

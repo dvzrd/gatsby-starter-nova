@@ -15,7 +15,11 @@ const metaData = {
     name: "Damir Vazgird",
     url: "https://damirvazgird.com",
   },
-  copyright: "© Handmade by With Pulp.",
+  copyright: {
+    authorMessage: "Created by ",
+    message: "Open sourced by ",
+    year: 2020,
+  },
   defaultDescription:
     "Nova is a gatsby starter made for quickly and easily launching SEO-friendly sites.",
   defaultTitle: "Launch a new site fast",

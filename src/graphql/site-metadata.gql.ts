@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-import { SiteMetadataProps } from "types/site-metadata";
+import { SiteMetadata } from "types/graphql";
 
 export const siteMetadataFragment = graphql`
   fragment SiteMetadataFragment on Site {
@@ -17,7 +17,11 @@ export const siteMetadataFragment = graphql`
         name
         url
       }
-      copyright
+      copyright {
+        authorMessage
+        message
+        year
+      }
       defaultDescription
       defaultTitle
       hours
@@ -42,7 +46,7 @@ export const siteMetadataFragment = graphql`
 export const useSiteMetadata = () => {
   const {
     site: { siteMetadata },
-  }: SiteMetadataProps = useStaticQuery(
+  }: SiteMetadata = useStaticQuery(
     graphql`
       query SiteMetadataQuery {
         site {

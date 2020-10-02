@@ -12,10 +12,14 @@ const PageIndex: FC<PageProps> = () => (
       <h1>Build and deploy your site more quickly and easily!</h1>
     </Hero>
     <Section className="bg-background-paper">
-      <p>Page section with paper background</p>
+      <p className="text-copy-paper">
+        Page section with paper background and copy colors.
+      </p>
     </Section>
     <Section as="footer" className="bg-background-primary">
-      <p className="text-copy-primary">Page footer with primary background</p>
+      <p className="text-copy-primary">
+        Page footer with primary background and copy colors.
+      </p>
     </Section>
   </DefaultLayout>
 );

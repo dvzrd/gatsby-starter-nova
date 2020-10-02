@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { ElementProps, Section } from "components";
+import { ElementProps } from "components";
 import { Brand } from "containers";
 import { ThemeSwitch, useThemeContext } from "contexts";
+// import { useSiteMetadata } from "graphql";
 
-import { Topbar } from "../components";
-import { useSiteMetadata } from "graphql";
+import { Footer, Topbar } from "../components";
 
 export interface DefaultLayoutProps extends ElementProps {
   seo?: {
@@ -14,14 +14,18 @@ export interface DefaultLayoutProps extends ElementProps {
     image?: string;
     title: string;
   };
+  footerProps?: {
+    isHidden?: boolean;
+  };
 }
 
 export const DefaultLayout: FC<DefaultLayoutProps> = ({
   children,
   className,
+  footerProps,
 }) => {
   const { theme } = useThemeContext();
-  const { copyright, memorial } = useSiteMetadata();
+  // const { defaultDescription, defaultTitle } = useSiteMetadata();
 
   return (
     <div
@@ -36,10 +40,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
         navRight={<ThemeSwitch className="text-primary-500" />}
       />
       <main className="flex-1">{children}</main>
-      <Section as="footer" className="z-10">
-        <p className="text-sm">{copyright}</p>
-        <p className="text-sm">{memorial}</p>
-      </Section>
+      <Footer {...footerProps} />
     </div>
   );
 };

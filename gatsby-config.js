@@ -47,6 +47,7 @@ module.exports = {
         containers: join(__dirname, "src/containers"),
         contexts: join(__dirname, "src/contexts"),
         graphql: join(__dirname, "src/graphql"),
+        images: join(__dirname, "src/images"),
         layouts: join(__dirname, "src/layouts"),
         pages: join(__dirname, "src/pages"),
         src: join(__dirname, "src"),
