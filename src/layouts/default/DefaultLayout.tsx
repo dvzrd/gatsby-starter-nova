@@ -17,12 +17,16 @@ export interface DefaultLayoutProps extends ElementProps {
   footerProps?: {
     isHidden?: boolean;
   };
+  topbarProps?: {
+    isHidden?: boolean;
+  };
 }
 
 export const DefaultLayout: FC<DefaultLayoutProps> = ({
   children,
   className,
   footerProps,
+  topbarProps,
 }) => {
   const { theme } = useThemeContext();
   // const { defaultDescription, defaultTitle } = useSiteMetadata();
@@ -38,6 +42,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
       <Topbar
         navLeft={<Brand />}
         navRight={<ThemeSwitch className="text-primary-500" />}
+        {...topbarProps}
       />
       <main className="flex-1">{children}</main>
       <Footer {...footerProps} />

@@ -6,6 +6,7 @@ import { Section, SectionProps } from "components";
 import styles from "./Topbar.module.css";
 
 export interface TopbarProps extends SectionProps {
+  isHidden?: boolean;
   navLeft?: ReactNode;
   navLeftClassName?: string;
   navRight?: ReactNode;
@@ -17,24 +18,33 @@ export const Topbar: FC<TopbarProps> = ({
   children,
   className,
   containerClassName = "flex justify-between",
+  isHidden = false,
   navLeft,
   navLeftClassName,
   navRight,
   navRightClassName,
-}) => (
-  <Section
-    as={as}
-    className={classNames(styles.header, className)}
-    containerClassName={containerClassName}
-  >
-    {navLeft && (
-      <nav className={classNames(styles.nav, navLeftClassName)}>{navLeft}</nav>
-    )}
-    {children}
-    {navRight && (
-      <nav className={classNames(styles.nav, "justify-end", navRightClassName)}>
-        {navRight}
-      </nav>
-    )}
-  </Section>
-);
+}) => {
+  if (isHidden) return null;
+
+  return (
+    <Section
+      as={as}
+      className={classNames(styles.header, className)}
+      containerClassName={containerClassName}
+    >
+      {navLeft && (
+        <nav className={classNames(styles.nav, navLeftClassName)}>
+          {navLeft}
+        </nav>
+      )}
+      {children}
+      {navRight && (
+        <nav
+          className={classNames(styles.nav, "justify-end", navRightClassName)}
+        >
+          {navRight}
+        </nav>
+      )}
+    </Section>
+  );
+};
