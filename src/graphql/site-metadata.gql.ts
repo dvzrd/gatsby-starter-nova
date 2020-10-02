@@ -22,8 +22,7 @@ export const siteMetadataFragment = graphql`
         message
         year
       }
-      defaultDescription
-      defaultTitle
+      description
       hours
       lang
       memorial
@@ -39,6 +38,7 @@ export const siteMetadataFragment = graphql`
         instagram
         twitter
       }
+      title
     }
   }
 `;

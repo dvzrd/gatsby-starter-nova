@@ -23,6 +23,36 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-next-seo",
+      options: {
+        canonical: metaData.siteUrl,
+        description: metaData.description,
+        openGraph: {
+          description: metaData.description,
+          images: [
+            {
+              url: `${metaData.siteUrl}/static/logo.png`,
+              width: 800,
+              height: 800,
+              alt: "Og Image Social Logo",
+            },
+          ],
+          locale: "en_IE",
+          site_name: metaData.name,
+          title: metaData.title,
+          type: "website",
+          url: metaData.siteUrl,
+        },
+        twitter: {
+          handle: `@${socialMedia.twitter}`,
+          site: `@${socialMedia.twitter}`,
+          cardType: "summary_large_image",
+        },
+        title: metaData.title,
+        titleTemplate: `%s | ${metaData.name}`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-postcss",
       options: {
         postCssPlugins: [

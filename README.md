@@ -34,6 +34,13 @@ For info about gatsby plugins and themes, see the following:
 - https://www.gatsbyjs.com/blog/2020-05-14-introducing-gatsby-theme-catalyst/
 - https://www.gatsbyjs.com/docs/plugins/
 
+### Gatsby Plugins
+
+#### Gatsby Next SEO
+
+- Configure SEO with [`gatsby-plugin-next-seo`](https://github.com/ifiokjr/gatsby-plugin-next-seo).
+- Configure SEO defaults in `gatsby-config`.
+
 ### Custom Plugins and Themes
 
 **Coming soon:**
@@ -56,7 +63,7 @@ For info about gatsby plugins and themes, see the following:
 
 You can use netlify to host the build, for more info about Netlify, [visit their site](https://www.netlify.com/). If you prefer to host on your own service or another platform, just remove the netlify config file.
 
-### Config
+### Netlify Config
 
 Netlify allows for file configs of their host server - allowing devs to push changes to our builds without needing to login to the netlify app dashboard.
 

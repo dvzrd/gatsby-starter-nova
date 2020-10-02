@@ -5,21 +5,19 @@ import classNames from "classnames";
 import { ElementProps } from "components";
 import { Brand } from "containers";
 import { ThemeSwitch, useThemeContext } from "contexts";
-import { useSiteMetadata } from "graphql";
 
 import { Footer, Topbar } from "../components";
 
+export type DefaultLayoutSection = {
+  className?: string;
+  isHidden?: boolean;
+};
+
 export interface DefaultLayoutProps extends ElementProps {
-  footerProps?: {
-    className?: string;
-    isHidden?: boolean;
-  };
+  footerProps?: DefaultLayoutSection;
   mainProps?: ElementProps;
   seoProps?: GatsbySeoProps;
-  topbarProps?: {
-    className?: string;
-    isHidden?: boolean;
-  };
+  topbarProps?: DefaultLayoutSection;
 }
 
 export const DefaultLayout: FC<DefaultLayoutProps> = ({
@@ -31,7 +29,6 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   topbarProps,
 }) => {
   const { theme } = useThemeContext();
-  const { defaultDescription, defaultTitle, name, siteUrl } = useSiteMetadata();
 
   return (
     <div
@@ -41,13 +38,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
         className
       )}
     >
-      <GatsbySeo
-        title={defaultTitle}
-        titleTemplate={`%s | ${name}`}
-        description={defaultDescription}
-        canonical={siteUrl}
-        {...seoProps}
-      />
+      <GatsbySeo {...seoProps} />
       <Topbar
         navLeft={<Brand />}
         navRight={<ThemeSwitch className="text-primary-500" />}

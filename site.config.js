@@ -20,9 +20,8 @@ const metaData = {
     message: "Open sourced by ",
     year: 2020,
   },
-  defaultDescription:
+  description:
     "Nova is a gatsby starter made for quickly and easily launching SEO-friendly sites.",
-  defaultTitle: "Launch a new site fast",
   hours: ["Mo-Fr 09:00-17:00", "Sa-Su 10:00-16:00"],
   image: logo,
   lang: "en",
@@ -35,7 +34,8 @@ const metaData = {
     url: "https://withpulp.com",
   },
   pathPrefix: "/",
-  siteUrl: "https://withpulp.com/gatsby",
+  siteUrl: "https://gatsby-starter-nova.netlify.com",
+  title: "Launch a new site fast",
 };
 
 const manifest = {

@@ -8,12 +8,12 @@ import { useSiteMetadata } from "graphql";
 interface PageProps extends GatsbyPageProps {}
 
 const PageIndex: FC<PageProps> = () => {
-  const { defaultDescription, defaultTitle, name } = useSiteMetadata();
+  const { description, title, name } = useSiteMetadata();
 
   return (
     <DefaultLayout>
       <Section as="header" pattern="hero">
-        <h2 className="leading-tight text-copy">{defaultDescription}</h2>
+        <h2 className="leading-tight text-copy">{description}</h2>
       </Section>
       <Section className="text-copy" pattern="content">
         <h4 className="leading-tight mt-8 mb-6">
@@ -50,7 +50,7 @@ const PageIndex: FC<PageProps> = () => {
         </p>
       </Section>
       <Section as="footer" className="text-copy">
-        <h3 className="leading-tight mt-12 mb-4">{defaultTitle}</h3>
+        <h3 className="leading-tight mt-12 mb-4">{title}</h3>
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus
           massa vel risus commodo, bibendum faucibus ligula commodo. Sed

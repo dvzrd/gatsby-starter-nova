@@ -36,8 +36,7 @@ export interface SiteMetadata {
       address?: SiteMetadataAddress;
       author?: SiteMetadataAuthor;
       copyright?: SiteMetadataCopyright;
-      defaultDescription: string;
-      defaultTitle: string;
+      description: string;
       footnote?: string;
       hours?: string[];
       lang: string;
@@ -45,6 +44,7 @@ export interface SiteMetadata {
       organization?: SiteMetadataOrganization;
       siteUrl: string;
       socialMedia?: SiteMetadataSocialMedia;
+      title: string;
     };
   };
 }
