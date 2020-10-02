@@ -28,7 +28,7 @@ const PageIndex: FC<PageProps> = () => {
             semper erat, eu finibus elit auctor sed. Sed egestas tempor
             interdum. Etiam eu massa euismod purus dictum faucibus.
           </p>
-          <p className="mb-8">
+          <p className="mb-12">
             Sed at felis fermentum, rutrum eros quis, sodales leo. Etiam porta,
             ipsum quis sagittis mollis, massa metus vulputate neque, sit amet
             convallis turpis leo ut nulla. Morbi sed gravida lectus.
@@ -42,7 +42,7 @@ const PageIndex: FC<PageProps> = () => {
         className="bg-background-primary text-copy-primary"
         pattern="feature"
       >
-        <h4 className="leading-tight mt-8 mb-4">{defaultTitle}</h4>
+        <h2 className="leading-tight mt-8 mb-4">{name}</h2>
         <p className="mb-8 text-lg">
           Nulla sit amet suscipit diam. Praesent aliquam metus nec diam
           ultricies tincidunt. Donec congue feugiat tempus. Pellentesque mi
@@ -50,8 +50,8 @@ const PageIndex: FC<PageProps> = () => {
         </p>
       </Section>
       <Section as="footer" className="text-copy">
-        <h3 className="leading-tight mt-8 mb-4">{name}</h3>
-        <p>
+        <h3 className="leading-tight mt-12 mb-4">{defaultTitle}</h3>
+        <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus
           massa vel risus commodo, bibendum faucibus ligula commodo. Sed
           sollicitudin nec eros sed condimentum.
