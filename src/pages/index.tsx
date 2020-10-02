@@ -13,7 +13,7 @@ const PageIndex: FC<PageProps> = () => {
   return (
     <DefaultLayout>
       <Hero>
-        <h1 className="leading-tight">{defaultDescription}</h1>
+        <h1 className="leading-tight text-primary-500">{defaultDescription}</h1>
       </Hero>
       <Section className="bg-background-paper">
         <p className="text-copy-paper">

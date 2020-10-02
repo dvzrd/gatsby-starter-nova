@@ -5,9 +5,6 @@ import { Section, SectionProps } from "components";
 
 import styles from "./Hero.module.css";
 
-// TODO: add more props for caption and actions
-// export interface HeroProps extends SectionProps {}
-
 export const Hero: FC<SectionProps> = ({
   as = "header",
   children,

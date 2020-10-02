@@ -7,7 +7,6 @@ import styles from "./Section.module.css";
 
 export interface SectionProps extends ElementProps {
   containerClassName?: string;
-  shadows?: string;
 }
 
 export const Section: FC<SectionProps> = ({
