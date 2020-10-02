@@ -18,8 +18,8 @@ const PageIndex: FC<PageProps> = () => {
         </h2>
       </Section>
       <Section className="bg-background-paper" pattern="content">
-        <h4 className="leading-tight my-8 text-copy-paper">
-          This is a page section with paper background and copy colors.
+        <h4 className="leading-tight mt-8 mb-6 text-copy-paper">
+          Content with paper colors
         </h4>
         <p className="mb-6 text-copy-paper">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus
@@ -38,17 +38,14 @@ const PageIndex: FC<PageProps> = () => {
           a augue non, elementum facilisis odio.
         </p>
       </Section>
-      <Section as="footer" className="bg-background-primary" pattern="content">
-        <h4 className="leading-tight my-8 text-copy-primary">
-          This is a page footer with primary background and copy colors.
-        </h4>
-        <p className="mb-8 text-copy-primary">
+      <Section as="footer" className="bg-background-primary" pattern="feature">
+        <h3 className="leading-tight mt-8 mb-4 text-copy-primary">
+          Feature with primary colors
+        </h3>
+        <p className="mb-8 text-lg text-copy-primary">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus
           massa vel risus commodo, bibendum faucibus ligula commodo. Sed
-          sollicitudin nec eros sed condimentum. Suspendisse eget viverra velit,
-          ac faucibus velit. Nulla eget semper leo. Curabitur tincidunt semper
-          erat, eu finibus elit auctor sed. Sed egestas tempor interdum. Etiam
-          eu massa euismod purus dictum faucibus.
+          sollicitudin nec eros sed condimentum.
         </p>
       </Section>
     </DefaultLayout>
