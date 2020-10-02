@@ -8,19 +8,27 @@ import styles from "./Section.module.css";
 export type SectionPattern = "content" | "feature" | "hero";
 
 export interface SectionProps extends ElementProps {
-  containerClassName?: string;
+  container?: ElementProps;
   pattern?: SectionPattern;
 }
 
+export const sectionDefaultProps: SectionProps = {
+  as: "section",
+  className: "text-copy",
+  container: {
+    as: "figure",
+  },
+};
+
 export const Section: FC<SectionProps> = ({
-  as = "section",
+  as,
   children,
-  className = "text-copy",
-  containerClassName,
+  className,
+  container,
   pattern,
 }) => (
   <Element
-    as={as}
+    as={as || sectionDefaultProps.as}
     className={classNames(
       className,
       styles.section,
@@ -29,8 +37,12 @@ export const Section: FC<SectionProps> = ({
       pattern === "hero" && styles.hero
     )}
   >
-    <figure className={classNames("container", containerClassName)}>
+    <Element
+      {...sectionDefaultProps.container}
+      {...container}
+      className={classNames("container", container?.className)}
+    >
       {children}
-    </figure>
+    </Element>
   </Element>
 );

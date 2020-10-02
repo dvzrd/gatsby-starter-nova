@@ -6,19 +6,22 @@ import { Section, SectionProps } from "components";
 import { useSiteMetadata } from "graphql";
 import { SiteMetadataAuthor, SiteMetadataOrganization } from "types/graphql";
 
-import styles from "./Footer.module.css";
-
 export interface FooterProps extends SectionProps {
   isHidden?: boolean;
   showAuthor?: boolean;
   showOrg?: boolean;
 }
 
+export const footerDefaultProps: FooterProps = {
+  as: "footer",
+  className: "text-copy z-10",
+};
+
 export const Footer: FC<FooterProps> = ({
-  as = "footer",
+  as,
   children,
-  className = "text-copy",
-  containerClassName,
+  className,
+  container,
   isHidden = false,
   showAuthor = true,
   showOrg = true,
@@ -37,9 +40,9 @@ export const Footer: FC<FooterProps> = ({
 
   return (
     <Section
-      as={as}
-      className={classNames(styles.footer, className)}
-      containerClassName={containerClassName}
+      as={as || footerDefaultProps.as}
+      className={classNames(footerDefaultProps.className, className)}
+      container={container}
     >
       {children}
       {copyright && (

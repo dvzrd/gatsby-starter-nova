@@ -1,11 +1,9 @@
 import React, { FC } from "react";
-import { PageProps as GatsbyPageProps } from "gatsby";
+import { PageProps } from "gatsby";
 
 import { Section } from "components";
 import { DefaultLayout } from "layouts";
 import { useSiteMetadata } from "graphql";
-
-interface PageProps extends GatsbyPageProps {}
 
 const PageIndex: FC<PageProps> = () => {
   const { description, title, name } = useSiteMetadata();

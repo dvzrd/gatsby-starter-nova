@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Link } from "gatsby";
 import { GatsbySeo, GatsbySeoProps } from "gatsby-plugin-next-seo";
 import classNames from "classnames";
 
@@ -8,25 +9,25 @@ import { ThemeSwitch, useThemeContext } from "contexts";
 
 import { Footer, Topbar } from "../components";
 
-export type DefaultLayoutSection = {
+export type LayoutSection = {
   className?: string;
   isHidden?: boolean;
 };
 
 export interface DefaultLayoutProps extends ElementProps {
-  footerProps?: DefaultLayoutSection;
-  mainProps?: ElementProps;
-  seoProps?: GatsbySeoProps;
-  topbarProps?: DefaultLayoutSection;
+  footer?: LayoutSection;
+  main?: ElementProps;
+  seo?: GatsbySeoProps;
+  topbar?: LayoutSection;
 }
 
 export const DefaultLayout: FC<DefaultLayoutProps> = ({
   children,
   className,
-  footerProps,
-  mainProps,
-  seoProps,
-  topbarProps,
+  footer,
+  main,
+  seo,
+  topbar,
 }) => {
   const { theme } = useThemeContext();
 
@@ -38,19 +39,23 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
         className
       )}
     >
-      <GatsbySeo {...seoProps} />
+      <GatsbySeo {...seo} />
       <Topbar
         navLeft={<Brand />}
-        navRight={<ThemeSwitch className="text-primary-500" />}
-        {...topbarProps}
+        navRight={
+          <>
+            <Link className="mr-6" to="/about">
+              About
+            </Link>
+            <ThemeSwitch className="text-primary-500" />
+          </>
+        }
+        {...topbar}
       />
-      <main
-        {...mainProps}
-        className={classNames("flex-1", mainProps?.className)}
-      >
+      <main {...main} className={classNames("flex-1", main?.className)}>
         {children}
       </main>
-      <Footer {...footerProps} />
+      <Footer {...footer} />
     </div>
   );
 };

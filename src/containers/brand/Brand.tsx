@@ -7,16 +7,12 @@ import { Element, ElementProps } from "components";
 import styles from "./Brand.module.css";
 import { useBrandData } from "./brand.gql";
 
-export interface BrandProps extends ElementProps {
-  linkTo?: string;
-}
-
-export const Brand: FC<BrandProps> = ({ className, linkTo = "/" }) => {
+export const Brand: FC<ElementProps> = ({ className }) => {
   const { logo, name } = useBrandData();
 
   return (
     <Element className={className}>
-      <Link className={styles.link} to={linkTo}>
+      <Link className="content-center flex items-center" to="/">
         {logo?.childImageSharp && (
           <Img className={styles.logo} alt={name} {...logo.childImageSharp} />
         )}

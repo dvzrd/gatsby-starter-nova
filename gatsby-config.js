@@ -23,6 +23,34 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-manifest",
+      options: manifest,
+    },
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        defaultLayouts: {
+          default: require.resolve(
+            "./src/templates/default/DefaultTemplate.tsx"
+          ),
+        },
+        extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [
+          "gatsby-remark-copy-linked-files",
+          // "gatsby-remark-prismjs",
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1280,
+              maxHeight: 720,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+        remarkPlugins: [require("remark-slug"), require("remark-emoji")],
+      },
+    },
+    {
       resolve: "gatsby-plugin-next-seo",
       options: {
         canonical: metaData.siteUrl,
@@ -66,10 +94,6 @@ module.exports = {
           require("tailwindcss"),
         ],
       },
-    },
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: manifest,
     },
     {
       resolve: "gatsby-plugin-root-import",

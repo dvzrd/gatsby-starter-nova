@@ -42,6 +42,8 @@
     "react-helmet-async": "latest"
   },
   "devDependencies": {
+    "@mdx-js/mdx": "latest",
+    "@mdx-js/react": "latest",
     "@types/classnames": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
@@ -54,18 +56,24 @@
     "gatsby-plugin-favicon": "latest",
     "gatsby-plugin-google-gtag": "latest",
     "gatsby-plugin-manifest": "latest",
+    "gatsby-plugin-mdx": "latest",
     "gatsby-plugin-next-seo": "latest",
     "gatsby-plugin-offline": "latest",
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-root-import": "latest",
     "gatsby-plugin-sharp": "latest",
     "gatsby-plugin-typescript": "latest",
+    "gatsby-remark-copy-linked-files": "latest",
+    "gatsby-remark-prismjs": "latest",
+    "gatsby-remark-images": "latest",
     "gatsby-source-filesystem": "latest",
     "gatsby-transformer-sharp": "latest",
     "gatsby-transformer-yaml": "latest",
     "postcss-import": "latest",
     "postcss-preset-env": "latest",
     "prettier": "latest",
+    "remark-emoji": "latest",
+    "remark-slug": "latest",
     "tailwindcss": "latest",
     "typescript": "latest"
   }

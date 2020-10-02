@@ -3,8 +3,6 @@ import classNames from "classnames";
 
 import { Section, SectionProps } from "components";
 
-import styles from "./Topbar.module.css";
-
 export interface TopbarProps extends SectionProps {
   isHidden?: boolean;
   navLeft?: ReactNode;
@@ -13,11 +11,21 @@ export interface TopbarProps extends SectionProps {
   navRightClassName?: string;
 }
 
+export const topbarDefaultProps: TopbarProps = {
+  as: "header",
+  className: "z-20",
+  container: {
+    className: "flex justify-between",
+  },
+  navLeftClassName: "content-center flex flex-1 items-center",
+  navRightClassName: "content-center flex flex-1 items-center justify-end",
+};
+
 export const Topbar: FC<TopbarProps> = ({
-  as = "header",
+  as,
   children,
   className,
-  containerClassName = "flex justify-between",
+  container,
   isHidden = false,
   navLeft,
   navLeftClassName,
@@ -29,18 +37,26 @@ export const Topbar: FC<TopbarProps> = ({
   return (
     <Section
       as={as}
-      className={classNames(styles.header, className)}
-      containerClassName={containerClassName}
+      className={classNames(topbarDefaultProps.className, className)}
+      container={container || topbarDefaultProps.container}
     >
       {navLeft && (
-        <nav className={classNames(styles.nav, navLeftClassName)}>
+        <nav
+          className={classNames(
+            topbarDefaultProps.navLeftClassName,
+            navLeftClassName
+          )}
+        >
           {navLeft}
         </nav>
       )}
       {children}
       {navRight && (
         <nav
-          className={classNames(styles.nav, "justify-end", navRightClassName)}
+          className={classNames(
+            topbarDefaultProps.navRightClassName,
+            navRightClassName
+          )}
         >
           {navRight}
         </nav>
