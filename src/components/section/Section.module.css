@@ -7,9 +7,9 @@
 }
 
 .section.feature {
-  @apply content-center items-center justify-center min-h-screen-1/4 py-10;
+  @apply content-center items-center justify-center min-h-screen-1/4 py-16;
 }
 
 .section.hero {
-  @apply content-center items-center justify-center min-h-screen-1/2 py-12;
+  @apply content-center items-center justify-center min-h-screen-1/2 py-20;
 }

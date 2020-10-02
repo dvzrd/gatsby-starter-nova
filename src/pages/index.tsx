@@ -13,24 +13,14 @@ const PageIndex: FC<PageProps> = () => {
   return (
     <DefaultLayout>
       <Section as="header" pattern="hero">
-        <h2 className="leading-tight my-8 lg:my-16">{defaultDescription}</h2>
+        <h2 className="leading-tight text-copy">{defaultDescription}</h2>
       </Section>
-      <Section className="bg-background-primary" pattern="feature">
-        <h3 className="leading-tight mt-8 mb-4 text-copy-primary">
-          {defaultTitle}
-        </h3>
-        <p className="mb-8 text-lg text-copy-primary">
-          Nulla sit amet suscipit diam. Praesent aliquam metus nec diam
-          ultricies tincidunt. Donec congue feugiat tempus. Pellentesque mi
-          lacus, fermentum sit amet lectus quis, iaculis volutpat massa.
-        </p>
-      </Section>
-      <Section className="bg-background-paper" pattern="content">
-        <h4 className="leading-tight mt-8 mb-6 text-copy-paper">
+      <Section className="text-copy" pattern="content">
+        <h4 className="leading-tight mt-8 mb-6">
           Tailwind CSS Utility Classes
         </h4>
         <div className="lg:gap-6 grid grid-cols-1 lg:grid-cols-2">
-          <p className="mb-6 text-copy-paper">
+          <p className="mb-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             rhoncus massa vel risus commodo, bibendum faucibus ligula commodo.
             Sed sollicitudin nec eros sed condimentum. Suspendisse eget viverra
@@ -38,7 +28,7 @@ const PageIndex: FC<PageProps> = () => {
             semper erat, eu finibus elit auctor sed. Sed egestas tempor
             interdum. Etiam eu massa euismod purus dictum faucibus.
           </p>
-          <p className="mb-8 text-copy-paper">
+          <p className="mb-8">
             Sed at felis fermentum, rutrum eros quis, sodales leo. Etiam porta,
             ipsum quis sagittis mollis, massa metus vulputate neque, sit amet
             convallis turpis leo ut nulla. Morbi sed gravida lectus.
@@ -48,9 +38,20 @@ const PageIndex: FC<PageProps> = () => {
           </p>
         </div>
       </Section>
-      <Section as="footer">
-        <h3 className="leading-tight mt-8 mb-4">{name}</h3>
+      <Section
+        className="bg-background-primary text-copy-primary"
+        pattern="feature"
+      >
+        <h4 className="leading-tight mt-8 mb-4">{defaultTitle}</h4>
         <p className="mb-8 text-lg">
+          Nulla sit amet suscipit diam. Praesent aliquam metus nec diam
+          ultricies tincidunt. Donec congue feugiat tempus. Pellentesque mi
+          lacus, fermentum sit amet lectus quis, iaculis volutpat massa.
+        </p>
+      </Section>
+      <Section as="footer" className="text-copy">
+        <h3 className="leading-tight mt-8 mb-4">{name}</h3>
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus
           massa vel risus commodo, bibendum faucibus ligula commodo. Sed
           sollicitudin nec eros sed condimentum.

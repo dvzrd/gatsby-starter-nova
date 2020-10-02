@@ -17,7 +17,7 @@ export interface FooterProps extends SectionProps {
 export const Footer: FC<FooterProps> = ({
   as = "footer",
   children,
-  className,
+  className = "text-copy",
   containerClassName,
   isHidden = false,
   showAuthor = true,

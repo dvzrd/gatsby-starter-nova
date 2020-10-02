@@ -15,7 +15,7 @@ export interface SectionProps extends ElementProps {
 export const Section: FC<SectionProps> = ({
   as = "section",
   children,
-  className,
+  className = "text-copy",
   containerClassName,
   pattern,
 }) => (
