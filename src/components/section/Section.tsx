@@ -5,7 +5,7 @@ import { Element, ElementProps } from "components";
 
 import styles from "./Section.module.css";
 
-export type SectionPattern = "content" | "feature" | "hero";
+export type SectionPattern = "contained" | "content" | "feature" | "hero";
 
 export interface SectionProps extends ElementProps {
   container?: ElementProps;
@@ -26,23 +26,31 @@ export const Section: FC<SectionProps> = ({
   className,
   container,
   pattern,
-}) => (
-  <Element
-    as={as || sectionDefaultProps.as}
-    className={classNames(
-      className,
-      styles.section,
-      pattern === "content" && styles.content,
-      pattern === "feature" && styles.feature,
-      pattern === "hero" && styles.hero
-    )}
-  >
+  ...rest
+}) => {
+  return (
     <Element
-      {...sectionDefaultProps.container}
-      {...container}
-      className={classNames("container", container?.className)}
+      as={as}
+      className={classNames(
+        className,
+        styles.section,
+        pattern === "content" && styles.content,
+        pattern === "feature" && styles.feature,
+        pattern === "hero" && styles.hero
+      )}
+      {...rest}
     >
-      {children}
+      <Element
+        {...sectionDefaultProps.container}
+        {...container}
+        className={classNames("container", container?.className, {
+          "p-0": pattern === "contained",
+        })}
+      >
+        {children}
+      </Element>
     </Element>
-  </Element>
-);
+  );
+};
+
+Section.defaultProps = sectionDefaultProps;

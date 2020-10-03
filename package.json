@@ -45,6 +45,7 @@
     "@mdx-js/mdx": "latest",
     "@mdx-js/react": "latest",
     "@types/classnames": "latest",
+    "@types/mdx-js__react": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",

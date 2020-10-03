@@ -7,9 +7,9 @@ export interface ElementProps extends HTMLAttributes<HTMLElement> {
 export const Element: FC<ElementProps> = ({
   as = "div",
   children,
-  ...props
+  ...rest
 }) => {
   const Component = as;
 
-  return <Component {...props}>{children}</Component>;
+  return <Component {...rest}>{children}</Component>;
 };

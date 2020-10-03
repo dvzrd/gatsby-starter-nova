@@ -3,40 +3,25 @@ import { Link } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import classNames from "classnames";
 
-import { Element, Section, ElementProps } from "components";
+import { Element, Section, SectionProps, ElementProps } from "components";
 
 export interface MDXProps extends ElementProps {
   body?: string;
   components?: {};
 }
 
+// TODO:
+// - map more components
+// - https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-mdx#components
+// - https://mdxjs.com/getting-started#table-of-components
+
 export const mdxDefaultProps: MDXProps = {
   as: "article",
   className: "flex flex-col flex-wrap mb-8",
   components: {
     a: Link,
-    // blockquote: Quote,
-    // code: Code,
-    // h1: (props) => <h1 {...props} />,
-    // h2: TextH2,
-    // h3: TextH3,
-    // h4: TextH4,
-    // h5: TextH5,
-    // h6: TextH6,
-    // hr: (props) => <hr className="divider" {...props} />,
-    // img: Media,
-    // inlineCode: (props) => <pre {...props} />,
-    // li: (props) => <li {...props} />,
-    // ol: (props) => <ol {...props} />,
-    // p: Text,
-    // table: Table,
-    // td/th: TableCell,
-    // tr: TableRow,
-    // pre: (props) => <Code variant="pre" {...props} />,
-    // thematicBreak: (props) => <hr className="divider-thematic" {...props} />,
-    // ul: (props) => <ul {...props} />,
-    Element,
-    Section,
+    Element: (props: ElementProps) => <Element {...props} />,
+    Section: (props: SectionProps) => <Section {...props} />,
   },
 };
 
