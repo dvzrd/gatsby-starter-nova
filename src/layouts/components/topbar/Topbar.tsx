@@ -11,21 +11,11 @@ export interface TopbarProps extends SectionProps {
   navRightClassName?: string;
 }
 
-export const topbarDefaultProps: TopbarProps = {
-  as: "header",
-  className: "z-20",
-  container: {
-    className: "flex justify-between",
-  },
-  navLeftClassName: "content-center flex flex-1 items-center",
-  navRightClassName: "content-center flex flex-1 items-center justify-end",
-};
-
 export const Topbar: FC<TopbarProps> = ({
-  as,
+  as = "header",
   children,
-  className,
-  container,
+  className = "z-20",
+  container = { className: "flex justify-between" },
   isHidden = false,
   navLeft,
   navLeftClassName,
@@ -35,15 +25,11 @@ export const Topbar: FC<TopbarProps> = ({
   if (isHidden) return null;
 
   return (
-    <Section
-      as={as}
-      className={classNames(topbarDefaultProps.className, className)}
-      container={container || topbarDefaultProps.container}
-    >
+    <Section as={as} className={className} container={container}>
       {navLeft && (
         <nav
           className={classNames(
-            topbarDefaultProps.navLeftClassName,
+            "content-center flex flex-1 items-center",
             navLeftClassName
           )}
         >
@@ -54,7 +40,7 @@ export const Topbar: FC<TopbarProps> = ({
       {navRight && (
         <nav
           className={classNames(
-            topbarDefaultProps.navRightClassName,
+            "content-center flex flex-1 items-center justify-end",
             navRightClassName
           )}
         >

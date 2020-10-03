@@ -12,45 +12,33 @@ export interface SectionProps extends ElementProps {
   pattern?: SectionPattern;
 }
 
-export const sectionDefaultProps: SectionProps = {
-  as: "section",
-  className: "text-copy",
-  container: {
-    as: "figure",
-  },
-};
-
 export const Section: FC<SectionProps> = ({
-  as,
+  as = "section",
   children,
-  className,
+  className = "text-copy",
   container,
   pattern,
   ...rest
-}) => {
-  return (
+}) => (
+  <Element
+    as={as}
+    {...rest}
+    className={classNames(
+      className,
+      styles.section,
+      pattern === "content" && styles.content,
+      pattern === "feature" && styles.feature,
+      pattern === "hero" && styles.hero
+    )}
+  >
     <Element
-      as={as}
-      className={classNames(
-        className,
-        styles.section,
-        pattern === "content" && styles.content,
-        pattern === "feature" && styles.feature,
-        pattern === "hero" && styles.hero
-      )}
-      {...rest}
+      as="figure"
+      {...container}
+      className={classNames("container", container?.className, {
+        "p-0": pattern === "contained",
+      })}
     >
-      <Element
-        {...sectionDefaultProps.container}
-        {...container}
-        className={classNames("container", container?.className, {
-          "p-0": pattern === "contained",
-        })}
-      >
-        {children}
-      </Element>
+      {children}
     </Element>
-  );
-};
-
-Section.defaultProps = sectionDefaultProps;
+  </Element>
+);

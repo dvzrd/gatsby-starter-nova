@@ -12,15 +12,10 @@ export interface FooterProps extends SectionProps {
   showOrg?: boolean;
 }
 
-export const footerDefaultProps: FooterProps = {
-  as: "footer",
-  className: "text-copy z-10",
-};
-
 export const Footer: FC<FooterProps> = ({
-  as,
+  as = "footer",
   children,
-  className,
+  className = "text-copy z-10",
   container,
   isHidden = false,
   showAuthor = true,
@@ -39,11 +34,7 @@ export const Footer: FC<FooterProps> = ({
     ) : null;
 
   return (
-    <Section
-      as={as || footerDefaultProps.as}
-      className={classNames(footerDefaultProps.className, className)}
-      container={container}
-    >
+    <Section as={as} className={className} container={container}>
       {children}
       {copyright && (
         <p className="text-sm">
