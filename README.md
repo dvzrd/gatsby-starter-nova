@@ -36,10 +36,20 @@ For info about gatsby plugins and themes, see the following:
 
 ### Gatsby Plugins
 
+#### Gatsby MDX
+
+MDX with [`gatsby-plugin-mdx`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-mdx).
+
+- Configure plugins and other options in `gatsby-config`.
+- Configure render options in `components/mdx`
+
 #### Gatsby Next SEO
 
-- Configure SEO with [`gatsby-plugin-next-seo`](https://github.com/ifiokjr/gatsby-plugin-next-seo).
-- Configure SEO defaults in `gatsby-config`.
+SEO with [`gatsby-plugin-next-seo`](https://github.com/ifiokjr/gatsby-plugin-next-seo).
+
+- Configure defaults in `gatsby-config`.
+- Configure page level SEO in `pages` by passing `seo` props to `layouts`.
+- Configure `seo` props in the `frontmatter` of your `mdx/md` files.
 
 ### Custom Plugins and Themes
 
@@ -79,6 +89,5 @@ It's recommended you setup netlify cli and run this project locally with netlify
 ## Roadmap
 
 - [Hygen](https://github.com/jondot/hygen/)
-- [MDX](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/)
 - [Lint](https://www.gatsbyjs.com/docs/eslint/)
 - [Tests](https://www.gatsbyjs.com/docs/unit-testing/)
