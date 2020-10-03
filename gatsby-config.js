@@ -37,7 +37,7 @@ module.exports = {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
           "gatsby-remark-copy-linked-files",
-          // "gatsby-remark-prismjs",
+          "gatsby-remark-prismjs",
           {
             resolve: "gatsby-remark-images",
             options: {
@@ -130,6 +130,7 @@ module.exports = {
     // themes
     // - add gatsby themes here.
     // transformers
+    "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-transformer-yaml",
   ],

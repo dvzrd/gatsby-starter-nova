@@ -1,0 +1,23 @@
+@layer components {
+  .section {
+    @apply content-start flex items-stretch justify-start overflow-hidden py-4 relative;
+
+    &.contained {
+      & > .container {
+        @apply max-w-none p-0;
+      }
+    }
+
+    &.content {
+      @apply py-8;
+    }
+
+    &.feature {
+      @apply content-center items-center justify-center min-h-screen-1/4 py-16;
+    }
+
+    &.hero {
+      @apply content-center items-center justify-center min-h-screen-1/2 py-20;
+    }
+  }
+}

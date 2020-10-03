@@ -41,12 +41,12 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
   const heroProps: SectionProps = {
     as: "header",
     className: "bg-background-primary text-copy-primary",
-    pattern: "feature",
+    patterns: ["feature"],
     ...hero,
   };
 
   const mainProps: SectionProps = {
-    pattern: "content",
+    patterns: ["content"],
     ...main,
   };
 

@@ -7,13 +7,17 @@ title: About
 
 This is just a regular markdown paragraph.
 
-<Section pattern="contained">
+<Section patterns={["contained content"]}>
 
-#### This is a contained section component
+#### This is a contained content section component
 
----
+<Element as="p" className="my-4">
+  You can use component shortcodes
+</Element>
 
-You can nest content using markdown, HTML, or other components inside of it or other components.
+<p class="my-4">You can write regular HTML content.</p>
+
+You can use regular markdown syntax.
 
 </Section>
 

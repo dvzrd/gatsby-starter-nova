@@ -3,13 +3,11 @@ import classNames from "classnames";
 
 import { Element, ElementProps } from "components";
 
-import styles from "./Section.module.css";
-
 export type SectionPattern = "contained" | "content" | "feature" | "hero";
 
 export interface SectionProps extends ElementProps {
   container?: ElementProps;
-  pattern?: SectionPattern;
+  patterns?: SectionPattern[];
 }
 
 export const Section: FC<SectionProps> = ({
@@ -17,26 +15,18 @@ export const Section: FC<SectionProps> = ({
   children,
   className = "text-copy",
   container,
-  pattern,
+  patterns,
   ...rest
 }) => (
   <Element
     as={as}
     {...rest}
-    className={classNames(
-      className,
-      styles.section,
-      pattern === "content" && styles.content,
-      pattern === "feature" && styles.feature,
-      pattern === "hero" && styles.hero
-    )}
+    className={classNames("section", [patterns], className)}
   >
     <Element
       as="figure"
       {...container}
-      className={classNames("container", container?.className, {
-        "p-0": pattern === "contained",
-      })}
+      className={classNames("container", container?.className)}
     >
       {children}
     </Element>

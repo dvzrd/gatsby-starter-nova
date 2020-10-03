@@ -6,7 +6,7 @@ import { DefaultLayout } from "layouts";
 
 const Page404: FC<PageProps> = () => (
   <DefaultLayout>
-    <Section as="header" pattern="hero">
+    <Section as="header" patterns={["hero"]}>
       <h1 className="text-copy">404: Not Found</h1>
     </Section>
   </DefaultLayout>
