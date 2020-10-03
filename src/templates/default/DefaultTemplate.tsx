@@ -40,7 +40,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
 
   const heroProps: SectionProps = {
     as: "header",
-    className: "bg-background-paper text-copy-paper",
+    className: "bg-background-primary text-copy-primary",
     pattern: "feature",
     ...hero,
   };
@@ -53,7 +53,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
   return (
     <DefaultLayout seo={seoProps} {...layout}>
       <Section {...heroProps}>
-        <h2 className="leading-tight text-copy">{title}</h2>
+        <h2 className="leading-tight">{title}</h2>
       </Section>
       <Section {...mainProps}>
         <MDX {...mdx}>{children}</MDX>

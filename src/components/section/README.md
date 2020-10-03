@@ -1,4 +1,4 @@
-# Section
+# Section Component
 
 Use Section to render various section components.
 

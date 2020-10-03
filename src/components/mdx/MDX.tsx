@@ -10,11 +10,6 @@ export interface MDXProps extends ElementProps {
   components?: {};
 }
 
-// TODO:
-// - map more components
-// - https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-mdx#components
-// - https://mdxjs.com/getting-started#table-of-components
-
 export const mdxDefaultProps: MDXProps = {
   as: "article",
   className: "flex flex-col flex-wrap mb-8",
