@@ -8,4 +8,8 @@ Tailwind CSS UI Components Library
 
 ## Roadmap
 
-- Add more components.
+- Add more components:
+  - Composition
+    - Form
+  - Typography
+- Refactor into node module - `@pulp/tailwind-ui`.
