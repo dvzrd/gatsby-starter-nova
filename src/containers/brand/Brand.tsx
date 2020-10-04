@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 
 import { Element, ElementProps } from "components";
 
-import styles from "./Brand.module.css";
 import { useBrandData } from "./brand.gql";
 
 export const Brand: FC<ElementProps> = ({ className }) => {
@@ -14,9 +13,15 @@ export const Brand: FC<ElementProps> = ({ className }) => {
     <Element className={className}>
       <Link className="content-center flex items-center" to="/">
         {logo?.childImageSharp && (
-          <Img className={styles.logo} alt={name} {...logo.childImageSharp} />
+          <Img
+            className="-mt-2 -ml-4 w-10"
+            alt={name}
+            {...logo.childImageSharp}
+          />
         )}
-        <h1 className={styles.name}>{name}</h1>
+        <h1 className="font-semibold inline-flex leading-none text-xl text-purple-500 tracking-tight uppercase">
+          {name}
+        </h1>
       </Link>
     </Element>
   );

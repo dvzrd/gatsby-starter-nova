@@ -1,8 +1,6 @@
-const { resolve } = require("path");
+"use strict";
 
-const logo = resolve(__dirname, "src/assets/images/logo.png");
-
-const metaData = {
+module.exports = {
   acronym: "GN",
   address: {
     locality: "Fake City",
@@ -23,7 +21,7 @@ const metaData = {
   description:
     "Nova is a gatsby starter made for quickly and easily launching SEO-friendly sites.",
   hours: ["Mo-Fr 09:00-17:00", "Sa-Su 10:00-16:00"],
-  image: logo,
+  image: "static/logo.png",
   lang: "en",
   memorial: "In loving memory of Isam Machlovi (1986-2019).",
   name: "Gatsby Nova",
@@ -35,26 +33,9 @@ const metaData = {
   },
   pathPrefix: "/",
   siteUrl: "https://gatsby-starter-nova.netlify.com",
+  socialMedia: {
+    instagram: "_withpulp",
+    twitter: "_withpulp",
+  },
   title: "Launch a new site fast",
-};
-
-const manifest = {
-  background_color: "#fff",
-  display: "minimal-ui",
-  icon: logo,
-  name: metaData.name,
-  short_name: metaData.acronym,
-  start_url: metaData.pathPrefix,
-  theme_color: "#4890ad",
-};
-
-const socialMedia = {
-  instagram: "_withpulp",
-  twitter: "_withpulp",
-};
-
-module.exports = {
-  metaData,
-  manifest,
-  socialMedia,
 };

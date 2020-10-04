@@ -1,6 +1,8 @@
+"use-strict";
+
 const { join } = require("path");
 
-const { manifest, metaData, socialMedia } = require("./site.config");
+const config = require("./site.config");
 
 module.exports = {
   plugins: [
@@ -24,7 +26,15 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-manifest",
-      options: manifest,
+      options: {
+        background_color: "#fff",
+        display: "minimal-ui",
+        icon: "static/logo.png",
+        name: config.name,
+        short_name: config.acronym,
+        start_url: config.pathPrefix,
+        theme_color: "#7b0ca6",
+      },
     },
     {
       resolve: "gatsby-plugin-mdx",
@@ -53,31 +63,31 @@ module.exports = {
     {
       resolve: "gatsby-plugin-next-seo",
       options: {
-        canonical: metaData.siteUrl,
-        description: metaData.description,
+        canonical: config.siteUrl,
+        description: config.description,
         openGraph: {
-          description: metaData.description,
+          description: config.description,
           images: [
             {
-              url: `${metaData.siteUrl}/static/logo.png`,
+              url: `${config.siteUrl}/logo.png`,
               width: 800,
               height: 800,
               alt: "Og Image Social Logo",
             },
           ],
           locale: "en_IE",
-          site_name: metaData.name,
-          title: metaData.title,
+          site_name: config.name,
+          title: config.title,
           type: "website",
-          url: metaData.siteUrl,
+          url: config.siteUrl,
         },
         twitter: {
-          handle: `@${socialMedia.twitter}`,
-          site: `@${socialMedia.twitter}`,
+          handle: `@${config.socialMedia.twitter}`,
+          site: `@${config.socialMedia.twitter}`,
           cardType: "summary_large_image",
         },
-        title: metaData.title,
-        titleTemplate: `%s | ${metaData.name}`,
+        title: config.title,
+        titleTemplate: `%s | ${config.name}`,
       },
     },
     {
@@ -134,8 +144,5 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-transformer-yaml",
   ],
-  siteMetadata: {
-    ...metaData,
-    socialMedia,
-  },
+  siteMetadata: config,
 };
