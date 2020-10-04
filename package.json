@@ -24,12 +24,13 @@
     "withpulp"
   ],
   "scripts": {
-    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build": "gatsby build",
+    "build:prod": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "clean": "gatsby clean",
+    "clean:modules": "rm -rf .cache node_modules public",
     "dev": "gatsby develop",
     "dev:netlify": "netlify dev",
     "fix": "prettier --write  \"**/*.{js,jsx,json,md,mdx,mjs,ts,tsx,yml}\"",
-    "purge": "rm -rf .cache node_modules public yarn.lock",
     "serve": "gatsby serve",
     "start": "yarn dev",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",

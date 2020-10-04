@@ -22,6 +22,7 @@ export interface MDXProps extends ElementProps {
 
 export const mdxComponents = {
   a: Link,
+  p: (props: TextProps) => <Text {...props} as="p" />,
   Element: (props: ElementProps) => <Element {...props} />,
   Pattern: (props: PatternProps) => <Pattern {...props} />,
   Section: (props: SectionProps) => <Section {...props} />,

@@ -18,7 +18,7 @@ export interface BrandProps extends ElementProps {
 
 export const Brand: FC<BrandProps> = ({
   children,
-  className,
+  className = "text-copy",
   isShort = false,
   linkTo = "/",
   logoProps,
