@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { BaseElement as Element, ElementProps } from "components";
+import { Pattern, PatternProps } from "components";
 
 export type TextPattern =
   | "body"
@@ -14,18 +14,24 @@ export type TextPattern =
   | "subtitle"
   | "title";
 
-export interface TextProps<Text extends HTMLElement = HTMLSpanElement>
-  extends Omit<ElementProps<Text>, "height" | "size"> {
-  pattern?: TextPattern;
+export interface TextProps extends PatternProps {
+  is?: TextPattern;
 }
 
 export const Text: FC<TextProps> = ({
   as = "span",
   children,
   className,
-  pattern,
+  is,
+  of,
+  on,
+  ...rest
 }) => (
-  <Element as={as} className={classNames("text", pattern, className)}>
+  <Pattern
+    as={as}
+    {...rest}
+    className={classNames("text", is, of, on, className)}
+  >
     {children}
-  </Element>
+  </Pattern>
 );

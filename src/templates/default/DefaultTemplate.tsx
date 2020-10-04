@@ -2,7 +2,15 @@ import React, { FC } from "react";
 import { GatsbySeoProps } from "gatsby-plugin-next-seo";
 import { PageProps } from "gatsby";
 
-import { ElementProps, MDX, MDXProps, Section, SectionProps } from "components";
+import {
+  ElementProps,
+  Hero,
+  HeroProps,
+  MDX,
+  MDXProps,
+  Section,
+  SectionProps,
+} from "components";
 import { DefaultLayout, LayoutSection } from "layouts";
 
 export type LayoutProps = {
@@ -16,7 +24,7 @@ export interface DefaultTemplateProps extends PageProps {
     frontmatter: {
       container?: SectionProps;
       description: string;
-      hero?: SectionProps;
+      hero?: HeroProps;
       layout?: LayoutProps;
       main?: SectionProps;
       mdx?: MDXProps;
@@ -38,10 +46,11 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
     ...seo,
   };
 
-  const heroProps: SectionProps = {
-    as: "header",
+  const heroProps: HeroProps = {
+    caption: {
+      heading: title,
+    },
     className: "bg-background-primary text-copy-primary",
-    is: "feature",
     ...hero,
   };
 
@@ -52,9 +61,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
 
   return (
     <DefaultLayout seo={seoProps} {...layout}>
-      <Section {...heroProps}>
-        <h1 className="leading-tight">{title}</h1>
-      </Section>
+      <Hero {...heroProps} />
       <Section {...mainProps}>
         <MDX {...mdx}>{children}</MDX>
       </Section>

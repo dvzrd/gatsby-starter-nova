@@ -8,7 +8,7 @@ import {
   PatternProps,
 } from "components";
 
-export type Section = "content" | "feature" | "form" | "hero";
+export type Section = "content" | "feature" | "form" | "heel" | "hero";
 
 export type SectionUtils = "compact" | "contained" | "fluid" | "full";
 
@@ -26,10 +26,16 @@ export const Section: FC<SectionProps> = ({
   children,
   className = "text-copy",
   container,
+  is,
   of,
+  on,
   ...rest
 }) => (
-  <Pattern as={as} {...rest} className={classNames("section", of, className)}>
+  <Pattern
+    as={as}
+    {...rest}
+    className={classNames("section", is, of, on, className)}
+  >
     <Element
       as="figure"
       {...container}

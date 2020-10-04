@@ -40,7 +40,7 @@ export const Hero: FC<HeroProps> = ({
   on = "page",
   caption,
   children,
-  className,
+  className = "text-copy",
   ...rest
 }) => (
   <Section
@@ -53,21 +53,22 @@ export const Hero: FC<HeroProps> = ({
   >
     {caption && (
       <Pattern
+        as="figcaption"
         {...caption}
         className={classNames("hero-caption", caption.className)}
       >
         {caption.meta && (
-          <Text as="h2" pattern="meta">
+          <Text as="h2" is="meta">
             {caption.meta}
           </Text>
         )}
         {caption.heading && (
-          <Text as="h1" pattern="heading">
+          <Text as="h1" is="hero">
             {caption.heading}
           </Text>
         )}
         {caption.subheading && (
-          <Text as="h2" pattern="subheading">
+          <Text as="h2" is="subheading">
             {caption.subheading}
           </Text>
         )}

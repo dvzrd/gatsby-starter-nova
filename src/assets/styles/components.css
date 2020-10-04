@@ -60,12 +60,28 @@
   @screen md {
     .text {
       @apply text-lg;
+
+      &.heading {
+        @apply text-4xl;
+      }
+
+      &.hero {
+        @apply text-5xl;
+      }
     }
   }
 
   @screen xl {
     .text {
       @apply text-xl;
+
+      &.heading {
+        @apply text-5xl;
+      }
+
+      &.hero {
+        @apply text-6xl;
+      }
     }
   }
 }

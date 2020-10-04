@@ -1,19 +1,23 @@
 import React, { FC } from "react";
 import { PageProps } from "gatsby";
 
-import { Section } from "components";
+import { Hero, Section } from "components";
 import { DefaultLayout } from "layouts";
 import { useSiteMetadata } from "graphql";
 
 const PageIndex: FC<PageProps> = () => {
   const { description, title, name } = useSiteMetadata();
 
+  const heroProps = {
+    caption: {
+      heading: description,
+    },
+  };
+
   return (
     <DefaultLayout>
-      <Section as="header" of="hero">
-        <h1 className="leading-tight">{description}</h1>
-      </Section>
-      <Section className="text-copy" of="content">
+      <Hero {...heroProps} />
+      <Section className="text-copy" is="content" on="page">
         <h4 className="leading-tight mt-8 mb-6">
           Tailwind CSS Utility Classes
         </h4>
@@ -36,7 +40,11 @@ const PageIndex: FC<PageProps> = () => {
           </p>
         </div>
       </Section>
-      <Section className="bg-background-primary text-copy-primary" of="feature">
+      <Section
+        className="bg-background-primary text-copy-primary"
+        is="feature"
+        on="page"
+      >
         <h2 className="leading-tight mt-8 mb-4">{name}</h2>
         <p className="mb-8 text-lg">
           Nulla sit amet suscipit diam. Praesent aliquam metus nec diam
@@ -44,7 +52,7 @@ const PageIndex: FC<PageProps> = () => {
           lacus, fermentum sit amet lectus quis, iaculis volutpat massa.
         </p>
       </Section>
-      <Section as="footer">
+      <Section as="footer" is="heel" on="page">
         <h3 className="leading-tight mt-12 mb-4">{title}</h3>
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus
