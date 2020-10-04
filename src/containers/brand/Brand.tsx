@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Link } from "gatsby";
 import classNames from "classnames";
 
-import { Element, ElementProps } from "components";
+import { BaseElement as Element, ElementProps } from "components";
 
 import { BrandLogo, BrandName } from "./components";
 

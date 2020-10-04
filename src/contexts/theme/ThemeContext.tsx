@@ -54,7 +54,7 @@ export const ThemeProvider: FC = ({ children }) => {
 export const ThemeSwitch: FC<HTMLAttributes<HTMLButtonElement>> = ({
   className,
 }) => {
-  const { theme, toggleTheme } = useThemeContext();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <button
@@ -97,10 +97,10 @@ export const ThemeSwitch: FC<HTMLAttributes<HTMLButtonElement>> = ({
   );
 };
 
-export const useThemeContext = () => {
+export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (context === null) {
-    throw new Error("useThemeContext must be called inside ThemeProvider.");
+    throw new Error("useTheme must be called inside ThemeProvider.");
   }
 
   return context;

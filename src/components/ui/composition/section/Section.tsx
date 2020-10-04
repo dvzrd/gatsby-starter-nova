@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Element, ElementProps } from "components";
+import { BaseElement as Element, ElementProps } from "components";
 
 export type SectionPattern = "contained" | "content" | "feature" | "hero";
 

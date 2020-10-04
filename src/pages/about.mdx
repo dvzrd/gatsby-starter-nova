@@ -11,9 +11,9 @@ This is just a regular markdown paragraph.
 
 #### This is a contained content section component
 
-<Element as="p" className="my-4">
+<Text as="p" className="my-4">
   You can use component shortcodes
-</Element>
+</Text>
 
 <p class="my-4">You can write regular HTML content.</p>
 
@@ -21,4 +21,15 @@ You can use regular markdown syntax.
 
 </Section>
 
+###### This is an h6
+
 This is just a regular markdown paragraph.
+
+<Element as="hr" className="clear-top" />
+
+<Pattern as="h4" patterns={["clear-bottom"]}>
+  This is a text pattern
+  <Text className="block" pattern="meta">
+    Dated 10/04/2020
+  </Text>
+</Pattern>

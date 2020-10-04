@@ -20,4 +20,52 @@
       @apply content-center items-center justify-center min-h-screen-1/2 py-20;
     }
   }
+
+  .text {
+    @apply text-base leading-normal;
+
+    &.caption {
+      @apply leading-tight tracking-wide text-xs;
+    }
+
+    &.heading {
+      @apply block mb-2 mt-4 text-3xl;
+    }
+
+    &.hero {
+      @apply leading-tight tracking-tight text-4xl;
+    }
+
+    &.legend {
+      @apply leading-tight tracking-tighter text-5xl;
+    }
+
+    &.meta {
+      @apply text-sm;
+    }
+
+    &.subheading {
+      @apply text-xl;
+    }
+
+    &.subtitle {
+      @apply text-lg;
+    }
+
+    &.title {
+      @apply text-2xl;
+    }
+  }
+
+  @screen md {
+    .text {
+      @apply text-lg;
+    }
+  }
+
+  @screen xl {
+    .text {
+      @apply text-xl;
+    }
+  }
 }

@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 import { ElementProps } from "components";
 import { Brand } from "containers";
-import { ThemeSwitch, useThemeContext } from "contexts";
+import { ThemeSwitch, useTheme } from "contexts";
 
 import { Footer, Topbar } from "../components";
 
@@ -29,7 +29,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   seo,
   topbar,
 }) => {
-  const { theme } = useThemeContext();
+  const { theme } = useTheme();
 
   return (
     <div
@@ -44,7 +44,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
         navLeft={<Brand />}
         navRight={
           <>
-            <Link className="mr-6" to="/about">
+            <Link className="mr-6 text-copy" to="/about">
               About
             </Link>
             <ThemeSwitch className="text-primary-500" />

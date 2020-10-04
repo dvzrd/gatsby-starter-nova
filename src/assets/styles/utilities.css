@@ -1,0 +1,49 @@
+@layer utilities {
+  .clear {
+    @apply my-4 py-4;
+  }
+
+  .clear-bottom {
+    @apply mb-4 pb-4;
+  }
+
+  .clear-top {
+    @apply mt-4 pt-4;
+  }
+
+  .divider {
+    @apply bg-gray-500 h-1 w-full m-auto;
+  }
+
+  .vertical-divider {
+    @apply bg-gray-500 h-full w-1 m-auto;
+  }
+
+  @screen md {
+    .clear {
+      @apply my-6 py-6;
+    }
+
+    .clear-bottom {
+      @apply mb-6 pb-6;
+    }
+
+    .clear-top {
+      @apply mt-4 pt-4;
+    }
+  }
+
+  @screen xl {
+    .clear {
+      @apply my-8 py-8;
+    }
+
+    .clear-bottom {
+      @apply mb-8 pb-8;
+    }
+
+    .clear-top {
+      @apply mt-8 pt-8;
+    }
+  }
+}

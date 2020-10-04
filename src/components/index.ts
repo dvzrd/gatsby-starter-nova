@@ -1,4 +1,5 @@
 /* primitive components */
-export * from "./element";
+export * from "./ui/primitive";
 export * from "./mdx";
-export * from "./section";
+export * from "./ui/composition";
+export * from "./ui/typography";

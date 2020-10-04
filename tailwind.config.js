@@ -1,6 +1,7 @@
 "use strict";
 
 // Tailwind config: https://tailwindcss.com/docs/configuration
+
 module.exports = {
   future: {
     purgeLayersByDefault: true,
@@ -113,6 +114,9 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        "7xl": "5rem",
+      },
       listStyleType: {
         square: "square",
       },
@@ -123,6 +127,9 @@ module.exports = {
         "screen-1/4": "25vh",
         "screen-1/2": "50vh",
         "screen-3/4": "75vh",
+      },
+      screens: {
+        dark: { raw: "(prefers-color-scheme: dark)" },
       },
     },
     fontFamily: {
@@ -159,6 +166,4 @@ module.exports = {
       xl: "1280px",
     },
   },
-  variants: {},
-  plugins: [],
 };

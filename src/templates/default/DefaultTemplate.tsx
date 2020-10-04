@@ -53,7 +53,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
   return (
     <DefaultLayout seo={seoProps} {...layout}>
       <Section {...heroProps}>
-        <h2 className="leading-tight">{title}</h2>
+        <h1 className="leading-tight">{title}</h1>
       </Section>
       <Section {...mainProps}>
         <MDX {...mdx}>{children}</MDX>

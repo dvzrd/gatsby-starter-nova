@@ -1,20 +1,31 @@
 import React, { FC } from "react";
 import { Link } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
+import { MDXProvider, MDXProviderComponents } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import classNames from "classnames";
 
-import { Element, Section, SectionProps, ElementProps } from "components";
+import {
+  BaseElement as Element,
+  ElementProps,
+  Pattern,
+  PatternProps,
+  Section,
+  SectionProps,
+  Text,
+  TextProps,
+} from "components";
 
 export interface MDXProps extends ElementProps {
   body?: string;
-  components?: {};
+  components?: MDXProviderComponents;
 }
 
-export const mdxDefaultComponents = {
+export const mdxComponents = {
   a: Link,
   Element: (props: ElementProps) => <Element {...props} />,
+  Pattern: (props: PatternProps) => <Pattern {...props} />,
   Section: (props: SectionProps) => <Section {...props} />,
+  Text: (props: TextProps) => <Text {...props} />,
 };
 
 export const MDX: FC<MDXProps> = ({
@@ -30,7 +41,7 @@ export const MDX: FC<MDXProps> = ({
     className={classNames("flex flex-col flex-wrap", className)}
     {...rest}
   >
-    <MDXProvider components={{ ...mdxDefaultComponents, ...components }}>
+    <MDXProvider components={{ ...mdxComponents, ...components }}>
       {body && <MDXRenderer>{body}</MDXRenderer>}
       {children}
     </MDXProvider>

@@ -8,26 +8,204 @@
   }
 
   h1 {
-    @apply text-6xl;
-  }
-
-  h2 {
-    @apply text-5xl;
-  }
-
-  h3 {
     @apply text-4xl;
   }
 
-  h4 {
+  h2 {
     @apply text-3xl;
   }
 
-  h5 {
+  h3 {
     @apply text-2xl;
   }
 
-  h6 {
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
     @apply text-lg;
+  }
+
+  h6 {
+    @apply text-base;
+  }
+
+  p {
+    @apply text-base;
+  }
+
+  @screen md {
+    h1 {
+      @apply text-5xl;
+    }
+  
+    h2 {
+      @apply text-4xl;
+    }
+  
+    h3 {
+      @apply text-3xl;
+    }
+  
+    h4 {
+      @apply text-2xl;
+    }
+  
+    h5 {
+      @apply text-xl;
+    }
+
+    h6 {
+      @apply text-lg;
+    }
+
+    p {
+      @apply text-lg;
+    }
+  }
+
+  @screen xl {
+    h1 {
+      @apply text-6xl;
+    }
+  
+    h2 {
+      @apply text-5xl;
+    }
+  
+    h3 {
+      @apply text-4xl;
+    }
+  
+    h4 {
+      @apply text-3xl;
+    }
+  
+    h5 {
+      @apply text-2xl;
+    }
+
+    h6 {
+      @apply text-xl;
+    }
+
+    p {
+      @apply text-xl;
+    }
+  }
+}
+
+@layer utilities {
+  .text-up-xs {
+    @apply text-xs;
+  }
+
+  .text-up-sm {
+    @apply text-sm;
+  }
+
+  .text-up-base {
+    @apply text-base;
+  }
+
+  .text-up-lg {
+    @apply text-lg;
+  }
+
+  .text-up-xl {
+    @apply text-xl;
+  }
+
+  .text-up-2xl {
+    @apply text-2xl;
+  }
+
+  .text-up-3xl {
+    @apply text-3xl;
+  }
+
+  .text-up-4xl {
+    @apply text-4xl;
+  }
+
+  .text-up-5xl {
+    @apply text-5xl;
+  }
+
+  @screen md {
+    .text-up-xs {
+      @apply text-sm;
+    }
+  
+    .text-up-sm {
+      @apply text-base;
+    }
+  
+    .text-up-base {
+      @apply text-lg;
+    }
+  
+    .text-up-lg {
+      @apply text-xl;
+    }
+  
+    .text-up-xl {
+      @apply text-2xl;
+    }
+  
+    .text-up-2xl {
+      @apply text-3xl;
+    }
+  
+    .text-up-3xl {
+      @apply text-4xl;
+    }
+  
+    .text-up-4xl {
+      @apply text-5xl;
+    }
+
+    .text-up-5xl {
+      @apply text-6xl;
+    }
+  }
+
+  @screen xl {
+    .text-up-xs {
+      @apply text-base;
+    }
+  
+    .text-up-sm {
+      @apply text-lg;
+    }
+  
+    .text-up-base {
+      @apply text-xl;
+    }
+  
+    .text-up-lg {
+      @apply text-2xl;
+    }
+  
+    .text-up-xl {
+      @apply text-3xl;
+    }
+  
+    .text-up-2xl {
+      @apply text-4xl;
+    }
+  
+    .text-up-3xl {
+      @apply text-5xl;
+    }
+  
+    .text-up-4xl {
+      @apply text-6xl;
+    }
+
+    .text-up-5xl {
+      @apply text-7xl;
+    }
   }
 }

@@ -11,7 +11,7 @@ const PageIndex: FC<PageProps> = () => {
   return (
     <DefaultLayout>
       <Section as="header" patterns={["hero"]}>
-        <h2 className="leading-tight text-copy">{description}</h2>
+        <h1 className="leading-tight">{description}</h1>
       </Section>
       <Section className="text-copy" patterns={["content"]}>
         <h4 className="leading-tight mt-8 mb-6">
@@ -47,7 +47,7 @@ const PageIndex: FC<PageProps> = () => {
           lacus, fermentum sit amet lectus quis, iaculis volutpat massa.
         </p>
       </Section>
-      <Section as="footer" className="text-copy">
+      <Section as="footer">
         <h3 className="leading-tight mt-12 mb-4">{title}</h3>
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus

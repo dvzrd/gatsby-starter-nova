@@ -12,7 +12,7 @@ export interface BrandNameProps extends ElementProps {
 export const BrandName: FC<BrandNameProps> = ({
   as = "h1",
   children,
-  className,
+  className = "text-xl",
   isShort,
 }) => {
   const { acronym, name } = useBrandData();
@@ -21,7 +21,7 @@ export const BrandName: FC<BrandNameProps> = ({
     <Element
       as={as}
       className={classNames(
-        "font-semibold inline-flex leading-none text-xl text-purple-500 tracking-tight uppercase",
+        "font-semibold inline-flex leading-none tracking-tight uppercase",
         className
       )}
     >
