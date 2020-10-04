@@ -5,18 +5,22 @@
 
   .clear-bottom {
     @apply mb-4 pb-4;
+
+    &.divider {
+      @apply border-b-2 border-gray-500 border-solid;
+    }
   }
 
   .clear-top {
     @apply mt-4 pt-4;
+
+    &.divider {
+      @apply border-t-2 border-gray-500 border-solid;
+    }
   }
 
   .divider {
-    @apply bg-gray-500 h-1 w-full m-auto;
-  }
-
-  .vertical-divider {
-    @apply bg-gray-500 h-full w-1 m-auto;
+    @apply my-1;
   }
 
   @screen md {

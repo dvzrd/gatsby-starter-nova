@@ -1,5 +1,8 @@
-/* primitive components */
+// primitive components
 export * from "./ui/primitive";
-export * from "./mdx";
+// composition components
 export * from "./ui/composition";
+// typography components
 export * from "./ui/typography";
+// mdx components
+export * from "./mdx";

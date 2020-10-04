@@ -3,33 +3,47 @@ description: About page description
 title: About
 ---
 
-### This is a page built with MDX
+<Pattern as="h2" of="clear">
+  This is a page built with MDX
+  <Element as="hr" className="divider" />
+  <Text className="block" pattern="meta">
+    Dated 10/04/2020
+  </Text>
+</Pattern>
 
-This is just a regular markdown paragraph.
+### This is an h3 in markdown syntax
 
-<Section patterns={["contained content"]}>
+<Pattern as="hr" className="divider pb-6" />
+
+**This is bold markdown:**
+
+Tristique risus nec feugiat in fermentum. Senectus et netus et malesuada fames. Viverra vitae congue eu consequat ac felis donec. Maecenas accumsan lacus vel facilisis volutpat est. Diam sollicitudin tempor id eu. Egestas maecenas pharetra convallis posuere morbi. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Senectus et netus et malesuada. Orci eu lobortis elementum nibh tellus molestie nunc. Lobortis elementum nibh tellus molestie. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Faucibus in ornare quam viverra orci sagittis. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
+
+<Pattern of="clear-bottom" />
+
+#### This is an h5
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<Section is="content" of="contained" className="clear">
 
 #### This is a contained content section component
 
-<Text as="p" className="my-4">
-  You can use component shortcodes
-</Text>
+<div className="gap-4 grid md:grid-cols-3 my-4">
+  <Text as="p" className="md:mb-6">
+    You can use component shortcodes
+  </Text>
+  <p className="md:mb-6">You can write regular HTML content.</p>
+  <Element as="p" className="md:mb-6">
+    Whatever components you pass to or define in MDX will be available as
+    shortcodes.
+  </Element>
+</div>
 
-<p class="my-4">You can write regular HTML content.</p>
-
-You can use regular markdown syntax.
+You can use regular markdown syntax, but not in a grid - have to wrap that in a div or something man. I mean give me something to work with here dude.
 
 </Section>
 
 ###### This is an h6
 
 This is just a regular markdown paragraph.
-
-<Element as="hr" className="clear-top" />
-
-<Pattern as="h4" patterns={["clear-bottom"]}>
-  This is a text pattern
-  <Text className="block" pattern="meta">
-    Dated 10/04/2020
-  </Text>
-</Pattern>

@@ -10,10 +10,10 @@ const PageIndex: FC<PageProps> = () => {
 
   return (
     <DefaultLayout>
-      <Section as="header" patterns={["hero"]}>
+      <Section as="header" of="hero">
         <h1 className="leading-tight">{description}</h1>
       </Section>
-      <Section className="text-copy" patterns={["content"]}>
+      <Section className="text-copy" of="content">
         <h4 className="leading-tight mt-8 mb-6">
           Tailwind CSS Utility Classes
         </h4>
@@ -36,10 +36,7 @@ const PageIndex: FC<PageProps> = () => {
           </p>
         </div>
       </Section>
-      <Section
-        className="bg-background-primary text-copy-primary"
-        patterns={["feature"]}
-      >
+      <Section className="bg-background-primary text-copy-primary" of="feature">
         <h2 className="leading-tight mt-8 mb-4">{name}</h2>
         <p className="mb-8 text-lg">
           Nulla sit amet suscipit diam. Praesent aliquam metus nec diam
