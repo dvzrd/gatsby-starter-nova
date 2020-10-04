@@ -1,28 +1,59 @@
 import React, { FC } from "react";
-import Img from "gatsby-image";
 import { Link } from "gatsby";
+import classNames from "classnames";
 
 import { Element, ElementProps } from "components";
 
-import { useBrandData } from "./brand.gql";
+import { BrandLogo, BrandName } from "./components";
 
-export const Brand: FC<ElementProps> = ({ className }) => {
-  const { logo, name } = useBrandData();
+export interface BrandProps extends ElementProps {
+  isShort?: boolean;
+  linkTo?: string;
+  logoProps?: ElementProps;
+  nameProps?: ElementProps;
+  showLink?: boolean;
+  showLogo?: boolean;
+  showName?: boolean;
+}
+
+export const Brand: FC<BrandProps> = ({
+  children,
+  className,
+  isShort = false,
+  linkTo = "/",
+  logoProps,
+  nameProps,
+  showLink = true,
+  showLogo = true,
+  showName = true,
+}) => {
+  const renderBrand = () => (
+    <>
+      {showLogo && <BrandLogo {...logoProps} />}
+      {showName && (
+        <BrandName isShort={isShort} {...nameProps}>
+          {children}
+        </BrandName>
+      )}
+    </>
+  );
 
   return (
-    <Element className={className}>
-      <Link className="content-center flex items-center" to="/">
-        {logo?.childImageSharp && (
-          <Img
-            className="-mt-2 -ml-4 w-10"
-            alt={name}
-            {...logo.childImageSharp}
-          />
-        )}
-        <h1 className="font-semibold inline-flex leading-none text-xl text-purple-500 tracking-tight uppercase">
-          {name}
-        </h1>
-      </Link>
-    </Element>
+    <>
+      {showLink ? (
+        <Link
+          className={classNames("content-center flex items-center", className)}
+          to={linkTo}
+        >
+          {renderBrand()}
+        </Link>
+      ) : (
+        <Element
+          className={classNames("content-center flex items-center", className)}
+        >
+          {renderBrand()}
+        </Element>
+      )}
+    </>
   );
 };
