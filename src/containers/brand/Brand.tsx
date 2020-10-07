@@ -2,15 +2,15 @@ import React, { FC } from "react";
 import { Link } from "gatsby";
 import classNames from "classnames";
 
-import { BaseElement as Element, ElementProps } from "components";
+import { ElementProps, Pattern, PatternProps } from "components";
 
-import { BrandLogo, BrandName } from "./components";
+import { BrandLogo, BrandName, BrandNameProps } from "./components";
 
-export interface BrandProps extends ElementProps {
+export interface BrandProps extends PatternProps {
   isShort?: boolean;
   linkTo?: string;
   logoProps?: ElementProps;
-  nameProps?: ElementProps;
+  nameProps?: BrandNameProps;
   showLink?: boolean;
   showLogo?: boolean;
   showName?: boolean;
@@ -48,11 +48,11 @@ export const Brand: FC<BrandProps> = ({
           {renderBrand()}
         </Link>
       ) : (
-        <Element
+        <Pattern
           className={classNames("content-center flex items-center", className)}
         >
           {renderBrand()}
-        </Element>
+        </Pattern>
       )}
     </>
   );

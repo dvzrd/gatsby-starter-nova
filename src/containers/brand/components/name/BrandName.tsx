@@ -1,31 +1,33 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Element, ElementProps } from "components";
+import { Text, TextProps } from "components";
 
 import { useBrandData } from "../../brand.gql";
 
-export interface BrandNameProps extends ElementProps {
+export interface BrandNameProps extends TextProps {
   isShort?: boolean;
 }
 
 export const BrandName: FC<BrandNameProps> = ({
   as = "h1",
   children,
-  className = "text-xl",
+  className,
   isShort,
+  ...rest
 }) => {
   const { acronym, name } = useBrandData();
 
   return (
-    <Element
+    <Text
       as={as}
+      {...rest}
       className={classNames(
         "font-semibold inline-flex leading-none tracking-tight uppercase",
         className
       )}
     >
       {children ? children : isShort ? acronym : name}
-    </Element>
+    </Text>
   );
 };

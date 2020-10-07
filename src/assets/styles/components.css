@@ -61,12 +61,36 @@
     .text {
       @apply text-lg;
 
+      &.caption {
+        @apply text-sm;
+      }
+
       &.heading {
         @apply text-4xl;
       }
 
       &.hero {
         @apply text-5xl;
+      }
+
+      &.legend {
+        @apply text-6xl;
+      }
+
+      &.meta {
+        @apply text-base;
+      }
+
+      &.subheading {
+        @apply text-2xl;
+      }
+
+      &.subtitle {
+        @apply text-xl;
+      }
+
+      &.title {
+        @apply text-3xl;
       }
     }
   }
@@ -75,12 +99,36 @@
     .text {
       @apply text-xl;
 
+      &.caption {
+        @apply text-base;
+      }
+
       &.heading {
         @apply text-5xl;
       }
 
       &.hero {
         @apply text-6xl;
+      }
+
+      &.legend {
+        @apply text-7xl;
+      }
+
+      &.meta {
+        @apply text-lg;
+      }
+
+      &.subheading {
+        @apply text-3xl;
+      }
+
+      &.subtitle {
+        @apply text-2xl;
+      }
+
+      &.title {
+        @apply text-4xl;
       }
     }
   }

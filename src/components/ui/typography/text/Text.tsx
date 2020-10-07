@@ -22,7 +22,7 @@ export const Text: FC<TextProps> = ({
   as = "span",
   children,
   className,
-  is,
+  is = "body",
   of,
   on,
   ...rest
