@@ -1,46 +1,29 @@
-import React, { ElementType, FC } from "react";
-import { Link, GatsbyLinkProps } from "gatsby";
+import React, { FC } from "react";
 import classNames from "classnames";
 
+import { Section, SectionProps } from "components";
+
 import {
-  ElementProps,
-  Pattern,
-  PatternProps,
-  Section,
-  SectionProps,
-  Text,
-} from "components";
-
-export interface HeroCaption extends PatternProps {
-  context?: ElementType;
-  heading?: string;
-  meta?: string;
-  subheading?: string;
-}
-
-export interface HeroButton extends GatsbyLinkProps<ElementProps> {
-  label?: string;
-}
-
-export interface HeroActions extends PatternProps {
-  buttons?: HeroButton[];
-  footer?: ElementType;
-}
+  HeroActions,
+  HeroActionsProps,
+  HeroCaption,
+  HeroCaptionProps,
+} from "./components";
 
 export interface HeroProps extends SectionProps {
-  actions?: HeroActions;
-  caption?: HeroCaption;
+  actions?: HeroActionsProps;
+  caption?: HeroCaptionProps;
 }
 
 export const Hero: FC<HeroProps> = ({
   actions,
   as = "header",
-  is = "hero",
-  of,
-  on = "page",
   caption,
   children,
   className = "text-copy",
+  is = "hero",
+  of,
+  on = "page",
   ...rest
 }) => (
   <Section
@@ -51,44 +34,8 @@ export const Hero: FC<HeroProps> = ({
     {...rest}
     className={classNames("hero", className)}
   >
-    {caption && (
-      <Pattern
-        as="figcaption"
-        {...caption}
-        className={classNames("hero-caption", caption.className)}
-      >
-        {caption.meta && (
-          <Text as="h2" is="meta">
-            {caption.meta}
-          </Text>
-        )}
-        {caption.heading && (
-          <Text as="h1" is="hero">
-            {caption.heading}
-          </Text>
-        )}
-        {caption.subheading && (
-          <Text as="h2" is="subheading">
-            {caption.subheading}
-          </Text>
-        )}
-        {caption.context}
-      </Pattern>
-    )}
+    {caption && <HeroCaption {...caption} />}
     {children}
-    {actions && (
-      <Pattern className={classNames("hero-actions", actions.className)}>
-        {actions.buttons &&
-          actions.buttons.map((action) => (
-            <Link
-              className={classNames("hero-button", action.className)}
-              to={action.to}
-            >
-              {action.label}
-            </Link>
-          ))}
-        {actions.footer}
-      </Pattern>
-    )}
+    {actions && <HeroActions {...actions} />}
   </Section>
 );
