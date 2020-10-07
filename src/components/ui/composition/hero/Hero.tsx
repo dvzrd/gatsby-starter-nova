@@ -10,9 +10,20 @@ import {
   HeroCaptionProps,
 } from "./components";
 
+export type HeroPattern =
+  | "card"
+  | "cta"
+  | "default"
+  | "footer"
+  | "form"
+  | "legendary"
+  | "page"
+  | "section";
+
 export interface HeroProps extends SectionProps {
   actions?: HeroActionsProps;
   caption?: HeroCaptionProps;
+  pattern?: HeroPattern;
 }
 
 export const Hero: FC<HeroProps> = ({
@@ -20,19 +31,19 @@ export const Hero: FC<HeroProps> = ({
   as = "header",
   caption,
   children,
-  className = "text-copy",
+  className,
   is = "hero",
   of,
-  on = "page",
+  on = "page-default",
+  pattern = "default",
   ...rest
 }) => (
   <Section
     as={as}
     is={is}
-    of={of}
     on={on}
     {...rest}
-    className={classNames("hero", className)}
+    className={classNames(`hero-${pattern}`, className)}
   >
     {caption && <HeroCaption {...caption} />}
     {children}

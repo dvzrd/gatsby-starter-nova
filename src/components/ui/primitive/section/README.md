@@ -4,21 +4,27 @@ Use Section to render various section components.
 
 ## API
 
-- is:
+- is: type of pattern [less important]
   - content
   - feature
   - form
+  - heel
   - hero
-- of:
+- of: type of utility patterns [important]
   - compact
   - contained
   - fluid
   - full
-- on
+- on: type of parent pattern [more important]
   - composition
+    - hero
   - layout
+    - default
   - page
+    - default
+    - home
   - template
+    - default
 
 ## Roadmap
 

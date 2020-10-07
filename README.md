@@ -14,11 +14,11 @@ A new gatsby starter using the latest dependencies and standards.
 
 ## Stack
 
-- Gatsby (Client)
+- GatsbyJS (Client)
 - GraphQL (Data)
 - MDX (Content)
 - Netlify (Server)
-- Tailwind (Styles)
+- TailwindCSS (Styles)
 - TypeScript (Types)
 
 ## Gatsby

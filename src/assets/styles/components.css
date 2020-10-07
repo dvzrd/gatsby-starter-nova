@@ -1,135 +1,163 @@
 @layer components {
-  .section {
-    @apply content-start flex items-stretch justify-start overflow-hidden py-4 relative;
+  .layout-default {
+    @apply bg-background flex flex-col min-h-screen;
+  }
 
-    &.contained {
-      & > .container {
-        @apply max-w-none p-0;
-      }
-    }
+  .layout-main {
+    @apply flex-1;
+  }
 
-    &.content {
-      @apply py-8;
-    }
+  .navbar {
+    @apply content-center flex flex-1 items-center;
+  }
 
-    &.feature {
-      @apply content-center items-center justify-center min-h-screen-1/4 py-16;
-    }
-
-    &.hero {
-      @apply content-center items-center justify-center min-h-screen-1/2 py-20;
+  .topbar-default {
+    & > .container {
+      @apply flex justify-between;
     }
   }
 
-  .text {
-    @apply text-base leading-normal;
+  .section-navbar {
+    @apply content-center flex items-center py-4 relative text-copy z-20;
+  }
 
-    &.caption {
-      @apply leading-tight tracking-wide text-xs;
-    }
+  .section-default {
+    @apply content-start flex items-stretch justify-start overflow-hidden py-4 relative text-copy;
+  }
 
-    &.heading {
-      @apply block mb-2 mt-4 text-3xl;
-    }
+  .section-content {
+    @apply py-8 text-copy;
+  }
 
-    &.hero {
-      @apply leading-tight tracking-tight text-4xl;
-    }
+  .section-feature {
+    @apply content-center flex items-center justify-center min-h-screen-1/4 py-16;
+  }
 
-    &.legend {
-      @apply leading-tight tracking-tighter text-5xl;
-    }
+  .section-heel {
+    @apply content-end flex items-end py-8 text-copy;
+  }
 
-    &.meta {
-      @apply text-sm;
-    }
+  .section-hero {
+    @apply content-center flex items-center justify-center py-20 text-copy;
 
-    &.subheading {
-      @apply text-xl;
+    &.page-home {
+      @apply min-h-screen-1/2;
     }
+  }
 
-    &.subtitle {
-      @apply text-lg;
-    }
+  .hero-default {
 
-    &.title {
-      @apply text-2xl;
-    }
+  }
+
+  .text-body {
+    @apply leading-normal text-base;
+  }
+
+  .text-caption {
+    @apply leading-normal text-xs tracking-wide;
+  }
+
+  .text-heading {
+    @apply block leading-tight mb-2 mt-4 text-3xl;
+  }
+
+  .text-hero {
+    @apply block leading-tight text-4xl tracking-tight;
+  }
+
+  .text-legend {
+    @apply block leading-none text-5xl tracking-tighter;
+  }
+
+  .text-meta {
+    @apply leading-normal text-sm;
+  }
+
+  .text-subheading {
+    @apply leading-none text-xl;
+  }
+
+  .text-subtitle {
+    @apply leading-none text-lg;
+  }
+
+  .text-title {
+    @apply block leading-tight text-2xl tracking-wide;
   }
 
   @screen md {
-    .text {
+    .text-body {
       @apply text-lg;
+    }
 
-      &.caption {
-        @apply text-sm;
-      }
+    .text-caption {
+      @apply text-sm;
+    }
 
-      &.heading {
-        @apply text-4xl;
-      }
+    .text-heading {
+      @apply text-4xl;
+    }
 
-      &.hero {
-        @apply text-5xl;
-      }
+    .text-hero {
+      @apply text-5xl;
+    }
 
-      &.legend {
-        @apply text-6xl;
-      }
+    .text-legend {
+      @apply text-6xl;
+    }
 
-      &.meta {
-        @apply text-base;
-      }
+    .text-meta {
+      @apply text-base;
+    }
 
-      &.subheading {
-        @apply text-2xl;
-      }
+    .text-subheading {
+      @apply text-2xl;
+    }
 
-      &.subtitle {
-        @apply text-xl;
-      }
+    .text-subtitle {
+      @apply text-xl;
+    }
 
-      &.title {
-        @apply text-3xl;
-      }
+    .text-title {
+      @apply text-3xl;
     }
   }
 
   @screen xl {
-    .text {
+    .text-body {
       @apply text-xl;
+    }
 
-      &.caption {
-        @apply text-base;
-      }
+    .text-caption {
+      @apply text-base;
+    }
 
-      &.heading {
-        @apply text-5xl;
-      }
+    .text-heading {
+      @apply text-5xl;
+    }
 
-      &.hero {
-        @apply text-6xl;
-      }
+    .text-hero {
+      @apply text-6xl;
+    }
 
-      &.legend {
-        @apply text-7xl;
-      }
+    .text-legend {
+      @apply text-7xl;
+    }
 
-      &.meta {
-        @apply text-lg;
-      }
+    .text-meta {
+      @apply text-lg;
+    }
 
-      &.subheading {
-        @apply text-3xl;
-      }
+    .text-subheading {
+      @apply text-3xl;
+    }
 
-      &.subtitle {
-        @apply text-2xl;
-      }
+    .text-subtitle {
+      @apply text-2xl;
+    }
 
-      &.title {
-        @apply text-4xl;
-      }
+    .text-title {
+      @apply text-4xl;
     }
   }
 }

@@ -39,7 +39,8 @@ export interface SiteMetadata {
       description: string;
       footnote?: string;
       hours?: string[];
-      lang: string;
+      lang?: string;
+      memorial?: string;
       name: string;
       organization?: SiteMetadataOrganization;
       siteUrl: string;

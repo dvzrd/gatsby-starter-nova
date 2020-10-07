@@ -23,6 +23,7 @@ export const siteMetadataFragment = graphql`
         year
       }
       description
+      footnote
       hours
       lang
       memorial

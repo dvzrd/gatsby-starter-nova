@@ -4,27 +4,31 @@ Use Pattern to create primitive components that have various design pattern type
 
 ## API
 
+The importance heirarchy determines which styles will take priority - this will allow for greater variety of pattern types to be used together to create even more custom patterns.
+
 - is - type of pattern [less important]
 - of - type of utility patterns [important]
 - on - type of parent pattern [more important]
 
 ## Roadmap
 
-- Define various pattern types and map to Pattern props.
+- Define various pattern types and map to Pattern props (still figuring these out as I build out more components).
   - is:
     - action
-    - box
     - container
     - content
     - wrapper
   - of:
-    - clear
-    - clear-bottom
-    - clear-top
-    - divider
-    - divider-vertical
+    - heel
+    - hero
+    - layout
+    - section
+    - topbar
   - on:
-    - composition
-    - primitive
-    - typography
+    - component
+    - container
+    - context
+    - layout
+    - page
+    - template
 - Create styles heirarchy using is, of, on props.

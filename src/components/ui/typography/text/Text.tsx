@@ -27,11 +27,7 @@ export const Text: FC<TextProps> = ({
   on,
   ...rest
 }) => (
-  <Pattern
-    as={as}
-    {...rest}
-    className={classNames("text", is, of, on, className)}
-  >
+  <Pattern as={as} {...rest} className={classNames(`text-${is}`, className)}>
     {children}
   </Pattern>
 );

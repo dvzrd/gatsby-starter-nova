@@ -1,27 +1,31 @@
 import React, { FC } from "react";
 import { PageProps } from "gatsby";
 
-import { Hero, Section } from "components";
-import { DefaultLayout } from "layouts";
+import { Hero, HeroProps, Section } from "components";
+import { DefaultLayout, DefaultLayoutProps } from "layouts";
 import { useSiteMetadata } from "graphql";
 
 const PageIndex: FC<PageProps> = () => {
   const { description, title, name } = useSiteMetadata();
 
-  const heroProps = {
+  const layoutProps: DefaultLayoutProps = {
+    on: "page-home",
+  };
+
+  const heroProps: HeroProps = {
     caption: {
       heading: description,
     },
   };
 
   return (
-    <DefaultLayout>
+    <DefaultLayout {...layoutProps}>
       <Hero {...heroProps} />
-      <Section className="text-copy" is="content" on="page">
+      <Section className="text-copy" is="content" on="page-home">
         <h4 className="leading-tight mt-8 mb-6">
           Tailwind CSS Utility Classes
         </h4>
-        <div className="lg:gap-6 grid grid-cols-1 lg:grid-cols-2">
+        <div className="lg:gap-8 grid grid-cols-1 lg:grid-cols-2">
           <p className="mb-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             rhoncus massa vel risus commodo, bibendum faucibus ligula commodo.
@@ -43,7 +47,7 @@ const PageIndex: FC<PageProps> = () => {
       <Section
         className="bg-background-primary text-copy-primary"
         is="feature"
-        on="page"
+        on="page-default"
       >
         <h2 className="leading-tight mt-8 mb-4">{name}</h2>
         <p className="mb-8 text-lg">
@@ -52,7 +56,7 @@ const PageIndex: FC<PageProps> = () => {
           lacus, fermentum sit amet lectus quis, iaculis volutpat massa.
         </p>
       </Section>
-      <Section as="footer" is="heel" on="page">
+      <Section as="footer" is="heel" on="page-home">
         <h3 className="leading-tight mt-12 mb-4">{title}</h3>
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus

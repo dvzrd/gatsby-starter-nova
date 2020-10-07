@@ -3,59 +3,61 @@ import { Link } from "gatsby";
 import { GatsbySeo, GatsbySeoProps } from "gatsby-plugin-next-seo";
 import classNames from "classnames";
 
-import { ElementProps } from "components";
+import { Pattern, PatternProps } from "components";
 import { Brand } from "containers";
 import { ThemeSwitch, useTheme } from "contexts";
 
-import { Footer, Topbar } from "../components";
+import {
+  LayoutFooter,
+  LayoutFooterProps,
+  LayoutHeader,
+  LayoutHeaderProps,
+} from "../components";
 
-export type LayoutSection = {
-  className?: string;
-  isHidden?: boolean;
-};
+export type LayoutPattern = "default" | "form";
 
-export interface DefaultLayoutProps extends ElementProps {
-  footer?: LayoutSection;
-  main?: ElementProps;
+export interface DefaultLayoutProps extends PatternProps {
+  footer?: LayoutFooterProps;
+  header?: LayoutHeaderProps;
+  main?: PatternProps;
+  pattern?: LayoutPattern;
   seo?: GatsbySeoProps;
-  topbar?: LayoutSection;
 }
 
 export const DefaultLayout: FC<DefaultLayoutProps> = ({
   children,
   className,
   footer,
+  header,
   main,
+  pattern = "default",
   seo,
-  topbar,
+  ...rest
 }) => {
   const { theme } = useTheme();
 
   return (
-    <div
-      className={classNames(
-        "bg-background flex flex-col min-h-screen",
-        theme,
-        className
-      )}
+    <Pattern
+      {...rest}
+      className={classNames(`layout-${pattern}`, theme, className)}
     >
       <GatsbySeo {...seo} />
-      <Topbar
+      <LayoutHeader
         navLeft={<Brand />}
         navRight={
           <>
-            <Link className="mr-6 text-copy" to="/about">
+            <Link className="mr-6 text- text-copy text-up-sm" to="/about">
               About
             </Link>
             <ThemeSwitch className="text-primary-500" />
           </>
         }
-        {...topbar}
+        {...header}
       />
-      <main {...main} className={classNames("flex-1", main?.className)}>
+      <Pattern as="main" is="layout-main" {...main}>
         {children}
-      </main>
-      <Footer {...footer} />
-    </div>
+      </Pattern>
+      <LayoutFooter {...footer} />
+    </Pattern>
   );
 };
