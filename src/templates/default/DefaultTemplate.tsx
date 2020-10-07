@@ -24,7 +24,6 @@ export interface DefaultTemplateProps extends PageProps {
       seo?: GatsbySeoProps;
       title: string;
     };
-    slug?: string;
   };
 }
 
@@ -32,10 +31,8 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
   children,
   pageContext: {
     frontmatter: { description, hero, layout, main, mdx, seo, title },
-    slug,
   },
 }) => {
-  console.log(slug);
   const seoProps: GatsbySeoProps = {
     description,
     title,
