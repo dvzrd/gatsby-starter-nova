@@ -9,6 +9,7 @@ export interface LayoutHeaderProps extends SectionProps {
   isHidden?: boolean;
   navLeft?: ReactNode;
   navLeftProps?: PatternProps;
+  navProps?: PatternProps;
   navRight?: ReactNode;
   navRightProps?: PatternProps;
   pattern?: LayoutHeaderPattern;
@@ -22,6 +23,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   isHidden = false,
   navLeft,
   navLeftProps,
+  navProps,
   navRight,
   navRightProps,
   pattern = "default",
@@ -37,7 +39,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
       className={classNames(`topbar-${pattern}`, className)}
     >
       {navLeft && (
-        <Pattern as="nav" is="navbar" {...navLeftProps}>
+        <Pattern as="nav" is="navbar" {...navProps} {...navLeftProps}>
           {navLeft}
         </Pattern>
       )}
@@ -46,6 +48,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
         <Pattern
           as="nav"
           is="navbar"
+          {...navProps}
           {...navRightProps}
           className={classNames("justify-end", navRightProps?.className)}
         >

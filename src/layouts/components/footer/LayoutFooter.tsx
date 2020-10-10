@@ -40,7 +40,7 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
 
   const renderLink = (link?: SiteMetadataAuthor | SiteMetadataOrganization) =>
     link ? (
-      <OutboundLink href={link?.url} target="_blank">
+      <OutboundLink className="underline" href={link?.url} target="_blank">
         {link?.name}
       </OutboundLink>
     ) : null;

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { BaseElement as Element, ElementProps } from "components";
+import { Box, BoxProps } from "components";
 
 export type PatternType =
   | "container"
@@ -12,7 +12,8 @@ export type PatternType =
   | "navbar"
   | "section"
   | "topbar"
-  | "wrapper";
+  | "wrapper"
+  | string;
 
 export type PatternUtil =
   | "clear"
@@ -25,13 +26,13 @@ export type PatternUtil =
   | "divide-bottom"
   | "divide-left"
   | "divide-right"
-  | "divide-top";
+  | "divide-top"
+  | string;
 
-export interface PatternProps<Pattern extends HTMLElement = HTMLDivElement>
-  extends Omit<ElementProps<Pattern>, "is" | "of" | "on"> {
-  is?: PatternType | string; // type of pattern [less important]
-  of?: PatternUtil | string; // type of utility pattern [important]
-  on?: PatternType | string; // type of parent pattern [more important]
+export interface PatternProps extends BoxProps {
+  is?: PatternType; // type of pattern [less important]
+  of?: PatternUtil; // type of utility pattern [important]
+  on?: PatternType; // type of parent pattern [more important]
 }
 
 export const Pattern: FC<PatternProps> = ({
@@ -43,7 +44,7 @@ export const Pattern: FC<PatternProps> = ({
   on,
   ...rest
 }) => (
-  <Element as={as} {...rest} className={classNames(is, of, on, className)}>
+  <Box as={as} {...rest} className={classNames(is, of, on, className)}>
     {children}
-  </Element>
+  </Box>
 );

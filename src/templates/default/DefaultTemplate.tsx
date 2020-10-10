@@ -41,6 +41,10 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
 
   const layoutProps: DefaultLayoutProps = {
     on: "template-default",
+    header: {
+      bgColor: "primary",
+      color: "primary",
+    },
     ...layout,
   };
 
@@ -48,7 +52,9 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
     caption: {
       heading: title,
     },
-    className: "bg-background-primary text-copy-primary",
+    bgColor: "primary",
+    color: "primary",
+    minH: "screen-1/2",
     ...hero,
   };
 

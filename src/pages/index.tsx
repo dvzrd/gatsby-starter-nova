@@ -10,9 +10,11 @@ const PageIndex: FC<PageProps> = () => {
 
   const layoutProps: DefaultLayoutProps = {
     on: "page-home",
+    switchClassName: "text-primary-500",
   };
 
   const heroProps: HeroProps = {
+    minH: "screen-2/3",
     caption: {
       heading: description,
     },
@@ -45,7 +47,7 @@ const PageIndex: FC<PageProps> = () => {
         </div>
       </Section>
       <Section
-        className="bg-background-primary text-copy-primary"
+        className="bg-background-primary text-color-primary"
         is="feature"
         on="page-default"
       >

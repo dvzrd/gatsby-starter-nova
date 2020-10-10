@@ -22,6 +22,7 @@ export interface DefaultLayoutProps extends PatternProps {
   main?: PatternProps;
   pattern?: LayoutPattern;
   seo?: GatsbySeoProps;
+  switchClassName?: string;
 }
 
 export const DefaultLayout: FC<DefaultLayoutProps> = ({
@@ -32,6 +33,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   main,
   pattern = "default",
   seo,
+  switchClassName,
   ...rest
 }) => {
   const { theme } = useTheme();
@@ -46,10 +48,10 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
         navLeft={<Brand />}
         navRight={
           <>
-            <Link className="mr-6 text- text-copy text-up-sm" to="/about">
+            <Link className="mr-6 text-up-sm" to="/about">
               About
             </Link>
-            <ThemeSwitch className="text-primary-500" />
+            <ThemeSwitch className={switchClassName} />
           </>
         }
         {...header}

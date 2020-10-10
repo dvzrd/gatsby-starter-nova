@@ -9,6 +9,8 @@ import React, {
 } from "react";
 import classNames from "classnames";
 
+import { Pattern, PatternProps } from "components";
+
 type Theme = "theme-dark" | "theme-light";
 
 interface ThemeContextProps {
@@ -51,13 +53,14 @@ export const ThemeProvider: FC = ({ children }) => {
   );
 };
 
-export const ThemeSwitch: FC<HTMLAttributes<HTMLButtonElement>> = ({
-  className,
-}) => {
+export const ThemeSwitch: FC<PatternProps> = ({ className, ...rest }) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button
+    <Pattern
+      as="button"
+      is="button"
+      {...rest}
       className={classNames("focus:outline-none", className)}
       type="button"
       onClick={toggleTheme}
@@ -93,7 +96,7 @@ export const ThemeSwitch: FC<HTMLAttributes<HTMLButtonElement>> = ({
           />
         </svg>
       )}
-    </button>
+    </Pattern>
   );
 };
 

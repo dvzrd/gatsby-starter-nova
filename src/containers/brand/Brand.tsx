@@ -18,7 +18,7 @@ export interface BrandProps extends PatternProps {
 
 export const Brand: FC<BrandProps> = ({
   children,
-  className = "text-copy",
+  className,
   isShort = false,
   linkTo = "/",
   logoProps,
