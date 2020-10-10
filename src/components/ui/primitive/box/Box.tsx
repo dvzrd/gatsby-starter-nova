@@ -3,14 +3,6 @@ import classNames from "classnames";
 
 import { BaseElement as Element, ElementProps } from "components";
 
-// TODO:
-// - match types with tailwind css
-// - add more props
-//   - padding
-//   - margin
-//   - position
-//   - border
-
 export type BoxDimension = number | string;
 export type BoxColor = string;
 
@@ -19,9 +11,9 @@ export interface BoxProps<Box extends HTMLElement = HTMLDivElement>
   bgColor?: BoxColor;
   backgroundColor?: BoxColor;
   color?: BoxColor;
-  h?: BoxDimension;
   minH?: BoxDimension;
   minHeight?: BoxDimension;
+  h?: BoxDimension;
   height?: BoxDimension;
   maxW?: BoxDimension;
   maxWidth?: BoxDimension;

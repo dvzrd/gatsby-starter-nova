@@ -71,13 +71,21 @@ SEO with [`gatsby-plugin-next-seo`](https://github.com/ifiokjr/gatsby-plugin-nex
 
 ## Netlify
 
-You can use netlify to host the build, for more info about Netlify, [visit their site](https://www.netlify.com/). If you prefer to host on your own service or another platform, just remove the netlify config file.
+You can use netlify to host the build, for more info about Netlify, [visit their site](https://www.netlify.com/). If you prefer to host on your own service or another platform, feel free to remove any netlify related files.
 
 ### Netlify Config
 
 Netlify allows for file configs of their host server - allowing devs to push changes to our builds without needing to login to the netlify app dashboard.
 
-[Click here for more details about the config file](https://docs.netlify.com/configure-builds/file-based-configuration)
+Reference the [Netlify docs on file based configuration](https://docs.netlify.com/configure-builds/file-based-configuration) for more detils.
+
+### Netlify Functions
+
+You can also setup AWS serverless Lambda functions with Netlify, allowing you to send and receive data without needing your own server.
+
+These are also called private functions because they're added to a private dir `.netlify`. If you want to keep your functions private, you can add `.netlify` to `.gitignore`.
+
+Reference the [Netlify docs on functions](https://docs.netlify.com/functions/overview/) for more detials.
 
 ### Dev
 
@@ -90,4 +98,5 @@ It's recommended you setup netlify cli and run this project locally with netlify
 
 - [Hygen](https://github.com/jondot/hygen/)
 - [Lint](https://www.gatsbyjs.com/docs/eslint/)
+- [Stories](https://storybook.js.org/)
 - [Tests](https://www.gatsbyjs.com/docs/unit-testing/)
