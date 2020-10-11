@@ -49,11 +49,18 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
     >
       <GatsbySeo {...seo} />
       <LayoutHeader
-        navLeft={<Brand logoColor={logoColor} />}
-        navRight={
+        navLeft={
           <>
+            <Brand className="mr-6" logoColor={logoColor} />
             <Link className="mr-6 text-up-sm" to="/about">
               About
+            </Link>
+          </>
+        }
+        navRight={
+          <>
+            <Link className="mr-6 text-up-sm" to="/jsx">
+              JSX
             </Link>
             <ThemeSwitch className={switchClassName} />
           </>
