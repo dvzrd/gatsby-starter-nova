@@ -4,7 +4,7 @@ import { GatsbySeo, GatsbySeoProps } from "gatsby-plugin-next-seo";
 import classNames from "classnames";
 
 import { Pattern, PatternProps } from "components";
-import { Brand } from "containers";
+import { Brand, LogoColor } from "containers";
 import { ThemeSwitch, useTheme } from "contexts";
 
 import {
@@ -19,6 +19,7 @@ export type LayoutPattern = "default" | "form";
 export interface DefaultLayoutProps extends PatternProps {
   footer?: LayoutFooterProps;
   header?: LayoutHeaderProps;
+  logoColor?: LogoColor;
   main?: PatternProps;
   pattern?: LayoutPattern;
   seo?: GatsbySeoProps;
@@ -30,6 +31,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   className,
   footer,
   header,
+  logoColor,
   main,
   pattern = "default",
   seo,
@@ -45,7 +47,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
     >
       <GatsbySeo {...seo} />
       <LayoutHeader
-        navLeft={<Brand />}
+        navLeft={<Brand logoColor={logoColor} />}
         navRight={
           <>
             <Link className="mr-6 text-up-sm" to="/about">

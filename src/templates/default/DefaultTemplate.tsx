@@ -11,6 +11,7 @@ import {
   SectionProps,
 } from "components";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
+import { useTheme } from "contexts";
 
 export interface DefaultTemplateProps extends PageProps {
   pageContext: {
@@ -33,6 +34,8 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
     frontmatter: { description, hero, layout, main, mdx, seo, title },
   },
 }) => {
+  const { theme } = useTheme();
+
   const seoProps: GatsbySeoProps = {
     description,
     title,
@@ -45,6 +48,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
       bgColor: "primary",
       color: "primary",
     },
+    logoColor: theme === "theme-dark" ? "black" : "white",
     ...layout,
   };
 

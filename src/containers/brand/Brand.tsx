@@ -2,14 +2,22 @@ import React, { FC } from "react";
 import { Link } from "gatsby";
 import classNames from "classnames";
 
-import { ElementProps, Pattern, PatternProps } from "components";
+import { Pattern, PatternProps } from "components";
 
-import { BrandLogo, BrandName, BrandNameProps } from "./components";
+import {
+  BrandLogo,
+  BrandLogoProps,
+  BrandName,
+  BrandNameProps,
+} from "./components";
+
+export type LogoColor = "black" | "white";
 
 export interface BrandProps extends PatternProps {
   isShort?: boolean;
   linkTo?: string;
-  logoProps?: ElementProps;
+  logoColor?: LogoColor;
+  logoProps?: BrandLogoProps;
   nameProps?: BrandNameProps;
   showLink?: boolean;
   showLogo?: boolean;
@@ -21,6 +29,7 @@ export const Brand: FC<BrandProps> = ({
   className,
   isShort = false,
   linkTo = "/",
+  logoColor,
   logoProps,
   nameProps,
   showLink = true,
@@ -29,7 +38,7 @@ export const Brand: FC<BrandProps> = ({
 }) => {
   const renderBrand = () => (
     <>
-      {showLogo && <BrandLogo {...logoProps} />}
+      {showLogo && <BrandLogo logoColor={logoColor} {...logoProps} />}
       {showName && (
         <BrandName isShort={isShort} {...nameProps}>
           {children}
