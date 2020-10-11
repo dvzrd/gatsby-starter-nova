@@ -13,7 +13,7 @@ export const BrandLogo: FC<ElementProps> = ({ className }) => {
 
   return (
     <Img
-      className={classNames("-mt-2 -ml-4 w-10", className)}
+      className={classNames("mr-2 w-10", className)}
       alt={name}
       {...logo.childImageSharp}
     />
