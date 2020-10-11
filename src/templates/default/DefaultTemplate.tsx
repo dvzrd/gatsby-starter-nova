@@ -10,6 +10,7 @@ import {
   Section,
   SectionProps,
 } from "components";
+import { LogoColor } from "containers";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
 import { useTheme } from "contexts";
 
@@ -36,6 +37,9 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
 }) => {
   const { theme } = useTheme();
 
+  const setLogoColor = (dark: LogoColor, light: LogoColor) =>
+    theme === "theme-dark" ? dark : light;
+
   const seoProps: GatsbySeoProps = {
     description,
     title,
@@ -48,8 +52,11 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
       bgColor: "primary",
       color: "primary",
     },
-    logoColor: theme === "theme-dark" ? "black" : "white",
     ...layout,
+    logoColor: setLogoColor(
+      layout?.logoDark || "black",
+      layout?.logoLight || "white"
+    ),
   };
 
   const heroProps: HeroProps = {

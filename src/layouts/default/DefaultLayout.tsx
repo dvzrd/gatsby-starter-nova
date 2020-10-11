@@ -20,6 +20,8 @@ export interface DefaultLayoutProps extends PatternProps {
   footer?: LayoutFooterProps;
   header?: LayoutHeaderProps;
   logoColor?: LogoColor;
+  logoDark?: LogoColor;
+  logoLight?: LogoColor;
   main?: PatternProps;
   pattern?: LayoutPattern;
   seo?: GatsbySeoProps;
