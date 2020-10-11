@@ -41,7 +41,9 @@ export const Box: FC<BoxProps> = ({
   const getBoxClassnames = () => {
     let boxClasses = "";
 
-    // TODO: refactor this when not tired
+    // TODO: refactor this monstrosity LOL
+    // - create a util method to convert prop values to a className.
+    // - strip boxClasses from any unwanted characters and spaces.
     if (bgColor || backgroundColor) boxClasses = `bg-background-${bgColor}`;
     if (color) boxClasses = boxClasses = `${boxClasses} text-color-${color}`;
     if (minH || minHeight)
