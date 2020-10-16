@@ -119,5 +119,5 @@ $RECYCLE.BIN/
 *.lnk
 Home.url
 
-# Local Netlify dev
-.netlify/state.json
+# Local Netlify folder
+.netlify
