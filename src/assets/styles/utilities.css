@@ -1,79 +1,8 @@
+/* TODO: deprecate in favor of css modules */
 @layer utilities {
-  .clear {
-    @apply my-4 py-4;
-  }
-
-  .clear-bottom {
-    @apply mb-4 pb-4;
-  }
-
-  .clear-top {
-    @apply mt-4 pt-4;
-
-    &.divider {
-      @apply border-t-2 border-gray-500 border-solid;
-    }
-  }
-
   .contained {
     & > .container {
       @apply max-w-none p-0;
-    }
-  }
-
-  .divide {
-    @apply bg-gray-500 mx-auto my-1 py-2 w-full;
-  }
-
-  .divide-bottom {
-    @apply border-b-2 border-gray-500 border-solid;
-  }
-
-  .divide-top {
-    @apply border-t-2 border-gray-500 border-solid;
-  }
-
-  @screen md {
-    .clear {
-      @apply my-6 py-6;
-    }
-
-    .clear-bottom {
-      @apply mb-6 pb-6;
-    }
-
-    .clear-left {
-      @apply pl-8;
-    }
-  
-    .clear-right {
-      @apply pr-8;
-    }
-
-    .clear-top {
-      @apply mt-4 pt-4;
-    }
-
-    .divide-left {
-      @apply border-l-2 border-gray-500 border-solid;
-    }
-  
-    .divide-right {
-      @apply border-r-2 border-gray-500 border-solid;
-    }
-  }
-
-  @screen xl {
-    .clear {
-      @apply my-8 py-8;
-    }
-
-    .clear-bottom {
-      @apply mb-8 pb-8;
-    }
-
-    .clear-top {
-      @apply mt-8 pt-8;
     }
   }
 }

@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import { Pattern, PatternProps, Section, SectionProps } from "components";
 
-export type LayoutHeaderPattern = "default" | "fixed" | "sticky";
+export type LayoutHeaderPattern = "topbar" | string;
 
 export interface LayoutHeaderProps extends SectionProps {
   isHidden?: boolean;
@@ -12,21 +12,22 @@ export interface LayoutHeaderProps extends SectionProps {
   navProps?: PatternProps;
   navRight?: ReactNode;
   navRightProps?: PatternProps;
-  pattern?: LayoutHeaderPattern;
+  variant?: LayoutHeaderPattern;
 }
 
 export const LayoutHeader: FC<LayoutHeaderProps> = ({
   as = "header",
   children,
   className,
-  is = "navbar",
+  is = "header",
   isHidden = false,
   navLeft,
   navLeftProps,
   navProps,
   navRight,
   navRightProps,
-  pattern = "default",
+  pattern = "navbar",
+  variant = "topbar",
   ...rest
 }) => {
   if (isHidden) return null;
@@ -35,11 +36,12 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
     <Section
       as={as}
       is={is}
+      pattern={pattern}
       {...rest}
-      className={classNames(`topbar-${pattern}`, className)}
+      className={classNames(variant, className)}
     >
       {navLeft && (
-        <Pattern as="nav" is="navbar" {...navProps} {...navLeftProps}>
+        <Pattern as="nav" is="nav" {...navProps} {...navLeftProps}>
           {navLeft}
         </Pattern>
       )}
@@ -47,7 +49,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
       {navRight && (
         <Pattern
           as="nav"
-          is="navbar"
+          is="nav"
           {...navProps}
           {...navRightProps}
           className={classNames("justify-end", navRightProps?.className)}

@@ -5,8 +5,12 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import classNames from "classnames";
 
 import {
+  Box,
+  BoxProps,
   BaseElement as Element,
   ElementProps,
+  Hero,
+  HeroProps,
   Pattern,
   PatternProps,
   Section,
@@ -23,7 +27,9 @@ export interface MDXProps extends ElementProps {
 export const mdxComponents = {
   a: Link,
   p: (props: TextProps) => <Text {...props} as="p" />,
+  Box: (props: BoxProps) => <Box {...props} />,
   Element: (props: ElementProps) => <Element {...props} />,
+  Hero: (props: HeroProps) => <Hero {...props} />,
   Pattern: (props: PatternProps) => <Pattern {...props} />,
   Section: (props: SectionProps) => <Section {...props} />,
   Text: (props: TextProps) => <Text {...props} />,
@@ -37,14 +43,14 @@ export const MDX: FC<MDXProps> = ({
   components,
   ...rest
 }) => (
-  <Element
+  <Pattern
     as={as}
-    className={classNames("flex flex-col flex-wrap", className)}
     {...rest}
+    className={classNames("flex flex-col flex-wrap", className)}
   >
     <MDXProvider components={{ ...mdxComponents, ...components }}>
       {body && <MDXRenderer>{body}</MDXRenderer>}
       {children}
     </MDXProvider>
-  </Element>
+  </Pattern>
 );

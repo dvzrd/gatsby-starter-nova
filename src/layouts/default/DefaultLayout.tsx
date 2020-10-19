@@ -7,6 +7,7 @@ import { Pattern, PatternProps } from "components";
 import { Brand, LogoColor } from "containers";
 import { ThemeSwitch, useTheme } from "contexts";
 
+import styles from "./DefaultLayout.module.css";
 import {
   LayoutFooter,
   LayoutFooterProps,
@@ -33,6 +34,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   className,
   footer,
   header,
+  is = "wrapper",
   logoColor,
   main,
   pattern = "default",
@@ -44,8 +46,9 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
 
   return (
     <Pattern
+      is={is}
       {...rest}
-      className={classNames(`layout-${pattern}`, theme, className)}
+      className={classNames(styles.layout, styles[pattern], theme, className)}
     >
       <GatsbySeo {...seo} />
       <LayoutHeader
@@ -67,7 +70,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
         }
         {...header}
       />
-      <Pattern as="main" is="layout-main" {...main}>
+      <Pattern as="main" is="main" {...main}>
         {children}
       </Pattern>
       <LayoutFooter {...footer} />

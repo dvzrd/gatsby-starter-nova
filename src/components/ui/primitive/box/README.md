@@ -41,3 +41,4 @@ Box component has props for configuring css box model style rules.
 - Add `BoxSpace` prop types to `BoxProps`. [Reference TailwindCSS docs on `spacing`](https://tailwindcss.com/docs/padding) for details.
 - Add `BoxPosition` prop types to `BoxProps`. [Reference TailwindCSS docs on `position`](https://tailwindcss.com/docs/position) for details.
 - Add `BoxBorder` prop types to `BoxProps`. [Reference TailwindCSS docs on `borders`](https://tailwindcss.com/docs/border-radius) for details.
+- Add Box css module.

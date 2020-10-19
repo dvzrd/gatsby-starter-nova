@@ -1,30 +1,28 @@
 import React, { FC } from "react";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
-import classNames from "classnames";
 
 import { Section, SectionProps, Text } from "components";
 import { useSiteMetadata } from "graphql";
 import { SiteMetadataAuthor, SiteMetadataOrganization } from "types/graphql";
 
-export type LayoutFooterPattern = "default" | "over" | "under" | "sticky";
+export type LayoutFooterPattern = "over" | "under" | "sticky";
 
 export interface LayoutFooterProps extends SectionProps {
   isHidden?: boolean;
   showAuthor?: boolean;
   showOrg?: boolean;
-  pattern?: LayoutFooterPattern;
+  variant?: LayoutFooterPattern;
 }
 
 export const LayoutFooter: FC<LayoutFooterProps> = ({
   as = "footer",
   children,
-  className,
   container,
-  is = "navbar",
+  is = "footer",
   isHidden = false,
   showAuthor = true,
   showOrg = true,
-  pattern = "default",
+  pattern = "navbar",
   ...rest
 }) => {
   const {
@@ -46,15 +44,10 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
     ) : null;
 
   return (
-    <Section
-      as={as}
-      is={is}
-      {...rest}
-      className={classNames(`navbar-${pattern}`, className)}
-    >
+    <Section as={as} is={is} {...rest}>
       {children}
       {copyright && (
-        <Text as="p" is="caption">
+        <Text as="p" pattern="caption">
           © {copyright.year ? copyright.year : currentYear}.
           {copyright.message && ` ${copyright.message}`}
           {showOrg && <>{renderLink(organization)}.</>}
@@ -63,12 +56,12 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
         </Text>
       )}
       {footnote && (
-        <Text as="p" is="caption">
+        <Text as="p" pattern="caption">
           {footnote}
         </Text>
       )}
       {memorial && (
-        <Text as="p" is="caption">
+        <Text as="p" pattern="caption">
           {memorial}
         </Text>
       )}

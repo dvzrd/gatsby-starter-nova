@@ -6,29 +6,36 @@ Use Pattern to create primitive components that have various design pattern type
 
 The importance heirarchy determines which styles will take priority - this will allow for greater variety of pattern types to be used together to create even more custom patterns.
 
-- is - type of pattern [less important]
-- of - type of utility patterns [important]
-- on - type of parent pattern [more important]
+- is - a type of pattern used to identify the primary purpose of a component using well known design patterns or well documented namespace.
+  - container
+  - divider
+  - main
+  - nav
+  - section
+  - wrapper
+- of - a type of utility pattern used to add utility styles to any component extension of the pattern component.
+  - clear
+  - clear-bottom
+  - clear-left
+  - clear-right
+  - clear-top
+  - compact
+  - contained
+  - divide
+  - divide-bottom
+  - divide-left
+  - divide-right
+  - divide-top
+  - fluid
+  - full
+- on - a type of parent pattern used to override styles for specific pages, containers, compositions, layouts, or templates.
+- utils - optional utils prop for passing tailwind css and custom css classes (alt to using className)
 
 ## Roadmap
 
-- Define various pattern types and map to Pattern props (still figuring these out as I build out more components).
-  - is:
-    - action
-    - container
-    - content
-    - wrapper
-  - of:
-    - heel
-    - hero
-    - layout
-    - section
-    - topbar
-  - on:
-    - component
-    - container
-    - context
-    - layout
-    - page
-    - template
-- Create styles heirarchy using is, of, on props.
+- Create CSS module
+- Move 'contained' util to section component css modile.
+- Create utils for getPattern and getUtils (can be reused for other components).
+- Define various pattern types and map to Pattern props (more patterns will be added as more components are created).
+- Write tests for various patterns by making use of data-pattern attributes.
+- Write stories for various patterns with react-storybook.

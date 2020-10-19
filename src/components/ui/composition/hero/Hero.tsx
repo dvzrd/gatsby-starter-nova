@@ -9,21 +9,20 @@ import {
   HeroCaption,
   HeroCaptionProps,
 } from "./components";
+import styles from "./Hero.module.css";
 
-export type HeroPattern =
+export type HeroVariant =
   | "card"
   | "cta"
-  | "default"
   | "footer"
   | "form"
   | "legendary"
-  | "page"
-  | "section";
+  | "page";
 
 export interface HeroProps extends SectionProps {
   actions?: HeroActionsProps;
   caption?: HeroCaptionProps;
-  pattern?: HeroPattern;
+  variant?: HeroVariant;
 }
 
 export const Hero: FC<HeroProps> = ({
@@ -32,10 +31,10 @@ export const Hero: FC<HeroProps> = ({
   caption,
   children,
   className,
-  is = "hero",
-  of,
+  is = "section",
   on = "page-default",
-  pattern = "default",
+  pattern = "hero",
+  variant = "page",
   ...rest
 }) => (
   <Section
@@ -43,7 +42,7 @@ export const Hero: FC<HeroProps> = ({
     is={is}
     on={on}
     {...rest}
-    className={classNames(`hero-${pattern}`, className)}
+    className={classNames(styles.hero, styles[variant], className)}
   >
     {caption && <HeroCaption {...caption} />}
     {children}

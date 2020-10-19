@@ -1,0 +1,107 @@
+.body {
+  @apply leading-normal text-base;
+
+  @media only screen and (min-width: 768px) {
+    @apply text-lg;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    @apply text-xl;
+  }
+}
+
+.caption {
+  @apply leading-normal text-xs tracking-wide;
+
+  @media only screen and (min-width: 768px) {
+    @apply text-sm;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    @apply text-base;
+  }
+}
+
+.heading {
+  @apply block leading-tight mb-2 mt-4 text-3xl;
+
+  @media only screen and (min-width: 768px) {
+    @apply text-4xl;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    @apply text-5xl;
+  }
+}
+
+.hero {
+  @apply block leading-tight text-4xl tracking-tight;
+
+  @media only screen and (min-width: 768px) {
+    @apply text-5xl;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    @apply text-6xl;
+  }
+}
+
+.legend {
+  @apply block leading-none text-5xl tracking-tighter;
+
+  @media only screen and (min-width: 768px) {
+    @apply text-6xl;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    @apply text-7xl;
+  }
+}
+
+.meta {
+  @apply leading-normal text-sm;
+
+  @media only screen and (min-width: 768px) {
+    @apply text-base;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    @apply text-lg;
+  }
+}
+
+.subheading {
+  @apply leading-none text-xl;
+
+  @media only screen and (min-width: 768px) {
+    @apply text-2xl;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    @apply text-3xl;
+  }
+}
+
+.subtitle {
+  @apply leading-none text-lg;
+
+  @media only screen and (min-width: 768px) {
+    @apply text-xl;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    @apply text-2xl;
+  }
+}
+
+.title {
+  @apply block leading-tight text-2xl tracking-wide;
+
+  @media only screen and (min-width: 768px) {
+    @apply text-3xl;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    @apply text-4xl;
+  }
+}

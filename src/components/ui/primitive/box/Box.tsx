@@ -38,10 +38,10 @@ export const Box: FC<BoxProps> = ({
   width,
   ...rest
 }) => {
+  // TODO: replace with css module
   const getBoxClassnames = () => {
     let boxClasses = "";
 
-    // TODO: refactor this when not tired
     if (bgColor || backgroundColor) boxClasses = `bg-background-${bgColor}`;
     if (color) boxClasses = boxClasses = `${boxClasses} text-color-${color}`;
     if (minH || minHeight)

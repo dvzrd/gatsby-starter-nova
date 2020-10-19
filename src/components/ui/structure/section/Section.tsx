@@ -3,44 +3,22 @@ import classNames from "classnames";
 
 import { Pattern, PatternProps } from "components";
 
+import styles from "./Section.module.css";
+
 export type SectionPattern =
-  | "bar"
   | "content"
   | "cta"
-  | "default"
   | "error"
   | "feature"
   | "form"
-  | "grid"
   | "heel"
   | "hero"
-  | "media"
-  | string;
-
-export type SectionUtils =
-  | "compact"
-  | "contained"
-  | "fluid"
-  | "full"
-  | "spaced"
-  | "spaced-bottom"
-  | "spaced-top"
-  | string;
-
-export type SectionParent =
-  | "layout-default"
-  | "page-blog"
-  | "page-default"
-  | "page-home"
-  | "template-default"
-  | "template-post"
+  | "navbar"
   | string;
 
 export interface SectionProps extends PatternProps {
   container?: PatternProps;
-  is?: SectionPattern;
-  of?: SectionUtils;
-  on?: SectionParent;
+  pattern?: SectionPattern;
 }
 
 export const Section: FC<SectionProps> = ({
@@ -48,18 +26,24 @@ export const Section: FC<SectionProps> = ({
   children,
   className,
   container,
-  is = "default",
+  is = "section",
   of,
   on,
+  pattern = "content",
   ...rest
-}) => (
-  <Pattern
-    as={as}
-    {...rest}
-    className={classNames(`section-${is}`, of, on, className)}
-  >
-    <Pattern as="figure" is="container" {...container}>
-      {children}
+}) => {
+  return (
+    <Pattern
+      as={as}
+      is={is}
+      of={of}
+      on={on}
+      {...rest}
+      className={classNames(styles.section, styles[pattern], className)}
+    >
+      <Pattern as="figure" is="container" {...container}>
+        {children}
+      </Pattern>
     </Pattern>
-  </Pattern>
-);
+  );
+};

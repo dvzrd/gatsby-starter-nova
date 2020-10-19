@@ -26,6 +26,7 @@ export interface DefaultTemplateProps extends PageProps {
       seo?: GatsbySeoProps;
       title: string;
     };
+    slug: string;
   };
 }
 
@@ -47,7 +48,6 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
   };
 
   const layoutProps: DefaultLayoutProps = {
-    on: "template-default",
     header: {
       bgColor: "primary",
       color: "primary",
@@ -70,7 +70,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
   };
 
   const mainProps: SectionProps = {
-    is: "content",
+    pattern: "content",
     ...main,
   };
 
