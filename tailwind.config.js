@@ -19,18 +19,7 @@ module.exports = {
     options: {
       whitelist: [
         // utilities
-        "clear",
-        "clear-bottom",
-        "clear-left",
-        "clear-right",
-        "clear-top",
         "contained",
-        "divider",
-        "divide",
-        "divide-bottom",
-        "divide-left",
-        "divide-right",
-        "divide-top",
         "max-w-screen-1/4",
         "max-w-screen-1/3",
         "max-w-screen-1/2",
@@ -53,7 +42,6 @@ module.exports = {
         // components
         "layout-default",
         "layout-main",
-        "navbar",
         "topbar-default",
         "section-navbar",
         "section-default",

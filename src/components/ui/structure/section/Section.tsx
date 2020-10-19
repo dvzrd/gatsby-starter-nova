@@ -17,30 +17,9 @@ export type SectionPattern =
   | "media"
   | string;
 
-export type SectionUtils =
-  | "compact"
-  | "contained"
-  | "fluid"
-  | "full"
-  | "spaced"
-  | "spaced-bottom"
-  | "spaced-top"
-  | string;
-
-export type SectionParent =
-  | "layout-default"
-  | "page-blog"
-  | "page-default"
-  | "page-home"
-  | "template-default"
-  | "template-post"
-  | string;
-
 export interface SectionProps extends PatternProps {
   container?: PatternProps;
   is?: SectionPattern;
-  of?: SectionUtils;
-  on?: SectionParent;
 }
 
 export const Section: FC<SectionProps> = ({
@@ -55,6 +34,9 @@ export const Section: FC<SectionProps> = ({
 }) => (
   <Pattern
     as={as}
+    is={is}
+    of={of}
+    on={on}
     {...rest}
     className={classNames(`section-${is}`, of, on, className)}
   >

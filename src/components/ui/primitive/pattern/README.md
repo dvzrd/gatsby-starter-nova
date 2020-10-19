@@ -9,6 +9,7 @@ The importance heirarchy determines which styles will take priority - this will 
 - is - type of pattern [less important]
 - of - type of utility patterns [important]
 - on - type of parent pattern [more important]
+- utils - optional utils prop for passing tailwind css and custom css classes (alt to using className)
 
 ## Roadmap
 

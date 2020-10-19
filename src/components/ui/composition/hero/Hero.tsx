@@ -41,6 +41,7 @@ export const Hero: FC<HeroProps> = ({
   <Section
     as={as}
     is={is}
+    of={of}
     on={on}
     {...rest}
     className={classNames(`hero-${pattern}`, className)}

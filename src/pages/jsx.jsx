@@ -5,7 +5,7 @@ import { DefaultLayout } from "layouts";
 
 const PageJSX = () => {
   const layoutProps = {
-    on: "page-404",
+    on: "page-jsx",
     switchClassName: "text-primary-500",
   };
 
