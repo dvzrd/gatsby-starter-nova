@@ -4,4 +4,4 @@ Use this layout footer component and it's different variation options to create 
 
 ## Roadmap
 
-- create props and styles to render different footer variations.
+- get different styles with tailwind using variant prop.

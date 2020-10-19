@@ -9,11 +9,9 @@ import { Box, BoxProps } from "components";
 export type PatternType =
   | "container"
   | "divider"
-  | "layout"
   | "main"
-  | "navbar"
+  | "nav"
   | "section"
-  | "topbar"
   | "wrapper"
   | string;
 
@@ -55,8 +53,14 @@ export const Pattern: FC<PatternProps> = ({
     switch (is) {
       case "divider":
         return "divide-y divide-gray-500 my-2";
-      case "navbar":
+      case "main":
+        return "flex-1";
+      case "nav":
         return "content-center flex flex-1 items-center";
+      case "section":
+        return "content-start flex items-stretch justify-start overflow-hidden py-4 relative text-color";
+      case "wrapper":
+        return "bg-background flex flex-col";
       case "container":
       default:
         return is;

@@ -33,6 +33,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   className,
   footer,
   header,
+  is = "wrapper",
   logoColor,
   main,
   pattern = "default",
@@ -42,10 +43,21 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
 }) => {
   const { theme } = useTheme();
 
+  const getPattern = () => {
+    switch (pattern) {
+      case "form":
+      case "default":
+        return "min-h-screen";
+      default:
+        return is;
+    }
+  };
+
   return (
     <Pattern
+      is={is}
       {...rest}
-      className={classNames(`layout-${pattern}`, theme, className)}
+      className={classNames(getPattern(), theme, className)}
     >
       <GatsbySeo {...seo} />
       <LayoutHeader
@@ -67,7 +79,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
         }
         {...header}
       />
-      <Pattern as="main" is="layout-main" {...main}>
+      <Pattern as="main" is="main" {...main}>
         {children}
       </Pattern>
       <LayoutFooter {...footer} />

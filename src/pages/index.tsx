@@ -23,7 +23,7 @@ const PageIndex: FC<PageProps> = () => {
   return (
     <DefaultLayout {...layoutProps}>
       <Hero {...heroProps} />
-      <Section className="text-copy" is="content" on="page-home">
+      <Section on="page-home" pattern="content">
         <h4 className="leading-tight mt-8 mb-6">
           Tailwind CSS Utility Classes
         </h4>
@@ -47,9 +47,8 @@ const PageIndex: FC<PageProps> = () => {
         </div>
       </Section>
       <Section
-        className="bg-background-primary text-color-primary"
-        is="feature"
-        on="page-default"
+        pattern="feature"
+        utils="bg-background-primary text-color-primary"
       >
         <h2 className="leading-tight mt-8 mb-4">{name}</h2>
         <p className="mb-8 text-lg">
@@ -58,7 +57,7 @@ const PageIndex: FC<PageProps> = () => {
           lacus, fermentum sit amet lectus quis, iaculis volutpat massa.
         </p>
       </Section>
-      <Section as="footer" is="heel" on="page-home">
+      <Section as="footer" on="page-home" pattern="heel">
         <h3 className="leading-tight mt-12 mb-4">{title}</h3>
         <p className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus

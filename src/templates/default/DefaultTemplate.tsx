@@ -70,7 +70,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
   };
 
   const mainProps: SectionProps = {
-    is: "content",
+    pattern: "content",
     ...main,
   };
 

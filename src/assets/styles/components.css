@@ -1,44 +1,8 @@
 @layer components {
-  .layout-default {
-    @apply bg-background flex flex-col min-h-screen;
-  }
-
-  .layout-main {
-    @apply flex-1;
-  }
-
-  .navbar {
-    @apply content-center flex flex-1 items-center;
-  }
-
-  .topbar-default {
+  .topbar {
     & > .container {
       @apply flex justify-between;
     }
-  }
-
-  .section-navbar {
-    @apply content-center flex items-center py-4 relative text-color z-20;
-  }
-
-  .section-default {
-    @apply content-start flex items-stretch justify-start overflow-hidden py-4 relative text-color;
-  }
-
-  .section-content {
-    @apply py-8 text-color;
-  }
-
-  .section-feature {
-    @apply content-center flex items-center justify-center min-h-screen-1/4 py-16;
-  }
-
-  .section-heel {
-    @apply content-end flex items-end py-8 text-color;
-  }
-
-  .section-hero {
-    @apply content-center flex items-center justify-center py-20 text-color;
   }
 
   .text-body {

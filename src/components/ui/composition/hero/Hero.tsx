@@ -16,14 +16,12 @@ export type HeroPattern =
   | "default"
   | "footer"
   | "form"
-  | "legendary"
-  | "page"
-  | "section";
+  | "legendary";
 
 export interface HeroProps extends SectionProps {
   actions?: HeroActionsProps;
   caption?: HeroCaptionProps;
-  pattern?: HeroPattern;
+  variant?: HeroPattern;
 }
 
 export const Hero: FC<HeroProps> = ({
@@ -32,22 +30,36 @@ export const Hero: FC<HeroProps> = ({
   caption,
   children,
   className,
-  is = "hero",
-  of,
+  is = "section",
   on = "page-default",
-  pattern = "default",
+  pattern = "hero",
+  variant = "default",
   ...rest
-}) => (
-  <Section
-    as={as}
-    is={is}
-    of={of}
-    on={on}
-    {...rest}
-    className={classNames(`hero-${pattern}`, className)}
-  >
-    {caption && <HeroCaption {...caption} />}
-    {children}
-    {actions && <HeroActions {...actions} />}
-  </Section>
-);
+}) => {
+  const getPattern = () => {
+    switch (variant) {
+      case "card":
+      case "cta":
+      case "footer":
+      case "form":
+      case "legendary":
+      case "default":
+      default:
+        return "content-center flex items-center justify-center py-20 text-color";
+    }
+  };
+
+  return (
+    <Section
+      as={as}
+      is={is}
+      on={on}
+      {...rest}
+      className={classNames(getPattern(), className)}
+    >
+      {caption && <HeroCaption {...caption} />}
+      {children}
+      {actions && <HeroActions {...actions} />}
+    </Section>
+  );
+};
