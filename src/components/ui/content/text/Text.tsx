@@ -3,6 +3,8 @@ import classNames from "classnames";
 
 import { Pattern, PatternProps } from "components";
 
+import styles from "./Text.module.css";
+
 export type TextPattern =
   | "body"
   | "caption"
@@ -15,19 +17,23 @@ export type TextPattern =
   | "title";
 
 export interface TextProps extends PatternProps {
-  is?: TextPattern;
+  pattern?: TextPattern;
 }
 
 export const Text: FC<TextProps> = ({
   as = "span",
   children,
   className,
-  is = "body",
-  of,
-  on,
+  is = "text",
+  pattern = "body",
   ...rest
 }) => (
-  <Pattern as={as} {...rest} className={classNames(`text-${is}`, className)}>
+  <Pattern
+    as={as}
+    is={is}
+    {...rest}
+    className={classNames(styles[pattern], className)}
+  >
     {children}
   </Pattern>
 );

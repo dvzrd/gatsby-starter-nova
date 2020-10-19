@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import classNames from "classnames";
 
 import { Text, TextProps } from "components";
 
@@ -21,11 +20,8 @@ export const BrandName: FC<BrandNameProps> = ({
   return (
     <Text
       as={as}
+      utils="font-semibold leading-none tracking-tight uppercase"
       {...rest}
-      className={classNames(
-        "font-semibold inline-flex leading-none tracking-tight uppercase",
-        className
-      )}
     >
       {children ? children : isShort ? acronym : name}
     </Text>

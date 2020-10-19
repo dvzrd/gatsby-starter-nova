@@ -27,17 +27,17 @@ export const HeroCaption: FC<HeroCaptionProps> = ({
 }) => (
   <Pattern as={as} {...rest} className={classNames("hero-caption", className)}>
     {meta && (
-      <Text as="h2" is="meta" {...metaProps}>
+      <Text as="h2" pattern="meta" {...metaProps}>
         {meta}
       </Text>
     )}
     {heading && (
-      <Text as="h1" is="hero" {...headingProps}>
+      <Text as="h1" pattern="hero" {...headingProps}>
         {heading}
       </Text>
     )}
     {subheading && (
-      <Text as="h2" is="subheading" {...subheadingProps}>
+      <Text as="h2" pattern="subheading" {...subheadingProps}>
         {subheading}
       </Text>
     )}

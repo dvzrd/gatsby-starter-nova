@@ -1,0 +1,23 @@
+.section {
+  @apply bg-background content-start flex items-stretch justify-start overflow-hidden relative text-color;
+}
+
+.content {
+  @apply py-8;
+}
+
+.feature {
+  @apply content-center flex items-center justify-center min-h-screen-1/4 py-16;
+}
+
+.heel {
+  @apply content-end flex items-end py-8;
+}
+
+.hero {
+  @apply content-center flex items-center justify-center py-20;
+}
+
+.navbar {
+  @apply content-center flex flex-none items-center py-4 relative z-30;
+}

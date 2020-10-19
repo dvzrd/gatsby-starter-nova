@@ -1,0 +1,31 @@
+.divider {
+  @apply border-t-2 border-gray-500 my-2;
+}
+
+.footer {
+  @apply z-10;
+}
+
+.header {
+  @apply z-20;
+}
+
+.main {
+  @apply flex-1;
+}
+
+.nav {
+  @apply content-center flex flex-1 items-center;
+}
+
+.section {
+  @apply content-start flex items-stretch justify-start overflow-hidden py-4 relative text-color;
+}
+
+.text {
+  @apply inline-flex;
+}
+
+.wrapper {
+  @apply flex flex-col flex-no-wrap;
+}

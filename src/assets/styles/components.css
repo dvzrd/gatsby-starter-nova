@@ -1,119 +1,12 @@
+/* TODO: deprecate in favor of css modules
+* - move topbar styles to section component css module
+* - move text to text styles component css module
+*/
+
 @layer components {
   .topbar {
     & > .container {
       @apply flex justify-between;
-    }
-  }
-
-  .text-body {
-    @apply leading-normal text-base;
-  }
-
-  .text-caption {
-    @apply leading-normal text-xs tracking-wide;
-  }
-
-  .text-heading {
-    @apply block leading-tight mb-2 mt-4 text-3xl;
-  }
-
-  .text-hero {
-    @apply block leading-tight text-4xl tracking-tight;
-  }
-
-  .text-legend {
-    @apply block leading-none text-5xl tracking-tighter;
-  }
-
-  .text-meta {
-    @apply leading-normal text-sm;
-  }
-
-  .text-subheading {
-    @apply leading-none text-xl;
-  }
-
-  .text-subtitle {
-    @apply leading-none text-lg;
-  }
-
-  .text-title {
-    @apply block leading-tight text-2xl tracking-wide;
-  }
-
-  @screen md {
-    .text-body {
-      @apply text-lg;
-    }
-
-    .text-caption {
-      @apply text-sm;
-    }
-
-    .text-heading {
-      @apply text-4xl;
-    }
-
-    .text-hero {
-      @apply text-5xl;
-    }
-
-    .text-legend {
-      @apply text-6xl;
-    }
-
-    .text-meta {
-      @apply text-base;
-    }
-
-    .text-subheading {
-      @apply text-2xl;
-    }
-
-    .text-subtitle {
-      @apply text-xl;
-    }
-
-    .text-title {
-      @apply text-3xl;
-    }
-  }
-
-  @screen xl {
-    .text-body {
-      @apply text-xl;
-    }
-
-    .text-caption {
-      @apply text-base;
-    }
-
-    .text-heading {
-      @apply text-5xl;
-    }
-
-    .text-hero {
-      @apply text-6xl;
-    }
-
-    .text-legend {
-      @apply text-7xl;
-    }
-
-    .text-meta {
-      @apply text-lg;
-    }
-
-    .text-subheading {
-      @apply text-3xl;
-    }
-
-    .text-subtitle {
-      @apply text-2xl;
-    }
-
-    .text-title {
-      @apply text-4xl;
     }
   }
 }

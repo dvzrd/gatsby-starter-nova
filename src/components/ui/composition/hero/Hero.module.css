@@ -1,0 +1,11 @@
+.hero {
+  @apply content-center flex items-center justify-center;
+}
+
+.card {
+  @apply max-w-md;
+}
+
+.page {
+  @apply py-20 text-color;
+}

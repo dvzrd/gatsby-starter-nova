@@ -19,7 +19,11 @@ const PageJSX = () => {
   return (
     <DefaultLayout {...layoutProps}>
       <Hero {...heroProps}>
-        <Text as="h2" is="subtitle" className="font-light leading-snug mt-4">
+        <Text
+          as="h2"
+          pattern="subtitle"
+          className="font-light leading-snug mt-4"
+        >
           TypeScript is not required (but you can adjust that in the tsconfig
           file) when working with this starter. Feel free to use JSX or JS if
           strict code is not a requirement for you or if you just want to

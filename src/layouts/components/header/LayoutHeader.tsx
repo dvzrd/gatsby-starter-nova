@@ -19,7 +19,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   as = "header",
   children,
   className,
-  is = "section",
+  is = "header",
   isHidden = false,
   navLeft,
   navLeftProps,

@@ -3,8 +3,7 @@ import classNames from "classnames";
 
 import { Box, BoxProps } from "components";
 
-// TODO:
-// - move 'contained' util to section component as prop config
+import styles from "./Pattern.module.css";
 
 export type PatternType =
   | "container"
@@ -12,6 +11,7 @@ export type PatternType =
   | "main"
   | "nav"
   | "section"
+  | "text"
   | "wrapper"
   | string;
 
@@ -33,40 +33,22 @@ export type PatternUtil =
   | string;
 
 export interface PatternProps extends BoxProps {
-  is?: PatternType; // type of pattern
-  of?: PatternUtil; // type of utility pattern
-  on?: string; // type of parent pattern
-  utils?: string; // optional utils (tailwind and custom classes)
+  is?: PatternType; // a type of design pattern.
+  of?: PatternUtil; // all types of utility design patterns.
+  on?: string; // a type of parent class name.
+  utils?: string; // all types of tailwind and/or custom css classes.
 }
 
 export const Pattern: FC<PatternProps> = ({
   as = "div",
   children,
   className,
-  is,
+  is = "wrapper",
   of,
   on,
   utils,
   ...rest
 }) => {
-  const getPattern = () => {
-    switch (is) {
-      case "divider":
-        return "divide-y divide-gray-500 my-2";
-      case "main":
-        return "flex-1";
-      case "nav":
-        return "content-center flex flex-1 items-center";
-      case "section":
-        return "content-start flex items-stretch justify-start overflow-hidden py-4 relative text-color";
-      case "wrapper":
-        return "bg-background flex flex-col";
-      case "container":
-      default:
-        return is;
-    }
-  };
-
   const getUtils = () => {
     const utils = of?.split(" ");
     let patterns: string[] = [];
@@ -118,7 +100,14 @@ export const Pattern: FC<PatternProps> = ({
     <Box
       as={as}
       {...rest}
-      className={classNames(getPattern(), getUtils(), on, className, utils)}
+      className={classNames(
+        styles[is],
+        { container: is === "container" },
+        getUtils(),
+        on,
+        className,
+        utils
+      )}
       data-pattern-is={is}
       data-pattern-of={of}
       data-pattern-on={on}

@@ -1,3 +1,4 @@
+/* TODO: deprecate in favor of css modules */
 @layer utilities {
   .contained {
     & > .container {

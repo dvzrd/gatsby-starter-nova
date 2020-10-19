@@ -3,10 +3,11 @@ import classNames from "classnames";
 
 import { Pattern, PatternProps } from "components";
 
+import styles from "./Section.module.css";
+
 export type SectionPattern =
   | "content"
   | "cta"
-  | "default"
   | "error"
   | "feature"
   | "form"
@@ -28,27 +29,9 @@ export const Section: FC<SectionProps> = ({
   is = "section",
   of,
   on,
-  pattern = "default",
+  pattern = "content",
   ...rest
 }) => {
-  const getPattern = () => {
-    switch (pattern) {
-      case "content":
-        return "py-8 text-color";
-      case "feature":
-        return "content-center flex items-center justify-center min-h-screen-1/4 py-16";
-      case "navbar":
-        return "content-center flex flex-none items-center py-4 relative text-color z-20";
-      case "heel":
-        return "content-end flex items-end py-8 text-color";
-      case "hero":
-        return "content-center flex items-center justify-center py-20 text-color";
-      case "default":
-      default:
-        return "";
-    }
-  };
-
   return (
     <Pattern
       as={as}
@@ -56,7 +39,7 @@ export const Section: FC<SectionProps> = ({
       of={of}
       on={on}
       {...rest}
-      className={classNames(getPattern(), className)}
+      className={classNames(styles.section, styles[pattern], className)}
     >
       <Pattern as="figure" is="container" {...container}>
         {children}

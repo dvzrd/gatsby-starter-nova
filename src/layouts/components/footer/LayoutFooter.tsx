@@ -18,7 +18,7 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
   as = "footer",
   children,
   container,
-  is = "section",
+  is = "footer",
   isHidden = false,
   showAuthor = true,
   showOrg = true,
@@ -47,7 +47,7 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
     <Section as={as} is={is} {...rest}>
       {children}
       {copyright && (
-        <Text as="p" is="caption">
+        <Text as="p" pattern="caption">
           © {copyright.year ? copyright.year : currentYear}.
           {copyright.message && ` ${copyright.message}`}
           {showOrg && <>{renderLink(organization)}.</>}
@@ -56,12 +56,12 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
         </Text>
       )}
       {footnote && (
-        <Text as="p" is="caption">
+        <Text as="p" pattern="caption">
           {footnote}
         </Text>
       )}
       {memorial && (
-        <Text as="p" is="caption">
+        <Text as="p" pattern="caption">
           {memorial}
         </Text>
       )}
