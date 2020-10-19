@@ -18,7 +18,6 @@ module.exports = {
     ],
     options: {
       whitelist: [
-        // utilities
         "contained",
         "max-w-screen-1/4",
         "max-w-screen-1/3",
@@ -39,16 +38,7 @@ module.exports = {
         "text-up-3xl",
         "text-up-4xl",
         "text-up-5xl",
-        // components
-        "text-body",
-        "text-caption",
-        "text-heading",
-        "text-hero",
-        "text-legend",
-        "text-meta",
-        "text-subheading",
-        "text-subtitle",
-        "text-title",
+        "topbar",
       ],
     },
   },
