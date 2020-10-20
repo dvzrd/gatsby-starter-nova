@@ -1,3 +1,5 @@
+/* pattern is */
+
 .divider {
   @apply border-t-2 border-gray-500 my-2;
 }
@@ -28,4 +30,23 @@
 
 .wrapper {
   @apply flex flex-col flex-no-wrap;
+}
+
+/* pattern of */
+
+.compact {
+  @apply my-0 p-0;
+}
+
+.fluid {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.full {
+  @apply mx-auto max-w-none w-full;
 }

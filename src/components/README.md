@@ -2,11 +2,11 @@
 
 Components are broken up into modules. As the library evolves, so will the organization of these files.
 
-The order in which the components are exported matters because of style inheritance, the order should be based on the types:
+Keep in mind that the order in which the components are exported matters because of style inheritance. Follow these guidelines when ordering your exports:
 
-1. primitive
-2. typography
-3. composition
+- Low level components are usually exported first because they're used as building blocks to create more complex components.
+- Extensions of existing components should be exported after the component they're extended from so that the inherit component's styles can be overriden properly.
+- Component compositions should be exported last since they're usually created using multiple components and will often need to override multiple component styles.
 
 ## MDX
 

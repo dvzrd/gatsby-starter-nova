@@ -2,6 +2,9 @@
 
 // Tailwind config: https://tailwindcss.com/docs/configuration
 
+// TODO:
+// - configure purge for custom utils
+
 module.exports = {
   future: {
     purgeLayersByDefault: true,
@@ -18,7 +21,6 @@ module.exports = {
     ],
     options: {
       whitelist: [
-        "contained",
         "max-w-screen-1/4",
         "max-w-screen-1/3",
         "max-w-screen-1/2",
@@ -38,7 +40,6 @@ module.exports = {
         "text-up-3xl",
         "text-up-4xl",
         "text-up-5xl",
-        "topbar",
       ],
     },
   },

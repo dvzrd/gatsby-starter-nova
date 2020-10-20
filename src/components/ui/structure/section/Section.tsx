@@ -18,6 +18,7 @@ export type SectionPattern =
 
 export interface SectionProps extends PatternProps {
   container?: PatternProps;
+  isContained?: boolean;
   pattern?: SectionPattern;
 }
 
@@ -27,23 +28,26 @@ export const Section: FC<SectionProps> = ({
   className,
   container,
   is = "section",
+  isContained,
   of,
   on,
   pattern = "content",
   ...rest
-}) => {
-  return (
+}) => (
+  <Pattern
+    as={as}
+    is={is}
+    of={of}
+    on={on}
+    {...rest}
+    className={classNames(styles.section, styles[pattern], className)}
+  >
     <Pattern
-      as={as}
-      is={is}
-      of={of}
-      on={on}
-      {...rest}
-      className={classNames(styles.section, styles[pattern], className)}
+      as="figure"
+      is={isContained ? undefined : "container"}
+      {...container}
     >
-      <Pattern as="figure" is="container" {...container}>
-        {children}
-      </Pattern>
+      {children}
     </Pattern>
-  );
-};
+  </Pattern>
+);

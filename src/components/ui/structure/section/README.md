@@ -28,4 +28,4 @@ Use Section to render various section components.
 
 ## Roadmap
 
-- Add `minHeight` prop to set min-height.
+- Add background prop to set background image with various options.
