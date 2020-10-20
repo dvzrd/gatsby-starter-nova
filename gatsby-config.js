@@ -13,12 +13,6 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-typescript",
     {
-      resolve: "gatsby-plugin-favicon",
-      options: {
-        logo: `${__dirname}/static/logo.png`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: [process.env.GA_TRACKING_ID],
@@ -29,7 +23,7 @@ module.exports = {
       options: {
         background_color: "#fff",
         display: "minimal-ui",
-        icon: "static/logo.png",
+        icon: `${__dirname}/src/assets/images/logo-dark.png`,
         name: config.name,
         short_name: config.acronym,
         start_url: config.pathPrefix,
@@ -72,7 +66,7 @@ module.exports = {
               url: `${config.siteUrl}/logo.png`,
               width: 800,
               height: 800,
-              alt: "Og Image Social Logo",
+              alt: config.name,
             },
           ],
           locale: "en_IE",

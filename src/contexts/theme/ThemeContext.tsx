@@ -1,6 +1,5 @@
 import React, {
   FC,
-  HTMLAttributes,
   MouseEvent,
   createContext,
   useContext,
@@ -18,8 +17,8 @@ interface ThemeContextProps {
   toggleTheme: (event: MouseEvent) => void;
 }
 
-// get dark mode information from OS
-const supportsDarkMode = () =>
+// check if color scheme preference for user's OS is configured for dark mode.
+const prefersDarkMode = () =>
   window.matchMedia("(prefers-color-scheme: dark)").matches === true;
 
 const ThemeContext = createContext<ThemeContextProps>({
@@ -35,7 +34,7 @@ export const ThemeProvider: FC = ({ children }) => {
     const storedTheme: Theme = localStorage.getItem("theme") as Theme;
     if (storedTheme !== null) {
       setTheme(storedTheme);
-    } else if (supportsDarkMode()) {
+    } else if (prefersDarkMode()) {
       setTheme("theme-dark");
     }
   }, []);

@@ -37,26 +37,21 @@ export const Box: FC<BoxProps> = ({
   w,
   width,
   ...rest
-}) => {
-  // TODO: replace with css module
-  const getPatterns = () => {
-    let boxClasses = "";
-
-    if (bgColor || backgroundColor) boxClasses = `bg-background-${bgColor}`;
-    if (color) boxClasses = boxClasses = `${boxClasses} text-color-${color}`;
-    if (minH || minHeight)
-      boxClasses = `${boxClasses} min-h-${minH || minHeight}`;
-    if (h || height) boxClasses = `${boxClasses} h-${h || height}`;
-    if (maxW || maxWidth)
-      boxClasses = `${boxClasses} max-w-${maxW || maxWidth}`;
-    if (w || width) boxClasses = `${boxClasses} w-${w || width}`;
-
-    return boxClasses;
-  };
-
-  return (
-    <Element as={as} {...rest} className={classNames(getPatterns(), className)}>
-      {children}
-    </Element>
-  );
-};
+}) => (
+  <Element
+    as={as}
+    {...rest}
+    className={classNames(
+      (bgColor || backgroundColor) &&
+        `bg-background-${bgColor || backgroundColor}`,
+      color && `text-color-${color}`,
+      (minH || minHeight) && `min-h-${minH || minHeight}`,
+      (h || height) && `h-${h || height}`,
+      (maxW || maxWidth) && `max-w-${maxW || maxWidth}`,
+      (w || width) && `w-${w || width}`,
+      className
+    )}
+  >
+    {children}
+  </Element>
+);
