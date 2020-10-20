@@ -39,7 +39,7 @@ export const Box: FC<BoxProps> = ({
   ...rest
 }) => {
   // TODO: replace with css module
-  const getBoxClassnames = () => {
+  const getPatterns = () => {
     let boxClasses = "";
 
     if (bgColor || backgroundColor) boxClasses = `bg-background-${bgColor}`;
@@ -55,11 +55,7 @@ export const Box: FC<BoxProps> = ({
   };
 
   return (
-    <Element
-      as={as}
-      {...rest}
-      className={classNames(getBoxClassnames(), className)}
-    >
+    <Element as={as} {...rest} className={classNames(getPatterns(), className)}>
       {children}
     </Element>
   );

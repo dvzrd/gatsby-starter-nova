@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
+import classNames from "classnames";
 
 import { Section, SectionProps, Text } from "components";
 import { useSiteMetadata } from "graphql";
@@ -17,12 +18,14 @@ export interface LayoutFooterProps extends SectionProps {
 export const LayoutFooter: FC<LayoutFooterProps> = ({
   as = "footer",
   children,
+  className,
   container,
   is = "footer",
   isHidden = false,
   showAuthor = true,
   showOrg = true,
   pattern = "navbar",
+  variant,
   ...rest
 }) => {
   const {
@@ -44,7 +47,13 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
     ) : null;
 
   return (
-    <Section as={as} is={is} {...rest}>
+    <Section
+      as={as}
+      is={is}
+      pattern={pattern}
+      {...rest}
+      className={classNames(variant, className)}
+    >
       {children}
       {copyright && (
         <Text as="p" pattern="caption">

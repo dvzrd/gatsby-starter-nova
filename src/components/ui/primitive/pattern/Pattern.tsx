@@ -88,6 +88,9 @@ export const Pattern: FC<PatternProps> = ({
         case "divide-top":
           patterns.push("border-t-2 border-gray-500 border-solid");
           break;
+        case "fluid":
+          patterns.push("fluid");
+          break;
         default:
           break;
       }
