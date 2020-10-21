@@ -3,7 +3,7 @@ description: About page description
 hero:
   caption:
     heading: This is about page was generated from an MDX file.
-    subheading: MDX is an extension of markdown (.md), so you can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. Now you can also write JSX and use React components in your markdown files - just use the .mdx file extension.
+    subheading: MDX is an extension of markdown (.md) that lets you write JSX code and use React Components in markdown, just change your file extension from .md to .mdx.
 title: About
 ---
 
@@ -23,7 +23,19 @@ title: About
 
 <Pattern utils="py-1" />
 
-Tristique risus nec feugiat in fermentum. Senectus et netus et malesuada fames. Viverra vitae congue eu consequat ac felis donec. Maecenas accumsan lacus vel facilisis volutpat est. Diam sollicitudin tempor id eu. Egestas maecenas pharetra convallis posuere morbi. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Senectus et netus et malesuada. Orci eu lobortis elementum nibh tellus molestie nunc. Lobortis elementum nibh tellus molestie. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Faucibus in ornare quam viverra orci sagittis. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
+You can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. It's up to you what you want to do. You can also imort other components at the top of the file if for some reason you don't want to add it to the components shortcode config insde the `MDX` component.
+
+```
+import { SketchPicker } from "react-color"
+
+# Hello, world!
+
+Here's a color picker!
+
+<SketchPicker />
+```
+
+Check out [`gatsby-plugin-mdx`](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/) for more details.
 
 <Pattern utils="py-6 md:py-8 xl:py-10" />
 
@@ -31,7 +43,7 @@ Tristique risus nec feugiat in fermentum. Senectus et netus et malesuada fames. 
   This is an h5 title text pattern with a bottom margin
 </Text>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+You can also write your own code in markdown, although that's not recommended you can technically do it. Go search for that though, I remember seeing an example a while back but I can't find it right now.
 
 <Section is="content" isContained utils="py-8 md:py-10 xl:py-12">
 
