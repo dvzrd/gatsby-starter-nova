@@ -71,6 +71,7 @@
     "gatsby-transformer-remark": "latest",
     "gatsby-transformer-sharp": "latest",
     "gatsby-transformer-yaml": "latest",
+    "lodash": "latest",
     "postcss-import": "latest",
     "postcss-preset-env": "latest",
     "prettier": "latest",

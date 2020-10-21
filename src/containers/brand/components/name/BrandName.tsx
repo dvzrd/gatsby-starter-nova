@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 
 import { Text, TextProps } from "components";
-
-import { useBrandData } from "../../brand.gql";
+import { useSiteNameData } from "graphql";
 
 export interface BrandNameProps extends TextProps {
   isShort?: boolean;
@@ -15,7 +14,7 @@ export const BrandName: FC<BrandNameProps> = ({
   isShort,
   ...rest
 }) => {
-  const { acronym, name } = useBrandData();
+  const { acronym, name } = useSiteNameData();
 
   return (
     <Text

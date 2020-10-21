@@ -1,12 +1,13 @@
 import React, { FC } from "react";
 import Img from "gatsby-image";
 import classNames from "classnames";
+import { kebabCase } from "lodash";
 
 import { BoxProps } from "components";
 import { useTheme } from "contexts";
+import { useLogoData, useSiteNameData } from "graphql";
 
 import { LogoColor } from "../../Brand";
-import { useBrandData } from "../../brand.gql";
 
 export interface BrandLogoProps extends BoxProps {
   logoColor?: LogoColor;
@@ -14,22 +15,14 @@ export interface BrandLogoProps extends BoxProps {
 
 export const BrandLogo: FC<BrandLogoProps> = ({ className, logoColor }) => {
   const { theme } = useTheme();
-  const {
-    logo,
-    logoBlack,
-    logoDark,
-    logoLight,
-    logoWhite,
-    name,
-  } = useBrandData();
-
-  if (!logo?.childImageSharp) return null;
+  const { logo, logoBlack, logoDark, logoLight, logoWhite } = useLogoData();
+  const { name } = useSiteNameData();
 
   if (logoColor === "black") {
     return (
       <Img
         className={classNames("mr-2 w-10", className)}
-        alt={name}
+        alt={kebabCase(`${name}-${logoBlack.name}`)}
         {...logoBlack.childImageSharp}
       />
     );
@@ -37,7 +30,7 @@ export const BrandLogo: FC<BrandLogoProps> = ({ className, logoColor }) => {
     return (
       <Img
         className={classNames("mr-2 w-10", className)}
-        alt={name}
+        alt={kebabCase(`${name}-${logoWhite.name}`)}
         {...logoWhite.childImageSharp}
       />
     );
@@ -47,7 +40,7 @@ export const BrandLogo: FC<BrandLogoProps> = ({ className, logoColor }) => {
     return (
       <Img
         className={classNames("mr-2 w-10", className)}
-        alt={name}
+        alt={kebabCase(`${name}-${logoDark.name}`)}
         {...logoDark.childImageSharp}
       />
     );
@@ -55,16 +48,18 @@ export const BrandLogo: FC<BrandLogoProps> = ({ className, logoColor }) => {
     return (
       <Img
         className={classNames("mr-2 w-10", className)}
-        alt={name}
+        alt={kebabCase(`${name}-${logoLight.name}`)}
         {...logoLight.childImageSharp}
       />
     );
   }
 
+  if (!logo?.childImageSharp) return null;
+
   return (
     <Img
       className={classNames("mr-2 w-10", className)}
-      alt={name}
+      alt={kebabCase(`${name}-${logo.name}`)}
       {...logo.childImageSharp}
     />
   );

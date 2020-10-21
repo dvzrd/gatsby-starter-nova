@@ -1,4 +1,7 @@
 /* pattern is */
+.box {
+  @apply flex flex-col flex-no-wrap relative;
+}
 
 .divider {
   @apply border-t-2 border-gray-500 my-2;
@@ -29,7 +32,7 @@
 }
 
 .wrapper {
-  @apply flex flex-col flex-no-wrap;
+  @apply flex flex-col flex-wrap;
 }
 
 /* pattern of */
@@ -44,4 +47,8 @@
 
 .full {
   @apply mx-auto max-w-none w-full;
+}
+
+.row {
+  @apply flex flex-row flex-wrap;
 }

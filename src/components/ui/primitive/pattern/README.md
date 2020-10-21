@@ -7,6 +7,7 @@ Use Pattern to create primitive components that have various design pattern type
 The importance heirarchy determines which styles will take priority - this will allow for greater variety of pattern types to be used together to create even more custom patterns.
 
 - is - a type of pattern used to identify the primary purpose of a component using well known design patterns or well documented namespace.
+  - box
   - container
   - divider
   - main
@@ -17,6 +18,7 @@ The importance heirarchy determines which styles will take priority - this will 
   - compact
   - fluid
   - full
+  - row
 - on - a type of parent pattern used to override styles for specific pages, containers, compositions, layouts, or templates.
 - utils - optional utils prop for passing tailwind css and custom css classes (alt to using className)
 

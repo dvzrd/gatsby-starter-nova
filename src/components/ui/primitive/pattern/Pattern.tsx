@@ -6,6 +6,7 @@ import { Box, BoxProps } from "components";
 import styles from "./Pattern.module.css";
 
 export type PatternType =
+  | "box"
   | "container"
   | "divider"
   | "main"
@@ -15,7 +16,7 @@ export type PatternType =
   | "wrapper"
   | string;
 
-export type PatternUtil = "compact" | "fluid" | "full" | string;
+export type PatternUtil = "compact" | "fluid" | "full" | "row" | string;
 
 export interface PatternProps extends BoxProps {
   is?: PatternType; // a type of design pattern.
@@ -28,7 +29,7 @@ export const Pattern: FC<PatternProps> = ({
   as = "div",
   children,
   className,
-  is = "wrapper",
+  is = "box",
   of,
   on,
   utils,

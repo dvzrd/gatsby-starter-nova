@@ -10,6 +10,7 @@ import {
   BrandName,
   BrandNameProps,
 } from "./components";
+import styles from "./Brand.module.css";
 
 export type LogoColor = "black" | "white";
 
@@ -50,16 +51,11 @@ export const Brand: FC<BrandProps> = ({
   return (
     <>
       {showLink ? (
-        <Link
-          className={classNames("content-center flex items-center", className)}
-          to={linkTo}
-        >
+        <Link className={classNames(styles.brand, className)} to={linkTo}>
           {renderBrand()}
         </Link>
       ) : (
-        <Pattern
-          className={classNames("content-center flex items-center", className)}
-        >
+        <Pattern className={classNames(styles.brand, className)}>
           {renderBrand()}
         </Pattern>
       )}
