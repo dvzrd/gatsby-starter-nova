@@ -28,7 +28,7 @@
 }
 
 .text {
-  @apply inline-flex;
+  @apply relative;
 }
 
 .wrapper {
