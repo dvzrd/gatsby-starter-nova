@@ -7,7 +7,7 @@ import classNames from "classnames";
 import {
   Box,
   BoxProps,
-  BaseElement as Element,
+  Element,
   ElementProps,
   Hero,
   HeroProps,

@@ -1,10 +1,4 @@
-import React, {
-  ElementType,
-  FC,
-  HTMLProps,
-  MutableRefObject,
-  forwardRef,
-} from "react";
+import React, { ElementType, FC, HTMLProps, MutableRefObject } from "react";
 
 export interface ElementProps<Element extends HTMLElement = HTMLDivElement>
   extends Omit<HTMLProps<Element>, "as" | "content" | "list"> {
@@ -15,7 +9,7 @@ export interface ElementProps<Element extends HTMLElement = HTMLDivElement>
     | null;
 }
 
-export const BaseElement: FC<ElementProps> = <
+export const Element: FC<ElementProps> = <
   E extends HTMLElement = HTMLDivElement
 >({
   as = "div",
@@ -32,7 +26,3 @@ export const BaseElement: FC<ElementProps> = <
     </Component>
   );
 };
-
-export const Element = forwardRef<HTMLDivElement, ElementProps<HTMLDivElement>>(
-  (props, ref) => <BaseElement {...props} innerRef={ref} />
-);
