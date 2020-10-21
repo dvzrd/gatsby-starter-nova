@@ -7,6 +7,8 @@ hero:
 title: About
 ---
 
+import { OutboundLink } from "gatsby-plugin-google-gtag"
+
 <Pattern as="h2" utils="py-8 md:py-10 xl:py-12">
   This page is built with MDX
   <Pattern as="hr" is="divider" className="mb-4" />
@@ -23,19 +25,7 @@ title: About
 
 <Pattern utils="py-1" />
 
-You can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. It's up to you what you want to do. You can also imort other components at the top of the file if for some reason you don't want to add it to the components shortcode config insde the `MDX` component.
-
-```
-import { SketchPicker } from "react-color"
-
-# Hello, world!
-
-Here's a color picker!
-
-<SketchPicker />
-```
-
-Check out [`gatsby-plugin-mdx`](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/) for more details.
+You can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. It's up to you what you want to do. You can also imort other components at the top of the file if for some reason you don't want to add it to the components shortcode config insde the `MDX` component. Like I did with <OutboundLink href="https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/" target="_blank">this outbound link you can click</OutboundLink> for more details.
 
 <Pattern utils="py-6 md:py-8 xl:py-10" />
 
