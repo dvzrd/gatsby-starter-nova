@@ -5,6 +5,11 @@ import { DefaultLayout } from "layouts";
 
 const PageJSX = () => {
   const layoutProps = {
+    footer: {
+      bgColor: "primary",
+      color: "primary",
+      utils: "py-8 md:py-10 xl:py-12",
+    },
     on: "page-jsx",
     switchClassName: "text-primary-500",
   };
