@@ -37,7 +37,12 @@ export const HeroCaption: FC<HeroCaptionProps> = ({
       </Text>
     )}
     {subheading && (
-      <Text as="h2" pattern="subheading" {...subheadingProps}>
+      <Text
+        as="h2"
+        pattern="subheading"
+        utils="font-thin leading-snug mt-4"
+        {...subheadingProps}
+      >
         {subheading}
       </Text>
     )}

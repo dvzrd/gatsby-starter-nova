@@ -2,13 +2,14 @@
 description: About page description
 hero:
   caption:
-    heading: This is the about page written in MDX
+    heading: This is about page was generated from an MDX file.
+    subheading: MDX is an extension of markdown (.md), so you can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. Now you can also write JSX and use React components in your markdown files - just use the .mdx file extension.
 title: About
 ---
 
-<Pattern as="h2" utils="py-6 md:py-8 xl:py-10">
+<Pattern as="h2" utils="py-8 md:py-10 xl:py-12">
   This page is built with MDX
-  <Pattern as="hr" is="divider" className="mb-3" />
+  <Pattern as="hr" is="divider" className="mb-4" />
   <Text pattern="meta" className="block">
     Dated 10/04/2020
   </Text>
@@ -16,23 +17,27 @@ title: About
 
 ### This is an h3 in markdown syntax
 
-<Pattern as="hr" is="divider" />
+<Pattern as="hr" is="divider" utils="mb-6" />
 
 **This is bold markdown:**
+
+<Pattern utils="py-1" />
 
 Tristique risus nec feugiat in fermentum. Senectus et netus et malesuada fames. Viverra vitae congue eu consequat ac felis donec. Maecenas accumsan lacus vel facilisis volutpat est. Diam sollicitudin tempor id eu. Egestas maecenas pharetra convallis posuere morbi. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Senectus et netus et malesuada. Orci eu lobortis elementum nibh tellus molestie nunc. Lobortis elementum nibh tellus molestie. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Faucibus in ornare quam viverra orci sagittis. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
 
 <Pattern utils="py-6 md:py-8 xl:py-10" />
 
-#### This is an h5
+<Text as="h5" pattern="title" utils="mb-6">
+  This is an h5 title text pattern with a bottom margin
+</Text>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-<Section is="content" isContained utils="py-6 md:py-8 xl:py-10">
+<Section is="content" isContained utils="py-8 md:py-10 xl:py-12">
 
-#### This is a contained content section component
+#### This is a contained content section component with vertical padding
 
-<Box className="gap-4 grid md:grid-cols-3 my-4">
+<Box className="gap-4 grid md:grid-cols-3 my-6">
   <Text as="p" className="md:mb-6">
     You can use component shortcodes
   </Text>
