@@ -2,9 +2,6 @@
 
 // Tailwind config: https://tailwindcss.com/docs/configuration
 
-// TODO:
-// - configure purge for custom utils
-
 module.exports = {
   future: {
     purgeLayersByDefault: true,
@@ -145,7 +142,9 @@ module.exports = {
       },
       height: {
         "1/4": "25%",
+        "1/3": "33.3333%",
         "1/2": "50%",
+        "2/3": "66.6666%",
         "3/4": "75%",
         auto: "auto",
         "screen-1/4": "25vh",
@@ -154,9 +153,18 @@ module.exports = {
         "screen-2/3": "66.6666vh",
         "screen-3/4": "75vh",
       },
+      inset: {
+        "1/4": "25%",
+        "1/3": "33.3333%",
+        "1/2": "50%",
+        "2/3": "66.6666%",
+        "3/4": "75%",
+      },
       maxWidth: {
         "1/4": "25%",
+        "1/3": "33.3333%",
         "1/2": "50%",
+        "2/3": "66.6666%",
         "3/4": "75%",
         "screen-1/4": "25vw",
         "screen-1/3": "33.3333vw",
@@ -166,7 +174,9 @@ module.exports = {
       },
       minHeight: {
         "1/4": "25%",
+        "1/3": "33.3333%",
         "1/2": "50%",
+        "2/3": "66.6666%",
         "3/4": "75%",
         "screen-1/4": "25vh",
         "screen-1/3": "33.3333vh",
@@ -174,9 +184,28 @@ module.exports = {
         "screen-2/3": "66.6666vh",
         "screen-3/4": "75vh",
       },
+      spacing: {
+        "17": "4.25rem",
+        "18": "4.5rem",
+        "19": "4.75rem",
+        "100": "30rem",
+        "vh-1/4": "25vh",
+        "vh-1/3": "33.3333vh",
+        "vh-1/2": "50vh",
+        "vh-2/3": "66.6666vh",
+        "vh-3/4": "75vh",
+        "vw-1/4": "25vw",
+        "vw-1/3": "33.3333vw",
+        "vw-1/2": "50vw",
+        "vw-2/3": "66.6666vw",
+        "vw-3/4": "75vw",
+        "vw-full": "100vw",
+      },
       width: {
         "1/4": "25%",
+        "1/3": "33.3333%",
         "1/2": "50%",
+        "2/3": "66.6666%",
         "3/4": "75%",
         auto: "auto",
         "screen-1/4": "25vw",
@@ -186,6 +215,7 @@ module.exports = {
         "screen-3/4": "75vw",
       },
       screens: {
+        // NOTE: this will override theme provider.
         dark: { raw: "(prefers-color-scheme: dark)" },
         light: { raw: "(prefers-color-scheme: light)" },
       },

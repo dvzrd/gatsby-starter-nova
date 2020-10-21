@@ -39,12 +39,7 @@
 }
 
 .fluid {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  width: 100vw;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  @apply inset-x-1/2 -mx-vw-1/2 relative w-screen;
 }
 
 .full {
