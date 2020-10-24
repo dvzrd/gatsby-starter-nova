@@ -9,6 +9,7 @@ export type PatternType =
   | "box"
   | "container"
   | "divider"
+  | "icon"
   | "main"
   | "nav"
   | "section"
