@@ -17,16 +17,20 @@ import {
 
 export type LayoutPattern = "default" | "form";
 
-export interface DefaultLayoutProps extends PatternProps {
-  footer?: LayoutFooterProps;
-  header?: LayoutHeaderProps;
+export interface LayoutLogoProps {
   logoName?: LogoName;
   logoDark?: string;
   logoLight?: string;
+}
+
+export interface DefaultLayoutProps extends PatternProps {
+  footer?: LayoutFooterProps;
+  header?: LayoutHeaderProps;
+  logo?: LayoutLogoProps;
   main?: PatternProps;
   pattern?: LayoutPattern;
   seo?: GatsbySeoProps;
-  switchClassName?: string;
+  themeSwitch?: PatternProps;
 }
 
 export const DefaultLayout: FC<DefaultLayoutProps> = ({
@@ -35,25 +39,19 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   footer,
   header,
   is = "wrapper",
-  logoName,
-  logoDark = "dark",
-  logoLight = "light",
+  logo,
   main,
   pattern = "default",
   seo,
-  switchClassName,
+  themeSwitch,
   ...rest
 }) => {
   const { theme } = useTheme();
 
-  const getLogoName = () =>
-    logoName
-      ? logoName
-      : theme
-      ? theme === "theme-dark"
-        ? logoDark
-        : logoLight
-      : undefined;
+  const themeSwitchProps: PatternProps = {
+    className: "text-primary-500",
+    ...themeSwitch,
+  };
 
   return (
     <Pattern
@@ -65,7 +63,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
       <LayoutHeader
         navLeft={
           <>
-            <Brand className="mr-6" logoName={getLogoName()} />
+            <Brand className="mr-6" {...logo} />
             <Link className="mr-6 text-up-sm" to="/about">
               About
             </Link>
@@ -76,7 +74,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
             <Link className="mr-6 text-up-sm" to="/jsx">
               JSX
             </Link>
-            <ThemeSwitch className={switchClassName} />
+            <ThemeSwitch {...themeSwitchProps} />
           </>
         }
         {...header}

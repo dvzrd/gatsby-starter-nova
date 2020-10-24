@@ -7,7 +7,6 @@ import { DefaultLayout, DefaultLayoutProps } from "layouts";
 const Page404: FC<PageProps> = () => {
   const layoutProps: DefaultLayoutProps = {
     on: "page-404",
-    switchClassName: "text-primary-500",
   };
 
   const heroProps: HeroProps = {

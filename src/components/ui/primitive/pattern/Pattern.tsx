@@ -40,7 +40,7 @@ export const Pattern: FC<PatternProps> = ({
     {...rest}
     className={classNames(
       is === "container" ? is : styles[is],
-      [of?.split(" ").map((util) => styles[util])],
+      [of?.split(" ").map((mod) => styles[mod])],
       on,
       mod,
       className

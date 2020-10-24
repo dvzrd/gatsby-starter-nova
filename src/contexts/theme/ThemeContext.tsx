@@ -55,6 +55,7 @@ export const ThemeProvider: FC = ({ children }) => {
 export const ThemeSwitch: FC<PatternProps> = ({ className, ...rest }) => {
   const { theme, toggleTheme } = useTheme();
 
+  // TODO: Replace pattern with higher level button component.
   return (
     <Pattern
       as="button"

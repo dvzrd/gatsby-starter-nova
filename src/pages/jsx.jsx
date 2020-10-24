@@ -8,21 +8,25 @@ const PageJSX = () => {
   const { theme } = useTheme();
 
   const layoutProps = {
+    on: "page-jsx",
     footer: {
       bgColor: "primary",
       color: "primary",
       mod: "py-8 md:py-10 xl:py-12",
     },
-    logoName: theme === "theme-dark" ? "white" : "black",
-    on: "page-jsx",
-    switchClassName: "text-primary-500",
+    logo: {
+      logoName: theme === "theme-dark" ? "white" : "black",
+    },
+    themeSwitch: {
+      className: "text-primary-500",
+    },
   };
 
   const heroProps = {
-    minH: "screen-1/2",
     caption: {
       heading: "This is a regular JSX page",
     },
+    minH: "screen-1/2",
   };
 
   return (

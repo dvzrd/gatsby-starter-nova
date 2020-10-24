@@ -10,7 +10,6 @@ const PageIndex: FC<PageProps> = () => {
 
   const layoutProps: DefaultLayoutProps = {
     on: "page-home",
-    switchClassName: "text-primary-500",
   };
 
   const heroProps: HeroProps = {
