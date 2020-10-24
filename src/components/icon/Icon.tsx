@@ -8,7 +8,7 @@ export interface IconProps extends PatternProps {
   name?: IconName | string;
 }
 
-export const Icon: FC<IconProps> = ({ children, name }) => {
+export const Icon: FC<IconProps> = ({ children, name, ...rest }) => {
   switch (name) {
     case "moon":
       return (
@@ -70,7 +70,7 @@ export const Icon: FC<IconProps> = ({ children, name }) => {
       );
     default:
       return (
-        <Pattern as="i" is="icon">
+        <Pattern as="i" is="icon" {...rest}>
           {children}
         </Pattern>
       );
