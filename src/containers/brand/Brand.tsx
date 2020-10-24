@@ -9,15 +9,14 @@ import {
   BrandLogoProps,
   BrandName,
   BrandNameProps,
+  LogoName,
 } from "./components";
 import styles from "./Brand.module.css";
-
-export type LogoColor = "black" | "white";
 
 export interface BrandProps extends PatternProps {
   isShort?: boolean;
   linkTo?: string;
-  logoColor?: LogoColor;
+  logoName?: LogoName;
   logoProps?: BrandLogoProps;
   nameProps?: BrandNameProps;
   showLink?: boolean;
@@ -30,7 +29,7 @@ export const Brand: FC<BrandProps> = ({
   className,
   isShort = false,
   linkTo = "/",
-  logoColor,
+  logoName,
   logoProps,
   nameProps,
   showLink = true,
@@ -39,7 +38,7 @@ export const Brand: FC<BrandProps> = ({
 }) => {
   const renderBrand = () => (
     <>
-      {showLogo && <BrandLogo logoColor={logoColor} {...logoProps} />}
+      {showLogo && <BrandLogo logoName={logoName} {...logoProps} />}
       {showName && (
         <BrandName isShort={isShort} {...nameProps}>
           {children}

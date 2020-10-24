@@ -1,15 +1,19 @@
 import React from "react";
 
 import { Hero, Text } from "components";
+import { useTheme } from "contexts";
 import { DefaultLayout } from "layouts";
 
 const PageJSX = () => {
+  const { theme } = useTheme();
+
   const layoutProps = {
     footer: {
       bgColor: "primary",
       color: "primary",
-      utils: "py-8 md:py-10 xl:py-12",
+      mod: "py-8 md:py-10 xl:py-12",
     },
+    logoName: theme === "theme-dark" ? "white" : "black",
     on: "page-jsx",
     switchClassName: "text-primary-500",
   };

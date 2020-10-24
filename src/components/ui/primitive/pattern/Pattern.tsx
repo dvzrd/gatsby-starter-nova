@@ -16,13 +16,13 @@ export type PatternType =
   | "wrapper"
   | string;
 
-export type PatternUtil = "compact" | "fluid" | "full" | "row" | string;
+export type PatternMod = "compact" | "fluid" | "full" | "row" | string;
 
 export interface PatternProps extends BoxProps {
   is?: PatternType; // a type of design pattern.
-  of?: PatternUtil; // all types of utility design patterns.
+  of?: PatternMod; // all types of modifier design patterns.
   on?: string; // a type of parent class name.
-  utils?: string; // all types of tailwind and/or custom css classes.
+  mod?: string; // all types of tailwind and/or custom css classes.
 }
 
 export const Pattern: FC<PatternProps> = ({
@@ -32,7 +32,7 @@ export const Pattern: FC<PatternProps> = ({
   is = "box",
   of,
   on,
-  utils,
+  mod,
   ...rest
 }) => (
   <Box
@@ -42,8 +42,8 @@ export const Pattern: FC<PatternProps> = ({
       is === "container" ? is : styles[is],
       [of?.split(" ").map((util) => styles[util])],
       on,
-      className,
-      utils
+      mod,
+      className
     )}
     data-pattern-is={is}
     data-pattern-of={of}

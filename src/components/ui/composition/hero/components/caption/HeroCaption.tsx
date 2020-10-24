@@ -40,7 +40,7 @@ export const HeroCaption: FC<HeroCaptionProps> = ({
       <Text
         as="h2"
         pattern="subheading"
-        utils="font-thin leading-snug mt-4"
+        mod="font-thin leading-snug mt-4"
         {...subheadingProps}
       >
         {subheading}

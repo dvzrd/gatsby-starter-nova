@@ -46,10 +46,7 @@ const PageIndex: FC<PageProps> = () => {
           </p>
         </div>
       </Section>
-      <Section
-        pattern="feature"
-        utils="bg-background-primary text-color-primary"
-      >
+      <Section pattern="feature" mod="bg-background-primary text-color-primary">
         <h2 className="leading-tight mt-8 mb-4">{name}</h2>
         <p className="mb-8 text-lg">
           Nulla sit amet suscipit diam. Praesent aliquam metus nec diam

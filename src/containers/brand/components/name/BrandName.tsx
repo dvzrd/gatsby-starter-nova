@@ -19,7 +19,7 @@ export const BrandName: FC<BrandNameProps> = ({
   return (
     <Text
       as={as}
-      utils="font-semibold leading-none tracking-tight uppercase"
+      mod="font-semibold leading-none tracking-tight uppercase"
       {...rest}
     >
       {children ? children : isShort ? acronym : name}

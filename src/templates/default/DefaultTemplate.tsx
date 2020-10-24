@@ -10,24 +10,26 @@ import {
   Section,
   SectionProps,
 } from "components";
-import { LogoColor } from "containers";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
-import { useTheme } from "contexts";
+
+export type PageFrontmatter = {
+  container?: SectionProps;
+  description: string;
+  hero?: HeroProps;
+  layout?: DefaultLayoutProps;
+  main?: SectionProps;
+  mdx?: MDXProps;
+  seo?: GatsbySeoProps;
+  title: string;
+};
+
+export interface PageContext {
+  frontmatter: PageFrontmatter;
+  slug: string;
+}
 
 export interface DefaultTemplateProps extends PageProps {
-  pageContext: {
-    frontmatter: {
-      container?: SectionProps;
-      description: string;
-      hero?: HeroProps;
-      layout?: DefaultLayoutProps;
-      main?: SectionProps;
-      mdx?: MDXProps;
-      seo?: GatsbySeoProps;
-      title: string;
-    };
-    slug: string;
-  };
+  pageContext: PageContext;
 }
 
 const DefaultTemplate: FC<DefaultTemplateProps> = ({
@@ -36,11 +38,6 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
     frontmatter: { description, hero, layout, main, mdx, seo, title },
   },
 }) => {
-  const { theme } = useTheme();
-
-  const setLogoColor = (dark: LogoColor, light: LogoColor) =>
-    theme === "theme-dark" ? dark : light;
-
   const seoProps: GatsbySeoProps = {
     description,
     title,
@@ -52,11 +49,9 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
       bgColor: "primary",
       color: "primary",
     },
+    logoDark: "black",
+    logoLight: "white",
     ...layout,
-    logoColor: setLogoColor(
-      layout?.logoDark || "black",
-      layout?.logoLight || "white"
-    ),
   };
 
   const heroProps: HeroProps = {

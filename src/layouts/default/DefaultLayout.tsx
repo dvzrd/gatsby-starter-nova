@@ -4,7 +4,7 @@ import { GatsbySeo, GatsbySeoProps } from "gatsby-plugin-next-seo";
 import classNames from "classnames";
 
 import { Pattern, PatternProps } from "components";
-import { Brand, LogoColor } from "containers";
+import { Brand, LogoName } from "containers";
 import { ThemeSwitch, useTheme } from "contexts";
 
 import styles from "./DefaultLayout.module.css";
@@ -20,9 +20,9 @@ export type LayoutPattern = "default" | "form";
 export interface DefaultLayoutProps extends PatternProps {
   footer?: LayoutFooterProps;
   header?: LayoutHeaderProps;
-  logoColor?: LogoColor;
-  logoDark?: LogoColor;
-  logoLight?: LogoColor;
+  logoName?: LogoName;
+  logoDark?: string;
+  logoLight?: string;
   main?: PatternProps;
   pattern?: LayoutPattern;
   seo?: GatsbySeoProps;
@@ -35,7 +35,9 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   footer,
   header,
   is = "wrapper",
-  logoColor,
+  logoName,
+  logoDark = "dark",
+  logoLight = "light",
   main,
   pattern = "default",
   seo,
@@ -43,6 +45,15 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   ...rest
 }) => {
   const { theme } = useTheme();
+
+  const getLogoName = () =>
+    logoName
+      ? logoName
+      : theme
+      ? theme === "theme-dark"
+        ? logoDark
+        : logoLight
+      : undefined;
 
   return (
     <Pattern
@@ -54,7 +65,7 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
       <LayoutHeader
         navLeft={
           <>
-            <Brand className="mr-6" logoColor={logoColor} />
+            <Brand className="mr-6" logoName={getLogoName()} />
             <Link className="mr-6 text-up-sm" to="/about">
               About
             </Link>

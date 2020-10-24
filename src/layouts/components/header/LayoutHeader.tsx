@@ -29,7 +29,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   if (isHidden) return null;
 
   const containerProps = {
-    utils: "flex justify-between",
+    mod: "flex justify-between",
     ...container,
   };
 

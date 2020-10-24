@@ -7,9 +7,9 @@ hero:
 title: About
 ---
 
-import { OutboundLink } from "gatsby-plugin-google-gtag"
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
-<Pattern as="h2" utils="py-8 md:py-10 xl:py-12">
+<Pattern as="h2" mod="py-8 md:py-10 xl:py-12">
   This page is built with MDX
   <Pattern as="hr" is="divider" className="mb-4" />
   <Text pattern="meta" className="block">
@@ -19,23 +19,23 @@ import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 ### This is an h3 in markdown syntax
 
-<Pattern as="hr" is="divider" utils="mb-6" />
+<Pattern as="hr" is="divider" mod="mb-6" />
 
 **This is bold markdown:**
 
-<Pattern utils="py-1" />
+<Pattern mod="py-1" />
 
 You can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. It's up to you what you want to do. You can also imort other components at the top of the file if for some reason you don't want to add it to the components shortcode config insde the MDX component. Like I did with <OutboundLink href="https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/" target="_blank">this outbound link you can click</OutboundLink> for more details.
 
-<Pattern utils="py-6 md:py-8 xl:py-10" />
+<Pattern mod="py-6 md:py-8 xl:py-10" />
 
-<Text as="h5" pattern="title" utils="mb-6">
+<Text as="h5" pattern="title" mod="mb-6">
   This is an h5 title text pattern with a bottom margin
 </Text>
 
 You can also write your own code in markdown, although that's not recommended you can technically do it. Go search for that though, I remember seeing an example a while back but I can't find it right now.
 
-<Section is="content" isContained utils="py-8 md:py-10 xl:py-12">
+<Section is="content" isContained mod="py-8 md:py-10 xl:py-12">
 
 #### This is a contained content section component with vertical padding
 
@@ -63,7 +63,7 @@ This is just a regular markdown paragraph.
   of="fluid"
   bgColor="primary"
   color="primary"
-  utils="mt-20"
+  mod="mt-20"
   caption={{
     context: (
       <Text as="h4" pattern="body">
