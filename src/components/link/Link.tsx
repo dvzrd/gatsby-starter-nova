@@ -1,4 +1,4 @@
-import React, { FC, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { Link as GatsbyLink } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 import classNames from "classnames";
@@ -15,7 +15,7 @@ export interface LinkProps extends PatternProps {
   href?: string;
   pattern?: LinkPattern | string;
   target?: LinkTarget | string;
-  to?: string;
+  to: string;
 }
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
@@ -27,41 +27,41 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
       href,
       is = "link",
       pattern = "text",
-      target = "_self",
+      target,
       to,
       ...rest
     },
     ref
   ) => {
-    if (href) {
-      return (
-        <Pattern
-          as={as}
-          is={is}
-          className={classNames(styles.link, styles[pattern], className)}
-          href={href}
-          innerRef={ref}
-          target={target}
-          {...rest}
-        >
-          {children}
-        </Pattern>
-      );
-    } else if (to) {
+    const internal = /^\/(?!\/)/.test(to);
+
+    if (internal) {
       return (
         <Pattern
           as={GatsbyLink}
           is={is}
-          className={classNames(styles.link, styles[pattern], className)}
-          innerRef={ref}
           to={to}
+          innerRef={ref}
           {...rest}
+          className={classNames(styles.link, styles[pattern], className)}
         >
           {children}
         </Pattern>
       );
     }
 
-    return null;
+    return (
+      <Pattern
+        as={as}
+        is={is}
+        href={to}
+        target={target}
+        innerRef={ref}
+        {...rest}
+        className={classNames(styles.link, styles[pattern], className)}
+      >
+        {children}
+      </Pattern>
+    );
   }
 );
