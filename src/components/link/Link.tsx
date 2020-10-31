@@ -20,19 +20,23 @@ export interface LinkProps<Link extends HTMLElement = HTMLAnchorElement>
 }
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
-  ({
-    as = OutboundLink,
-    children,
-    className,
-    href,
-    is = "link",
-    pattern = "text",
-    target,
-    to,
-    ...rest
-  }, ref) => {
-    const internal = /^\/(?!\/)/.test(to);
-    const file = /\.[0-9a-z]+$/i.test(to);
+  (
+    {
+      as = OutboundLink,
+      children,
+      className,
+      href,
+      is = "link",
+      pattern = "text",
+      target,
+      to,
+      ...rest
+    },
+    ref
+  ) => {
+    const link = href ? href : to;
+    const internal = /^\/(?!\/)/.test(link);
+    const file = /\.[0-9a-z]+$/i.test(link);
 
     if (internal) {
       if (file) {
@@ -40,7 +44,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
           <Pattern
             as={as}
             is={is}
-            href={to}
+            href={link}
             target={target}
             innerRef={ref}
             {...rest}
@@ -50,12 +54,12 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
           </Pattern>
         );
       }
-  
+
       return (
         <Pattern
           as={GatsbyLink}
           is={is}
-          to={to}
+          to={link}
           innerRef={ref}
           {...rest}
           className={classNames(styles.link, styles[pattern], className)}
@@ -69,8 +73,8 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
       <Pattern
         as={as}
         is={is}
-        href={to}
-        target={target}
+        href={link}
+        target={target || "_blank"}
         innerRef={ref}
         {...rest}
         className={classNames(styles.link, styles[pattern], className)}
