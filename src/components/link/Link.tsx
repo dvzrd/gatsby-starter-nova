@@ -34,8 +34,25 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     ref
   ) => {
     const internal = /^\/(?!\/)/.test(to);
+    const file = /\.[0-9a-z]+$/i.test(to);
 
     if (internal) {
+      if (file) {
+        return (
+          <Pattern
+            as={as}
+            is={is}
+            href={to}
+            target={target}
+            innerRef={ref}
+            {...rest}
+            className={classNames(styles.link, styles[pattern], className)}
+          >
+            {children}
+          </Pattern>
+        );
+      }
+  
       return (
         <Pattern
           as={GatsbyLink}

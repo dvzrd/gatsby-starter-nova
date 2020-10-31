@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { Link } from "gatsby";
 import { MDXProvider, MDXProviderComponents } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import classNames from "classnames";
@@ -11,6 +10,8 @@ import {
   ElementProps,
   Hero,
   HeroProps,
+  Link,
+  LinkProps,
   Pattern,
   PatternProps,
   Section,
@@ -25,11 +26,12 @@ export interface MDXProps extends ElementProps {
 }
 
 export const mdxComponents = {
-  a: Link,
+  a: (props: LinkProps) => <Link {...props} />,
   p: (props: TextProps) => <Text {...props} as="p" />,
   Box: (props: BoxProps) => <Box {...props} />,
   Element: (props: ElementProps) => <Element {...props} />,
   Hero: (props: HeroProps) => <Hero {...props} />,
+  Link: (props: LinkProps) => <Link {...props} />,
   Pattern: (props: PatternProps) => <Pattern {...props} />,
   Section: (props: SectionProps) => <Section {...props} />,
   Text: (props: TextProps) => <Text {...props} />,
