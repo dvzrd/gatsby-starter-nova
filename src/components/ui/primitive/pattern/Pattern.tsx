@@ -20,12 +20,20 @@ export type PatternType =
 
 export type PatternMod = "compact" | "fluid" | "full" | "row" | string;
 
-export interface PatternProps extends BoxProps {
+export interface PatternProps<Pattern extends HTMLElement = HTMLDivElement>
+  extends BoxProps<Pattern> {
   is?: PatternType; // a type of design pattern.
   of?: PatternMod; // all types of modifier design patterns.
   on?: string; // a type of parent class name.
   mod?: string; // all types of tailwind and/or custom css classes.
 }
+
+// export interface PatternProps extends BoxProps {
+//   is?: PatternType; // a type of design pattern.
+//   of?: PatternMod; // all types of modifier design patterns.
+//   on?: string; // a type of parent class name.
+//   mod?: string; // all types of tailwind and/or custom css classes.
+// }
 
 export const Pattern: FC<PatternProps> = ({
   as = "div",
