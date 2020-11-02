@@ -23,11 +23,11 @@ import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 **This is bold markdown:**
 
-<Pattern mod="py-1" />
+You can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. It's up to you what you want to do. You can also imort other components at the top of the file if for some reason you don't want to add it to the components shortcode config insde the MDX component. Like I did with <OutboundLink className="underline font-medium" href="https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/" target="_blank">this outbound link you can click</OutboundLink> for more details.
 
-You can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. It's up to you what you want to do. You can also imort other components at the top of the file if for some reason you don't want to add it to the components shortcode config insde the MDX component. Like I did with <OutboundLink className="underline font-medium" href="https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/" target="_blank">this outbound link you can click</OutboundLink> for more details. You can also use a <Link to="/">link component</Link> to create both inbound and outbound links. Using [Markdown Syntax](/jsx) to create links works just as well for both internal and [external links](https://www.gatsbyjs.com/).
+But using imports means you'll have to style them yourself and you want to avoid that. So you should just use the <Link to="/">link component</Link> to create both inbound and outbound links. Using [Markdown Syntax](/jsx) to create links works just as well for both internal and [external links](https://www.gatsbyjs.com/) since it's already pre-configured to use the link component.
 
-<Pattern mod="py-6 md:py-8 xl:py-10" />
+<Pattern mod="py-4 md:py-6 xl:py-8" />
 
 <Text as="h5" pattern="title" mod="mb-6">
   This is an h5 title text pattern with a bottom margin
@@ -57,6 +57,12 @@ You can use regular markdown syntax, but not in a grid - have to wrap that in a 
 ###### This is an h6
 
 This is just a regular markdown paragraph.
+
+<Text as="h4" pattern="title" mod="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8">
+  Look at all the different colored buttons
+</Text>
+
+<Button>Default button</Button>
 
 <Hero
   as="section"

@@ -6,10 +6,14 @@ import classNames from "classnames";
 import {
   Box,
   BoxProps,
+  Button,
+  ButtonProps,
   Element,
   ElementProps,
   Hero,
   HeroProps,
+  Icon,
+  IconProps,
   Link,
   LinkProps,
   Pattern,
@@ -27,10 +31,27 @@ export interface MDXProps extends ElementProps {
 
 export const mdxComponents = {
   a: (props: LinkProps) => <Link {...props} />,
-  p: (props: TextProps) => <Text {...props} as="p" />,
+  h1: (props: TextProps) => <Text as="h1" pattern="hero" {...props} />,
+  h2: (props: TextProps) => <Text as="h2" pattern="heading" {...props} />,
+  h3: (props: TextProps) => <Text as="h3" pattern="title" {...props} />,
+  h4: (props: TextProps) => <Text as="h4" pattern="subheading" {...props} />,
+  h5: (props: TextProps) => <Text as="h5" pattern="subtitle" {...props} />,
+  h6: (props: TextProps) => (
+    <Text
+      as="h6"
+      pattern="body"
+      mod="font-semibold mt-6 mb-2 md:mt-8 md:mb-4 xl:mt-10 xl:mb-6"
+      {...props}
+    />
+  ),
+  p: (props: TextProps) => (
+    <Text as="p" mod="mb-4 md:mb-6 xl:mb-8" {...props} />
+  ),
   Box: (props: BoxProps) => <Box {...props} />,
+  Button: (props: ButtonProps) => <Button {...props} />,
   Element: (props: ElementProps) => <Element {...props} />,
   Hero: (props: HeroProps) => <Hero {...props} />,
+  Icon: (props: IconProps) => <Icon {...props} />,
   Link: (props: LinkProps) => <Link {...props} />,
   Pattern: (props: PatternProps) => <Pattern {...props} />,
   Section: (props: SectionProps) => <Section {...props} />,
