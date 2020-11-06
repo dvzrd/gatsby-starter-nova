@@ -40,7 +40,7 @@ export const mdxComponents = {
     <Text
       as="h6"
       pattern="body"
-      mod="font-semibold mt-6 mb-2 md:mt-8 md:mb-4 xl:mt-10 xl:mb-6"
+      mod="font-semibold mt-4 mb-2 md:mt-6 md:mb-3 xl:mt-8 xl:mb-4"
       {...props}
     />
   ),
