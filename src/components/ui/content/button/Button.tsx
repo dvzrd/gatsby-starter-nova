@@ -3,27 +3,55 @@ import classNames from "classnames";
 
 import { Pattern, PatternProps } from "components";
 
-export type ButtonPattern = "default" | "link" | "text";
+import styles from "./Button.module.css";
 
-// TODO:
-// - extend as html button
-// - omit color prop from box (primary, secondary)
-// - add size prop (xs, sm, md, lg, xl)
-// - add more style patterns and modifiers
+export type ButtonColor =
+  | "inherit"
+  | "primary"
+  | "primary-contrast"
+  | "secondary"
+  | "secondary-contrast"
+  | "transparent";
 
-export interface ButtonProps extends PatternProps {
+export type ButtonPattern = "default" | "icon" | "outline" | "text";
+
+export type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl";
+
+export type ButtonType = "button" | "reset" | "submit";
+
+export interface ButtonProps<Button extends HTMLElement = HTMLButtonElement>
+  extends Omit<PatternProps<Button>, "color"> {
+  color?: ButtonColor;
   pattern?: ButtonPattern;
-  type?: string;
+  size?: ButtonSize;
+  type?: ButtonType;
 }
 
 export const Button: FC<ButtonProps> = ({
   as = "button",
   children,
   className,
+  color = "inherit",
   is = "button",
+  pattern = "default",
+  size = "md",
+  type = "button",
   ...rest
 }) => (
-  <Pattern as={as} is={is} {...rest} className={classNames(className)}>
+  <Pattern
+    as={as}
+    is={is}
+    {...(rest as PatternProps)}
+    className={classNames(
+      styles.default,
+      styles[color],
+      styles[pattern],
+      {
+        "py-2 px-4 md:py-3 md:px-5 xl:py-4 xl:px-6": size === "md",
+      },
+      className
+    )}
+  >
     {children}
   </Pattern>
 );

@@ -1,3 +1,17 @@
+/* button colors */
+.inherit {
+  background-color: inherit;
+  border-color: inherit;
+  color: inherit;
+}
+
+.transparent {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* button patterns */
+
 .default {
-  @apply py-2 px-4;
+  @apply border-2 border-solid font-medium outline-none tracking-wide uppercase;
 }

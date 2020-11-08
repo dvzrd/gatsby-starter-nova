@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import { Link as GatsbyLink } from "gatsby";
+import { Link as GatsbyLink, GatsbyLinkProps } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 import classNames from "classnames";
 
@@ -34,9 +34,9 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
     },
     ref
   ) => {
-    const link = href ? href : to;
-    const internal = /^\/(?!\/)/.test(link);
-    const file = /\.[0-9a-z]+$/i.test(link);
+    const link: string = href ? href : to;
+    const internal: boolean = /^\/(?!\/)/.test(link);
+    const file: boolean = /\.[0-9a-z]+$/i.test(link);
 
     if (internal) {
       if (file) {
@@ -46,9 +46,9 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
             is={is}
             href={link}
             target={target}
-            innerRef={ref}
-            {...rest}
+            {...(rest as PatternProps)}
             className={classNames(styles.link, styles[pattern], className)}
+            innerRef={ref as any}
           >
             {children}
           </Pattern>
@@ -60,9 +60,9 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
           as={GatsbyLink}
           is={is}
           to={link}
-          innerRef={ref}
-          {...rest}
+          {...(rest as PatternProps)}
           className={classNames(styles.link, styles[pattern], className)}
+          innerRef={ref as any}
         >
           {children}
         </Pattern>
@@ -75,9 +75,9 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
         is={is}
         href={link}
         target={target || "_blank"}
-        innerRef={ref}
-        {...rest}
+        {...(rest as PatternProps)}
         className={classNames(styles.link, styles[pattern], className)}
+        innerRef={ref as any}
       >
         {children}
       </Pattern>

@@ -31,7 +31,7 @@ export const Text: FC<TextProps> = ({
   <Pattern
     as={as}
     is={is}
-    {...rest}
+    {...(rest as PatternProps)}
     className={classNames(styles[pattern], className)}
   >
     {children}

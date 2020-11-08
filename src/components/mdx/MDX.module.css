@@ -1,0 +1,11 @@
+.mdx {
+  @apply flex flex-col flex-wrap;
+}
+
+.list {
+  @apply list-square;
+
+  & li > ul {
+    @apply mb-1;
+  }
+}

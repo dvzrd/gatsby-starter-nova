@@ -1,0 +1,117 @@
+---
+description: This page was generated from an MDX file.
+hero:
+  caption:
+    heading: This page was generated from an MDX file.
+    subheading: MDX is an extension of markdown (.md) that lets you write JSX code and use React Components as shortcodes in markdown, just remember to update your file extension from .md to .mdx.
+title: This is an MDX page
+---
+
+import { OutboundLink } from "gatsby-plugin-google-gtag";
+
+<Pattern as="h2" mod="py-8 md:py-10 xl:py-12">
+  This page is built with MDX
+  <Pattern as="hr" is="divider" className="mb-4" />
+  <Text pattern="meta" className="block">
+    Dated 10/04/2020
+  </Text>
+</Pattern>
+
+### This is an h3 in markdown syntax
+
+<Pattern as="hr" is="divider" mod="mb-6" />
+
+**This is bold markdown:**
+
+You can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. It's up to you what you want to do. You can also imort other components at the top of the file if for some reason you don't want to add it to the components shortcode config insde the MDX component. Like I did with <OutboundLink className="underline font-medium" href="https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/" target="_blank">this outbound link you can click</OutboundLink> for more details.
+
+But using imports means you'll have to style them yourself and you want to avoid that. So you should just use the <Link to="/">link component</Link> to create both inbound and outbound links. Using [Markdown Syntax](/jsx) to create links works just as well for both internal and [external links](https://www.gatsbyjs.com/) since it's already pre-configured to use the link component.
+
+<Pattern mod="py-4 md:py-6 xl:py-8" />
+
+<Text as="h5" pattern="title" mod="mb-6">
+  This is an h5 title text pattern with a bottom margin
+</Text>
+
+You can also write your own code in markdown, although that's not recommended you can technically do it. Go search for that though, I remember seeing an example a while back but I can't find it right now.
+
+<Section is="content" isContained mod="py-8 md:py-10 xl:py-12">
+
+#### This is a contained content section component with vertical padding
+
+<Box className="gap-4 grid md:grid-cols-3 my-6">
+  <Text as="p" className="md:mb-6">
+    You can use component shortcodes
+  </Text>
+  <p className="md:mb-6">You can write regular HTML content.</p>
+  <Element as="p" className="md:mb-6">
+    Whatever components you pass to or define in MDX will be available as
+    shortcodes.
+  </Element>
+</Box>
+
+You can use regular markdown syntax, but not in a grid - have to wrap that in a div or something man. I mean give me something to work with here dude.
+
+</Section>
+
+###### This is an h6
+
+This is just a regular markdown paragraph.
+
+<Text as="h4" pattern="title" mod="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8">
+  Look at all the different colored buttons
+</Text>
+
+<Pattern is="grid" mod="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  <Button>Default button</Button>
+  <Button color="primary">Primary button</Button>
+  <Button color="primary-contrast">Primary contrast button</Button>
+  <Button color="secondary">Secondary button</Button>
+  <Button color="secondary-contrast">Secondary contrast button</Button>
+  <Button color="transparent">Transparent button</Button>
+  <Text as="h5" pattern="subtitle" mod="col-span-full my-4">
+    Outline patterns
+  </Text>
+  <Button pattern="outline">Outline button</Button>
+  <Button color="primary" pattern="outline">
+    Primary button
+  </Button>
+  <Button color="secondary" pattern="outline">
+    Secondary button
+  </Button>
+  <Text as="h5" pattern="subtitle" mod="col-span-full my-4">
+    Text buttons
+  </Text>
+  <Button pattern="text">Text button</Button>
+  <Button color="primary" pattern="text">
+    Primary button
+  </Button>
+  <Button color="secondary" pattern="text">
+    Secondary button
+  </Button>
+  <Text as="h5" pattern="subtitle" mod="col-span-full my-4">
+    Button sizes
+  </Text>
+  <Button size="xs">XS button</Button>
+  <Button size="sm">SM button</Button>
+  <Button size="md">MD button</Button>
+  <Button size="lg">LG button</Button>
+  <Button size="xl">XL button</Button>
+</Pattern>
+
+<Hero
+  as="section"
+  of="fluid"
+  bgColor="primary"
+  color="primary"
+  mod="mt-20"
+  caption={{
+    context: (
+      <Text as="h4" pattern="body">
+        This is why this component is here, to save you from the pain of not
+        having a hero when you need one.
+      </Text>
+    ),
+    heading: "Sometimes you need a hero",
+  }}
+/>

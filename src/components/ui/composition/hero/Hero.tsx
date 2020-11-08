@@ -41,7 +41,7 @@ export const Hero: FC<HeroProps> = ({
     as={as}
     is={is}
     on={on}
-    {...rest}
+    {...(rest as SectionProps)}
     className={classNames(styles.hero, styles[variant], className)}
   >
     {caption && <HeroCaption {...caption} />}

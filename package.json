@@ -60,13 +60,13 @@
     "gatsby-plugin-mdx": "latest",
     "gatsby-plugin-next-seo": "latest",
     "gatsby-plugin-offline": "latest",
-    "gatsby-plugin-postcss": "^2.3.13",
+    "gatsby-plugin-postcss": "latest",
     "gatsby-plugin-root-import": "latest",
     "gatsby-plugin-sharp": "latest",
     "gatsby-plugin-typescript": "latest",
     "gatsby-remark-copy-linked-files": "latest",
-    "gatsby-remark-prismjs": "latest",
     "gatsby-remark-images": "latest",
+    "gatsby-remark-prismjs": "latest",
     "gatsby-source-filesystem": "latest",
     "gatsby-transformer-remark": "latest",
     "gatsby-transformer-sharp": "latest",
@@ -78,7 +78,7 @@
     "prismjs": "latest",
     "remark-emoji": "latest",
     "remark-slug": "latest",
-    "tailwindcss": "latest",
+    "tailwindcss": "^1.9.6",
     "typescript": "latest"
   }
 }

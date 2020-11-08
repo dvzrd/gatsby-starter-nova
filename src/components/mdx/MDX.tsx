@@ -24,28 +24,58 @@ import {
   TextProps,
 } from "components";
 
+import styles from "./MDX.module.css";
+
 export interface MDXProps extends ElementProps {
   body?: string;
   components?: MDXProviderComponents;
 }
 
-export const mdxComponents = {
+export const mdxComponents: MDXProviderComponents = {
   a: (props: LinkProps) => <Link {...props} />,
-  h1: (props: TextProps) => <Text as="h1" pattern="hero" {...props} />,
-  h2: (props: TextProps) => <Text as="h2" pattern="heading" {...props} />,
-  h3: (props: TextProps) => <Text as="h3" pattern="title" {...props} />,
-  h4: (props: TextProps) => <Text as="h4" pattern="subheading" {...props} />,
-  h5: (props: TextProps) => <Text as="h5" pattern="subtitle" {...props} />,
+  h1: (props: TextProps) => (
+    <Text
+      as="h1"
+      mod="mb-4 mt-8 md:mb-6 md:mt-10 xl:mb-8 xl:mt-12"
+      pattern="hero"
+      {...props}
+    />
+  ),
+  h2: (props: TextProps) => (
+    <Text
+      as="h2"
+      mod="mb-4 mt-6 md:mb-6 md:mt-8 xl:mb-8 xl:mt-10"
+      pattern="heading"
+      {...props}
+    />
+  ),
+  h3: (props: TextProps) => (
+    <Text as="h3" mod="my-4 md:my-6 xl:my-8" pattern="title" {...props} />
+  ),
+  h4: (props: TextProps) => (
+    <Text as="h4" mod="my-4 md:my-6 xl:my-8" pattern="subheading" {...props} />
+  ),
+  h5: (props: TextProps) => (
+    <Text as="h5" mod="my-4 md:my-6 xl:my-8" pattern="subtitle" {...props} />
+  ),
   h6: (props: TextProps) => (
     <Text
       as="h6"
+      mod="font-semibold my-4 md:my-6 xl:my-8"
       pattern="body"
-      mod="font-semibold mt-4 mb-2 md:mt-6 md:mb-3 xl:mt-8 xl:mb-4"
       {...props}
     />
   ),
   p: (props: TextProps) => (
     <Text as="p" mod="mb-4 md:mb-6 xl:mb-8" {...props} />
+  ),
+  ul: (props: TextProps) => (
+    <Text
+      as="ul"
+      className={styles.list}
+      mod="mb-4 md:mb-6 xl:mb-8 pl-5"
+      {...props}
+    />
   ),
   Box: (props: BoxProps) => <Box {...props} />,
   Button: (props: ButtonProps) => <Button {...props} />,
@@ -66,11 +96,7 @@ export const MDX: FC<MDXProps> = ({
   components,
   ...rest
 }) => (
-  <Pattern
-    as={as}
-    {...rest}
-    className={classNames("flex flex-col flex-wrap", className)}
-  >
+  <Pattern as={as} {...rest} className={classNames(styles.mdx, className)}>
     <MDXProvider components={{ ...mdxComponents, ...components }}>
       {body && <MDXRenderer>{body}</MDXRenderer>}
       {children}

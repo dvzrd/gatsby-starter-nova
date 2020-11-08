@@ -48,7 +48,7 @@ export const Pattern: FC<PatternProps> = ({
 }) => (
   <Box
     as={as}
-    {...rest}
+    {...(rest as BoxProps)}
     className={classNames(
       is === "container" ? is : styles[is],
       [of?.split(" ").map((mod) => styles[mod])],

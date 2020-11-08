@@ -56,6 +56,7 @@ SEO with [`gatsby-plugin-next-seo`](https://github.com/ifiokjr/gatsby-plugin-nex
 
 - Components with TailwindCSS
   - Compositional UI Components
+  - Primitive UI Components
   - Structural UI Components
   - Typography UI Components
 - Forms
