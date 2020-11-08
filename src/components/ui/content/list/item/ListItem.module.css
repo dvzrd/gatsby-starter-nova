@@ -1,0 +1,10 @@
+/* list item patterns */
+
+.default {
+  @apply m-0;
+
+  & > ul,
+  & > ol {
+    @apply mb-1;
+  }
+}

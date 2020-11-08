@@ -38,7 +38,7 @@ export const Button: FC<ButtonProps> = ({
   type,
   ...rest
 }) => {
-  const textSize: TextPattern = getTextSize(size);
+  const textSize: TextPattern = text ? text : getTextSize(size);
 
   return (
     <Text
@@ -48,13 +48,9 @@ export const Button: FC<ButtonProps> = ({
       {...(rest as TextProps)}
       className={classNames(
         "transition-colors duration-250 ease-in-out focus:outline-none",
+        color !== undefined && styles[color],
         styles.default,
-        styles[color],
         styles[pattern],
-        {
-          "border-2 border-hover border-solid bg-background-paper text-color-paper  hover:text-color-primary hover:bg-background-primary hover:border-primary":
-            pattern === "default",
-        },
         styles[size],
         {
           "py-1 px-2 lg:px-3": size === "xs",
@@ -66,6 +62,8 @@ export const Button: FC<ButtonProps> = ({
           "py-6 px-8 md:px-8 xl:py-7 xl:px-12": size === "3xl",
           "py-7 px-9 md:px-8 xl:py-8 xl:px-14": size === "4xl",
           "py-8 px-10 md:px-8 xl:py-9 xl:px-16": size === "5xl",
+          "border-2 border-hover border-solid bg-background-paper text-color-paper  hover:text-color-primary hover:bg-background-primary hover:border-primary":
+            pattern === "default",
         },
         className
       )}
