@@ -74,6 +74,9 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
             <Link className="mr-6 text-up-sm" to="/jsx">
               JSX
             </Link>
+            <Link className="mr-6 text-up-sm" to="/mdx">
+              MDX
+            </Link>
             <ThemeSwitch {...themeSwitchProps} />
           </>
         }

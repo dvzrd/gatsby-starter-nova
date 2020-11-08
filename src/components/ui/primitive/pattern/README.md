@@ -12,6 +12,7 @@ The importance heirarchy determines which styles will take priority - this will 
   - container
   - divider
   - icon
+  - link
   - main
   - nav
   - section

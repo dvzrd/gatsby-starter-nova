@@ -48,8 +48,11 @@ export type BoxPosition =
 
 export type BoxSizing = "border" | "content";
 
-export interface BoxProps<Box extends HTMLElement = HTMLDivElement>
-  extends Omit<ElementProps<Box>, "background" | "color" | "height" | "width"> {
+export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
+  extends Omit<
+    ElementProps<Element>,
+    "align" | "background" | "color" | "height" | "size" | "width"
+  > {
   bgColor?: BoxColor;
   backgroundColor?: BoxColor;
   color?: BoxColor;
@@ -90,7 +93,7 @@ export const Box: FC<BoxProps> = ({
 }) => (
   <Element
     as={as}
-    {...rest}
+    {...(rest as ElementProps)}
     className={classNames(
       (bgColor || backgroundColor) &&
         `bg-background-${bgColor || backgroundColor}`,

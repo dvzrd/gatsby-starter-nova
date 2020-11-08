@@ -2,75 +2,62 @@
 description: About page description
 hero:
   caption:
-    heading: This is about page was generated from an MDX file.
-    subheading: MDX is an extension of markdown (.md) that lets you write JSX code and use React Components in markdown, just change your file extension from .md to .mdx.
+    heading: A new gatsby starter with a tailwind css design system.
+    subheading: Nova is a gatsby starter written in TypeScript with MDX and TailwindCSS, useful for creating quick web app prototypes and/or high performance marketing websites
 title: About
 ---
 
-import { OutboundLink } from "gatsby-plugin-google-gtag";
+## Stack
 
-<Pattern as="h2" mod="py-8 md:py-10 xl:py-12">
-  This page is built with MDX
-  <Pattern as="hr" is="divider" className="mb-4" />
-  <Text pattern="meta" className="block">
-    Dated 10/04/2020
-  </Text>
-</Pattern>
+- GatsbyJS (Client)
+- GraphQL (Data)
+- MDX (Content)
+- Netlify (Server)
+- TailwindCSS (Styles)
+- TypeScript (Types)
 
-### This is an h3 in markdown syntax
+## Gatsby
 
-<Pattern as="hr" is="divider" mod="mb-6" />
+Nova is composed of different gatsby plugins and themes.
 
-**This is bold markdown:**
+For info about gatsby plugins and themes, see the following:
 
-<Pattern mod="py-1" />
+- [Gatsby plugins, themes and starters](https://www.gatsbyjs.com/docs/plugins-themes-and-starters/)
+- [Gatsby plugins docs](https://www.gatsbyjs.com/docs/plugins/)
+- [What are gatsby themes?](https://www.gatsbyjs.com/docs/themes/what-are-gatsby-themes/)
+- [Introducing gatsby theme catalyst](https://www.gatsbyjs.com/blog/2020-05-14-introducing-gatsby-theme-catalyst/)
+- [Gatsby plugin and theme tutorials](https://www.gatsbyjs.com/tutorial/plugin-and-theme-tutorials/)
 
-You can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. It's up to you what you want to do. You can also imort other components at the top of the file if for some reason you don't want to add it to the components shortcode config insde the MDX component. Like I did with <OutboundLink href="https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/" target="_blank">this outbound link you can click</OutboundLink> for more details.
+### Gatsby Plugins
 
-<Pattern mod="py-6 md:py-8 xl:py-10" />
+#### Gatsby MDX
 
-<Text as="h5" pattern="title" mod="mb-6">
-  This is an h5 title text pattern with a bottom margin
-</Text>
+MDX with [`gatsby-plugin-mdx`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-mdx).
 
-You can also write your own code in markdown, although that's not recommended you can technically do it. Go search for that though, I remember seeing an example a while back but I can't find it right now.
+- Configure plugins and other options in `gatsby-config`.
+- Configure render options in `components/mdx`
 
-<Section is="content" isContained mod="py-8 md:py-10 xl:py-12">
+#### Gatsby Next SEO
 
-#### This is a contained content section component with vertical padding
+SEO with [`gatsby-plugin-next-seo`](https://github.com/ifiokjr/gatsby-plugin-next-seo).
 
-<Box className="gap-4 grid md:grid-cols-3 my-6">
-  <Text as="p" className="md:mb-6">
-    You can use component shortcodes
-  </Text>
-  <p className="md:mb-6">You can write regular HTML content.</p>
-  <Element as="p" className="md:mb-6">
-    Whatever components you pass to or define in MDX will be available as
-    shortcodes.
-  </Element>
-</Box>
+- Configure defaults in `gatsby-config`.
+- Configure page level SEO in `pages` by passing `seo` props to `layouts`.
+- Configure `seo` props in the `frontmatter` of your `mdx/md` files.
 
-You can use regular markdown syntax, but not in a grid - have to wrap that in a div or something man. I mean give me something to work with here dude.
+### Custom Plugins and Themes (Coming Soon)
 
-</Section>
-
-###### This is an h6
-
-This is just a regular markdown paragraph.
-
-<Hero
-  as="section"
-  of="fluid"
-  bgColor="primary"
-  color="primary"
-  mod="mt-20"
-  caption={{
-    context: (
-      <Text as="h4" pattern="body">
-        This is why this component is here, to save you from the pain of not
-        having a hero when you need one.
-      </Text>
-    ),
-    heading: "Sometimes you need a hero",
-  }}
-/>
+- Components with TailwindCSS
+  - Compositional UI Components
+  - Primitive UI Components
+  - Structural UI Components
+  - Typography UI Components
+- Forms
+  - Mailchimp / Netlify Integration
+  - React Final Form
+  - Validation with Yup
+- MDX
+  - Blog
+  - Case Studies
+  - Portfolio
+  - Projects

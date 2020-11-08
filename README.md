@@ -56,6 +56,7 @@ SEO with [`gatsby-plugin-next-seo`](https://github.com/ifiokjr/gatsby-plugin-nex
 
 - Components with TailwindCSS
   - Compositional UI Components
+  - Primitive UI Components
   - Structural UI Components
   - Typography UI Components
 - Forms
@@ -89,7 +90,7 @@ Reference the [Netlify docs on file based configuration](https://docs.netlify.co
 
 You can also setup AWS serverless Lambda functions with Netlify, allowing you to send and receive data without needing your own server.
 
-These are also called private functions because they're added to a private dir `.netlify`. If you want to keep your functions private, you can add `.netlify` to `.gitignore`.
+These are also called private functions because they're placed inside a private `.netlify` dir. To keep this dir private, it's automatically added to `.gitignore`, but feel free to change that if you want to version control your functions in a private repo or if you're using environment variables to hide your secret API keys.
 
 Reference the [Netlify docs on functions](https://docs.netlify.com/functions/overview/) for more detials.
 

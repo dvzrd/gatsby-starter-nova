@@ -39,13 +39,13 @@ export const Section: FC<SectionProps> = ({
     is={is}
     of={of}
     on={on}
-    {...rest}
+    {...(rest as PatternProps)}
     className={classNames(styles.section, styles[pattern], className)}
   >
     <Pattern
       as="figure"
       is={isContained ? undefined : "container"}
-      {...container}
+      {...(container as PatternProps)}
     >
       {children}
     </Pattern>

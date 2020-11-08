@@ -43,18 +43,24 @@
 .theme-dark {
   /* dark theme background colors */
   --color-background: var(--color-gray-900);
+  --color-background-hover: var(--color-gray-600);
   --color-background-paper: var(--color-gray-100);
   --color-background-primary: var(--color-primary-500);
+  --color-background-primary-hover: var(--color-secondary-500);
   --color-background-secondary: var(--color-secondary-500);
+  --color-background-secondary-hover: var(--color-primary-500);
   /* dark theme text colors */
   --color-text: var(--color-gray-100);
+  --color-text-hover: var(--color-primary-500);
   --color-text-paper: var(--color-gray-800);
   --color-text-primary: var(--color-gray-900);
-  --color-text-primary-dark: var(--color-gray-300);
-  --color-text-primary-light: var(--color-gray-700);
-  --color-text-secondary: var(--color-gray-300);
-  --color-text-secondary-dark: var(--color-gray-50);
-  --color-text-secondary-light: var(--color-gray-200);
+  --color-text-primary-hover: var(--color-primary-100);
+  --color-text-primary-dark: var(--color-secondary-400);
+  --color-text-primary-light: var(--color-secondary-900);
+  --color-text-secondary: var(--color-gray-50);
+  --color-text-secondary-hover: var(--color-secondary-900);
+  --color-text-secondary-dark: var(--color-primary-500);
+  --color-text-secondary-light: var(--color-primary-900);
   /* dark theme primary colors*/
   --color-primary-100: var(--color-yellow-100);
   --color-primary-200: var(--color-yellow-200);
@@ -80,16 +86,22 @@
 .theme-light {
   /* light theme background colors */
   --color-background: var(--color-white);
+  --color-background-hover: var(--color-gray-400);
   --color-background-paper: var(--color-gray-50);
   --color-background-primary: var(--color-primary-500);
+  --color-background-primary-hover: var(--color-secondary-500);
   --color-background-secondary: var(--color-secondary-500);
+  --color-background-secondary-hover: var(--color-primary-500);
   /* light theme text colors */
   --color-text: var(--color-gray-900);
+  --color-text-hover: var(--color-primary-500);
   --colot-text-paper: var(--color-gray-700);
   --color-text-primary: var(--color-gray-50);
+  --color-text-primary-hover: var(--color-gray-900);
   --color-text-primary-dark: var(--color-white);
   --color-text-primary-light: var(--color-gray-700);
-  --color-text-secondary: var(--color-gray-300);
+  --color-text-secondary: var(--color-gray-900);
+  --color-text-secondary-hover: var(--color-primary-100);
   --color-text-secondary-dark: var(--color-gray-50);
   --color-text-secondary-light: var(--color-gray-800);
   /* light theme primary colors */
