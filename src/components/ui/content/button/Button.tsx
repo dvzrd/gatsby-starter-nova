@@ -30,7 +30,7 @@ export const Button: FC<ButtonProps> = ({
   as = "button",
   children,
   className,
-  color = "inherit",
+  color,
   is = "button",
   pattern = "default",
   size = "md",

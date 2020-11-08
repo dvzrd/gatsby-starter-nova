@@ -1,11 +1,3 @@
-/* button colors */
-
-.inherit {
-  background-color: inherit;
-  border-color: inherit;
-  color: inherit;
-}
-
 /* button patterns */
 
 .default {
@@ -77,6 +69,14 @@
       @apply text-background-primary;
     }
   }
+}
+
+/* button colors */
+
+.inherit {
+  background-color: inherit !important;
+  border-color: inherit !important;
+  color: inherit !important;
 }
 
 /* button sizes */
