@@ -2,14 +2,14 @@
 description: This page was generated from an MDX file.
 hero:
   caption:
-    heading: This page was generated from an MDX file.
+    heading: Look at this page that was generated from an MDX file.
     subheading: MDX is an extension of markdown (.md) that lets you write JSX code and use React Components as shortcodes in markdown, just remember to update your file extension from .md to .mdx.
 title: This is an MDX page
 ---
 
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 
-<Pattern as="h2" mod="py-8 md:py-10 xl:py-12">
+<Pattern as="h2" mod="py-8 md:py-10 xl:py-12 w-full">
   This page is built with MDX
   <Pattern as="hr" is="divider" className="mb-4" />
   <Text pattern="meta" className="block">
@@ -19,15 +19,13 @@ import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 ### This is an h3 in markdown syntax
 
-<Pattern as="hr" is="divider" mod="mb-6" />
-
-**This is bold markdown:**
+**This is bold markdown text:**
 
 You can still write your pages in plain markdown, mixed in with regular HTML with Taiwind CSS or custom CSS classes. It's up to you what you want to do. You can also imort other components at the top of the file if for some reason you don't want to add it to the components shortcode config insde the MDX component. Like I did with <OutboundLink className="underline font-medium" href="https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/" target="_blank">this outbound link you can click</OutboundLink> for more details.
 
 But using imports means you'll have to style them yourself and you want to avoid that. So you should just use the <Link to="/">link component</Link> to create both inbound and outbound links. Using [Markdown Syntax](/jsx) to create links works just as well for both internal and [external links](https://www.gatsbyjs.com/) since it's already pre-configured to use the link component.
 
-<Pattern mod="py-4 md:py-6 xl:py-8" />
+<Pattern as="hr" is="divider" mod="mt-4 py-4 md:nt-6 md:py-6 xl:mt-8 xl:py-8" />
 
 <Text as="h5" pattern="title" mod="mb-6">
   This is an h5 title text pattern with a bottom margin
@@ -54,49 +52,76 @@ You can use regular markdown syntax, but not in a grid - have to wrap that in a 
 
 </Section>
 
-###### This is an h6
+###### This is a regular h6 headline
 
 This is just a regular markdown paragraph.
 
 <Text as="h4" pattern="title" mod="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8">
-  Look at all the different colored buttons
+  Look at all the different style buttons
 </Text>
 
-<Pattern is="grid" mod="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-  <Button>Default button</Button>
-  <Button color="primary">Primary button</Button>
-  <Button color="primary-contrast">Primary contrast button</Button>
-  <Button color="secondary">Secondary button</Button>
-  <Button color="secondary-contrast">Secondary contrast button</Button>
-  <Button color="transparent">Transparent button</Button>
-  <Text as="h5" pattern="subtitle" mod="col-span-full my-4">
-    Outline patterns
-  </Text>
-  <Button pattern="outline">Outline button</Button>
-  <Button color="primary" pattern="outline">
+<Pattern is="flex" mod="flex flex-row flex-wrap items-center w-full">
+  <Button mod="mb-4 mr-4">Default button</Button>
+  <Button color="primary" mod="mb-4 mr-4">
     Primary button
   </Button>
-  <Button color="secondary" pattern="outline">
+  <Button color="secondary" mod="mb-4 mr-4">
     Secondary button
   </Button>
-  <Text as="h5" pattern="subtitle" mod="col-span-full my-4">
+  <Text as="h5" pattern="subheading" mod="mb-4 mt-8 w-full">
+    Outline buttons
+  </Text>
+  <Button pattern="outline" mod="mb-4 mr-4">
+    Default outline
+  </Button>
+  <Button color="primary" pattern="outline" mod="mb-4 mr-4">
+    Primary outline
+  </Button>
+  <Button color="secondary" pattern="outline" mod="mb-4 mr-4">
+    Secondary outline
+  </Button>
+  <Text as="h5" pattern="subheading" mod="mb-4 mt-8 w-full">
     Text buttons
   </Text>
-  <Button pattern="text">Text button</Button>
-  <Button color="primary" pattern="text">
-    Primary button
+  <Button pattern="text" mod="mb-4 mr-4">
+    Default text
   </Button>
-  <Button color="secondary" pattern="text">
-    Secondary button
+  <Button color="primary" pattern="text" mod="mb-4 mr-4">
+    Primary text
   </Button>
-  <Text as="h5" pattern="subtitle" mod="col-span-full my-4">
+  <Button color="secondary" pattern="text" mod="mb-4 mr-4">
+    Secondary text
+  </Button>
+  <Text as="h5" pattern="subheading" mod="mb-4 mt-8 w-full">
     Button sizes
   </Text>
-  <Button size="xs">XS button</Button>
-  <Button size="sm">SM button</Button>
-  <Button size="md">MD button</Button>
-  <Button size="lg">LG button</Button>
-  <Button size="xl">XL button</Button>
+  <Button size="xs" pattern="outline" mod="mb-4 mr-4">
+    XS button
+  </Button>
+  <Button size="sm" pattern="outline" mod="mb-4 mr-4">
+    SM button
+  </Button>
+  <Button size="md" pattern="outline" mod="mb-4 mr-4">
+    MD button
+  </Button>
+  <Button size="lg" pattern="outline" mod="mb-4 mr-4">
+    LG button
+  </Button>
+  <Button size="xl" pattern="outline" mod="mb-4 mr-4">
+    XL button
+  </Button>
+  <Button size="2xl" pattern="outline" mod="mb-6 mr-6">
+    2XL button
+  </Button>
+  <Button size="3xl" pattern="outline" mod="mb-8 mr-8">
+    3XL button
+  </Button>
+  <Button size="4xl" pattern="outline" mod="mb-10 mr-10">
+    4XL button
+  </Button>
+  <Button size="5xl" pattern="outline" mod="mb-12 mr-12">
+    5XL button
+  </Button>
 </Pattern>
 
 <Hero

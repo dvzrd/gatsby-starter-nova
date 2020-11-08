@@ -3,7 +3,7 @@
 }
 
 .button {
-  @apply outline-none;
+  @apply border-2 border-solid font-medium tracking-wide uppercase;
 }
 
 .icon {

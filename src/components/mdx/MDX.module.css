@@ -1,5 +1,13 @@
+/* container */
+
 .mdx {
-  @apply flex flex-col flex-wrap;
+  @apply content-start flex flex-col flex-wrap items-start justify-start;
+}
+
+/* components */
+
+.h6 {
+  @apply font-semibold;
 }
 
 .list {

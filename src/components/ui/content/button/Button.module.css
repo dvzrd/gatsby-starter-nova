@@ -1,17 +1,93 @@
 /* button colors */
+
 .inherit {
   background-color: inherit;
   border-color: inherit;
   color: inherit;
 }
 
-.transparent {
-  background-color: transparent;
-  border-color: transparent;
-}
-
 /* button patterns */
 
 .default {
-  @apply border-2 border-solid font-medium outline-none tracking-wide uppercase;
+  @apply outline-none font-medium tracking-wide uppercase;
+
+  &.primary {
+    @apply bg-background-primary border-primary text-color-primary;
+  
+    &:hover {
+      @apply bg-background-primary-hover border-background-primary-hover text-color-primary-hover;
+    }
+  }
+
+  &.secondary {
+    @apply bg-background-secondary border-secondary text-color-secondary;
+  
+    &:hover {
+      @apply bg-background-secondary-hover border-background-secondary-hover  text-color-secondary-hover;
+    }
+  }  
+}
+
+.outline {
+  @apply border-2 border-solid;
+  background-color: transparent !important;
+
+  &:hover {
+    @apply border-primary text-color-hover;
+  }
+
+  &.primary {
+    @apply border-primary text-background-primary;
+
+    &:hover {
+      @apply border-secondary text-background-secondary;
+    }
+  }
+
+  &.secondary {
+    @apply border-secondary text-background-secondary;
+
+    &:hover {
+      @apply  border-primary text-background-primary;
+    }
+  }
+}
+
+.text {
+  @apply leading-normal normal-case text-color text-left;
+  background-color: transparent !important;
+  padding: 0 !important;
+
+  &:hover {
+    @apply text-color-hover;
+  }
+
+  &.primary {
+    @apply text-background-primary;
+
+    &:hover {
+      @apply text-background-secondary;
+    }
+  }
+
+  &.secondary {
+    @apply text-background-secondary;
+
+    &:hover {
+      @apply text-background-primary;
+    }
+  }
+}
+
+/* button sizes */
+.xs {
+  font-size: 50%;
+}
+
+.sm {
+  font-size: 75%;
+}
+
+.md {
+  font-size: 100%;
 }

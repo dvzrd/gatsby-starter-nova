@@ -61,7 +61,8 @@ export const mdxComponents: MDXProviderComponents = {
   h6: (props: TextProps) => (
     <Text
       as="h6"
-      mod="font-semibold my-4 md:my-6 xl:my-8"
+      className={styles.h6}
+      mod="my-4 md:my-6 xl:my-8"
       pattern="body"
       {...props}
     />
