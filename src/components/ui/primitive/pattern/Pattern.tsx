@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Box, BoxProps } from "components";
+import { Flex, FlexProps } from "components";
 
 import styles from "./Pattern.module.css";
 
@@ -24,7 +24,7 @@ export type PatternType =
 export type PatternMod = "compact" | "fluid" | "full" | "row" | string;
 
 export interface PatternProps<Pattern extends HTMLElement = HTMLDivElement>
-  extends BoxProps<Pattern> {
+  extends FlexProps<Pattern> {
   is?: PatternType; // a type of design pattern.
   of?: PatternMod; // all types of modifier design patterns.
   on?: string; // a type of parent class name.
@@ -48,9 +48,9 @@ export const Pattern: FC<PatternProps> = ({
   mod,
   ...rest
 }) => (
-  <Box
+  <Flex
     as={as}
-    {...(rest as BoxProps)}
+    {...(rest as FlexProps)}
     className={classNames(
       is === "container" ? is : styles[is],
       [of?.split(" ").map((mod) => styles[mod])],
@@ -63,5 +63,5 @@ export const Pattern: FC<PatternProps> = ({
     data-pattern-on={on}
   >
     {children}
-  </Box>
+  </Flex>
 );
