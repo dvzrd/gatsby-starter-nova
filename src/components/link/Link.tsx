@@ -1,9 +1,9 @@
 import React, { forwardRef } from "react";
-import { Link as GatsbyLink, GatsbyLinkProps } from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 import classNames from "classnames";
 
-import { Pattern, PatternProps } from "components";
+import { Text, TextProps, TextPattern } from "components";
 
 import styles from "./Link.module.css";
 
@@ -12,10 +12,11 @@ export type LinkPattern = "button" | "icon" | "text" | "wrapper";
 export type LinkTarget = "_blank" | "_parent" | "_self" | "_top";
 
 export interface LinkProps<Link extends HTMLElement = HTMLAnchorElement>
-  extends PatternProps<Link> {
+  extends Omit<TextProps<Link>, "pattern" | "to"> {
   href?: string;
   pattern?: LinkPattern | string;
   target?: LinkTarget | string;
+  text?: TextPattern;
   to: string;
 }
 
@@ -41,46 +42,46 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
     if (internal) {
       if (file) {
         return (
-          <Pattern
+          <Text
             as={as}
             is={is}
             href={link}
             target={target}
-            {...(rest as PatternProps)}
+            {...(rest as TextProps)}
             className={classNames(styles.link, styles[pattern], className)}
             innerRef={ref as any}
           >
             {children}
-          </Pattern>
+          </Text>
         );
       }
 
       return (
-        <Pattern
+        <Text
           as={GatsbyLink}
           is={is}
           to={link}
-          {...(rest as PatternProps)}
+          {...(rest as TextProps)}
           className={classNames(styles.link, styles[pattern], className)}
           innerRef={ref as any}
         >
           {children}
-        </Pattern>
+        </Text>
       );
     }
 
     return (
-      <Pattern
+      <Text
         as={as}
         is={is}
         href={link}
         target={target || "_blank"}
-        {...(rest as PatternProps)}
+        {...(rest as TextProps)}
         className={classNames(styles.link, styles[pattern], className)}
         innerRef={ref as any}
       >
         {children}
-      </Pattern>
+      </Text>
     );
   }
 );
