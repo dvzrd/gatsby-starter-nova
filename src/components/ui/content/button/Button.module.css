@@ -1,7 +1,7 @@
 /* button patterns */
 
 .default {
-  @apply outline-none font-medium tracking-wide uppercase;
+  @apply border-solid outline-none font-medium tracking-wide uppercase;
 
   &.primary {
     @apply bg-background-primary border-primary text-color-primary;
@@ -17,11 +17,10 @@
     &:hover {
       @apply bg-background-secondary-hover border-background-secondary-hover  text-color-secondary-hover;
     }
-  }  
+  }
 }
 
 .outline {
-  @apply border-2 border-solid;
   background-color: transparent !important;
 
   &:hover {
@@ -48,6 +47,7 @@
 .text {
   @apply leading-normal normal-case text-color text-left;
   background-color: transparent !important;
+  border: 0 !important;
   padding: 0 !important;
 
   &:hover {

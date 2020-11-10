@@ -147,6 +147,12 @@ module.exports = {
       },
     },
     extend: {
+      borderWidth: {
+        "3": "3px",
+        "5": "5px",
+        "6": "6px",
+        "7": "7px",
+      },
       fontSize: {
         "7xl": "5rem",
       },
