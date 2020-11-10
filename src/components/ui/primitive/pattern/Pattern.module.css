@@ -1,10 +1,10 @@
 /* pattern is */
 .box {
-  @apply flex flex-col flex-no-wrap relative;
+  @apply block;
 }
 
 .divider {
-  @apply border-t-2 border-gray-500 my-2;
+  @apply border-t-2 my-2;
 }
 
 .footer {
@@ -28,7 +28,7 @@
 }
 
 .text {
-  @apply relative;
+  @apply border-none outline-none;
 }
 
 .wrapper {

@@ -1,0 +1,68 @@
+export type BoxColor = string;
+
+export type BoxDimension = number | string;
+
+export type BoxDisplay =
+  | "block"
+  | "inline-block"
+  | "inline"
+  | "flex"
+  | "inline-flex"
+  | string;
+
+export type BoxInset =
+  | "0"
+  | "1/4"
+  | "1/3"
+  | "1/2"
+  | "2/3"
+  | "3/4"
+  | "auto"
+  | "full"
+  | "x-0"
+  | "x-1/4"
+  | "x-1/3"
+  | "x-1/2"
+  | "x-2/3"
+  | "x-3/4"
+  | "x-auto"
+  | "y-0"
+  | "y-1/4"
+  | "y-1/3"
+  | "y-1/2"
+  | "y-2/3"
+  | "y-3/4"
+  | "y-auto";
+
+export type BoxPosition =
+  | "absolute"
+  | "fixed"
+  | "relative"
+  | "static"
+  | "sticky";
+
+export type BoxSizing = "border" | "content";
+
+export type FlexDirection = "col" | "col-reverse" | "row" | "row-reverse";
+
+export type FlexFlow =
+  | "col-no-wrap"
+  | "col-reverse-no-wrap"
+  | "col-wrap"
+  | "col-reverse-wrap"
+  | "col-wrap-reverse"
+  | "col-reverse-wrap-reverse"
+  | "row-no-wrap"
+  | "row-reverse-no-wrap"
+  | "row-wrap"
+  | "row-reverse-wrap"
+  | "row-wrap-reverse"
+  | "row-reverse-wrap-reverse";
+
+export type FlexGrow = "default" | "0";
+
+export type FlexShrink = "default" | "0";
+
+export type FlexType = "1" | "auto" | "initial" | "none";
+
+export type FlexWrap = "no-wrap" | "wrap" | "wrap-reverse";

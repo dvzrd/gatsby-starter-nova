@@ -28,7 +28,7 @@ export type PatternType =
 export type PatternMod = "col" | "compact" | "fluid" | "full" | "row" | string;
 
 export interface PatternProps<Pattern extends HTMLElement = HTMLDivElement>
-  extends BoxProps<Pattern> {
+  extends Omit<BoxProps<Pattern>, "wrap"> {
   is?: PatternType; // a type of design pattern.
   of?: PatternMod; // all types of modifier design patterns.
   on?: string; // a type of parent class name.
@@ -44,21 +44,24 @@ export const Pattern: FC<PatternProps> = ({
   on,
   mod,
   ...rest
-}) => (
-  <Box
-    as={as}
-    {...(rest as BoxProps)}
-    className={classNames(
-      is === "container" ? is : styles[is],
-      [of?.split(" ").map((mod) => styles[mod])],
-      on,
-      mod,
-      className
-    )}
-    data-pattern-is={is}
-    data-pattern-of={of}
-    data-pattern-on={on}
-  >
-    {children}
-  </Box>
-);
+}) => {
+  const getPattern = () => {
+    if (is === "container" || is === "flex") return is;
+    return styles[is];
+  };
+
+  const getModifiers = () => [of?.split(" ").map((mod) => styles[mod])];
+
+  return (
+    <Box
+      as={as}
+      {...(rest as BoxProps)}
+      className={classNames(getPattern(), getModifiers(), on, mod, className)}
+      data-pattern-is={is}
+      data-pattern-of={of}
+      data-pattern-on={on}
+    >
+      {children}
+    </Box>
+  );
+};

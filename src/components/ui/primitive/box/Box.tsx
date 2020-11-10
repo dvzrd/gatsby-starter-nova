@@ -3,50 +3,20 @@ import classNames from "classnames";
 
 import { Element, ElementProps } from "components";
 
-export type BoxColor = string;
-
-export type BoxDimension = number | string;
-
-export type BoxDisplay =
-  | "block"
-  | "inline-block"
-  | "inline"
-  | "flex"
-  | "inline-flex"
-  | string;
-
-export type BoxInset =
-  | "0"
-  | "1/4"
-  | "1/3"
-  | "1/2"
-  | "2/3"
-  | "3/4"
-  | "auto"
-  | "full"
-  | "x-0"
-  | "x-1/4"
-  | "x-1/3"
-  | "x-1/2"
-  | "x-2/3"
-  | "x-3/4"
-  | "x-auto"
-  | "y-0"
-  | "y-1/4"
-  | "y-1/3"
-  | "y-1/2"
-  | "y-2/3"
-  | "y-3/4"
-  | "y-auto";
-
-export type BoxPosition =
-  | "absolute"
-  | "fixed"
-  | "relative"
-  | "static"
-  | "sticky";
-
-export type BoxSizing = "border" | "content";
+import {
+  BoxColor,
+  BoxDisplay,
+  BoxDimension,
+  BoxInset,
+  BoxPosition,
+  BoxSizing,
+  FlexDirection,
+  FlexFlow,
+  FlexGrow,
+  FlexShrink,
+  FlexType,
+  FlexWrap,
+} from "./types";
 
 export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
   extends Omit<
@@ -56,7 +26,11 @@ export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
   bgColor?: BoxColor;
   backgroundColor?: BoxColor;
   color?: BoxColor;
+  direction?: FlexDirection;
   display?: BoxDisplay;
+  flex?: FlexType;
+  flow?: FlexFlow;
+  grow?: FlexGrow;
   h?: BoxDimension;
   height?: BoxDimension;
   inset?: BoxInset;
@@ -64,10 +38,13 @@ export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
   maxWidth?: BoxDimension;
   minH?: BoxDimension;
   minHeight?: BoxDimension;
+  order?: number | string;
   position?: BoxPosition;
+  shrink?: FlexShrink;
   sizing?: BoxSizing;
   w?: BoxDimension;
   width?: BoxDimension;
+  wrap?: FlexWrap;
 }
 
 export const Box: FC<BoxProps> = ({
@@ -77,7 +54,11 @@ export const Box: FC<BoxProps> = ({
   children,
   className,
   color,
+  direction,
   display,
+  flex,
+  flow,
+  grow,
   h,
   height,
   inset,
@@ -85,10 +66,13 @@ export const Box: FC<BoxProps> = ({
   maxWidth,
   minH,
   minHeight,
-  position,
+  order,
+  position = "relative",
+  shrink,
   sizing,
   w,
   width,
+  wrap,
   ...rest
 }) => (
   <Element
@@ -106,6 +90,30 @@ export const Box: FC<BoxProps> = ({
       position,
       sizing && `box-${sizing}`,
       (w || width) && `w-${w || width}`,
+      // Flex box styles
+      direction && `flex-${direction}`,
+      wrap && `flex-${wrap}`,
+      grow && (grow === "default" ? "flex-grow" : `flex-grow-${grow}`),
+      shrink &&
+        (shrink === "default" ? "flex-shrink" : `flex-shrink-${shrink}`),
+      order && `order-${order}`,
+      flex && `flex flex-${flex}`,
+      {
+        "flex-col flex-no-wrap": flow === "col-no-wrap",
+        "flex-col-reverse flex-no-wrap": flow === "col-reverse-no-wrap",
+        "flex-col flex-wrap": flow === "col-wrap",
+        "flex-col-reverse flex-wrap": flow === "col-reverse-wrap",
+        "flex-col flex-wrap-reverse": flow === "col-wrap-reverse",
+        "flex-col-reverse flex-wrap-reverse":
+          flow === "col-reverse-wrap-reverse",
+        "flex-row flex-no-wrap": flow === "row-no-wrap",
+        "flex-row-reverse flex-no-wrap": flow === "row-reverse-no-wrap",
+        "flex-row flex-wrap": flow === "row-wrap",
+        "flex-row-reverse flex-wrap": flow === "row-reverse-wrap",
+        "flex-row flex-wrap-reverse": flow === "row-wrap-reverse",
+        "flex-row-reverse flex-wrap-reverse":
+          flow === "row-reverse-wrap-reverse",
+      },
       className
     )}
   >
