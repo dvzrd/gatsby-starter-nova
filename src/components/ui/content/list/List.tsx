@@ -1,10 +1,11 @@
 import React, { FC } from "react";
+import { random } from "lodash";
 import classNames from "classnames";
 
 import { Text, TextProps, TextPattern } from "components";
 
 import styles from "./List.module.css";
-import { ListItemProps } from "./item";
+import { ListItem, ListItemProps } from "./item";
 
 export type ListPattern = "default" | "inline" | "table";
 
@@ -32,6 +33,12 @@ export const List: FC<ListProps> = ({
     {...(rest as TextProps)}
     className={classNames(styles.default, styles[pattern])}
   >
+    {items?.length &&
+      items.map(({ children, ...rest }) => (
+        <ListItem key={random(16)} {...(rest as ListItemProps)}>
+          {children}
+        </ListItem>
+      ))}
     {children}
   </Text>
 );

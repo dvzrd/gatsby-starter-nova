@@ -37,12 +37,20 @@
 
 /* pattern of */
 
+.col {
+  @apply flex flex-col flex-no-wrap;
+}
+
 .compact {
   @apply my-0 p-0;
 }
 
 .fluid {
-  @apply inset-x-1/2 -mx-vw-1/2 relative w-screen;
+  @apply -mx-4;
+
+  @media only screen and (min-width: 480px) {
+    @apply inset-x-1/2 -mx-vw-1/2 relative w-screen;
+  }
 }
 
 .full {

@@ -10,6 +10,10 @@ export type PatternType =
   | "button"
   | "container"
   | "divider"
+  | "flex"
+  | "footer"
+  | "grid"
+  | "header"
   | "icon"
   | "item"
   | "link"
@@ -21,7 +25,7 @@ export type PatternType =
   | "wrapper"
   | string;
 
-export type PatternMod = "compact" | "fluid" | "full" | "row" | string;
+export type PatternMod = "col" | "compact" | "fluid" | "full" | "row" | string;
 
 export interface PatternProps<Pattern extends HTMLElement = HTMLDivElement>
   extends BoxProps<Pattern> {

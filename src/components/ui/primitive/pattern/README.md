@@ -9,15 +9,24 @@ The importance heirarchy determines which styles will take priority - this will 
 ```md
 - is - a type of pattern used to identify the primary purpose of a component using well known design patterns or well documented namespace.
   - box
+  - button
   - container
   - divider
+  - flex
+  - footer
+  - grid
+  - header
   - icon
+  - item
   - link
+  - list
   - main
   - nav
   - section
+  - text
   - wrapper
 - of - a type of utility pattern used to add utility styles to any component extension of the pattern component.
+  - col
   - compact
   - fluid
   - full
