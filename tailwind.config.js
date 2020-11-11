@@ -45,7 +45,7 @@ module.exports = {
       ...theme("colors"),
       default: "var(--color-gray-500)",
       hover: "var(--color-background-hover)",
-      paper: "var(--color-background-paper)",
+      paper: "var(--color-text-paper)",
       primary: "var(--color-primary-500)",
       secondary: "var(--color-secondary-500)",
     }),
@@ -142,9 +142,9 @@ module.exports = {
       padding: {
         default: "1rem",
         sm: "1.5rem",
-        md: "3rem",
-        lg: "6rem",
-        xl: "12rem",
+        md: "2rem",
+        lg: "4rem",
+        xl: "8rem",
       },
     },
     extend: {

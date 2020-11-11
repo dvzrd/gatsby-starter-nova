@@ -3,6 +3,10 @@
   @apply block;
 }
 
+.card {
+  @apply overflow-hidden relative;
+}
+
 .divider {
   @apply border-t-2 border-hover my-2 w-full;
 }

@@ -43,7 +43,7 @@
 .theme-dark {
   /* dark theme background colors */
   --color-background: var(--color-gray-900);
-  --color-background-hover: var(--color-gray-600);
+  --color-background-hover: var(--color-gray-500);
   --color-background-paper: var(--color-gray-100);
   --color-background-primary: var(--color-primary-500);
   --color-background-primary-hover: var(--color-secondary-500);
@@ -95,7 +95,7 @@
   /* light theme text colors */
   --color-text: var(--color-gray-900);
   --color-text-hover: var(--color-primary-500);
-  --colot-text-paper: var(--color-gray-700);
+  --color-text-paper: var(--color-gray-700);
   --color-text-primary: var(--color-gray-50);
   --color-text-primary-hover: var(--color-gray-900);
   --color-text-primary-dark: var(--color-white);

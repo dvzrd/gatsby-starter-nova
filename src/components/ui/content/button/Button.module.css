@@ -21,6 +21,7 @@
 }
 
 .outline {
+  @apply border-paper text-color;
   background-color: transparent !important;
 
   &:hover {

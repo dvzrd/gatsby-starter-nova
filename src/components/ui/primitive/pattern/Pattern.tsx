@@ -8,6 +8,7 @@ import styles from "./Pattern.module.css";
 export type PatternType =
   | "box"
   | "button"
+  | "card"
   | "container"
   | "divider"
   | "flex"
