@@ -10,12 +10,18 @@ import {
   ButtonProps,
   Element,
   ElementProps,
+  Grid,
+  GridProps,
   Hero,
   HeroProps,
   Icon,
   IconProps,
   Link,
   LinkProps,
+  List,
+  ListProps,
+  ListItem,
+  ListItemProps,
   Pattern,
   PatternProps,
   Section,
@@ -67,20 +73,18 @@ export const mdxComponents: MDXProviderComponents = {
       {...props}
     />
   ),
+  li: (props: ListItemProps) => <ListItem {...props} />,
+  ol: (props: ListProps) => (
+    <List as="ol" mod="mb-4 md:mb-6 xl:mb-8 pl-5" {...props} />
+  ),
   p: (props: TextProps) => (
     <Text as="p" mod="mb-4 md:mb-6 xl:mb-8" {...props} />
   ),
-  ul: (props: TextProps) => (
-    <Text
-      as="ul"
-      className={styles.list}
-      mod="mb-4 md:mb-6 xl:mb-8 pl-5"
-      {...props}
-    />
-  ),
+  ul: (props: ListProps) => <List mod="mb-4 md:mb-6 xl:mb-8 pl-5" {...props} />,
   Box: (props: BoxProps) => <Box {...props} />,
   Button: (props: ButtonProps) => <Button {...props} />,
   Element: (props: ElementProps) => <Element {...props} />,
+  Grid: (props: GridProps) => <Grid {...props} />,
   Hero: (props: HeroProps) => <Hero {...props} />,
   Icon: (props: IconProps) => <Icon {...props} />,
   Link: (props: LinkProps) => <Link {...props} />,

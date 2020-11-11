@@ -1,0 +1,7 @@
+.default {
+  @apply grid;
+}
+
+.masonry {
+  @apply block;
+}

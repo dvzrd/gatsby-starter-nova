@@ -44,7 +44,8 @@ module.exports = {
     borderColor: (theme) => ({
       ...theme("colors"),
       default: "var(--color-gray-500)",
-      hover: "var(--color-gray-900)",
+      hover: "var(--color-background-hover)",
+      paper: "var(--color-text-paper)",
       primary: "var(--color-primary-500)",
       secondary: "var(--color-secondary-500)",
     }),
@@ -141,12 +142,18 @@ module.exports = {
       padding: {
         default: "1rem",
         sm: "1.5rem",
-        md: "3rem",
-        lg: "6rem",
-        xl: "12rem",
+        md: "2rem",
+        lg: "4rem",
+        xl: "8rem",
       },
     },
     extend: {
+      borderWidth: {
+        "3": "3px",
+        "5": "5px",
+        "6": "6px",
+        "7": "7px",
+      },
       fontSize: {
         "7xl": "5rem",
       },

@@ -1,0 +1,5 @@
+/* list patterns */
+
+.default {
+  @apply list-square;
+}

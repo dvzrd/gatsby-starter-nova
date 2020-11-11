@@ -1,6 +1,6 @@
 # Box Component
 
-Box component has props for configuring css box model style rules.
+Box component has props for configuring css box model and flex box style rules.
 
 ## Box API
 
@@ -45,5 +45,8 @@ Box component has props for configuring css box model style rules.
 ## Roadmap
 
 - Add additional `BoxDimension` and `BoxColor` prop types to `BoxProps`.
+- Add missing alignment flex prop types descriptions and links to API docs.
 - Add `BoxSpacing` prop types to `BoxProps`. [Reference TailwindCSS docs on `spacing`](https://tailwindcss.com/docs/padding) for details.
+  - Props for spacing: `m, mx, my, p, px, py` - Make these pattern based props, meaning the utils will have different responsive space definitions based on sizes: `xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl`.
+  - I don't plan on going more lower level than this because you can just use the `mod` or `className` prop to define more customized margins and paddings.
 - Add `BoxBorder` prop types to `BoxProps`. [Reference TailwindCSS docs on `borders`](https://tailwindcss.com/docs/border-radius) for details.

@@ -9,11 +9,3 @@
 .h6 {
   @apply font-semibold;
 }
-
-.list {
-  @apply list-square;
-
-  & li > ul {
-    @apply mb-1;
-  }
-}

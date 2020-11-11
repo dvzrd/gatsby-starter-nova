@@ -40,7 +40,7 @@ export const Section: FC<SectionProps> = ({
     of={of}
     on={on}
     {...(rest as PatternProps)}
-    className={classNames(styles.section, styles[pattern], className)}
+    className={classNames(styles.default, styles[pattern], className)}
   >
     <Pattern
       as="figure"

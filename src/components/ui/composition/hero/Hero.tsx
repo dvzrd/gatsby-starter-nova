@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Section, SectionProps } from "components";
+import { Section, SectionPattern, SectionProps } from "components";
 
 import {
   HeroActions,
@@ -11,18 +11,20 @@ import {
 } from "./components";
 import styles from "./Hero.module.css";
 
-export type HeroVariant =
+export type HeroPattern =
   | "card"
   | "cta"
   | "footer"
   | "form"
   | "legendary"
-  | "page";
+  | "page"
+  | "section";
 
-export interface HeroProps extends SectionProps {
+export interface HeroProps extends Omit<SectionProps, "pattern"> {
   actions?: HeroActionsProps;
   caption?: HeroCaptionProps;
-  variant?: HeroVariant;
+  pattern?: HeroPattern;
+  section?: SectionPattern;
 }
 
 export const Hero: FC<HeroProps> = ({
@@ -31,18 +33,17 @@ export const Hero: FC<HeroProps> = ({
   caption,
   children,
   className,
-  is = "section",
-  on = "page-default",
-  pattern = "hero",
-  variant = "page",
+  is = "hero",
+  pattern = "section",
+  section = "hero",
   ...rest
 }) => (
   <Section
     as={as}
     is={is}
-    on={on}
+    pattern={section}
     {...(rest as SectionProps)}
-    className={classNames(styles.hero, styles[variant], className)}
+    className={classNames(styles[pattern], className)}
   >
     {caption && <HeroCaption {...caption} />}
     {children}

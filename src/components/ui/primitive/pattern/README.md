@@ -9,15 +9,25 @@ The importance heirarchy determines which styles will take priority - this will 
 ```md
 - is - a type of pattern used to identify the primary purpose of a component using well known design patterns or well documented namespace.
   - box
+  - button
+  - card
   - container
   - divider
+  - flex
+  - footer
+  - grid
+  - header
   - icon
+  - item
   - link
+  - list
   - main
   - nav
   - section
+  - text
   - wrapper
 - of - a type of utility pattern used to add utility styles to any component extension of the pattern component.
+  - col
   - compact
   - fluid
   - full
@@ -34,7 +44,7 @@ Thinking about patterns, it helps to name them in this order because it's easier
   is="section"
   of="compact full row"
   on="home-page"
-  mod="background-primary-500 text-color-white"
+  mod="bg-background-primary text-color-primary"
   className="home-hero"
 >
   <h1 className="home-hero__heading">Home Page Hero Pattern</h1>
@@ -43,6 +53,23 @@ Thinking about patterns, it helps to name them in this order because it's easier
 ```
 
 Which could be reads as - this pattern is a header section of a compact full row, on the home page, modified with a primary background of 500 and a text color of white, called by the name of home hero.
+
+Since `Pattern` is an extension of `Box`, you can also pass all the props available to box if you want to. For example, instead of using the `mod` prop, you can use the lower level props of `Box` to set the background and text color like this:
+
+```tsx
+<Pattern
+  as="header"
+  is="section"
+  of="compact full row"
+  on="home-page"
+  bgColor="primary"
+  color="primary"
+  className="home-hero"
+>
+  <h1 className="home-hero__heading">Home Page Hero Pattern</h1>
+  <h2 className="home-hero__subheading">This is a subheading.</h2>
+</Pattern>
+```
 
 ## Roadmap
 

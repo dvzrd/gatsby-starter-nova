@@ -11,7 +11,7 @@ import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 <Pattern as="h2" mod="py-8 md:py-10 xl:py-12 w-full">
   This page is built with MDX
-  <Pattern as="hr" is="divider" className="mb-4" />
+  <Pattern as="hr" is="divider" mod="mb-4 border-primary" />
   <Text pattern="meta" className="block">
     Dated 10/04/2020
   </Text>
@@ -25,10 +25,10 @@ You can still write your pages in plain markdown, mixed in with regular HTML wit
 
 But using imports means you'll have to style them yourself and you want to avoid that. So you should just use the <Link to="/">link component</Link> to create both inbound and outbound links. Using [Markdown Syntax](/jsx) to create links works just as well for both internal and [external links](https://www.gatsbyjs.com/) since it's already pre-configured to use the link component.
 
-<Pattern as="hr" is="divider" mod="mt-4 py-4 md:nt-6 md:py-6 xl:mt-8 xl:py-8" />
+<Pattern as="hr" is="divider" mod="my-4 md:my-6 xl:my-8" />
 
-<Text as="h5" pattern="title" mod="mb-6">
-  This is an h5 title text pattern with a bottom margin
+<Text as="h5" pattern="title" mod="mb-6 mt-4">
+  This is an h5 title text pattern with a margin modifier
 </Text>
 
 You can also write your own code in markdown, although that's not recommended you can technically do it. Go search for that though, I remember seeing an example a while back but I can't find it right now.
@@ -54,13 +54,13 @@ You can use regular markdown syntax, but not in a grid - have to wrap that in a 
 
 ###### This is a regular h6 headline
 
-This is just a regular markdown paragraph.
+This is just a regular markdown paragraph. That's cool and all but shortcodes are even cooler, check some of them out:
 
 <Text as="h4" pattern="title" mod="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8">
   Look at all the different style buttons
 </Text>
 
-<Pattern is="flex" mod="flex flex-row flex-wrap items-center w-full">
+<Box flex="1" flow="row-wrap" className="items-center w-full">
   <Button mod="mb-4 mr-4">Default button</Button>
   <Pattern
     is="wrapper"
@@ -74,6 +74,7 @@ This is just a regular markdown paragraph.
   <Button color="secondary" mod="mb-4 mr-4">
     Secondary button
   </Button>
+  <Pattern as="hr" is="divider" mod="mt-4 md:mt-6 xl:mt-8" />
   <Text as="h5" pattern="subheading" mod="mb-4 mt-8 w-full">
     Outline buttons
   </Text>
@@ -94,6 +95,7 @@ This is just a regular markdown paragraph.
   <Button color="secondary" pattern="outline" mod="mb-4 mr-4">
     Secondary outline
   </Button>
+  <Pattern as="hr" is="divider" mod="mt-4 md:mt-6 xl:mt-8" />
   <Text as="h5" pattern="subheading" mod="mb-4 mt-8 w-full">
     Text buttons
   </Text>
@@ -111,6 +113,7 @@ This is just a regular markdown paragraph.
   <Button color="secondary" pattern="text" mod="mb-4 mr-4">
     Secondary text
   </Button>
+  <Pattern as="hr" is="divider" mod="mt-4 md:mt-6 xl:mt-8" />
   <Text as="h5" pattern="subheading" mod="mb-4 mt-8 w-full">
     Button sizes
   </Text>
@@ -141,7 +144,29 @@ This is just a regular markdown paragraph.
   <Button size="5xl" pattern="outline" mod="mb-12 mr-12">
     5XL button
   </Button>
-</Pattern>
+</Box>
+
+<Pattern as="hr" is="divider" mod="my-4 md:my-6 xl:my8" />
+
+<Text as="h4" pattern="title" mod="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8">
+  Look at this CSS grid component
+</Text>
+
+<Grid cols="md:grid-cols-4" gap="gap-4 md:gap-5 xl:gap-6" mod="w-full">
+  <Box className="p-2 md:p-3 xl:p-4">Box Column</Box>
+  <Grid mod="p-2 md:p-3 xl:p-4">Grid Column</Grid>
+  <Pattern is="grid" mod="md:col-span-2 p-2 md:p-3 xl:p-4" bgColor="secondary">
+    Two Column Span Grid Pattern Column
+  </Pattern>
+  <Grid
+    col="col-span-full"
+    mod="p-2 md:p-3 xl:p-4"
+    bgColor="paper"
+    color="paper"
+  >
+    Full Span Grid Column
+  </Grid>
+</Grid>
 
 <Hero
   as="section"
@@ -151,7 +176,7 @@ This is just a regular markdown paragraph.
   mod="mt-20"
   caption={{
     context: (
-      <Text as="h4" pattern="body">
+      <Text as="h4" pattern="body" mod="mt-2 md:mt-3 xl:mt-4">
         This is why this component is here, to save you from the pain of not
         having a hero when you need one.
       </Text>
