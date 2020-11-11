@@ -28,7 +28,7 @@ export type PatternType =
 export type PatternMod = "col" | "compact" | "fluid" | "full" | "row" | string;
 
 export interface PatternProps<Pattern extends HTMLElement = HTMLDivElement>
-  extends Omit<BoxProps<Pattern>, "wrap"> {
+  extends Omit<BoxProps<Pattern>, "cols" | "rows" | "wrap"> {
   is?: PatternType; // a type of design pattern.
   of?: PatternMod; // all types of modifier design patterns.
   on?: string; // a type of parent class name.

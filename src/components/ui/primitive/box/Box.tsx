@@ -19,12 +19,7 @@ import {
   FlexShrink,
   FlexType,
   FlexWrap,
-  JustifyContent,
-  JustifyItems,
-  JustifySelf,
   PlaceContent,
-  PlaceItems,
-  PlaceSelf,
 } from "./types";
 
 export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
@@ -46,17 +41,17 @@ export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
   h?: BoxDimension;
   height?: BoxDimension;
   inset?: BoxInset;
-  justifyContent?: JustifyContent;
-  justifyItems?: JustifyItems;
-  justifySelf?: JustifySelf;
+  justifyContent?: AlignContent;
+  justifyItems?: AlignSelf;
+  justifySelf?: AlignSelf;
   maxW?: BoxDimension;
   maxWidth?: BoxDimension;
   minH?: BoxDimension;
   minHeight?: BoxDimension;
   order?: number | string;
   placeContent?: PlaceContent;
-  placeItems?: PlaceItems;
-  placeSelf?: PlaceSelf;
+  placeItems?: AlignSelf;
+  placeSelf?: AlignSelf;
   position?: BoxPosition;
   shrink?: FlexShrink;
   sizing?: BoxSizing;
@@ -94,7 +89,7 @@ export const Box: FC<BoxProps> = ({
   placeContent,
   placeItems,
   placeSelf,
-  position = "relative",
+  position,
   shrink,
   sizing,
   w,

@@ -4,7 +4,7 @@
 }
 
 .divider {
-  @apply border-t-2 my-2;
+  @apply border-t-2 border-hover my-2 w-full;
 }
 
 .footer {

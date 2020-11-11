@@ -59,17 +59,7 @@ export type AlignItems = "baseline" | "center" | "end" | "start" | "stretch";
 
 export type AlignSelf = "auto" | "center" | "end" | "start" | "stretch";
 
-export type JustifyContent = AlignContent;
-
-export type JustifyItems = AlignSelf;
-
-export type JustifySelf = AlignSelf;
-
 export type PlaceContent = AlignContent | "stretch";
-
-export type PlaceItems = AlignSelf;
-
-export type PlaceSelf = AlignSelf;
 
 // Flex Box Types
 

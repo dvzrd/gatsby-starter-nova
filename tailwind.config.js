@@ -44,7 +44,8 @@ module.exports = {
     borderColor: (theme) => ({
       ...theme("colors"),
       default: "var(--color-gray-500)",
-      hover: "var(--color-gray-900)",
+      hover: "var(--color-background-hover)",
+      paper: "var(--color-background-paper)",
       primary: "var(--color-primary-500)",
       secondary: "var(--color-secondary-500)",
     }),
