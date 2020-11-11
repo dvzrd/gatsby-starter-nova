@@ -4,6 +4,9 @@ import classNames from "classnames";
 import { Element, ElementProps } from "components";
 
 import {
+  AlignContent,
+  AlignItems,
+  AlignSelf,
   BoxColor,
   BoxDisplay,
   BoxDimension,
@@ -16,6 +19,12 @@ import {
   FlexShrink,
   FlexType,
   FlexWrap,
+  JustifyContent,
+  JustifyItems,
+  JustifySelf,
+  PlaceContent,
+  PlaceItems,
+  PlaceSelf,
 } from "./types";
 
 export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
@@ -23,6 +32,9 @@ export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
     ElementProps<Element>,
     "align" | "background" | "color" | "height" | "size" | "width"
   > {
+  alignContent?: AlignContent;
+  alignItems?: AlignItems;
+  alignSelf?: AlignSelf;
   bgColor?: BoxColor;
   backgroundColor?: BoxColor;
   color?: BoxColor;
@@ -34,11 +46,17 @@ export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
   h?: BoxDimension;
   height?: BoxDimension;
   inset?: BoxInset;
+  justifyContent?: JustifyContent;
+  justifyItems?: JustifyItems;
+  justifySelf?: JustifySelf;
   maxW?: BoxDimension;
   maxWidth?: BoxDimension;
   minH?: BoxDimension;
   minHeight?: BoxDimension;
   order?: number | string;
+  placeContent?: PlaceContent;
+  placeItems?: PlaceItems;
+  placeSelf?: PlaceSelf;
   position?: BoxPosition;
   shrink?: FlexShrink;
   sizing?: BoxSizing;
@@ -48,6 +66,9 @@ export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
 }
 
 export const Box: FC<BoxProps> = ({
+  alignContent,
+  alignItems,
+  alignSelf,
   as = "div",
   bgColor,
   backgroundColor,
@@ -62,11 +83,17 @@ export const Box: FC<BoxProps> = ({
   h,
   height,
   inset,
+  justifyContent,
+  justifyItems,
+  justifySelf,
   maxW,
   maxWidth,
   minH,
   minHeight,
   order,
+  placeContent,
+  placeItems,
+  placeSelf,
   position = "relative",
   shrink,
   sizing,
@@ -90,7 +117,17 @@ export const Box: FC<BoxProps> = ({
       position,
       sizing && `box-${sizing}`,
       (w || width) && `w-${w || width}`,
-      // Flex box styles
+      // Alignment styles
+      alignContent && `content-${alignContent}`,
+      alignItems && `items-${alignItems}`,
+      alignSelf && `self-${alignSelf}`,
+      justifyContent && `justify-${justifyContent}`,
+      justifyItems && `justify-items-${justifyItems}`,
+      justifySelf && `justify-self-${justifySelf}`,
+      placeContent && `place-content-${placeContent}`,
+      placeItems && `place-items-${placeItems}`,
+      placeSelf && `place-self-${placeSelf}`,
+      // Flex styles
       direction && `flex-${direction}`,
       wrap && `flex-${wrap}`,
       grow && (grow === "default" ? "flex-grow" : `flex-grow-${grow}`),

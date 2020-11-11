@@ -1,3 +1,5 @@
+// Box Types
+
 export type BoxColor = string;
 
 export type BoxDimension = number | string;
@@ -42,6 +44,34 @@ export type BoxPosition =
   | "sticky";
 
 export type BoxSizing = "border" | "content";
+
+// Box Alignment Types
+
+export type AlignContent =
+  | "around"
+  | "between"
+  | "center"
+  | "end"
+  | "evenly"
+  | "start";
+
+export type AlignItems = "baseline" | "center" | "end" | "start" | "stretch";
+
+export type AlignSelf = "auto" | "center" | "end" | "start" | "stretch";
+
+export type JustifyContent = AlignContent;
+
+export type JustifyItems = AlignSelf;
+
+export type JustifySelf = AlignSelf;
+
+export type PlaceContent = AlignContent | "stretch";
+
+export type PlaceItems = AlignSelf;
+
+export type PlaceSelf = AlignSelf;
+
+// Flex Box Types
 
 export type FlexDirection = "col" | "col-reverse" | "row" | "row-reverse";
 
