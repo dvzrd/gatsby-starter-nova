@@ -4,10 +4,12 @@ import classNames from "classnames";
 import { Pattern, PatternProps, Section, SectionProps } from "components";
 
 export interface LayoutHeaderProps extends SectionProps {
+  isFixed?: boolean;
   isHidden?: boolean;
+  isMenuOpened?: boolean;
+  nav?: PatternProps;
   navLeft?: ReactNode;
   navLeftProps?: PatternProps;
-  navProps?: PatternProps;
   navRight?: ReactNode;
   navRightProps?: PatternProps;
 }
@@ -17,20 +19,28 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   children,
   container,
   is = "header",
+  isFixed = false,
   isHidden = false,
+  isMenuOpened = false,
+  nav,
   navLeft,
   navLeftProps,
-  navProps,
   navRight,
   navRightProps,
   pattern = "navbar",
+  position = "relative",
   ...rest
 }) => {
   if (isHidden) return null;
 
   const containerProps = {
-    mod: "flex justify-between",
+    mod: "flex flex-row flex-wrap content-between justify-between h-full",
     ...container,
+  };
+
+  const navProps = {
+    order: 0,
+    ...nav,
   };
 
   return (
@@ -38,6 +48,11 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
       as={as}
       container={containerProps}
       is={is}
+      mod={`${
+        isMenuOpened
+          ? `fixed top-0 left-0 w-full h-screen lg:${position} lg:top-auto lg:left-auto lg:w-auto lg:h-auto`
+          : position
+      }`}
       pattern={pattern}
       {...rest}
     >

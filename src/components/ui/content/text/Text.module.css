@@ -1,3 +1,5 @@
+/* Text Patterns */
+
 .body {
   @apply leading-normal text-base;
 
@@ -104,4 +106,10 @@
   @media only screen and (min-width: 1280px) {
     @apply text-4xl;
   }
+}
+
+/* Text Sizes */
+
+.inherit {
+  font-size: inherit !important;
 }

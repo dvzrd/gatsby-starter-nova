@@ -1,0 +1,11 @@
+.menu {
+  @apply order-1;
+
+  &.closed {
+    @apply invisible h-0;
+  }
+
+  &.opened {
+    @apply visible h-auto;
+  }
+}

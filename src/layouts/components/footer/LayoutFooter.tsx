@@ -1,8 +1,7 @@
 import React, { FC } from "react";
-import { OutboundLink } from "gatsby-plugin-google-gtag";
 import classNames from "classnames";
 
-import { Section, SectionProps, Text } from "components";
+import { Link, Section, SectionProps, Text } from "components";
 import { useSiteMetadata } from "graphql";
 import { SiteMetadataAuthor, SiteMetadataOrganization } from "types/graphql";
 
@@ -41,9 +40,9 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
 
   const renderLink = (link?: SiteMetadataAuthor | SiteMetadataOrganization) =>
     link ? (
-      <OutboundLink className="ml-1 underline" href={link?.url} target="_blank">
+      <Link size="inherit" to={link?.url}>
         {link?.name}
-      </OutboundLink>
+      </Link>
     ) : null;
 
   return (

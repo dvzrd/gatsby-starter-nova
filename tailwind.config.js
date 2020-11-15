@@ -154,6 +154,9 @@ module.exports = {
         "6": "6px",
         "7": "7px",
       },
+      flex: {
+        full: "1 100%",
+      },
       fontSize: {
         "7xl": "5rem",
       },

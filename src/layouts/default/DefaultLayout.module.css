@@ -1,3 +1,7 @@
 .layout {
   @apply bg-background min-h-screen;
 }
+
+.link {
+  @apply flex items-center justify-between;
+}

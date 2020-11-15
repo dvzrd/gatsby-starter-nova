@@ -18,7 +18,7 @@ const PageJSX = () => {
       logoName: theme === "theme-dark" ? "white" : "black",
     },
     themeSwitch: {
-      className: "text-primary-500",
+      mod: "text-primary-500",
     },
   };
 

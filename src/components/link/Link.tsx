@@ -12,7 +12,7 @@ export type LinkPattern = "button" | "icon" | "text" | "wrapper";
 export type LinkTarget = "_blank" | "_parent" | "_self" | "_top";
 
 export interface LinkProps<Link extends HTMLElement = HTMLAnchorElement>
-  extends Omit<TextProps<Link>, "pattern" | "to"> {
+  extends Omit<TextProps<Link>, "pattern" | "text" | "to"> {
   href?: string;
   pattern?: LinkPattern | string;
   target?: LinkTarget | string;
@@ -30,6 +30,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
       is = "link",
       pattern = "text",
       target,
+      text,
       to,
       ...rest
     },
@@ -46,6 +47,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
             as={as}
             is={is}
             href={link}
+            pattern={text}
             target={target}
             {...(rest as TextProps)}
             className={classNames(styles.link, styles[pattern], className)}
@@ -61,6 +63,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
           as={GatsbyLink}
           is={is}
           to={link}
+          pattern={text}
           {...(rest as TextProps)}
           className={classNames(styles.link, styles[pattern], className)}
           innerRef={ref as any}
@@ -75,6 +78,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
         as={as}
         is={is}
         href={link}
+        pattern={text}
         target={target || "_blank"}
         {...(rest as TextProps)}
         className={classNames(styles.link, styles[pattern], className)}

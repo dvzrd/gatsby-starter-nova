@@ -1,19 +1,79 @@
 import React, { FC } from "react";
+import classNames from "classnames";
 
 import { Pattern, PatternProps } from "components";
 
-export type IconName = "moon" | "rip" | "sun";
+import { IconColor, IconName, IconSize } from "./types";
 
 export interface IconProps extends PatternProps {
-  name?: IconName | string;
+  color?: IconColor;
+  name?: IconName;
+  size?: IconSize;
 }
 
-export const Icon: FC<IconProps> = ({ children, name, ...rest }) => {
+export const Icon: FC<IconProps> = ({
+  children,
+  className,
+  color,
+  name,
+  size = "md",
+  ...rest
+}) => {
+  const getSize = () => {
+    switch (size) {
+      case "xs":
+        return "w-2 h-2";
+      case "sm":
+        return "w-4 h-4";
+      case "lg":
+        return "w-8 h-8";
+      case "xl":
+        return "w-10 h-10";
+      case "md":
+      default:
+        return "w-6 h-6";
+    }
+  };
+
   switch (name) {
+    case "chevron-right":
+      return (
+        <svg
+          className={classNames(color, getSize(), className)}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      );
+    case "menu":
+      return (
+        <svg
+          className={classNames(color, getSize(), className)}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      );
     case "moon":
       return (
         <svg
-          className="fill-current w-6 h-6"
+          className={classNames(color, getSize(), className)}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -31,6 +91,7 @@ export const Icon: FC<IconProps> = ({ children, name, ...rest }) => {
       // https://www.flaticon.com/free-icon/grave_2851736?term=rip&page=1&position=30
       return (
         <svg
+          className={classNames(color, getSize(), className)}
           xmlns="http://www.w3.org/2000/svg"
           width="512"
           height="512"
@@ -54,7 +115,7 @@ export const Icon: FC<IconProps> = ({ children, name, ...rest }) => {
     case "sun":
       return (
         <svg
-          className="fill-current w-6 h-6"
+          className={classNames(color, getSize(), className)}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -68,9 +129,31 @@ export const Icon: FC<IconProps> = ({ children, name, ...rest }) => {
           />
         </svg>
       );
+    case "x":
+      return (
+        <svg
+          className={classNames(color, getSize(), className)}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      );
     default:
       return (
-        <Pattern as="i" is="icon" {...rest}>
+        <Pattern
+          as="i"
+          is="icon"
+          {...rest}
+          className={classNames(color, getSize(), className)}
+        >
           {children}
         </Pattern>
       );

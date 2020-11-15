@@ -1,9 +1,15 @@
-import React, { FC } from "react";
-import { Link } from "gatsby";
+import React, { FC, useState } from "react";
 import { GatsbySeo, GatsbySeoProps } from "gatsby-plugin-next-seo";
 import classNames from "classnames";
 
-import { Pattern, PatternProps } from "components";
+import {
+  Button,
+  ButtonProps,
+  Icon,
+  Link,
+  Pattern,
+  PatternProps,
+} from "components";
 import { Brand, LogoName } from "containers";
 import { ThemeSwitch, useTheme } from "contexts";
 
@@ -13,6 +19,8 @@ import {
   LayoutFooterProps,
   LayoutHeader,
   LayoutHeaderProps,
+  LayoutMenu,
+  LayoutMenuProps,
 } from "../components";
 
 export type LayoutPattern = "default" | "form";
@@ -28,9 +36,10 @@ export interface DefaultLayoutProps extends PatternProps {
   header?: LayoutHeaderProps;
   logo?: LayoutLogoProps;
   main?: PatternProps;
+  menu?: LayoutMenuProps;
   pattern?: LayoutPattern;
   seo?: GatsbySeoProps;
-  themeSwitch?: PatternProps;
+  themeSwitch?: ButtonProps;
 }
 
 export const DefaultLayout: FC<DefaultLayoutProps> = ({
@@ -41,16 +50,26 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   is = "wrapper",
   logo,
   main,
+  menu,
   pattern = "default",
   seo,
   themeSwitch,
   ...rest
 }) => {
   const { theme } = useTheme();
+  const [menuOpened, setMenuOpened] = useState(false);
+  // const [headerFixed, setHeaderFixed] = useState(false);
 
-  const themeSwitchProps: PatternProps = {
-    className: "text-primary-500",
+  const toggleMenu = () => setMenuOpened(!menuOpened);
+
+  const themeSwitchProps: ButtonProps = {
+    mod: "text-primary-500",
     ...themeSwitch,
+  };
+
+  const menuProps: LayoutMenuProps = {
+    mod: "lg:hidden",
+    ...menu,
   };
 
   return (
@@ -61,27 +80,88 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
     >
       <GatsbySeo {...seo} />
       <LayoutHeader
+        isMenuOpened={menuOpened}
+        // isFixed={headerFixed}
         navLeft={
           <>
             <Brand className="mr-6" {...logo} />
-            <Link className="mr-6 text-up-sm" to="/about">
+            <Link
+              mod="mr-6 hidden lg:inline-flex"
+              pattern="button"
+              text="meta"
+              to="/about"
+            >
               About
             </Link>
           </>
         }
         navRight={
           <>
-            <Link className="mr-6 text-up-sm" to="/jsx">
+            <Link
+              mod="mr-6 hidden lg:inline-flex"
+              pattern="button"
+              text="meta"
+              to="/jsx"
+            >
               JSX
             </Link>
-            <Link className="mr-6 text-up-sm" to="/mdx">
+            <Link
+              mod="mr-6 hidden lg:inline-flex"
+              pattern="button"
+              text="meta"
+              to="/mdx"
+            >
               MDX
             </Link>
             <ThemeSwitch {...themeSwitchProps} />
+            <Button
+              color="transparent"
+              mod="ml-6 lg:hidden"
+              pattern="icon"
+              onClick={toggleMenu}
+            >
+              {menuOpened ? <Icon name="x" /> : <Icon name="menu" />}
+            </Button>
           </>
         }
         {...header}
-      />
+      >
+        <LayoutMenu {...menuProps} isOpened={menuOpened}>
+          <Link
+            className={styles.link}
+            mod="p-2 sm:p-3 md:p-4"
+            pattern="button"
+            size="inherit"
+            to="/about"
+            onClick={toggleMenu}
+          >
+            About
+            <Icon name="chevron-right" />
+          </Link>
+          <Link
+            className={styles.link}
+            mod="p-2 sm:p-3 md:p-4"
+            pattern="button"
+            size="inherit"
+            to="/jsx"
+            onClick={toggleMenu}
+          >
+            JSX
+            <Icon name="chevron-right" />
+          </Link>
+          <Link
+            className={styles.link}
+            mod="p-2 sm:p-3 md:p-4"
+            pattern="button"
+            size="inherit"
+            to="/mdx"
+            onClick={toggleMenu}
+          >
+            MDX
+            <Icon name="chevron-right" />
+          </Link>
+        </LayoutMenu>
+      </LayoutHeader>
       <Pattern as="main" is="main" {...main}>
         {children}
       </Pattern>

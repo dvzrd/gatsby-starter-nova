@@ -7,7 +7,7 @@ import { Text, TextProps, TextPattern } from "components";
 import styles from "./List.module.css";
 import { ListItem, ListItemProps } from "./item";
 
-export type ListPattern = "default" | "inline" | "table";
+export type ListPattern = "default" | "inline" | "menu";
 
 export interface ListProps<List extends HTMLElement = HTMLUListElement>
   extends Omit<TextProps<List>, "pattern"> {
@@ -31,7 +31,7 @@ export const List: FC<ListProps> = ({
     is={is}
     pattern={text}
     {...(rest as TextProps)}
-    className={classNames(styles.default, styles[pattern])}
+    className={classNames(styles.default, styles[pattern], className)}
   >
     {items?.length &&
       items.map(({ children, ...rest }) => (

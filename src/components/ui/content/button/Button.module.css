@@ -20,6 +20,11 @@
   }
 }
 
+.icon {
+  border: 0 !important;
+  padding: 0 !important;
+}
+
 .outline {
   @apply border-paper text-color;
   background-color: transparent !important;
@@ -78,6 +83,11 @@
   background-color: inherit !important;
   border-color: inherit !important;
   color: inherit !important;
+}
+
+.transparent {
+  background-color: transparent !important;
+  border-color: transparent !important;
 }
 
 /* button sizes */

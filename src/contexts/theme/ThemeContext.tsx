@@ -6,9 +6,8 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import classNames from "classnames";
 
-import { Icon, Pattern, PatternProps } from "components";
+import { Button, ButtonProps, Icon } from "components";
 
 type Theme = "theme-dark" | "theme-light";
 
@@ -52,28 +51,19 @@ export const ThemeProvider: FC = ({ children }) => {
   );
 };
 
-export const ThemeSwitch: FC<PatternProps> = ({
-  children,
-  className,
-  ...rest
-}) => {
+export const ThemeSwitch: FC<ButtonProps> = ({ children, ...rest }) => {
   const { theme, toggleTheme } = useTheme();
 
-  // TODO:
-  // - Replace pattern with higher level button component.
-  // - Add props for icons.
   return (
-    <Pattern
-      as="button"
-      is="button"
-      {...rest}
-      className={classNames("focus:outline-none", className)}
-      type="button"
+    <Button
+      color="transparent"
+      pattern="icon"
+      {...(rest as ButtonProps)}
       onClick={toggleTheme}
     >
       {theme === "theme-dark" ? <Icon name="sun" /> : <Icon name="moon" />}
       {children}
-    </Pattern>
+    </Button>
   );
 };
 

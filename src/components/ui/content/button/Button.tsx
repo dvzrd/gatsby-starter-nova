@@ -11,9 +11,9 @@ import {
 
 import styles from "./Button.module.css";
 
-export type ButtonColor = "inherit" | "primary" | "secondary";
+export type ButtonColor = "inherit" | "primary" | "secondary" | "transparent";
 
-export type ButtonPattern = "default" | "outline" | "text";
+export type ButtonPattern = "default" | "icon" | "outline" | "text";
 
 export type ButtonType = "button" | "reset" | "submit";
 

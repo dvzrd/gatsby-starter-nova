@@ -16,7 +16,7 @@
 }
 
 .header {
-  @apply z-20;
+  @apply z-50;
 }
 
 .main {

@@ -3,3 +3,11 @@
 .default {
   @apply list-square;
 }
+
+.inline {
+  @apply flex flex-row flex-wrap;
+}
+
+.menu {
+  @apply flex flex-col flex-full flex-wrap;
+}

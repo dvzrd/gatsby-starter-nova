@@ -19,5 +19,5 @@
 }
 
 .navbar {
-  @apply content-center flex-none items-center py-4 relative z-30;
+  @apply content-center flex-none items-start py-4 relative;
 }

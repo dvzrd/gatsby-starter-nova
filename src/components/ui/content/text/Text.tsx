@@ -4,36 +4,18 @@ import classNames from "classnames";
 import { Pattern, PatternProps } from "components";
 
 import styles from "./Text.module.css";
-
-export type TextPattern =
-  | "body"
-  | "caption"
-  | "heading"
-  | "hero"
-  | "legend"
-  | "meta"
-  | "subheading"
-  | "subtitle"
-  | "title";
-
-export type TextSize =
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "2xl"
-  | "3xl"
-  | "4xl"
-  | "5xl";
+import { TextPattern, TextSize } from "./types";
 
 export interface TextProps<Text extends HTMLElement = HTMLDivElement>
   extends PatternProps<Text> {
   pattern?: TextPattern;
+  size?: TextSize;
 }
 
 export const getTextSize = (size: TextSize) => {
   switch (size) {
+    case "inherit":
+      return styles.inherit;
     case "xs":
       return "caption" as TextPattern;
     case "sm":
@@ -62,13 +44,18 @@ export const Text: FC<TextProps> = ({
   className,
   is = "text",
   pattern = "body",
+  size,
   ...rest
 }) => (
   <Pattern
     as={as}
     is={is}
     {...(rest as PatternProps)}
-    className={classNames(styles[pattern], className)}
+    className={classNames(
+      styles[pattern],
+      getTextSize(size as TextSize),
+      className
+    )}
   >
     {children}
   </Pattern>
