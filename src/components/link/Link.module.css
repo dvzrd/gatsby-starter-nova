@@ -1,11 +1,11 @@
 /* Link patterns */
 
 .link {
-  @apply transition-colors duration-150 ease-in-out;
+  @apply no-underline;
 }
 
 .button {
-  @apply no-underline uppercase;
+  @apply outline-none uppercase;
 }
 
 .icon {
@@ -13,7 +13,9 @@
 }
 
 .text {
-  @apply underline;
+  &:hover {
+    @apply underline;
+  }
 }
 
 .wrapper {
