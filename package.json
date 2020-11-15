@@ -40,7 +40,8 @@
     "classnames": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-helmet-async": "latest"
+    "react-helmet-async": "latest",
+    "react-hook-form": "^6.11.2"
   },
   "devDependencies": {
     "@mdx-js/mdx": "latest",

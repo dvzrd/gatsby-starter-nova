@@ -48,11 +48,13 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
       as={as}
       container={containerProps}
       is={is}
-      mod={`${
+      mod={classNames(
         isMenuOpened
           ? `fixed top-0 left-0 w-full h-screen lg:${position} lg:top-auto lg:left-auto lg:w-auto lg:h-auto`
+          : isFixed
+          ? "fixed top-0 left-0 w-full"
           : position
-      }`}
+      )}
       pattern={pattern}
       {...rest}
     >

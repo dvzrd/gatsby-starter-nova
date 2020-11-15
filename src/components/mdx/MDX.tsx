@@ -28,6 +28,8 @@ import {
   SectionProps,
   Text,
   TextProps,
+  TextField,
+  TextFieldProps,
 } from "components";
 
 import styles from "./MDX.module.css";
@@ -91,6 +93,7 @@ export const mdxComponents: MDXProviderComponents = {
   Pattern: (props: PatternProps) => <Pattern {...props} />,
   Section: (props: SectionProps) => <Section {...props} />,
   Text: (props: TextProps) => <Text {...props} />,
+  TextField: (props: TextFieldProps) => <TextField {...props} />,
 };
 
 export const MDX: FC<MDXProps> = ({

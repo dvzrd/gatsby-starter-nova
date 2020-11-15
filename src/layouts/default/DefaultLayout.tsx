@@ -58,7 +58,6 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
 }) => {
   const { theme } = useTheme();
   const [menuOpened, setMenuOpened] = useState(false);
-  // const [headerFixed, setHeaderFixed] = useState(false);
 
   const toggleMenu = () => setMenuOpened(!menuOpened);
 
