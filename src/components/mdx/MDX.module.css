@@ -1,7 +1,7 @@
 /* container */
 
 .mdx {
-  @apply content-start flex flex-col flex-wrap items-start justify-start;
+  @apply content-start flex flex-col flex-wrap items-stretch justify-start;
 }
 
 /* components */

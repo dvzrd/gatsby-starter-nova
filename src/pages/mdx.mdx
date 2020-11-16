@@ -9,7 +9,7 @@ title: This is an MDX page
 
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 
-<Pattern as="h2" mod="py-8 md:py-10 xl:py-12 w-full">
+<Pattern as="h2" mod="py-8 md:py-10 xl:py-12">
   This page is built with MDX
   <Pattern as="hr" is="divider" mod="mb-4 border-primary" />
   <Text pattern="meta" className="block">
@@ -60,7 +60,7 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
   Look at all the different style buttons
 </Text>
 
-<Box flex="1" flow="row-wrap" className="items-center w-full">
+<Box flex="1" flow="row-wrap" className="items-center">
   <Button mod="mb-4 mr-4">Default button</Button>
   <Pattern
     is="wrapper"
@@ -75,7 +75,7 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
     Secondary button
   </Button>
   <Pattern as="hr" is="divider" mod="mt-4 md:mt-6 xl:mt-8" />
-  <Text as="h5" pattern="subheading" mod="mb-4 mt-8 w-full">
+  <Text as="h5" pattern="subheading" mod="flex-full mb-4 mt-8">
     Outline buttons
   </Text>
   <Button pattern="outline" mod="mb-4 mr-4">
@@ -96,7 +96,7 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
     Secondary outline
   </Button>
   <Pattern as="hr" is="divider" mod="mt-4 md:mt-6 xl:mt-8" />
-  <Text as="h5" pattern="subheading" mod="mb-4 mt-8 w-full">
+  <Text as="h5" pattern="subheading" mod="flex-full mb-4 mt-8">
     Text buttons
   </Text>
   <Button pattern="text" mod="mb-4 mr-4">
@@ -114,7 +114,7 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
     Secondary text
   </Button>
   <Pattern as="hr" is="divider" mod="mt-4 md:mt-6 xl:mt-8" />
-  <Text as="h5" pattern="subheading" mod="mb-4 mt-8 w-full">
+  <Text as="h5" pattern="subheading" mod="flex-full mb-4 mt-8">
     Button sizes
   </Text>
   <Button size="xs" pattern="outline" mod="mb-4 mr-4">
@@ -152,7 +152,7 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
   Look at this CSS grid component
 </Text>
 
-<Grid cols="md:grid-cols-4" gap="gap-4 md:gap-5 xl:gap-6" mod="w-full">
+<Grid cols="md:grid-cols-4" gap="gap-4 md:gap-5 xl:gap-6">
   <Box className="p-2 md:p-3 xl:p-4">Box Column</Box>
   <Grid mod="p-2 md:p-3 xl:p-4">Grid Column</Grid>
   <Pattern is="grid" mod="md:col-span-2 p-2 md:p-3 xl:p-4" bgColor="secondary">

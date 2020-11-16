@@ -8,7 +8,7 @@
 }
 
 .divider {
-  @apply border-t-2 border-hover my-2 w-full;
+  @apply border-t-2 border-hover flex-full my-2;
 }
 
 .field {
@@ -62,7 +62,7 @@
 }
 
 .full {
-  @apply mx-auto max-w-none w-full;
+  @apply flex-full mx-auto max-w-none;
 }
 
 .row {
