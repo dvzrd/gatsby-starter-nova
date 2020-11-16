@@ -60,9 +60,9 @@ SEO with [`gatsby-plugin-next-seo`](https://github.com/ifiokjr/gatsby-plugin-nex
   - Structural UI Components
   - Typography UI Components
 - Forms
-  - Mailchimp / Netlify Integration
+  - Form Container Compositions
   - React Hook Form
-  - Validation with Yup
+  - Mailchimp / Netlify Integration
 - MDX
   - Blog
   - Case Studies

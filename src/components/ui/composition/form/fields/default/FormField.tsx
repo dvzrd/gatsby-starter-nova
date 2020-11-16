@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { useForm } from "react-hook-form";
 
 import { Pattern, PatternProps, Text } from "components";
 
@@ -11,7 +10,7 @@ export interface FormFieldProps extends PatternProps {
   error?: string;
   label?: string;
   name: string;
-  reg?: FieldRegister;
+  register?: FieldRegister;
   type?: FieldType;
 }
 
@@ -22,40 +21,31 @@ export const FormField: FC<FormFieldProps> = ({
   error,
   label,
   name,
-  reg,
+  register,
   type = "text",
   ...rest
-}) => {
-  const { register, errors } = useForm();
-
-  const ref = register({
-    required: true,
-    ...reg,
-  });
-
-  return (
-    <Pattern
-      is={is}
-      {...(rest as PatternProps)}
-      className={classNames(styles.field, className)}
-    >
-      {label && (
-        <Text as="label" pattern="meta" className={styles.label} htmlFor={name}>
-          {label}
-        </Text>
-      )}
-      <input
-        className={classNames("p-2 md:p-3 xl:p-4", styles.input)}
-        name={name}
-        ref={ref}
-        type={type}
-      />
-      {errors[name] && (
-        <Text pattern="meta" className={styles.error}>
-          {error}
-        </Text>
-      )}
-      {children}
-    </Pattern>
-  );
-};
+}) => (
+  <Pattern
+    is={is}
+    {...(rest as PatternProps)}
+    className={classNames(styles.field, className)}
+  >
+    {label && (
+      <Text as="label" pattern="meta" className={styles.label} htmlFor={name}>
+        {label}
+      </Text>
+    )}
+    <input
+      className={classNames("p-2 md:p-3 xl:p-4", styles.input)}
+      name={name}
+      ref={register}
+      type={type}
+    />
+    {error && (
+      <Text pattern="meta" className={styles.error}>
+        {error}
+      </Text>
+    )}
+    {children}
+  </Pattern>
+);
