@@ -33,6 +33,7 @@ import {
   Text,
   TextProps,
 } from "components";
+import { SampleForm } from "containers";
 
 import styles from "./MDX.module.css";
 
@@ -42,6 +43,7 @@ export interface MDXProps extends ElementProps {
 }
 
 export const mdxComponents: MDXProviderComponents = {
+  // default components
   a: (props: LinkProps) => <Link {...props} />,
   h1: (props: TextProps) => (
     <Text
@@ -85,6 +87,7 @@ export const mdxComponents: MDXProviderComponents = {
     <Text as="p" mod="mb-4 md:mb-6 xl:mb-8" {...props} />
   ),
   ul: (props: ListProps) => <List mod="mb-4 md:mb-6 xl:mb-8 pl-5" {...props} />,
+  // component shortcodes
   Box: (props: BoxProps) => <Box {...props} />,
   Button: (props: ButtonProps) => <Button {...props} />,
   Element: (props: ElementProps) => <Element {...props} />,
@@ -97,6 +100,8 @@ export const mdxComponents: MDXProviderComponents = {
   Pattern: (props: PatternProps) => <Pattern {...props} />,
   Section: (props: SectionProps) => <Section {...props} />,
   Text: (props: TextProps) => <Text {...props} />,
+  // containers
+  SampleForm: (props: FormProps) => <SampleForm {...props} />,
 };
 
 export const MDX: FC<MDXProps> = ({

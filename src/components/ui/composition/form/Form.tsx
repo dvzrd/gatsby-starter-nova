@@ -1,9 +1,10 @@
 import React, { FC } from "react";
+import { SubmitHandler } from "react-hook-form";
 
 import { Grid, GridProps } from "components";
 
 export interface FormProps extends GridProps {
-  onSubmit: (data: object) => void;
+  onSubmit: SubmitHandler<any>;
 }
 
 export const Form: FC<FormProps> = ({

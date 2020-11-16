@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import classNames from "classnames";
+import { FieldError } from "react-hook-form";
 
 import { Pattern, PatternProps, Text } from "components";
 
@@ -7,7 +8,8 @@ import styles from "./FormField.module.css";
 import { FieldRegister, FieldType } from "./types";
 
 export interface FormFieldProps extends PatternProps {
-  error?: string;
+  error?: FieldError;
+  errorMessage?: string;
   label?: string;
   name: string;
   register?: FieldRegister;
@@ -19,6 +21,7 @@ export const FormField: FC<FormFieldProps> = ({
   children,
   className,
   error,
+  errorMessage = "This field is required",
   label,
   name,
   register,
@@ -43,7 +46,7 @@ export const FormField: FC<FormFieldProps> = ({
     />
     {error && (
       <Text pattern="meta" className={styles.error}>
-        {error}
+        {error.message || errorMessage}
       </Text>
     )}
     {children}
