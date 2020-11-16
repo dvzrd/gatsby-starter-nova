@@ -14,6 +14,7 @@ export type PatternType =
   | "field"
   | "flex"
   | "footer"
+  | "form"
   | "grid"
   | "header"
   | "icon"

@@ -167,10 +167,20 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
     Full Span Grid Column
   </Grid>
   <Grid col="col-span-full" gap="gap-4">
-    <Text as="h5" pattern="subtitle">
-      You can also make forms
+    <Text
+      as="h5"
+      pattern="subheading"
+      mod="mt-8 mb-2 md:mt-10 md:mb-4 xl:mt-12 xl:mb-6"
+    >
+      Grids are especially useful for making forms
     </Text>
-    <TextField label="This is text a field" name="text-field" />
+    <FormField label="Email address" name="email" type="email" />
+  </Grid>
+  <Grid col="md:col-span-2">
+    <FormField label="First name" name="first-name" />
+  </Grid>
+  <Grid col="md:col-span-2">
+    <FormField label="Last name" name="last-name" />
   </Grid>
 </Grid>
 

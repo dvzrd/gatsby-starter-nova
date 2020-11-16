@@ -10,6 +10,10 @@ import {
   ButtonProps,
   Element,
   ElementProps,
+  Form,
+  FormProps,
+  FormField,
+  FormFieldProps,
   Grid,
   GridProps,
   Hero,
@@ -28,8 +32,6 @@ import {
   SectionProps,
   Text,
   TextProps,
-  TextField,
-  TextFieldProps,
 } from "components";
 
 import styles from "./MDX.module.css";
@@ -86,6 +88,8 @@ export const mdxComponents: MDXProviderComponents = {
   Box: (props: BoxProps) => <Box {...props} />,
   Button: (props: ButtonProps) => <Button {...props} />,
   Element: (props: ElementProps) => <Element {...props} />,
+  Form: (props: FormProps) => <Form {...props} />,
+  FormField: (props: FormFieldProps) => <FormField {...props} />,
   Grid: (props: GridProps) => <Grid {...props} />,
   Hero: (props: HeroProps) => <Hero {...props} />,
   Icon: (props: IconProps) => <Icon {...props} />,
@@ -93,7 +97,6 @@ export const mdxComponents: MDXProviderComponents = {
   Pattern: (props: PatternProps) => <Pattern {...props} />,
   Section: (props: SectionProps) => <Section {...props} />,
   Text: (props: TextProps) => <Text {...props} />,
-  TextField: (props: TextFieldProps) => <TextField {...props} />,
 };
 
 export const MDX: FC<MDXProps> = ({
