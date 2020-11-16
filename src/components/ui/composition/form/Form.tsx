@@ -1,29 +1,25 @@
 import React, { FC } from "react";
 import { useForm } from "react-hook-form";
 
-import { Pattern, PatternProps } from "components";
+import { Grid, GridProps } from "components";
 
-export interface FormProps extends PatternProps {
+export interface FormProps extends GridProps {
   onSubmit: (data: object) => void;
 }
 
 export const Form: FC<FormProps> = ({
   as = "form",
-  is = "form",
   children,
   onSubmit,
   ...rest
 }) => {
-  const { handleSubmit } = useForm();
+  const { errors, formState, handleSubmit } = useForm();
+
+  console.log(errors, formState);
 
   return (
-    <Pattern
-      as={as}
-      is={is}
-      {...(rest as PatternProps)}
-      onSubmit={handleSubmit(onSubmit)}
-    >
+    <Grid as={as} {...(rest as GridProps)} onSubmit={handleSubmit(onSubmit)}>
       {children}
-    </Pattern>
+    </Grid>
   );
 };

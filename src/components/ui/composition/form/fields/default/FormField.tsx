@@ -5,12 +5,13 @@ import { useForm } from "react-hook-form";
 import { Pattern, PatternProps, Text } from "components";
 
 import styles from "./FormField.module.css";
-import { FieldType } from "./types";
+import { FieldRegister, FieldType } from "./types";
 
 export interface FormFieldProps extends PatternProps {
   error?: string;
   label?: string;
   name: string;
+  reg?: FieldRegister;
   type?: FieldType;
 }
 
@@ -21,10 +22,16 @@ export const FormField: FC<FormFieldProps> = ({
   error,
   label,
   name,
+  reg,
   type = "text",
   ...rest
 }) => {
   const { register, errors } = useForm();
+
+  const ref = register({
+    required: true,
+    ...reg,
+  });
 
   return (
     <Pattern
@@ -40,7 +47,7 @@ export const FormField: FC<FormFieldProps> = ({
       <input
         className={classNames("p-2 md:p-3 xl:p-4", styles.input)}
         name={name}
-        ref={register({ required: true })}
+        ref={ref}
         type={type}
       />
       {errors[name] && (

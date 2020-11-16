@@ -166,22 +166,33 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
   >
     Full Span Grid Column
   </Grid>
-  <Grid col="col-span-full" gap="gap-4">
+  <Form
+    col="col-span-full"
+    cols="md:grid-cols-2"
+    gap="gap-4"
+    onSubmit={(data) => console.log(data)}
+  >
     <Text
       as="h5"
       pattern="subheading"
-      mod="mt-8 mb-2 md:mt-10 md:mb-4 xl:mt-12 xl:mb-6"
+      mod="mt-8 mb-2 md:mt-10 md:mb-4 xl:mt-12 xl:mb-6 col-span-full"
     >
       Grids are especially useful for making forms
     </Text>
-    <FormField label="Email address" name="email" type="email" />
-  </Grid>
-  <Grid col="md:col-span-2">
+    <FormField
+      label="Email address"
+      name="email"
+      type="email"
+      mod="col-span-full"
+    />
     <FormField label="First name" name="first-name" />
-  </Grid>
-  <Grid col="md:col-span-2">
     <FormField label="Last name" name="last-name" />
-  </Grid>
+    <Box className="col-span-full">
+      <Button pattern="primary" type="submit">
+        Submit
+      </Button>
+    </Box>
+  </Form>
 </Grid>
 
 <Hero
