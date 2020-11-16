@@ -24,12 +24,20 @@ export const TextField: FC<TextFieldProps> = ({
   return (
     <Pattern is="field" className={classNames(styles.field, className)}>
       {label && (
-        <Text as="label" htmlFor={name}>
+        <Text as="label" pattern="meta" className={styles.label} htmlFor={name}>
           {label}
         </Text>
       )}
-      <input name={name} ref={register({ required: true })} />
-      {errors[name] && <Text pattern="meta">{error}</Text>}
+      <input
+        className={classNames("p-2 md:p-3 xl:p-4", styles.input)}
+        name={name}
+        ref={register({ required: true })}
+      />
+      {errors[name] && (
+        <Text pattern="meta" className={styles.error}>
+          {error}
+        </Text>
+      )}
       {children}
     </Pattern>
   );

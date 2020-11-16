@@ -11,6 +11,10 @@
   @apply border-t-2 border-hover my-2 w-full;
 }
 
+.field {
+  @apply flex flex-col flex-no-wrap;
+}
+
 .footer {
   @apply z-10;
 }

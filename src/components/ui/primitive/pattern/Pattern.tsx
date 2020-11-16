@@ -11,6 +11,7 @@ export type PatternType =
   | "card"
   | "container"
   | "divider"
+  | "field"
   | "flex"
   | "footer"
   | "grid"

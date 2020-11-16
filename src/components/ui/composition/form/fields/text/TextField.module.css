@@ -1,3 +1,20 @@
 .field {
-  @apply block;
+  @apply content-start items-stretch;
+}
+
+.label {
+  @apply mb-1;
+}
+
+
+.input {
+  @apply border-2 text-gray-900 transition-colors duration-150 ease-in-out;
+
+  &:focus {
+    @apply border-primary outline-none;
+  }
+}
+
+.error {
+  @apply mt-1 text-service-fail;
 }
