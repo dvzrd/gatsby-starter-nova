@@ -207,4 +207,17 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
     ),
     heading: "Sometimes you need a hero",
   }}
+  actions={{
+    render: (
+      <Link
+        to="/"
+        pattern="button"
+        mod="no-underline border-color-primary hover:border-color-primary-hover text-color-primary hover:text-color-primary-hover my-4 md:my-5 xl:my-6"
+      >
+        <Button as="span" color="inherit" pattern="outline" size="lg">
+          Take me home
+        </Button>
+      </Link>
+    ),
+  }}
 />

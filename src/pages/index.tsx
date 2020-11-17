@@ -113,15 +113,15 @@ const PageIndex: FC<PageProps> = () => {
         <Text as="h2" pattern="hero">
           {name}
         </Text>
-        <Text as="h4" pattern="title" mod="mb-8">
+        <Text as="h4" pattern="title">
           {title}
         </Text>
         <Link
           to="/about"
           pattern="button"
-          mod="no-underline bg-background-paper hover:bg-background-secondary border-paper hover:border-secondary text-color-paper hover:text-color-secondary"
+          mod="no-underline border-color-primary hover:border-color-primary-hover text-color-primary hover:text-color-primary-hover my-4 md:my-5 xl:my-6"
         >
-          <Button as="span" color="inherit" pattern="outline">
+          <Button as="span" color="inherit" pattern="outline" size="lg">
             See about page
           </Button>
         </Link>

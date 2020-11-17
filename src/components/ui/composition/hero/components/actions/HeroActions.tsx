@@ -9,12 +9,12 @@ export interface HeroButton extends GatsbyLinkProps<ElementProps> {
 }
 
 export interface HeroActionsProps extends PatternProps {
-  actions?: ElementType;
+  render?: ElementType;
   buttons?: HeroButton[];
 }
 
 export const HeroActions: FC<HeroActionsProps> = ({
-  actions,
+  render,
   buttons,
   className,
   ...rest
@@ -29,6 +29,6 @@ export const HeroActions: FC<HeroActionsProps> = ({
           {button.label}
         </Link>
       ))}
-    {actions}
+    {render}
   </Pattern>
 );

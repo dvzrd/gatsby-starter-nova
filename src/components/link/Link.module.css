@@ -5,7 +5,7 @@
 }
 
 .button {
-  @apply outline-none uppercase;
+  @apply flex outline-none uppercase;
 }
 
 .icon {
