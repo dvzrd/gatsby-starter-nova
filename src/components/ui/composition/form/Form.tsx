@@ -4,7 +4,7 @@ import { SubmitHandler } from "react-hook-form";
 import { Grid, GridProps } from "components";
 
 export interface FormProps extends GridProps {
-  onSubmit: SubmitHandler<any>;
+  onSubmit?: SubmitHandler<any>;
 }
 
 export const Form: FC<FormProps> = ({
