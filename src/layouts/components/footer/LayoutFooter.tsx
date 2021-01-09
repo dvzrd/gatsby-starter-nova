@@ -9,9 +9,9 @@ export type LayoutFooterPattern = "over" | "under" | "sticky";
 
 export interface LayoutFooterProps extends SectionProps {
   isHidden?: boolean;
+  mod?: LayoutFooterPattern;
   showAuthor?: boolean;
   showOrg?: boolean;
-  variant?: LayoutFooterPattern;
 }
 
 export const LayoutFooter: FC<LayoutFooterProps> = ({
@@ -19,12 +19,11 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
   children,
   className,
   container,
-  is = "footer",
+  is = "navbar",
   isHidden = false,
+  mod,
   showAuthor = true,
   showOrg = true,
-  pattern = "navbar",
-  variant,
   ...rest
 }) => {
   const {
@@ -49,13 +48,12 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
     <Section
       as={as}
       is={is}
-      pattern={pattern}
-      {...rest}
-      className={classNames(variant, className)}
+      {...(rest as SectionProps)}
+      className={classNames(mod, className)}
     >
       {children}
       {copyright && (
-        <Text as="p" pattern="caption">
+        <Text as="p" is="caption">
           © {copyright.year ? copyright.year : currentYear}.
           {copyright.message && ` ${copyright.message}`}
           {showOrg && <>{renderLink(organization)}.</>}
@@ -64,12 +62,12 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
         </Text>
       )}
       {footnote && (
-        <Text as="p" pattern="caption">
+        <Text as="p" is="caption">
           {footnote}
         </Text>
       )}
       {memorial && (
-        <Text as="p" pattern="caption">
+        <Text as="p" is="caption">
           {memorial}
         </Text>
       )}

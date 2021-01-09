@@ -9,13 +9,13 @@ title: This is an MDX page
 
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 
-<Pattern as="h2" mod="py-8 md:py-10 xl:py-12">
+<Box as="h2" className="py-8 md:py-10 xl:py-12">
   This page is built with MDX
-  <Pattern as="hr" is="divider" mod="mb-4 border-primary" />
-  <Text pattern="meta" className="block">
-    Dated 10/04/2020
+  <Box as="hr" className="border-t-2 border-hover flex-full mt-2 mb-4" />
+  <Text is="meta" className="block">
+    Last updated 01/09/2021
   </Text>
-</Pattern>
+</Box>
 
 ### This is an h3 in markdown syntax
 
@@ -25,15 +25,18 @@ You can still write your pages in plain markdown, mixed in with regular HTML wit
 
 But using imports means you'll have to style them yourself and you want to avoid that. So you should just use the <Link to="/">link component</Link> to create both inbound and outbound links. Using [Markdown Syntax](/jsx) to create links works just as well for both internal and [external links](https://www.gatsbyjs.com/) since it's already pre-configured to use the link component.
 
-<Pattern as="hr" is="divider" mod="my-4 md:my-6 xl:my-8" />
+<Box
+  as="hr"
+  className="border-t-2 border-hover flex-full my-4 md:my-6 xl:my-8"
+/>
 
-<Text as="h5" pattern="title" mod="mb-6 mt-4">
+<Text as="h5" is="title" className="mb-6 mt-4">
   This is an h5 title text pattern with a margin modifier
 </Text>
 
 You can also write your own code in markdown, although that's not recommended you can technically do it. Go search for that though, I remember seeing an example a while back but I can't find it right now.
 
-<Section is="content" isContained mod="py-8 md:py-10 xl:py-12">
+<Section is="content" isContained className="py-8 md:py-10 xl:py-12">
 
 #### This is a contained content section component with vertical padding
 
@@ -56,111 +59,125 @@ You can use regular markdown syntax, but not in a grid - have to wrap that in a 
 
 This is just a regular markdown paragraph. That's cool and all but shortcodes are even cooler, check some of them out:
 
-<Text as="h4" pattern="title" mod="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8">
+<Text
+  as="h4"
+  is="title"
+  className="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8"
+>
   Look at all the different style buttons
 </Text>
 
 <Box flex="1" flow="row-wrap" className="items-center">
-  <Button mod="mb-4 mr-4">Default button</Button>
-  <Pattern
-    is="wrapper"
-    mod="bg-secondary text-contrast-secondary border-secondary hover:bg-primary hover:text-contrast-primary hover:border-primary mb-4 mr-4"
-  >
+  <Button className="mb-4 mr-4">Default button</Button>
+  <Box className="bg-secondary text-contrast-secondary border-secondary hover:bg-primary hover:text-contrast-primary hover:border-primary flex flex-col flex-wrap mb-4 mr-4">
     <Button color="inherit">Inherit button</Button>
-  </Pattern>
-  <Button color="primary" mod="mb-4 mr-4">
+  </Box>
+  <Button color="primary" className="mb-4 mr-4">
     Primary button
   </Button>
-  <Button color="secondary" mod="mb-4 mr-4">
+  <Button color="secondary" className="mb-4 mr-4">
     Secondary button
   </Button>
-  <Pattern as="hr" is="divider" mod="mt-4 md:mt-6 xl:mt-8" />
-  <Text as="h5" pattern="subheading" mod="flex-full mb-4 mt-8">
+  <Box
+    as="hr"
+    className="border-t-2 border-hover flex-full mt-4 md:mt-6 xl:mt-8"
+  />
+  <Text as="h5" is="subheading" className="flex-full mb-4 mt-8">
     Outline buttons
   </Text>
-  <Button pattern="outline" mod="mb-4 mr-4">
+  <Button is="outline" className="mb-4 mr-4">
     Default outline
   </Button>
-  <Pattern
-    is="wrapper"
-    mod="bg-transparent text-contrast-primary border-primary hover:text-contrast-secondary hover:border-secondary mb-4 mr-4"
-  >
-    <Button color="inherit" pattern="outline">
+  <Box className="bg-transparent text-contrast-primary border-primary hover:text-contrast-secondary hover:border-secondary flex flex-col flex-wrap mb-4 mr-4">
+    <Button color="inherit" is="outline">
       Inherit outline
     </Button>
-  </Pattern>
-  <Button color="primary" pattern="outline" mod="mb-4 mr-4">
+  </Box>
+  <Button color="primary" is="outline" className="mb-4 mr-4">
     Primary outline
   </Button>
-  <Button color="secondary" pattern="outline" mod="mb-4 mr-4">
+  <Button color="secondary" is="outline" className="mb-4 mr-4">
     Secondary outline
   </Button>
-  <Pattern as="hr" is="divider" mod="mt-4 md:mt-6 xl:mt-8" />
-  <Text as="h5" pattern="subheading" mod="flex-full mb-4 mt-8">
+  <Box
+    as="hr"
+    className="border-t-2 border-hover flex-full mt-4 md:mt-6 xl:mt-8"
+  />
+  <Text as="h5" is="subheading" className="flex-full mb-4 mt-8">
     Text buttons
   </Text>
-  <Button pattern="text" mod="mb-4 mr-4">
+  <Button is="text" className="mb-4 mr-4">
     Default text
   </Button>
-  <Pattern is="wrapper" mod="text-hover hover:text-default mb-4 mr-4">
-    <Button color="inherit" pattern="text">
+  <Box className="flex flex-col flex-wrap text-hover hover:text-default mb-4 mr-4">
+    <Button color="inherit" is="text">
       Inherit text
     </Button>
-  </Pattern>
-  <Button color="primary" pattern="text" mod="mb-4 mr-4">
+  </Box>
+  <Button color="primary" is="text" className="mb-4 mr-4">
     Primary text
   </Button>
-  <Button color="secondary" pattern="text" mod="mb-4 mr-4">
+  <Button color="secondary" is="text" className="mb-4 mr-4">
     Secondary text
   </Button>
-  <Pattern as="hr" is="divider" mod="mt-4 md:mt-6 xl:mt-8" />
-  <Text as="h5" pattern="subheading" mod="flex-full mb-4 mt-8">
+  <Box
+    as="hr"
+    className="border-t-2 border-hover flex-full mt-4 md:mt-6 xl:mt-8"
+  />
+  <Text as="h5" is="subheading" className="flex-full mb-4 mt-8">
     Button sizes
   </Text>
-  <Button size="xs" pattern="outline" mod="mb-4 mr-4">
+  <Button size="xs" is="outline" className="mb-4 mr-4">
     XS button
   </Button>
-  <Button size="sm" pattern="outline" mod="mb-4 mr-4">
+  <Button size="sm" is="outline" className="mb-4 mr-4">
     SM button
   </Button>
-  <Button size="md" pattern="outline" mod="mb-4 mr-4">
+  <Button size="md" is="outline" className="mb-4 mr-4">
     MD button
   </Button>
-  <Button size="lg" pattern="outline" mod="mb-4 mr-4">
+  <Button size="lg" is="outline" className="mb-4 mr-4">
     LG button
   </Button>
-  <Button size="xl" pattern="outline" mod="mb-4 mr-4">
+  <Button size="xl" is="outline" className="mb-4 mr-4">
     XL button
   </Button>
-  <Button size="2xl" pattern="outline" mod="mb-6 mr-6">
+  <Button size="2xl" is="outline" className="mb-6 mr-6">
     2XL button
   </Button>
-  <Button size="3xl" pattern="outline" mod="mb-8 mr-8">
+  <Button size="3xl" is="outline" className="mb-8 mr-8">
     3XL button
   </Button>
-  <Button size="4xl" pattern="outline" mod="mb-10 mr-10">
+  <Button size="4xl" is="outline" className="mb-10 mr-10">
     4XL button
   </Button>
-  <Button size="5xl" pattern="outline" mod="mb-12 mr-12">
+  <Button size="5xl" is="outline" className="mb-12 mr-12">
     5XL button
   </Button>
 </Box>
 
-<Pattern as="hr" is="divider" mod="my-4 md:my-6 xl:my8" />
+<Box
+  as="hr"
+  className="border-t-2 border-hover flex-full my-4 md:my-6 xl:my8"
+/>
 
-<Text as="h4" pattern="title" mod="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8">
+<Text
+  as="h4"
+  is="title"
+  className="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8"
+>
   Look at this CSS grid component
 </Text>
 
 <Grid cols="md:grid-cols-4" gap="gap-4 md:gap-5 xl:gap-6">
   <Box className="p-2 md:p-3 xl:p-4">Box Column</Box>
-  <Grid mod="p-2 md:p-3 xl:p-4">Grid Column</Grid>
-  <Pattern is="grid" mod="md:col-span-2 p-2 md:p-3 xl:p-4" bgColor="secondary">
-    Two Column Span Grid Pattern Column
-  </Pattern>
+  <Grid className="p-2 md:p-3 xl:p-4">Grid Column</Grid>
+  <Grid className="md:col-span-2 p-2 md:p-3 xl:p-4" bgColor="secondary">
+    Two Column Span Grid Column
+  </Grid>
   <Grid
     col="col-span-full"
-    mod="p-2 md:p-3 xl:p-4"
+    className="p-2 md:p-3 xl:p-4"
     bgColor="paper"
     color="paper"
   >
@@ -169,23 +186,23 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
   <Grid col="col-span-full" cols="md:grid-cols-2" gap="gap-4">
     <Text
       as="h5"
-      pattern="subheading"
-      mod="mt-8 mb-2 md:mt-10 md:mb-4 xl:mt-12 xl:mb-6 col-span-full"
+      is="subheading"
+      className="mt-8 mb-2 md:mt-10 md:mb-4 xl:mt-12 xl:mb-6 col-span-full"
     >
       Grids are especially useful for making forms
     </Text>
     <FormField
       label="Checkout this text field"
       name="text-field"
-      mod="col-span-full"
+      className="col-span-full"
     />
   </Grid>
 </Grid>
 
 <Text
   as="h5"
-  pattern="subheading"
-  mod="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8"
+  is="subheading"
+  className="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8"
 >
   Here's a working form container sample, try it out!
 </Text>
@@ -194,13 +211,13 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
 
 <Hero
   as="section"
-  of="fluid"
   bgColor="primary"
   color="primary"
-  mod="mt-20"
+  mod="fluid"
+  className="mt-20"
   caption={{
     context: (
-      <Text as="h4" pattern="body" mod="mt-2 md:mt-3 xl:mt-4">
+      <Text as="h4" is="body" className="mt-2 md:mt-3 xl:mt-4">
         This is why this component is here, to save you from the pain of not
         having a hero when you need one.
       </Text>
@@ -211,10 +228,10 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
     render: (
       <Link
         to="/"
-        pattern="button"
-        mod="no-underline border-primary hover:border-primary-hover text-contrast-primary hover:text-contrast-primary-hover my-4 md:my-5 xl:my-6"
+        is="button"
+        className="no-underline border-primary hover:border-primary-hover text-contrast-primary hover:text-contrast-primary-hover my-4 md:my-5 xl:my-6"
       >
-        <Button as="span" color="inherit" pattern="outline" size="lg">
+        <Button as="span" color="inherit" is="outline" size="lg">
           Take me home
         </Button>
       </Link>

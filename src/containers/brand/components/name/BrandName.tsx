@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import classNames from "classnames";
 
 import { Text, TextProps } from "components";
 import { useSiteNameData } from "graphql";
@@ -19,8 +20,11 @@ export const BrandName: FC<BrandNameProps> = ({
   return (
     <Text
       as={as}
-      mod="font-semibold leading-none tracking-tight uppercase"
-      {...rest}
+      className={classNames(
+        "font-semibold leading-none tracking-tight uppercase",
+        className
+      )}
+      {...(rest as TextProps)}
     >
       {children ? children : isShort ? acronym : name}
     </Text>

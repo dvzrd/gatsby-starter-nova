@@ -25,18 +25,18 @@ const PageIndex: FC<PageProps> = () => {
     caption: {
       heading: description,
     },
+    is: "page",
     minH: "screen-2/3",
-    pattern: "page",
   };
 
   return (
     <DefaultLayout {...layoutProps}>
       <Hero {...heroProps} />
-      <Section on="page-home" pattern="content">
+      <Section on="page-home" is="content">
         <Text
           as="h3"
-          pattern="heading"
-          mod="mt-8 md:mt-10 xl:mt-12 mb-6 md:mb-8 xl:mb-10"
+          is="heading"
+          className="mt-8 md:mt-10 xl:mt-12 mb-6 md:mb-8 xl:mb-10"
         >
           Featuring a utility-first design system UI built with TailwindCSS
         </Text>
@@ -54,7 +54,7 @@ const PageIndex: FC<PageProps> = () => {
             you see it — you have to actually try it.
           </p>
         </Grid>
-        <Text as="p" pattern="subtitle" mod="mt-8 md:mt-10 xl:mt-12">
+        <Text as="p" is="subtitle" className="mt-8 md:mt-10 xl:mt-12">
           Once you've actually built something this way, you'll quickly notice
           some really important benefits:
         </Text>
@@ -63,45 +63,45 @@ const PageIndex: FC<PageProps> = () => {
         <Grid
           cols="lg:grid-cols-3"
           gap="gap-4 md:gap-5 xl:gap-6"
-          mod="mb-12 md:mb-13 xl:mb-14"
+          className="mb-12 md:mb-13 xl:mb-14"
         >
-          <Card mod="border-primary">
+          <Card className="border-primary">
             <Text
               as="h4"
-              pattern="subheading"
-              mod="mb-2 md:mb-3 xl:mb-4 text-primary-500"
+              is="subheading"
+              className="mb-2 md:mb-3 xl:mb-4 text-primary-500"
             >
               Designing with constraints.
             </Text>
-            <Text as="p" pattern="meta">
+            <Text as="p" is="meta">
               Using inline styles, every value is a magic number. With
               utilities, you're choosing styles from a predefined design system,
               which makes it much easier to build visually consistent UIs.
             </Text>
           </Card>
-          <Card mod="border-primary">
+          <Card className="border-primary">
             <Text
               as="h4"
-              pattern="subheading"
-              mod="mb-2 md:mb-3 xl:mb-4 text-primary-500"
+              is="subheading"
+              className="mb-2 md:mb-3 xl:mb-4 text-primary-500"
             >
               Your CSS stops growing.
             </Text>
-            <Text as="p" pattern="meta">
+            <Text as="p" is="meta">
               Using a traditional approach, your CSS files get bigger every time
               you add a new feature. With utilities, everything is reusable so
               you rarely need to write new CSS.
             </Text>
           </Card>
-          <Card mod="border-primary">
+          <Card className="border-primary">
             <Text
               as="h4"
-              pattern="subheading"
-              mod="mb-2 md:mb-3 xl:mb-4 text-primary-500"
+              is="subheading"
+              className="mb-2 md:mb-3 xl:mb-4 text-primary-500"
             >
               Making changes feels safer.
             </Text>
-            <Text as="p" pattern="meta">
+            <Text as="p" is="meta">
               CSS is global and you never know what you're breaking when you
               make a change. Classes in your HTML are local, so you can change
               them without worrying about something else breaking.
@@ -109,24 +109,24 @@ const PageIndex: FC<PageProps> = () => {
           </Card>
         </Grid>
       </Section>
-      <Section pattern="feature" mod="bg-primary text-contrast-primary">
-        <Text as="h2" pattern="hero">
+      <Section is="feature" className="bg-primary text-contrast-primary">
+        <Text as="h2" is="hero">
           {name}
         </Text>
-        <Text as="h4" pattern="title">
+        <Text as="h4" is="title">
           {title}
         </Text>
         <Link
           to="/about"
-          pattern="button"
-          mod="no-underline border-primary hover:border-primary-hover text-contrast-primary hover:text-contrast-primary-hover my-4 md:my-5 xl:my-6"
+          is="button"
+          className="no-underline border-primary hover:border-primary-hover text-contrast-primary hover:text-contrast-primary-hover my-4 md:my-5 xl:my-6"
         >
-          <Button as="span" color="inherit" pattern="outline" size="lg">
+          <Button as="span" color="inherit" is="outline" size="lg">
             See about page
           </Button>
         </Link>
       </Section>
-      <Section as="footer" on="page-home" pattern="heel">
+      <Section as="footer" is="heel" on="page-home">
         <h3 className="leading-tight mt-12 md:mt-13 xl:mt-14 mb-4 md:mb-5 xl:mb-6">
           This gatsby starter uses TailwindCSS
         </h3>

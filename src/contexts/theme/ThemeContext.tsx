@@ -57,7 +57,7 @@ export const ThemeSwitch: FC<ButtonProps> = ({ children, ...rest }) => {
   return (
     <Button
       color="transparent"
-      pattern="icon"
+      is="icon"
       {...(rest as ButtonProps)}
       onClick={toggleTheme}
     >

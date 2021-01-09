@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Section, SectionPattern, SectionProps } from "components";
+import { Section, SectionProps } from "components";
 
 import {
   HeroActions,
@@ -32,7 +32,7 @@ export const Hero: FC<HeroProps> = ({
   caption,
   children,
   className,
-  is = "section",
+  is = "page",
   ...rest
 }) => (
   <Section

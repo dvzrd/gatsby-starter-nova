@@ -1,5 +1,5 @@
 .menu {
-  @apply order-1;
+  @apply order-1 mt-4 xs:mt-6 xs:mb-8 sm:mt-8 sm:mb-10 md:mt-10 md:mb-12;
 
   &.closed {
     @apply invisible h-0;

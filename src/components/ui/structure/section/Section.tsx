@@ -16,10 +16,13 @@ export type SectionPattern =
   | "navbar"
   | string;
 
+export type SectionMod = "col" | "compact" | "fluid" | "full" | "row" | string;
+
 export interface SectionProps extends BoxProps {
   container?: BoxProps;
   isContained?: boolean;
   is?: SectionPattern;
+  mod?: SectionMod;
 }
 
 export const Section: FC<SectionProps> = ({
@@ -29,24 +32,34 @@ export const Section: FC<SectionProps> = ({
   container,
   is = "content",
   isContained,
+  mod,
   on,
   ...rest
-}) => (
-  <Box
-    as={as}
-    on={on}
-    {...(rest as BoxProps)}
-    className={classNames(styles.default, styles[is], className)}
-  >
+}) => {
+  const getModifiers = () => [mod?.split(" ").map((mod) => styles[mod])];
+
+  return (
     <Box
-      as="figure"
-      {...(container as BoxProps)}
+      as={as}
+      on={on}
+      {...(rest as BoxProps)}
       className={classNames(
-        isContained ? undefined : "container",
-        container?.className
+        styles.default,
+        styles[is],
+        getModifiers(),
+        className
       )}
     >
-      {children}
+      <Box
+        as="figure"
+        {...(container as BoxProps)}
+        className={classNames(
+          isContained ? undefined : "container",
+          container?.className
+        )}
+      >
+        {children}
+      </Box>
     </Box>
-  </Box>
-);
+  );
+};

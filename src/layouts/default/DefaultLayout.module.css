@@ -1,3 +1,7 @@
+.default {
+  @apply flex flex-col flex-wrap;
+}
+
 .layout {
   @apply bg-default min-h-screen;
 }

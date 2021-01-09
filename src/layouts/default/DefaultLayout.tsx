@@ -2,14 +2,7 @@ import React, { FC, useState } from "react";
 import { GatsbySeo, GatsbySeoProps } from "gatsby-plugin-next-seo";
 import classNames from "classnames";
 
-import {
-  Button,
-  ButtonProps,
-  Icon,
-  Link,
-  Pattern,
-  PatternProps,
-} from "components";
+import { Button, ButtonProps, Icon, Link, Box, BoxProps } from "components";
 import { Brand, LogoName } from "containers";
 import { ThemeSwitch, useTheme } from "contexts";
 
@@ -31,11 +24,11 @@ export interface LayoutLogoProps {
   logoLight?: string;
 }
 
-export interface DefaultLayoutProps extends PatternProps {
+export interface DefaultLayoutProps extends BoxProps {
   footer?: LayoutFooterProps;
   header?: LayoutHeaderProps;
   logo?: LayoutLogoProps;
-  main?: PatternProps;
+  main?: BoxProps;
   menu?: LayoutMenuProps;
   pattern?: LayoutPattern;
   seo?: GatsbySeoProps;
@@ -47,11 +40,10 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   className,
   footer,
   header,
-  is = "wrapper",
+  is = "default",
   logo,
   main,
   menu,
-  pattern = "default",
   seo,
   themeSwitch,
   ...rest
@@ -62,20 +54,19 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   const toggleMenu = () => setMenuOpened(!menuOpened);
 
   const themeSwitchProps: ButtonProps = {
-    mod: "text-primary-500",
+    className: "text-primary-500",
     ...themeSwitch,
   };
 
   const menuProps: LayoutMenuProps = {
-    mod: "lg:hidden",
+    className: "lg:hidden",
     ...menu,
   };
 
   return (
-    <Pattern
-      is={is}
-      {...rest}
-      className={classNames(styles.layout, styles[pattern], theme, className)}
+    <Box
+      {...(rest as BoxProps)}
+      className={classNames(styles.layout, styles[is], theme, className)}
     >
       <GatsbySeo {...seo} />
       <LayoutHeader
@@ -85,8 +76,8 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
           <>
             <Brand className="mr-6" {...logo} />
             <Link
-              mod="mr-6 hidden lg:inline-flex"
-              pattern="button"
+              className="mr-6 hidden lg:inline-flex"
+              is="button"
               text="meta"
               to="/about"
             >
@@ -97,16 +88,16 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
         navRight={
           <>
             <Link
-              mod="mr-6 hidden lg:inline-flex"
-              pattern="button"
+              className="mr-6 hidden lg:inline-flex"
+              is="button"
               text="meta"
               to="/jsx"
             >
               JSX
             </Link>
             <Link
-              mod="mr-6 hidden lg:inline-flex"
-              pattern="button"
+              className="mr-6 hidden lg:inline-flex"
+              is="button"
               text="meta"
               to="/mdx"
             >
@@ -114,9 +105,9 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
             </Link>
             <ThemeSwitch {...themeSwitchProps} />
             <Button
+              className="ml-6 lg:hidden"
               color="transparent"
-              mod="ml-6 lg:hidden"
-              pattern="icon"
+              is="icon"
               onClick={toggleMenu}
             >
               {menuOpened ? <Icon name="x" /> : <Icon name="menu" />}
@@ -127,9 +118,8 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
       >
         <LayoutMenu {...menuProps} isOpened={menuOpened}>
           <Link
-            className={styles.link}
-            mod="p-2 sm:p-3 md:p-4"
-            pattern="button"
+            className={classNames(styles.link, "p-2 sm:p-3 md:p-4")}
+            is="button"
             size="inherit"
             to="/about"
             onClick={toggleMenu}
@@ -138,9 +128,8 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
             <Icon name="chevron-right" />
           </Link>
           <Link
-            className={styles.link}
-            mod="p-2 sm:p-3 md:p-4"
-            pattern="button"
+            className={classNames(styles.link, "p-2 sm:p-3 md:p-4")}
+            is="button"
             size="inherit"
             to="/jsx"
             onClick={toggleMenu}
@@ -149,9 +138,8 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
             <Icon name="chevron-right" />
           </Link>
           <Link
-            className={styles.link}
-            mod="p-2 sm:p-3 md:p-4"
-            pattern="button"
+            className={classNames(styles.link, "p-2 sm:p-3 md:p-4")}
+            is="button"
             size="inherit"
             to="/mdx"
             onClick={toggleMenu}
@@ -161,10 +149,10 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
           </Link>
         </LayoutMenu>
       </LayoutHeader>
-      <Pattern as="main" is="main" {...main}>
+      <Box as="main" is="main" {...main}>
         {children}
-      </Pattern>
+      </Box>
       <LayoutFooter {...footer} />
-    </Pattern>
+    </Box>
   );
 };

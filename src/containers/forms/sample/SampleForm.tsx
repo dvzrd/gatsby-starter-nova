@@ -52,11 +52,11 @@ export const SampleForm: FC<FormProps> = (props: FormProps) => {
         justifyContent="between"
       >
         {formState.isSubmitSuccessful ? (
-          <Text mod="text-service-pass">
+          <Text className="text-service-pass">
             Form data submitted, check your console.
           </Text>
         ) : (
-          <Text mod="text-service-fail">
+          <Text className="text-service-fail">
             {Object.keys(errors).length > 0 &&
               "Fill out all the required fields and try again."}
           </Text>

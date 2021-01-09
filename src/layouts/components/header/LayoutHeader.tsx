@@ -1,24 +1,24 @@
 import React, { FC, ReactNode } from "react";
 import classNames from "classnames";
 
-import { Pattern, PatternProps, Section, SectionProps } from "components";
+import { Box, BoxProps, Section, SectionProps } from "components";
 
 export interface LayoutHeaderProps extends SectionProps {
   isFixed?: boolean;
   isHidden?: boolean;
   isMenuOpened?: boolean;
-  nav?: PatternProps;
+  nav?: BoxProps;
   navLeft?: ReactNode;
-  navLeftProps?: PatternProps;
+  navLeftProps?: BoxProps;
   navRight?: ReactNode;
-  navRightProps?: PatternProps;
+  navRightProps?: BoxProps;
 }
 
 export const LayoutHeader: FC<LayoutHeaderProps> = ({
   as = "header",
   children,
   container,
-  is = "header",
+  is = "navbar",
   isFixed = false,
   isHidden = false,
   isMenuOpened = false,
@@ -27,7 +27,6 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   navLeftProps,
   navRight,
   navRightProps,
-  pattern = "navbar",
   position = "relative",
   ...rest
 }) => {
@@ -46,34 +45,40 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   return (
     <Section
       as={as}
-      container={containerProps}
-      is={is}
-      mod={classNames(
+      className={classNames(
         isMenuOpened
           ? `fixed top-0 left-0 w-full h-screen lg:${position} lg:top-auto lg:left-auto lg:w-auto lg:h-auto`
           : isFixed
           ? "fixed top-0 left-0 w-full"
           : position
       )}
-      pattern={pattern}
-      {...rest}
+      container={containerProps}
+      is={is}
+      {...(rest as SectionProps)}
     >
       {navLeft && (
-        <Pattern as="nav" is="nav" {...navProps} {...navLeftProps}>
+        <Box
+          as="nav"
+          {...(navProps as BoxProps)}
+          {...(navLeftProps as BoxProps)}
+          className={classNames(
+            "content-center flex flex-1 items-center",
+            navLeftProps?.className
+          )}
+        >
           {navLeft}
-        </Pattern>
+        </Box>
       )}
       {children}
       {navRight && (
-        <Pattern
+        <Box
           as="nav"
-          is="nav"
-          {...navProps}
-          {...navRightProps}
+          {...(navProps as BoxProps)}
+          {...(navRightProps as BoxProps)}
           className={classNames("justify-end", navRightProps?.className)}
         >
           {navRight}
-        </Pattern>
+        </Box>
       )}
     </Section>
   );

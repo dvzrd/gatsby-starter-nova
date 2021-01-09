@@ -21,3 +21,29 @@
 .navbar {
   @apply content-center flex-none items-start py-4 relative;
 }
+
+/* modifiers */
+
+.col {
+  @apply flex flex-col flex-nowrap;
+}
+
+.compact {
+  @apply my-0 p-0;
+}
+
+.fluid {
+  @apply -mx-4;
+
+  @media only screen and (min-width: 480px) {
+    @apply inset-x-1/2 -mx-vw-1/2 relative w-screen;
+  }
+}
+
+.full {
+  @apply flex-full mx-auto max-w-none;
+}
+
+.row {
+  @apply flex flex-row flex-wrap;
+}

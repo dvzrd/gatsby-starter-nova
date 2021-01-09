@@ -21,7 +21,7 @@ export interface GridProps extends BoxProps {
   gap?: GridGap;
   gapX?: GridGap;
   gapY?: GridGap;
-  is: GridPattern;
+  is?: GridPattern;
   row?: GridType;
   rows?: GridType;
 }

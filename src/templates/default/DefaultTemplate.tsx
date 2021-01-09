@@ -54,7 +54,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
       logoLight: "white",
     },
     themeSwitch: {
-      mod: "text-contrast-primary",
+      className: "text-contrast-primary",
     },
     ...layout,
   };
@@ -70,7 +70,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
   };
 
   const mainProps: SectionProps = {
-    pattern: "content",
+    is: "content",
     ...main,
   };
 

@@ -14,8 +14,8 @@ module.exports = {
     url: "https://damirvazgird.com",
   },
   copyright: {
-    authorMessage: "Created by ",
-    message: "Open sourced by ",
+    authorMessage: "Developed by ",
+    message: "Published by ",
     year: 2020,
   },
   description:

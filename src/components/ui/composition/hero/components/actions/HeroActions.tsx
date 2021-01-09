@@ -2,13 +2,13 @@ import React, { ElementType, FC } from "react";
 import { Link, GatsbyLinkProps } from "gatsby";
 import classNames from "classnames";
 
-import { ElementProps, Pattern, PatternProps } from "components";
+import { ElementProps, Box, BoxProps } from "components";
 
 export interface HeroButton extends GatsbyLinkProps<ElementProps> {
   label?: string;
 }
 
-export interface HeroActionsProps extends PatternProps {
+export interface HeroActionsProps extends BoxProps {
   render?: ElementType;
   buttons?: HeroButton[];
 }
@@ -19,7 +19,10 @@ export const HeroActions: FC<HeroActionsProps> = ({
   className,
   ...rest
 }) => (
-  <Pattern {...rest} className={classNames("hero-actions", className)}>
+  <Box
+    {...(rest as BoxProps)}
+    className={classNames("hero-actions", className)}
+  >
     {buttons &&
       buttons.map((button) => (
         <Link
@@ -30,5 +33,5 @@ export const HeroActions: FC<HeroActionsProps> = ({
         </Link>
       ))}
     {render}
-  </Pattern>
+  </Box>
 );

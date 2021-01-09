@@ -14,17 +14,16 @@ export const LayoutMenu: FC<LayoutMenuProps> = ({
   children,
   className,
   isOpened,
-  pattern = "menu",
+  is = "menu",
   text = "title",
   ...rest
 }) => (
   <List
     as={as}
-    pattern={pattern}
+    is={is}
     text={text}
     {...(rest as ListProps)}
     className={classNames(
-      "mt-4 xs:mt-6 xs:mb-8 sm:mt-8 sm:mb-10 md:mt-10 md:mb-12",
       styles.menu,
       isOpened ? styles.opened : styles.closed,
       className
