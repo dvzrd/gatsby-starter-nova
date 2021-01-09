@@ -1,4 +1,4 @@
-/* pattern is */
+/* patterns */
 .box {
   @apply block;
 }
@@ -12,7 +12,7 @@
 }
 
 .field {
-  @apply flex flex-col flex-no-wrap;
+  @apply flex flex-col flex-nowrap;
 }
 
 .footer {
@@ -32,7 +32,7 @@
 }
 
 .section {
-  @apply content-start flex items-stretch justify-start overflow-hidden py-4 relative text-color;
+  @apply content-start flex items-stretch justify-start overflow-hidden py-4 relative text-default;
 }
 
 .text {
@@ -43,10 +43,10 @@
   @apply flex flex-col flex-wrap;
 }
 
-/* pattern of */
+/* pattern modifiers */
 
 .col {
-  @apply flex flex-col flex-no-wrap;
+  @apply flex flex-col flex-nowrap;
 }
 
 .compact {

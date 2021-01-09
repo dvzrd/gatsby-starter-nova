@@ -1,5 +1,5 @@
 .layout {
-  @apply bg-background min-h-screen;
+  @apply bg-default min-h-screen;
 }
 
 .link {

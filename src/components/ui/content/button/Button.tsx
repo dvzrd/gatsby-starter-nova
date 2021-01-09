@@ -18,9 +18,9 @@ export type ButtonPattern = "default" | "icon" | "outline" | "text";
 export type ButtonType = "button" | "reset" | "submit";
 
 export interface ButtonProps<Button extends HTMLElement = HTMLButtonElement>
-  extends Omit<TextProps<Button>, "color" | "pattern"> {
+  extends Omit<TextProps<Button>, "color" | "is" | "pattern"> {
   color?: ButtonColor;
-  pattern?: ButtonPattern;
+  is?: ButtonPattern;
   size?: TextSize;
   text?: TextPattern;
   type?: ButtonType;
@@ -31,8 +31,7 @@ export const Button: FC<ButtonProps> = ({
   children,
   className,
   color,
-  is = "button",
-  pattern = "default",
+  is = "default",
   size = "md",
   text,
   type,
@@ -43,14 +42,13 @@ export const Button: FC<ButtonProps> = ({
   return (
     <Text
       as={as}
-      is={is}
-      pattern={textSize}
+      is={textSize}
       {...(rest as TextProps)}
       className={classNames(
         "transition-colors duration-250 ease-in-out focus:outline-none",
         color !== undefined && styles[color],
         styles.default,
-        styles[pattern],
+        styles[is],
         styles[size],
         {
           "border font-light py-1 px-2 lg:px-3": size === "xs",
@@ -62,8 +60,8 @@ export const Button: FC<ButtonProps> = ({
           "border-4 py-6 px-8 md:px-8 xl:py-7 xl:px-12": size === "3xl",
           "border-5 py-7 px-9 md:px-8 xl:py-8 xl:px-14": size === "4xl",
           "border-6 py-8 px-10 md:px-8 xl:py-9 xl:px-16": size === "5xl",
-          "border-hover bg-background-paper text-color-paper hover:text-color-primary hover:bg-background-primary hover:border-primary":
-            pattern === "default",
+          "border-hover bg-paper text-paper hover:text-contrast-primary hover:bg-primary hover:border-primary":
+            is === "default",
         },
         className
       )}

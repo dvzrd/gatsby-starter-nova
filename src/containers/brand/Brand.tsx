@@ -47,7 +47,7 @@ export const Brand: FC<BrandProps> = ({
     logoName
       ? logoName
       : theme
-      ? theme === "theme-dark"
+      ? theme === "dark"
         ? logoDark
         : logoLight
       : undefined;

@@ -109,7 +109,7 @@ const PageIndex: FC<PageProps> = () => {
           </Card>
         </Grid>
       </Section>
-      <Section pattern="feature" mod="bg-background-primary text-color-primary">
+      <Section pattern="feature" mod="bg-primary text-contrast-primary">
         <Text as="h2" pattern="hero">
           {name}
         </Text>
@@ -119,7 +119,7 @@ const PageIndex: FC<PageProps> = () => {
         <Link
           to="/about"
           pattern="button"
-          mod="no-underline border-color-primary hover:border-color-primary-hover text-color-primary hover:text-color-primary-hover my-4 md:my-5 xl:my-6"
+          mod="no-underline border-primary hover:border-primary-hover text-contrast-primary hover:text-contrast-primary-hover my-4 md:my-5 xl:my-6"
         >
           <Button as="span" color="inherit" pattern="outline" size="lg">
             See about page

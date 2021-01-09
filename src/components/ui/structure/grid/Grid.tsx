@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Pattern, PatternProps } from "components";
+import { Box, BoxProps } from "components";
 
 import styles from "./Grid.module.css";
 import {
@@ -12,7 +12,7 @@ import {
   GridType,
 } from "./types";
 
-export interface GridProps extends PatternProps {
+export interface GridProps extends BoxProps {
   autoCols?: GridAuto;
   autoFlow?: GridAutoFlow;
   autoRows?: GridAuto;
@@ -21,7 +21,7 @@ export interface GridProps extends PatternProps {
   gap?: GridGap;
   gapX?: GridGap;
   gapY?: GridGap;
-  pattern?: GridPattern;
+  is: GridPattern;
   row?: GridType;
   rows?: GridType;
 }
@@ -37,15 +37,14 @@ export const Grid: FC<GridProps> = ({
   gap,
   gapX,
   gapY,
-  is = "grid",
-  pattern = "default",
+  is = "default",
   row,
   rows,
   ...rest
 }) => (
-  <Pattern
+  <Box
     is={is}
-    {...(rest as PatternProps)}
+    {...(rest as BoxProps)}
     className={classNames(
       autoCols && `auto-cols-${autoCols}`,
       autoFlow && `grid-flow-${autoFlow}`,
@@ -57,10 +56,10 @@ export const Grid: FC<GridProps> = ({
       gapY,
       row,
       rows,
-      pattern === "flex" ? pattern : styles[pattern],
+      is === "flex" ? is : styles[is],
       className
     )}
   >
     {children}
-  </Pattern>
+  </Box>
 );

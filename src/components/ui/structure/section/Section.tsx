@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Pattern, PatternProps } from "components";
+import { Box, BoxProps } from "components";
 
 import styles from "./Section.module.css";
 
@@ -16,10 +16,10 @@ export type SectionPattern =
   | "navbar"
   | string;
 
-export interface SectionProps extends PatternProps {
-  container?: PatternProps;
+export interface SectionProps extends BoxProps {
+  container?: BoxProps;
   isContained?: boolean;
-  pattern?: SectionPattern;
+  is?: SectionPattern;
 }
 
 export const Section: FC<SectionProps> = ({
@@ -27,27 +27,26 @@ export const Section: FC<SectionProps> = ({
   children,
   className,
   container,
-  is = "section",
+  is = "content",
   isContained,
-  of,
   on,
-  pattern = "content",
   ...rest
 }) => (
-  <Pattern
+  <Box
     as={as}
-    is={is}
-    of={of}
     on={on}
-    {...(rest as PatternProps)}
-    className={classNames(styles.default, styles[pattern], className)}
+    {...(rest as BoxProps)}
+    className={classNames(styles.default, styles[is], className)}
   >
-    <Pattern
+    <Box
       as="figure"
-      is={isContained ? undefined : "container"}
-      {...(container as PatternProps)}
+      {...(container as BoxProps)}
+      className={classNames(
+        isContained ? undefined : "container",
+        container?.className
+      )}
     >
       {children}
-    </Pattern>
-  </Pattern>
+    </Box>
+  </Box>
 );

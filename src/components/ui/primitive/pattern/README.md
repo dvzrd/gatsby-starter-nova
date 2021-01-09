@@ -2,6 +2,8 @@
 
 Use Pattern to create primitive components that have various design pattern types.
 
+**NOTE:** This component is still experimental so it's not used to create any complex components. Stay tuned for new features and use cases as this component library gets ported into a package.
+
 ## API
 
 The importance heirarchy determines which styles will take priority - this will allow for greater variety of pattern types to be used together to create even more custom patterns.
@@ -44,7 +46,7 @@ Thinking about patterns, it helps to name them in this order because it's easier
   is="section"
   of="compact full row"
   on="home-page"
-  mod="bg-background-primary text-color-primary"
+  mod="bg-primary text-contrast-primary"
   className="home-hero"
 >
   <h1 className="home-hero__heading">Home Page Hero Pattern</h1>

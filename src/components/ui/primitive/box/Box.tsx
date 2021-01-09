@@ -25,7 +25,15 @@ import {
 export interface BoxProps<Element extends HTMLElement = HTMLDivElement>
   extends Omit<
     ElementProps<Element>,
-    "align" | "background" | "color" | "height" | "size" | "width"
+    | "align"
+    | "background"
+    | "cols"
+    | "color"
+    | "height"
+    | "rows"
+    | "size"
+    | "width"
+    | "wrap"
   > {
   alignContent?: AlignContent;
   alignItems?: AlignItems;
@@ -101,9 +109,8 @@ export const Box: FC<BoxProps> = ({
     as={as}
     {...(rest as ElementProps)}
     className={classNames(
-      (bgColor || backgroundColor) &&
-        `bg-background-${bgColor || backgroundColor}`,
-      color && `text-color-${color}`,
+      (bgColor || backgroundColor) && `bg-${bgColor || backgroundColor}`,
+      color && `text-${color}`,
       display,
       (minH || minHeight) && `min-h-${minH || minHeight}`,
       (h || height) && `h-${h || height}`,

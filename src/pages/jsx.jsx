@@ -15,7 +15,7 @@ const PageJSX = () => {
       mod: "py-8 md:py-10 xl:py-12",
     },
     logo: {
-      logoName: theme === "theme-dark" ? "white" : "black",
+      logoName: theme === "dark" ? "white" : "black",
     },
     themeSwitch: {
       mod: "text-primary-500",

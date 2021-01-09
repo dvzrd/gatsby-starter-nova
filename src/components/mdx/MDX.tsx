@@ -37,7 +37,7 @@ import { SampleForm } from "containers";
 
 import styles from "./MDX.module.css";
 
-export interface MDXProps extends ElementProps {
+export interface MDXProps extends BoxProps {
   body?: string;
   components?: MDXProviderComponents;
 }
@@ -48,45 +48,46 @@ export const mdxComponents: MDXProviderComponents = {
   h1: (props: TextProps) => (
     <Text
       as="h1"
-      mod="mb-4 mt-8 md:mb-6 md:mt-10 xl:mb-8 xl:mt-12"
-      pattern="hero"
+      className="mb-4 mt-8 md:mb-6 md:mt-10 xl:mb-8 xl:mt-12"
+      is="hero"
       {...props}
     />
   ),
   h2: (props: TextProps) => (
     <Text
       as="h2"
-      mod="mb-4 mt-6 md:mb-6 md:mt-8 xl:mb-8 xl:mt-10"
-      pattern="heading"
+      className="mb-4 mt-6 md:mb-6 md:mt-8 xl:mb-8 xl:mt-10"
+      is="heading"
       {...props}
     />
   ),
   h3: (props: TextProps) => (
-    <Text as="h3" mod="my-4 md:my-6 xl:my-8" pattern="title" {...props} />
+    <Text as="h3" className="my-4 md:my-6 xl:my-8" is="title" {...props} />
   ),
   h4: (props: TextProps) => (
-    <Text as="h4" mod="my-4 md:my-6 xl:my-8" pattern="subheading" {...props} />
+    <Text as="h4" className="my-4 md:my-6 xl:my-8" is="subheading" {...props} />
   ),
   h5: (props: TextProps) => (
-    <Text as="h5" mod="my-4 md:my-6 xl:my-8" pattern="subtitle" {...props} />
+    <Text as="h5" className="my-4 md:my-6 xl:my-8" is="subtitle" {...props} />
   ),
   h6: (props: TextProps) => (
     <Text
       as="h6"
-      className={styles.h6}
-      mod="my-4 md:my-6 xl:my-8"
-      pattern="body"
+      className={classNames(styles.h6, "my-4 md:my-6 xl:my-8")}
+      is="body"
       {...props}
     />
   ),
   li: (props: ListItemProps) => <ListItem {...props} />,
   ol: (props: ListProps) => (
-    <List as="ol" mod="mb-4 md:mb-6 xl:mb-8 pl-5" {...props} />
+    <List as="ol" className="mb-4 md:mb-6 xl:mb-8 pl-5" {...props} />
   ),
   p: (props: TextProps) => (
-    <Text as="p" mod="mb-4 md:mb-6 xl:mb-8" {...props} />
+    <Text as="p" className="mb-4 md:mb-6 xl:mb-8" {...props} />
   ),
-  ul: (props: ListProps) => <List mod="mb-4 md:mb-6 xl:mb-8 pl-5" {...props} />,
+  ul: (props: ListProps) => (
+    <List className="mb-4 md:mb-6 xl:mb-8 pl-5" {...props} />
+  ),
   // component shortcodes
   Box: (props: BoxProps) => <Box {...props} />,
   Button: (props: ButtonProps) => <Button {...props} />,
@@ -112,10 +113,14 @@ export const MDX: FC<MDXProps> = ({
   components,
   ...rest
 }) => (
-  <Pattern as={as} {...rest} className={classNames(styles.mdx, className)}>
+  <Box
+    as={as}
+    {...(rest as BoxProps)}
+    className={classNames(styles.mdx, className)}
+  >
     <MDXProvider components={{ ...mdxComponents, ...components }}>
       {body && <MDXRenderer>{body}</MDXRenderer>}
       {children}
     </MDXProvider>
-  </Pattern>
+  </Box>
 );

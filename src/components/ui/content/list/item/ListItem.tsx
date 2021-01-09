@@ -8,8 +8,8 @@ import styles from "./ListItem.module.css";
 export type ListItemPattern = "cell" | "default" | "wrapper";
 
 export interface ListItemProps<ListItem extends HTMLElement = HTMLLIElement>
-  extends Omit<TextProps<ListItem>, "pattern"> {
-  pattern?: ListItemPattern;
+  extends Omit<TextProps<ListItem>, "is"> {
+  is?: ListItemPattern;
   text?: TextPattern;
 }
 
@@ -17,17 +17,15 @@ export const ListItem: FC<ListItemProps> = ({
   as = "li",
   children,
   className,
-  is = "item",
-  pattern = "default",
+  is,
   text,
   ...rest
 }) => (
   <Text
     as={as}
-    is={is}
-    pattern={text}
+    is={text}
     {...(rest as TextProps)}
-    className={classNames(styles.default, styles[pattern])}
+    className={classNames(styles.default, is && styles[is])}
   >
     {children}
   </Text>

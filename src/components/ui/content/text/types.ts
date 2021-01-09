@@ -7,7 +7,8 @@ export type TextPattern =
   | "meta"
   | "subheading"
   | "subtitle"
-  | "title";
+  | "title"
+  | string;
 
 export type TextSize =
   | "inherit"

@@ -9,7 +9,7 @@ import React, {
 
 import { Button, ButtonProps, Icon } from "components";
 
-type Theme = "theme-dark" | "theme-light";
+type Theme = "dark" | "light";
 
 interface ThemeContextProps {
   theme: Theme;
@@ -21,12 +21,12 @@ const prefersDarkMode = () =>
   window.matchMedia("(prefers-color-scheme: dark)").matches === true;
 
 const ThemeContext = createContext<ThemeContextProps>({
-  theme: "theme-dark",
+  theme: "dark",
   toggleTheme: () => {},
 });
 
 export const ThemeProvider: FC = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>("theme-light");
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
     // get theme value from localStorage
@@ -34,14 +34,14 @@ export const ThemeProvider: FC = ({ children }) => {
     if (storedTheme !== null) {
       setTheme(storedTheme);
     } else if (prefersDarkMode()) {
-      setTheme("theme-dark");
+      setTheme("dark");
     }
   }, []);
 
   const toggleTheme = () => {
-    const isDark = theme === "theme-dark";
-    localStorage.setItem("theme", isDark ? "theme-light" : "theme-dark");
-    setTheme(isDark ? "theme-light" : "theme-dark");
+    const isDark = theme === "dark";
+    localStorage.setItem("theme", isDark ? "light" : "dark");
+    setTheme(isDark ? "light" : "dark");
   };
 
   return (
@@ -61,7 +61,7 @@ export const ThemeSwitch: FC<ButtonProps> = ({ children, ...rest }) => {
       {...(rest as ButtonProps)}
       onClick={toggleTheme}
     >
-      {theme === "theme-dark" ? <Icon name="sun" /> : <Icon name="moon" />}
+      {theme === "dark" ? <Icon name="sun" /> : <Icon name="moon" />}
       {children}
     </Button>
   );

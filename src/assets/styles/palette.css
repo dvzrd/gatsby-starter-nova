@@ -40,7 +40,7 @@
   --color-service-warn: #f06c00;
 }
 
-.theme-dark {
+.dark {
   /* dark theme background colors */
   --color-background: var(--color-gray-900);
   --color-background-hover: var(--color-gray-500);
@@ -51,16 +51,17 @@
   --color-background-secondary-hover: var(--color-primary-500);
   /* dark theme text colors */
   --color-text: var(--color-gray-100);
+  --color-text-contrast-paper: var(--color-gray-800);
+  --color-text-contrast-primary: var(--color-gray-900);
+  --color-text-contrast-primary-hover: var(--color-primary-100);
+  --color-text-contrast-primary-dark: var(--color-secondary-400);
+  --color-text-contrast-primary-light: var(--color-secondary-900);
+  --color-text-contrast-secondary: var(--color-gray-50);
+  --color-text-contrast-secondary-hover: var(--color-secondary-900);
+  --color-text-contrast-secondary-dark: var(--color-primary-500);
+  --color-text-contrast-secondary-light: var(--color-primary-900);
   --color-text-hover: var(--color-primary-500);
-  --color-text-paper: var(--color-gray-800);
-  --color-text-primary: var(--color-gray-900);
-  --color-text-primary-hover: var(--color-primary-100);
-  --color-text-primary-dark: var(--color-secondary-400);
-  --color-text-primary-light: var(--color-secondary-900);
-  --color-text-secondary: var(--color-gray-50);
-  --color-text-secondary-hover: var(--color-secondary-900);
-  --color-text-secondary-dark: var(--color-primary-500);
-  --color-text-secondary-light: var(--color-primary-900);
+  --color-text-paper: var(--color-gray-100);
   /* dark theme primary colors*/
   --color-primary-100: var(--color-yellow-100);
   --color-primary-200: var(--color-yellow-200);
@@ -83,7 +84,7 @@
   --color-secondary-900: var(--color-purple-900);
 }
 
-.theme-light {
+.light {
   /* light theme background colors */
   --color-background: var(--color-white);
   --color-background-hover: var(--color-gray-400);
@@ -96,14 +97,14 @@
   --color-text: var(--color-gray-900);
   --color-text-hover: var(--color-primary-500);
   --color-text-paper: var(--color-gray-700);
-  --color-text-primary: var(--color-gray-50);
-  --color-text-primary-hover: var(--color-gray-900);
-  --color-text-primary-dark: var(--color-white);
-  --color-text-primary-light: var(--color-gray-700);
-  --color-text-secondary: var(--color-gray-900);
-  --color-text-secondary-hover: var(--color-primary-100);
-  --color-text-secondary-dark: var(--color-gray-50);
-  --color-text-secondary-light: var(--color-gray-800);
+  --color-text-contrast-primary: var(--color-gray-50);
+  --color-text-contrast-primary-hover: var(--color-gray-900);
+  --color-text-contrast-primary-dark: var(--color-white);
+  --color-text-contrast-primary-light: var(--color-gray-700);
+  --color-text-contrast-secondary: var(--color-gray-900);
+  --color-text-contrast-secondary-hover: var(--color-primary-100);
+  --color-text-contrast-secondary-dark: var(--color-gray-50);
+  --color-text-contrast-secondary-light: var(--color-gray-800);
   /* light theme primary colors */
   --color-primary-100: var(--color-purple-100);
   --color-primary-200: var(--color-purple-200);

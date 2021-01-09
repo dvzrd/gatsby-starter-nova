@@ -1,5 +1,5 @@
 .default {
-  @apply bg-background flex overflow-hidden relative text-color;
+  @apply bg-default content-start flex items-stretch justify-start overflow-hidden py-4 relative;
 }
 
 .content {
@@ -15,7 +15,7 @@
 }
 
 .hero {
-  @apply content-center items-center justify-center py-20;
+  @apply content-center items-center overflow-hidden justify-center py-20;
 }
 
 .navbar {

@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Pattern, PatternProps } from "components";
+import { Box, BoxProps } from "components";
 
 import { IconColor, IconName, IconSize } from "./types";
 
-export interface IconProps extends PatternProps {
+export interface IconProps extends BoxProps {
   color?: IconColor;
   name?: IconName;
   size?: IconSize;
@@ -148,14 +148,13 @@ export const Icon: FC<IconProps> = ({
       );
     default:
       return (
-        <Pattern
+        <Box
           as="i"
-          is="icon"
-          {...rest}
+          {...(rest as BoxProps)}
           className={classNames(color, getSize(), className)}
         >
           {children}
-        </Pattern>
+        </Box>
       );
   }
 };

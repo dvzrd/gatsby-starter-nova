@@ -6,9 +6,10 @@ export type ElementRef =
   | null;
 
 export interface ElementProps<Element extends HTMLElement = HTMLDivElement>
-  extends Omit<HTMLProps<Element>, "as" | "content" | "list"> {
+  extends Omit<HTMLProps<Element>, "as" | "content" | "on" | "list"> {
   as?: ElementType;
   innerRef?: ElementRef;
+  on?: string;
   testId?: string;
 }
 
@@ -19,6 +20,7 @@ export const Element: FC<ElementProps> = <
   children,
   className,
   innerRef,
+  on,
   testId,
   ...rest
 }: ElementProps<E>) => {

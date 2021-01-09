@@ -20,11 +20,10 @@ export type HeroPattern =
   | "page"
   | "section";
 
-export interface HeroProps extends Omit<SectionProps, "pattern"> {
+export interface HeroProps extends Omit<SectionProps, "is"> {
   actions?: HeroActionsProps;
   caption?: HeroCaptionProps;
-  pattern?: HeroPattern;
-  section?: SectionPattern;
+  is?: HeroPattern;
 }
 
 export const Hero: FC<HeroProps> = ({
@@ -33,17 +32,14 @@ export const Hero: FC<HeroProps> = ({
   caption,
   children,
   className,
-  is = "hero",
-  pattern = "section",
-  section = "hero",
+  is = "section",
   ...rest
 }) => (
   <Section
     as={as}
-    is={is}
-    pattern={section}
+    is="hero"
     {...(rest as SectionProps)}
-    className={classNames(styles[pattern], className)}
+    className={classNames(styles[is], className)}
   >
     {caption && <HeroCaption {...caption} />}
     {children}

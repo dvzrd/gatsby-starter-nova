@@ -1,5 +1,9 @@
 /* Text Patterns */
 
+.default {
+  @apply border-none outline-none;
+}
+
 .body {
   @apply leading-normal text-base;
 

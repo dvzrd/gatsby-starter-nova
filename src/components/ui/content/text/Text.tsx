@@ -1,40 +1,40 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Pattern, PatternProps } from "components";
+import { Box, BoxProps } from "components";
 
 import styles from "./Text.module.css";
 import { TextPattern, TextSize } from "./types";
 
 export interface TextProps<Text extends HTMLElement = HTMLDivElement>
-  extends PatternProps<Text> {
-  pattern?: TextPattern;
+  extends BoxProps<Text> {
+  is?: TextPattern;
   size?: TextSize;
 }
 
-export const getTextSize = (size: TextSize) => {
+export const getTextSize = (size: TextSize): TextPattern => {
   switch (size) {
     case "inherit":
       return styles.inherit;
     case "xs":
-      return "caption" as TextPattern;
+      return "caption";
     case "sm":
-      return "meta" as TextPattern;
+      return "meta";
     case "lg":
-      return "subtitle" as TextPattern;
+      return "subtitle";
     case "xl":
-      return "subheading" as TextPattern;
+      return "subheading";
     case "2xl":
-      return "title" as TextPattern;
+      return "title";
     case "3xl":
-      return "heading" as TextPattern;
+      return "heading";
     case "4xl":
-      return "hero" as TextPattern;
+      return "hero";
     case "5xl":
-      return "legend" as TextPattern;
+      return "legend";
     case "md":
     default:
-      return "body" as TextPattern;
+      return "body";
   }
 };
 
@@ -42,21 +42,20 @@ export const Text: FC<TextProps> = ({
   as = "span",
   children,
   className,
-  is = "text",
-  pattern = "body",
+  is = "body",
   size,
   ...rest
 }) => (
-  <Pattern
+  <Box
     as={as}
-    is={is}
-    {...(rest as PatternProps)}
+    {...(rest as BoxProps)}
     className={classNames(
-      styles[pattern],
+      styles.default,
+      styles[is],
       getTextSize(size as TextSize),
       className
     )}
   >
     {children}
-  </Pattern>
+  </Box>
 );

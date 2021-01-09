@@ -13,12 +13,7 @@ Use Section to render various section components.
   - heel
   - hero
   - navbar
-- of: type of utility patterns
-  - compact
-  - contained
-  - fluid
-  - full
-- on: type of parent pattern
+- on: type of parent
 
 ## Roadmap
 

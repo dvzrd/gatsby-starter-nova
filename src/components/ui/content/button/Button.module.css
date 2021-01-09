@@ -4,18 +4,18 @@
   @apply border-solid outline-none font-medium tracking-wide uppercase;
 
   &.primary {
-    @apply bg-background-primary border-primary text-color-primary;
+    @apply bg-primary border-primary text-contrast-primary;
   
     &:hover {
-      @apply bg-background-primary-hover border-background-primary-hover text-color-primary-hover;
+      @apply bg-primary-hover border-primary-hover text-contrast-primary-hover;
     }
   }
 
   &.secondary {
-    @apply bg-background-secondary border-secondary text-color-secondary;
+    @apply bg-secondary border-secondary text-contrast-secondary;
   
     &:hover {
-      @apply bg-background-secondary-hover border-background-secondary-hover  text-color-secondary-hover;
+      @apply bg-secondary-hover border-secondary-hover  text-contrast-secondary-hover;
     }
   }
 }
@@ -26,53 +26,53 @@
 }
 
 .outline {
-  @apply border-paper text-color;
+  @apply border-paper text-default;
   background-color: transparent !important;
 
   &:hover {
-    @apply border-primary text-color-hover;
+    @apply border-primary text-hover;
   }
 
   &.primary {
-    @apply border-primary text-background-primary;
+    @apply border-primary text-contrast-primary;
 
     &:hover {
-      @apply border-secondary text-background-secondary;
+      @apply border-secondary text-contrast-secondary;
     }
   }
 
   &.secondary {
-    @apply border-secondary text-background-secondary;
+    @apply border-secondary text-contrast-secondary;
 
     &:hover {
-      @apply  border-primary text-background-primary;
+      @apply  border-primary text-contrast-primary;
     }
   }
 }
 
 .text {
-  @apply leading-normal normal-case text-color text-left;
+  @apply leading-normal normal-case text-default text-left;
   background-color: transparent !important;
   border: 0 !important;
   padding: 0 !important;
 
   &:hover {
-    @apply text-color-hover;
+    @apply text-hover;
   }
 
   &.primary {
-    @apply text-background-primary;
+    @apply text-contrast-primary;
 
     &:hover {
-      @apply text-background-secondary;
+      @apply text-contrast-secondary;
     }
   }
 
   &.secondary {
-    @apply text-background-secondary;
+    @apply text-contrast-secondary;
 
     &:hover {
-      @apply text-background-primary;
+      @apply text-contrast-primary;
     }
   }
 }

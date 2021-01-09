@@ -1,29 +1,28 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Pattern, PatternProps } from "components";
+import { Box, BoxProps } from "components";
 
 export type CardPattern = "default";
 
-export interface CardProps extends PatternProps {
-  pattern?: CardPattern;
+export interface CardProps extends BoxProps {
+  is?: CardPattern;
 }
 
 export const Card: FC<CardProps> = ({
   children,
   className,
-  is = "card",
-  pattern = "default",
+  is = "default",
   ...rest
 }) => (
-  <Pattern
+  <Box
     is={is}
-    {...(rest as PatternProps)}
+    {...(rest as BoxProps)}
     className={classNames(
-      "border-2 xl:border-3 text-paper p-4 md:p-6 xl:p-8",
+      "overflow-hidden relative border-2 xl:border-3 text-paper p-4 md:p-6 xl:p-8",
       className
     )}
   >
     {children}
-  </Pattern>
+  </Box>
 );

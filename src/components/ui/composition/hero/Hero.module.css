@@ -7,5 +7,5 @@
 }
 
 .section {
-  @apply py-20 text-color;
+  @apply py-20;
 }

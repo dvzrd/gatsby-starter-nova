@@ -2,12 +2,12 @@ import React, { FC } from "react";
 import classNames from "classnames";
 import { FieldError } from "react-hook-form";
 
-import { Pattern, PatternProps, Text } from "components";
+import { Box, BoxProps, Text } from "components";
 
 import styles from "./FormField.module.css";
 import { FieldRegister, FieldType } from "./types";
 
-export interface FormFieldProps extends PatternProps {
+export interface FormFieldProps extends BoxProps {
   error?: FieldError;
   errorMessage?: string;
   label?: string;
@@ -17,7 +17,6 @@ export interface FormFieldProps extends PatternProps {
 }
 
 export const FormField: FC<FormFieldProps> = ({
-  is = "field",
   children,
   className,
   error,
@@ -28,13 +27,9 @@ export const FormField: FC<FormFieldProps> = ({
   type = "text",
   ...rest
 }) => (
-  <Pattern
-    is={is}
-    {...(rest as PatternProps)}
-    className={classNames(styles.field, className)}
-  >
+  <Box {...(rest as BoxProps)} className={classNames(styles.field, className)}>
     {label && (
-      <Text as="label" pattern="meta" className={styles.label} htmlFor={name}>
+      <Text as="label" is="meta" className={styles.label} htmlFor={name}>
         {label}
       </Text>
     )}
@@ -45,10 +40,10 @@ export const FormField: FC<FormFieldProps> = ({
       type={type}
     />
     {error && (
-      <Text pattern="meta" className={styles.error}>
+      <Text is="meta" className={styles.error}>
         {error.message || errorMessage}
       </Text>
     )}
     {children}
-  </Pattern>
+  </Box>
 );

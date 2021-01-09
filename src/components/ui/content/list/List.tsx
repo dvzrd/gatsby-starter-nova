@@ -10,9 +10,9 @@ import { ListItem, ListItemProps } from "./item";
 export type ListPattern = "default" | "inline" | "menu";
 
 export interface ListProps<List extends HTMLElement = HTMLUListElement>
-  extends Omit<TextProps<List>, "pattern"> {
+  extends Omit<TextProps<List>, "is"> {
   items?: ListItemProps[];
-  pattern?: ListPattern;
+  is?: ListPattern;
   text?: TextPattern;
 }
 
@@ -20,18 +20,16 @@ export const List: FC<ListProps> = ({
   as = "ul",
   children,
   className,
-  is = "list",
+  is,
   items = undefined,
-  pattern = "default",
   text,
   ...rest
 }) => (
   <Text
     as={as}
-    is={is}
-    pattern={text}
+    is={text}
     {...(rest as TextProps)}
-    className={classNames(styles.default, styles[pattern], className)}
+    className={classNames(styles.default, is && styles[is], className)}
   >
     {items?.length &&
       items.map(({ children, ...rest }) => (

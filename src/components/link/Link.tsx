@@ -12,9 +12,9 @@ export type LinkPattern = "button" | "icon" | "text" | "wrapper";
 export type LinkTarget = "_blank" | "_parent" | "_self" | "_top";
 
 export interface LinkProps<Link extends HTMLElement = HTMLAnchorElement>
-  extends Omit<TextProps<Link>, "pattern" | "text" | "to"> {
+  extends Omit<TextProps<Link>, "is" | "text" | "to"> {
   href?: string;
-  pattern?: LinkPattern | string;
+  is?: LinkPattern | string;
   target?: LinkTarget | string;
   text?: TextPattern;
   to: string;
@@ -27,8 +27,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
       children,
       className,
       href,
-      is = "link",
-      pattern = "text",
+      is = "text",
       target,
       text,
       to,
@@ -45,12 +44,11 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
         return (
           <Text
             as={as}
-            is={is}
+            is={text}
             href={link}
-            pattern={text}
             target={target}
             {...(rest as TextProps)}
-            className={classNames(styles.link, styles[pattern], className)}
+            className={classNames(styles.link, styles[is], className)}
             innerRef={ref as any}
           >
             {children}
@@ -61,11 +59,10 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
       return (
         <Text
           as={GatsbyLink}
-          is={is}
+          is={text}
           to={link}
-          pattern={text}
           {...(rest as TextProps)}
-          className={classNames(styles.link, styles[pattern], className)}
+          className={classNames(styles.link, styles[is], className)}
           innerRef={ref as any}
         >
           {children}
@@ -76,12 +73,11 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
     return (
       <Text
         as={as}
-        is={is}
+        is={text}
         href={link}
-        pattern={text}
         target={target || "_blank"}
         {...(rest as TextProps)}
-        className={classNames(styles.link, styles[pattern], className)}
+        className={classNames(styles.link, styles[is], className)}
         innerRef={ref as any}
       >
         {children}
