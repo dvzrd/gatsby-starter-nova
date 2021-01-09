@@ -33,7 +33,8 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   if (isHidden) return null;
 
   const containerProps = {
-    mod: "flex flex-row flex-wrap content-between justify-between h-full",
+    className:
+      "flex flex-row flex-wrap content-between items-center justify-between h-full",
     ...container,
   };
 
@@ -47,7 +48,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
       as={as}
       className={classNames(
         isMenuOpened
-          ? `fixed top-0 left-0 w-full h-screen lg:${position} lg:top-auto lg:left-auto lg:w-auto lg:h-auto`
+          ? `fixed top-0 left-0 w-full h-screen lg:${position} lg:top-auto lg:left-auto lg:w-auto lg:h-auto z-10`
           : isFixed
           ? "fixed top-0 left-0 w-full"
           : position
@@ -75,7 +76,10 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
           as="nav"
           {...(navProps as BoxProps)}
           {...(navRightProps as BoxProps)}
-          className={classNames("justify-end", navRightProps?.className)}
+          className={classNames(
+            "content-center flex flex-1 items-center justify-end",
+            navRightProps?.className
+          )}
         >
           {navRight}
         </Box>

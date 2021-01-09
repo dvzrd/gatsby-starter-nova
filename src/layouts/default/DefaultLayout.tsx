@@ -149,7 +149,11 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
           </Link>
         </LayoutMenu>
       </LayoutHeader>
-      <Box as="main" is="main" {...main}>
+      <Box
+        as="main"
+        {...(main as BoxProps)}
+        className={classNames(styles.main, main?.className)}
+      >
         {children}
       </Box>
       <LayoutFooter {...footer} />

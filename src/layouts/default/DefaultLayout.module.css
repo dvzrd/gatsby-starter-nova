@@ -6,6 +6,10 @@
   @apply bg-default min-h-screen;
 }
 
+.main {
+  @apply flex-1;
+}
+
 .link {
   @apply flex items-center justify-between;
 }

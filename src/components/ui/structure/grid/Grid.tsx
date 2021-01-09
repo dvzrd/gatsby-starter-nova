@@ -43,7 +43,6 @@ export const Grid: FC<GridProps> = ({
   ...rest
 }) => (
   <Box
-    is={is}
     {...(rest as BoxProps)}
     className={classNames(
       autoCols && `auto-cols-${autoCols}`,
