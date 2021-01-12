@@ -1,5 +1,5 @@
 .default {
-  @apply bg-default content-start flex items-stretch justify-start overflow-hidden py-4 relative;
+  @apply text-default bg-default content-start flex items-stretch justify-start overflow-hidden py-4 relative;
 }
 
 .content {

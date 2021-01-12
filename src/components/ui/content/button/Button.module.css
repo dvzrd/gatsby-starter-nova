@@ -4,19 +4,11 @@
   @apply border-solid outline-none font-medium tracking-wide uppercase;
 
   &.primary {
-    @apply bg-primary border-bg-primary text-primary;
-  
-    &:hover {
-      @apply bg-primary-hover border-bg-primary-hover text-primary-hover;
-    }
+    @apply bg-primary border-bg-primary text-primary hover:bg-primary-dark hover:border-bg-primary hover:text-primary-dark;
   }
 
   &.secondary {
-    @apply bg-secondary border-bg-secondary text-secondary;
-  
-    &:hover {
-      @apply bg-secondary-hover border-bg-secondary-hover text-secondary-hover;
-    }
+    @apply bg-secondary border-bg-secondary text-secondary hover:bg-secondary-dark hover:border-bg-secondary hover:text-secondary-dark;
   }
 }
 
@@ -26,54 +18,30 @@
 }
 
 .outline {
-  @apply border-default text-default;
+  @apply border-default text-default hover:border-hover hover:text-hover;
   background-color: transparent !important;
 
-  &:hover {
-    @apply border-hover text-hover;
-  }
-
   &.primary {
-    @apply border-bg-primary text-bg-primary;
-
-    &:hover {
-      @apply border-bg-primary-hover text-bg-primary-hover;
-    }
+    @apply border-bg-primary text-bg-primary hover:border-bg-primary-light-hover hover:text-bg-primary-light-hover;
   }
 
   &.secondary {
-    @apply border-bg-secondary text-bg-secondary;
-
-    &:hover {
-      @apply  border-bg-secondary-hover text-bg-secondary-hover;
-    }
+    @apply border-bg-secondary text-bg-secondary hover:border-bg-secondary-light-hover hover:text-bg-secondary-light-hover;
   }
 }
 
 .text {
-  @apply leading-normal normal-case text-default text-left;
+  @apply leading-normal normal-case text-default hover:text-hover text-left;
   background-color: transparent !important;
   border: 0 !important;
   padding: 0 !important;
 
-  &:hover {
-    @apply text-hover;
-  }
-
   &.primary {
-    @apply text-bg-primary;
-
-    &:hover {
-      @apply text-bg-primary-hover;
-    }
+    @apply text-bg-primary hover:text-bg-primary-hover;
   }
 
   &.secondary {
-    @apply text-bg-secondary;
-
-    &:hover {
-      @apply text-bg-secondary-hover;
-    }
+    @apply text-bg-secondary hover:text-bg-secondary-hover;
   }
 }
 

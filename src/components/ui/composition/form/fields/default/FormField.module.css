@@ -6,13 +6,8 @@
   @apply mb-1;
 }
 
-
 .input {
-  @apply border-2 text-gray-900 transition-colors duration-150 ease-in-out;
-
-  &:focus {
-    @apply border-bg-primary outline-none;
-  }
+  @apply border-2 focus:border-bg-primary focus:outline-none border-bg-paper text-gray-900 transition-colors duration-150 ease-in-out;
 }
 
 .error {

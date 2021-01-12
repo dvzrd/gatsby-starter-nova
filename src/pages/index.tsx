@@ -69,7 +69,7 @@ const PageIndex: FC<PageProps> = () => {
             <Text
               as="h4"
               is="subheading"
-              className="mb-2 md:mb-3 xl:mb-4 text-primary-500"
+              className="mb-2 md:mb-3 xl:mb-4 text-bg-primary"
             >
               Designing with constraints.
             </Text>
@@ -83,7 +83,7 @@ const PageIndex: FC<PageProps> = () => {
             <Text
               as="h4"
               is="subheading"
-              className="mb-2 md:mb-3 xl:mb-4 text-primary-500"
+              className="mb-2 md:mb-3 xl:mb-4 text-bg-primary"
             >
               Your CSS stops growing.
             </Text>
@@ -97,7 +97,7 @@ const PageIndex: FC<PageProps> = () => {
             <Text
               as="h4"
               is="subheading"
-              className="mb-2 md:mb-3 xl:mb-4 text-primary-500"
+              className="mb-2 md:mb-3 xl:mb-4 text-bg-primary"
             >
               Making changes feels safer.
             </Text>

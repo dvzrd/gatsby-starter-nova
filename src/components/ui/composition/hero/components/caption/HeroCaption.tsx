@@ -31,7 +31,7 @@ export const HeroCaption: FC<HeroCaptionProps> = ({
     className={classNames("hero-caption", className)}
   >
     {meta && (
-      <Text as="h2" is="meta" {...metaProps}>
+      <Text as="small" is="meta" {...metaProps}>
         {meta}
       </Text>
     )}

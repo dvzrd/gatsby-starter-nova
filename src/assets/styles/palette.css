@@ -3,7 +3,9 @@
   --color-black: #000;
   --color-white: #fff;
   /* default gray colors */
+  --color-gray-25: #fcfcf9;
   --color-gray-50: #f0f0ef;
+  --color-gray-75: #ddddd3;
   --color-gray-100: #d0d0cd;
   --color-gray-200: #b9b8b1;
   --color-gray-300: #a1a097;
@@ -24,7 +26,7 @@
   --color-purple-800: #190221;
   --color-purple-900: #0f0116;
   /* default yellow colors */
-  --color-yellow-100: #fefae2;
+  --color-yellow-100: #f7efc7;
   --color-yellow-200: #fcee97;
   --color-yellow-300: #fbe76a;
   --color-yellow-400: #fbe141;
@@ -32,7 +34,7 @@
   --color-yellow-600: #e6c605;
   --color-yellow-700: #c3a804;
   --color-yellow-800: #9e8905;
-  --color-yellow-900: #867504;
+  --color-yellow-900: #7e7e03;
   /* default service colors */
   --color-service-fail: #e00028;
   --color-service-info: #00dffc;
@@ -81,7 +83,7 @@
   --color-bg-secondary-paper: var(--color-secondary-300);
   --color-bg-secondary-paper-hover: var(--color-secondary-400);
   /* dark theme text colors */
-  --color-text: var(--color-gray-25);
+  --color-text: var(--color-gray-200);
   --color-text-hover: var(--color-primary-500);
   --color-text-contrast: var(--color-gray-900);
   --color-text-contrast-hover: var(--color-gray-700);
@@ -89,15 +91,15 @@
   --color-text-dark-hover: var(--color-gray-100);
   --color-text-light: var(--color-gray-800);
   --color-text-light-hover: var(--color-gray-600);
-  --color-text-paper: var(--color-black);
-  --color-text-paper-hover: var(--color-primary-900);
+  --color-text-paper: var(--color-gray-25);
+  --color-text-paper-hover: var(--color-primary-100);
   /* dark theme primary text colors */
-  --color-text-primary: var(--color-white);
-  --color-text-primary-hover: var(--color-primary-100);
-  --color-text-primary-constrast: var(--color-gray-25);
-  --color-text-primary-constrast-hover: var(--color-primary-200);
-  --color-text-primary-dark: var(--color-secondary-100);
-  --color-text-primary-dark-hover: var(--color-secondary-200);
+  --color-text-primary: var(--color-gray-900);
+  --color-text-primary-hover: var(--color-gray-800);
+  --color-text-primary-constrast: var(--color-gray-100);
+  --color-text-primary-constrast-hover: var(--color-primary-300);
+  --color-text-primary-dark: var(--color-primary-500);
+  --color-text-primary-dark-hover: var(--color-primary-600);
   --color-text-primary-light: var(--color-secondary-900);
   --color-text-primary-light-hover: var(--color-secondary-800);
   --color-text-primary-paper: var(--color-color-primary-900);
@@ -107,8 +109,8 @@
   --color-text-secondary-hover: var(--color-secondary-100);
   --color-text-secondary-constrast: var(--color-gray-200);
   --color-text-secondary-constrast-hover: var(--color-gray-300);
-  --color-text-secondary-dark: var(--color-primary-100);
-  --color-text-secondary-dark-hover: var(--color-primary-200);
+  --color-text-secondary-dark: var(--color-secondary-500);
+  --color-text-secondary-dark-hover: var(--color-secondary-600);
   --color-text-secondary-light: var(--color-primary-900);
   --color-text-secondary-light-hover: var(--color-primary-800);
   --color-text-secondary-paper: var(--color-secondary-900);
@@ -150,10 +152,10 @@
   /* light theme primary background colors */
   --color-bg-primary: var(--color-primary-500);
   --color-bg-primary-hover: var(--color-primary-600);
-  --color-bg-primary-contrast: var(--color-gray-700);
-  --color-bg-primary-constrast-hover: var(--color-primary-700);
-  --color-bg-primary-dark: var(--color-primary-900);
-  --color-bg-primary-dark-hover: var(--color-primary-800);
+  --color-bg-primary-contrast: var(--color-gray-900);
+  --color-bg-primary-constrast-hover: var(--color-primary-600);
+  --color-bg-primary-dark: var(--color-primary-700);
+  --color-bg-primary-dark-hover: var(--color-primary-500);
   --color-bg-primary-light: var(--color-primary-100);
   --color-bg-primary-light-hover: var(--color-primary-200);
   --color-bg-primary-paper: var(--color-primary-300);
@@ -161,10 +163,10 @@
   /* light theme secondary background colors */
   --color-bg-secondary: var(--color-secondary-500);
   --color-bg-secondary-hover: var(--color-secondary-600);
-  --color-bg-secondary-contrast: var(--color-gray-600);
-  --color-bg-secondary-constrast-hover: var(--color-secondary-700);
-  --color-bg-secondary-dark: var(--color-secondary-900);
-  --color-bg-secondary-dark-hover: var(--color-secondary-800);
+  --color-bg-secondary-contrast: var(--color-gray-800);
+  --color-bg-secondary-constrast-hover: var(--color-secondary-600);
+  --color-bg-secondary-dark: var(--color-secondary-700);
+  --color-bg-secondary-dark-hover: var(--color-secondary-500);
   --color-bg-secondary-light: var(--color-secondary-100);
   --color-bg-secondary-light-hover: var(--color-secondary-200);
   --color-bg-secondary-paper: var(--color-secondary-300);
@@ -185,8 +187,8 @@
   --color-text-primary-hover: var(--color-primary-100);
   --color-text-primary-constrast: var(--color-gray-300);
   --color-text-primary-constrast-hover: var(--color-primary-300);
-  --color-text-primary-dark: var(--color-gray-50);
-  --color-text-primary-dark-hover: var(--color-secondary-100);
+  --color-text-primary-dark: var(--color-primary-500);
+  --color-text-primary-dark-hover: var(--color-primary-400);
   --color-text-primary-light: var(--color-secondary-900);
   --color-text-primary-light-hover: var(--color-secondary-800);
   --color-text-primary-paper: var(--color-color-primary-700);
@@ -196,12 +198,12 @@
   --color-text-secondary-hover: var(--color-primary-700);
   --color-text-secondary-constrast: var(--color-gray-25);
   --color-text-secondary-constrast-hover: var(--color-gray-100);
-  --color-text-secondary-dark: var(--color-primary-100);
-  --color-text-secondary-dark-hover: var(--color-primary-200);
+  --color-text-secondary-dark: var(--color-secondary-500);
+  --color-text-secondary-dark-hover: var(--color-secondary-400);
   --color-text-secondary-light: var(--color-primary-900);
   --color-text-secondary-light-hover: var(--color-primary-800);
   --color-text-secondary-paper: var(--color-secondary-700);
-  --color-text-secondary-paper-hover: var(--color-secondary-600);
+  --color-text-secondary-paper-hover: var(--color-secondary-800);
   /* light theme primary colors */
   --color-primary-100: var(--color-purple-100);
   --color-primary-200: var(--color-purple-200);
