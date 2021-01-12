@@ -4,18 +4,18 @@
   @apply border-solid outline-none font-medium tracking-wide uppercase;
 
   &.primary {
-    @apply bg-primary border-primary text-contrast-primary;
+    @apply bg-primary border-bg-primary text-primary;
   
     &:hover {
-      @apply bg-primary-hover border-primary-hover text-contrast-primary-hover;
+      @apply bg-primary-hover border-bg-primary-hover text-primary-hover;
     }
   }
 
   &.secondary {
-    @apply bg-secondary border-secondary text-contrast-secondary;
+    @apply bg-secondary border-bg-secondary text-secondary;
   
     &:hover {
-      @apply bg-secondary-hover border-secondary-hover  text-contrast-secondary-hover;
+      @apply bg-secondary-hover border-bg-secondary-hover text-secondary-hover;
     }
   }
 }
@@ -26,26 +26,26 @@
 }
 
 .outline {
-  @apply border-paper text-default;
+  @apply border-default text-default;
   background-color: transparent !important;
 
   &:hover {
-    @apply border-primary text-hover;
+    @apply border-hover text-hover;
   }
 
   &.primary {
-    @apply border-primary text-contrast-primary;
+    @apply border-bg-primary text-bg-primary;
 
     &:hover {
-      @apply border-secondary text-contrast-secondary;
+      @apply border-bg-primary-hover text-bg-primary-hover;
     }
   }
 
   &.secondary {
-    @apply border-secondary text-contrast-secondary;
+    @apply border-bg-secondary text-bg-secondary;
 
     &:hover {
-      @apply  border-primary text-contrast-primary;
+      @apply  border-bg-secondary-hover text-bg-secondary-hover;
     }
   }
 }
@@ -61,18 +61,18 @@
   }
 
   &.primary {
-    @apply text-contrast-primary;
+    @apply text-bg-primary;
 
     &:hover {
-      @apply text-contrast-secondary;
+      @apply text-bg-primary-hover;
     }
   }
 
   &.secondary {
-    @apply text-contrast-secondary;
+    @apply text-bg-secondary;
 
     &:hover {
-      @apply text-contrast-primary;
+      @apply text-bg-secondary-hover;
     }
   }
 }

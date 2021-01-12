@@ -3,6 +3,8 @@ import classNames from "classnames";
 
 import { Box, BoxProps } from "components";
 
+import styles from "./Card.module.css";
+
 export type CardPattern = "default";
 
 export interface CardProps extends BoxProps {
@@ -15,14 +17,7 @@ export const Card: FC<CardProps> = ({
   is = "default",
   ...rest
 }) => (
-  <Box
-    is={is}
-    {...(rest as BoxProps)}
-    className={classNames(
-      "overflow-hidden relative border-2 xl:border-3 text-paper p-4 md:p-6 xl:p-8",
-      className
-    )}
-  >
+  <Box {...(rest as BoxProps)} className={classNames(styles[is], className)}>
     {children}
   </Box>
 );

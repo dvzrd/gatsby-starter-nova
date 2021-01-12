@@ -46,8 +46,7 @@ Thinking about patterns, it helps to name them in this order because it's easier
   is="section"
   of="compact full row"
   on="home-page"
-  mod="bg-primary text-contrast-primary"
-  className="home-hero"
+  className="home-hero bg-primary text-primary"
 >
   <h1 className="home-hero__heading">Home Page Hero Pattern</h1>
   <h2 className="home-hero__subheading">This is a subheading.</h2>

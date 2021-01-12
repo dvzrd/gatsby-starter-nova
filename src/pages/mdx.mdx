@@ -69,7 +69,7 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
 
 <Box flex="1" flow="row-wrap" className="items-center">
   <Button className="mb-4 mr-4">Default button</Button>
-  <Box className="bg-secondary text-contrast-secondary border-secondary hover:bg-primary hover:text-contrast-primary hover:border-primary flex flex-col flex-wrap mb-4 mr-4">
+  <Box className="bg-secondary text-secondary border-secondary hover:bg-primary hover:text-primary hover:border-bg-primary flex flex-col flex-wrap mb-4 mr-4">
     <Button color="inherit">Inherit button</Button>
   </Box>
   <Button color="primary" className="mb-4 mr-4">
@@ -88,7 +88,7 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
   <Button is="outline" className="mb-4 mr-4">
     Default outline
   </Button>
-  <Box className="bg-transparent text-contrast-primary border-primary hover:text-contrast-secondary hover:border-secondary flex flex-col flex-wrap mb-4 mr-4">
+  <Box className="bg-transparent border-bg-primary text-bg-primary hover:bg-secondary hover:border-secondary hover:text-secondary flex flex-col flex-wrap mb-4 mr-4">
     <Button color="inherit" is="outline">
       Inherit outline
     </Button>
@@ -229,7 +229,7 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
       <Link
         to="/"
         is="button"
-        className="no-underline border-primary hover:border-primary-hover text-contrast-primary hover:text-contrast-primary-hover my-4 md:my-5 xl:my-6"
+        className="border-bg-secondary text-bg-secondary hover:bg-secondary hover:border-bg-secondary hover:text-secondary my-4 md:my-5 xl:my-6"
       >
         <Button as="span" color="inherit" is="outline" size="lg">
           Take me home

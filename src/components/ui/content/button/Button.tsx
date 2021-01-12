@@ -60,7 +60,7 @@ export const Button: FC<ButtonProps> = ({
           "border-4 py-6 px-8 md:px-8 xl:py-7 xl:px-12": size === "3xl",
           "border-5 py-7 px-9 md:px-8 xl:py-8 xl:px-14": size === "4xl",
           "border-6 py-8 px-10 md:px-8 xl:py-9 xl:px-16": size === "5xl",
-          "border-hover bg-paper text-paper hover:text-contrast-primary hover:bg-primary hover:border-primary":
+          "border-paper bg-paper text-paper hover:border-bg-primary hover:bg-primary hover:text-primary":
             is === "default",
         },
         className

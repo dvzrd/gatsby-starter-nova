@@ -65,7 +65,7 @@ const PageIndex: FC<PageProps> = () => {
           gap="gap-4 md:gap-5 xl:gap-6"
           className="mb-12 md:mb-13 xl:mb-14"
         >
-          <Card className="border-primary">
+          <Card className="border-bg-primary">
             <Text
               as="h4"
               is="subheading"
@@ -79,7 +79,7 @@ const PageIndex: FC<PageProps> = () => {
               which makes it much easier to build visually consistent UIs.
             </Text>
           </Card>
-          <Card className="border-primary">
+          <Card className="border-bg-primary">
             <Text
               as="h4"
               is="subheading"
@@ -93,7 +93,7 @@ const PageIndex: FC<PageProps> = () => {
               you rarely need to write new CSS.
             </Text>
           </Card>
-          <Card className="border-primary">
+          <Card className="border-bg-primary">
             <Text
               as="h4"
               is="subheading"
@@ -109,7 +109,7 @@ const PageIndex: FC<PageProps> = () => {
           </Card>
         </Grid>
       </Section>
-      <Section is="feature" className="bg-primary text-contrast-primary">
+      <Section is="feature" className="bg-primary text-primary">
         <Text as="h2" is="hero">
           {name}
         </Text>
@@ -119,7 +119,7 @@ const PageIndex: FC<PageProps> = () => {
         <Link
           to="/about"
           is="button"
-          className="no-underline border-primary hover:border-primary-hover text-contrast-primary hover:text-contrast-primary-hover my-4 md:my-5 xl:my-6"
+          className="inline-flex border-bg-secondary text-bg-secondary hover:bg-secondary hover:border-bg-secondary hover:text-secondary my-4 md:my-5 xl:my-6"
         >
           <Button as="span" color="inherit" is="outline" size="lg">
             See about page

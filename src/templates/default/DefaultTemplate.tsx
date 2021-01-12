@@ -54,7 +54,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
       logoLight: "white",
     },
     themeSwitch: {
-      className: "text-contrast-primary",
+      className: "text-primary",
     },
     ...layout,
   };

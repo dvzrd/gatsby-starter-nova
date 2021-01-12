@@ -5,10 +5,13 @@ const { join } = require("path");
 const config = require("./site.config");
 
 module.exports = {
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+  },
   plugins: [
     // plugins
     "gatsby-plugin-advanced-sitemap",
-    "gatsby-plugin-next-seo",
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
     "gatsby-plugin-typescript",

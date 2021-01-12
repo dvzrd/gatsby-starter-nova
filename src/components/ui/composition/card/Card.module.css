@@ -1,0 +1,3 @@
+.default {
+  @apply overflow-hidden relative border-2 xl:border-3 p-4 md:p-6 xl:p-8;
+}

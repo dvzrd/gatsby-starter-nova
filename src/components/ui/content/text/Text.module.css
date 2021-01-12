@@ -29,7 +29,7 @@
 }
 
 .heading {
-  @apply block leading-tight mb-2 mt-4 text-3xl tracking-wide;
+  @apply block leading-tight text-3xl tracking-wide;
 
   @media only screen and (min-width: 768px) {
     @apply text-4xl;

@@ -66,14 +66,14 @@ export type PlaceContent = AlignContent | "stretch";
 export type FlexDirection = "col" | "col-reverse" | "row" | "row-reverse";
 
 export type FlexFlow =
-  | "col-no-wrap"
-  | "col-reverse-no-wrap"
+  | "col-nowrap"
+  | "col-reverse-nowrap"
   | "col-wrap"
   | "col-reverse-wrap"
   | "col-wrap-reverse"
   | "col-reverse-wrap-reverse"
-  | "row-no-wrap"
-  | "row-reverse-no-wrap"
+  | "row-nowrap"
+  | "row-reverse-nowrap"
   | "row-wrap"
   | "row-reverse-wrap"
   | "row-wrap-reverse"
@@ -85,4 +85,4 @@ export type FlexShrink = "default" | "0";
 
 export type FlexType = "1" | "auto" | "initial" | "none";
 
-export type FlexWrap = "no-wrap" | "wrap" | "wrap-reverse";
+export type FlexWrap = "nowrap" | "wrap" | "wrap-reverse";

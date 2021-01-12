@@ -21,7 +21,10 @@ export const HeroActions: FC<HeroActionsProps> = ({
 }) => (
   <Box
     {...(rest as BoxProps)}
-    className={classNames("hero-actions", className)}
+    className={classNames(
+      "hero-actions flex flex-col flex-nowrap items-start",
+      className
+    )}
   >
     {buttons &&
       buttons.map((button) => (

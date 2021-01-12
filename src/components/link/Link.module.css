@@ -1,11 +1,11 @@
 /* Link patterns */
 
 .link {
-  @apply no-underline;
+  @apply underline;
 }
 
 .button {
-  @apply flex outline-none uppercase;
+  @apply flex no-underline outline-none uppercase;
 }
 
 .icon {
@@ -13,9 +13,7 @@
 }
 
 .text {
-  &:hover {
-    @apply underline;
-  }
+  @apply hover:underline;
 }
 
 .wrapper {
