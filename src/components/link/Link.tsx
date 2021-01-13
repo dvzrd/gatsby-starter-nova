@@ -3,7 +3,14 @@ import { Link as GatsbyLink } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 import classNames from "classnames";
 
-import { Text, TextProps, TextPattern } from "components";
+import {
+  Button,
+  ButtonPattern,
+  ButtonProps,
+  Text,
+  TextProps,
+  TextPattern,
+} from "components";
 
 import styles from "./Link.module.css";
 
@@ -13,6 +20,9 @@ export type LinkTarget = "_blank" | "_parent" | "_self" | "_top";
 
 export interface LinkProps<Link extends HTMLElement = HTMLAnchorElement>
   extends Omit<TextProps<Link>, "is" | "text" | "to"> {
+  activeClassName?: string;
+  button?: ButtonPattern;
+  buttonProps?: ButtonProps;
   href?: string;
   is?: LinkPattern | string;
   target?: LinkTarget | string;
@@ -24,6 +34,8 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
   (
     {
       as = OutboundLink,
+      button = "text",
+      buttonProps,
       children,
       className,
       href,
@@ -51,7 +63,18 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
             className={classNames(styles.link, styles[is], className)}
             innerRef={ref as any}
           >
-            {children}
+            {is === "button" ? (
+              <Button
+                as="span"
+                is={button}
+                {...(buttonProps as ButtonProps)}
+                className={buttonProps?.className}
+              >
+                {children}
+              </Button>
+            ) : (
+              children
+            )}
           </Text>
         );
       }
@@ -65,7 +88,18 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
           className={classNames(styles.link, styles[is], className)}
           innerRef={ref as any}
         >
-          {children}
+          {is === "button" ? (
+            <Button
+              as="span"
+              is={button}
+              {...(buttonProps as ButtonProps)}
+              className={buttonProps?.className}
+            >
+              {children}
+            </Button>
+          ) : (
+            children
+          )}
         </Text>
       );
     }
@@ -80,7 +114,18 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
         className={classNames(styles.link, styles[is], className)}
         innerRef={ref as any}
       >
-        {children}
+        {is === "button" ? (
+          <Button
+            as="span"
+            is={button}
+            {...(buttonProps as ButtonProps)}
+            className={buttonProps?.className}
+          >
+            {children}
+          </Button>
+        ) : (
+          children
+        )}
       </Text>
     );
   }

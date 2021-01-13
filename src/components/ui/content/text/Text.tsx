@@ -7,7 +7,7 @@ import styles from "./Text.module.css";
 import { TextPattern, TextSize } from "./types";
 
 export interface TextProps<Text extends HTMLElement = HTMLDivElement>
-  extends BoxProps<Text> {
+  extends Omit<BoxProps<Text>, "to"> {
   is?: TextPattern;
   size?: TextSize;
 }

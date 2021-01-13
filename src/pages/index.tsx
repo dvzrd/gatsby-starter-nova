@@ -1,16 +1,7 @@
 import React, { FC } from "react";
 import { PageProps } from "gatsby";
 
-import {
-  Button,
-  Card,
-  Grid,
-  Hero,
-  HeroProps,
-  Link,
-  Section,
-  Text,
-} from "components";
+import { Card, Grid, Hero, HeroProps, Link, Section, Text } from "components";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
 import { useSiteMetadata } from "graphql";
 
@@ -119,11 +110,10 @@ const PageIndex: FC<PageProps> = () => {
         <Link
           to="/about"
           is="button"
+          buttonProps={{ is: "outline", color: "inherit", size: "lg" }}
           className="inline-flex border-bg-secondary text-bg-secondary hover:bg-secondary hover:border-bg-secondary hover:text-secondary my-4 md:my-5 xl:my-6"
         >
-          <Button as="span" color="inherit" is="outline" size="lg">
-            See about page
-          </Button>
+          See about page
         </Link>
       </Section>
       <Section as="footer" is="heel" on="page-home">
