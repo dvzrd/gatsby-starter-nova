@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Hero, Text } from "components";
+import { PageHero } from "components";
 import { useTheme } from "contexts";
 import { DefaultLayout } from "layouts";
 
@@ -25,20 +25,15 @@ const PageJSX = () => {
   const heroProps = {
     caption: {
       heading: "This is a regular JSX page",
+      subheading:
+        "TypeScript is not required (but you can adjust that in the tsconfig file) when working with this starter. Feel free to use JSX or JS if strict code is not a requirement for you or if you just want to prototype something really quickly.",
     },
-    minH: "screen-1/2",
+    on: "page-jsx",
   };
 
   return (
     <DefaultLayout {...layoutProps}>
-      <Hero {...heroProps}>
-        <Text as="h2" is="subtitle" className="font-light leading-snug mt-4">
-          TypeScript is not required (but you can adjust that in the tsconfig
-          file) when working with this starter. Feel free to use JSX or JS if
-          strict code is not a requirement for you or if you just want to
-          prototype something really quickly.
-        </Text>
-      </Hero>
+      <PageHero {...heroProps} />
     </DefaultLayout>
   );
 };

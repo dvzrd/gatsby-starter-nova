@@ -44,7 +44,7 @@ export const siteMetadataFragment = graphql`
   }
 `;
 
-export const useSiteMetadata = () => {
+export const useSiteMetadataQuery = () => {
   const {
     site: { siteMetadata },
   }: SiteMetadata = useStaticQuery(

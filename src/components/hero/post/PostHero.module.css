@@ -1,0 +1,8 @@
+.hero {
+  @apply items-center text-center;
+}
+
+.caption {
+  @apply mx-auto;
+  max-width: 800px;
+}

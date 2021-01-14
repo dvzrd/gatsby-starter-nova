@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import classNames from "classnames";
 
 import { Link, Section, SectionProps, Text } from "components";
-import { useSiteMetadata } from "graphql";
+import { useSiteMetadataQuery } from "graphql";
 import { SiteMetadataAuthor, SiteMetadataOrganization } from "types/graphql";
 import { GatsbyLocation } from "types/gatsby";
 
@@ -34,7 +34,7 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
     footnote,
     memorial,
     organization,
-  } = useSiteMetadata();
+  } = useSiteMetadataQuery();
   const currentYear = new Date().getFullYear();
 
   if (isHidden) return null;
@@ -51,7 +51,7 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
       as={as}
       is={is}
       {...(rest as SectionProps)}
-      className={classNames(mod, className)}
+      className={classNames(mod, "bg-gray-100 dark:bg-black", className)}
     >
       {children}
       {copyright && (

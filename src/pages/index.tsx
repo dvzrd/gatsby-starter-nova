@@ -1,29 +1,37 @@
 import React, { FC } from "react";
 import { PageProps } from "gatsby";
 
-import { Card, Grid, Hero, HeroProps, Link, Section, Text } from "components";
+import {
+  Card,
+  Grid,
+  Link,
+  PageHero,
+  PageHeroProps,
+  Section,
+  Text,
+} from "components";
+import { PostsListing } from "containers";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
-import { useSiteMetadata } from "graphql";
+import { useSiteMetadataQuery } from "graphql";
 
 const PageIndex: FC<PageProps> = ({ location }) => {
-  const { description, title, name } = useSiteMetadata();
+  const { description, title, name } = useSiteMetadataQuery();
 
   const layoutProps: DefaultLayoutProps = {
     on: "page-home",
     location,
   };
 
-  const heroProps: HeroProps = {
+  const heroProps: PageHeroProps = {
     caption: {
       heading: description,
     },
-    is: "page",
-    vh: "3/4",
+    on: "page-home",
   };
 
   return (
     <DefaultLayout {...layoutProps}>
-      <Hero {...heroProps} />
+      <PageHero {...heroProps} />
       <Section on="page-home" is="content">
         <Text
           as="h3"
@@ -117,6 +125,7 @@ const PageIndex: FC<PageProps> = ({ location }) => {
           See about page
         </Link>
       </Section>
+      <PostsListing />
       <Section as="footer" is="heel" on="page-home">
         <h3 className="leading-tight mt-12 md:mt-13 xl:mt-14 mb-4 md:mb-5 xl:mb-6">
           This gatsby starter uses TailwindCSS

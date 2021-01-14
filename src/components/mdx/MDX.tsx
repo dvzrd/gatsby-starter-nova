@@ -109,7 +109,7 @@ export const MDX: FC<MDXProps> = ({
   as = "article",
   body,
   children,
-  className = "mb-8",
+  className,
   components,
   ...rest
 }) => (

@@ -1,48 +1,43 @@
 import React, { FC } from "react";
 import { GatsbySeoProps } from "gatsby-plugin-next-seo";
-import { PageProps } from "gatsby";
 
 import {
-  Hero,
-  HeroProps,
+  PageHero,
+  PageHeroProps,
   MDX,
   MDXProps,
   Section,
   SectionProps,
 } from "components";
-import { useTheme } from "contexts";
-import { DefaultLayout, DefaultLayoutProps } from "layouts";
+import { ContactSection } from "containers";
+import { DefaultLayout } from "layouts";
 
-export type PageFrontmatter = {
-  container?: SectionProps;
-  description: string;
-  hero?: HeroProps;
-  layout?: DefaultLayoutProps;
-  main?: SectionProps;
-  mdx?: MDXProps;
-  seo?: GatsbySeoProps;
-  title: string;
-};
+import { DefaultPageProps } from "./types";
 
-export interface PageContext {
-  excerpt?: string;
-  frontmatter: PageFrontmatter;
-  slug: string;
-}
-
-export interface DefaultTemplateProps extends PageProps {
-  pageContext: PageContext;
-}
-
-const DefaultTemplate: FC<DefaultTemplateProps> = ({
+const DefaultTemplate: FC<DefaultPageProps> = ({
   children,
   location,
   pageContext: {
     excerpt,
-    frontmatter: { description, hero, layout, main, mdx, seo, title },
+    frontmatter: {
+      description,
+      hero,
+      layout,
+      main,
+      mdx,
+      page,
+      seo,
+      showFooter = true,
+      showHeader = true,
+      subtitle,
+      template,
+      title,
+      contact,
+    },
   },
 }) => {
-  const { theme } = useTheme();
+  const pageId = page ? `page-${page}` : "page-default";
+  const mainPattern = !template ? "main" : "content";
 
   const seoProps: GatsbySeoProps = {
     title: seo?.title || title,
@@ -66,55 +61,36 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
           height: 800,
           alt: title,
         },
-        {
-          url: `${location?.origin}/logo-${theme}.png`,
-          width: 800,
-          height: 800,
-          alt: title,
-        },
       ],
       ...seo?.openGraph,
     },
     ...seo,
   };
 
-  const layoutProps: DefaultLayoutProps = {
-    header: {
-      bgColor: "primary",
-      color: "primary",
-    },
-    location,
-    logo: {
-      logoDark: "black",
-      logoLight: "white",
-    },
-    themeSwitch: {
-      className: "text-primary",
-    },
-    ...layout,
-  };
-
-  const heroProps: HeroProps = {
+  const heroProps: PageHeroProps = {
+    on: pageId,
+    is: "landing",
+    ...hero,
     caption: {
       heading: title,
+      subheading: subtitle,
+      ...hero?.caption,
     },
-    bgColor: "primary",
-    color: "primary",
-    vh: "2/3",
-    ...hero,
   };
 
   const mainProps: SectionProps = {
-    is: "content",
+    on: pageId,
+    is: mainPattern,
     ...main,
   };
 
   return (
-    <DefaultLayout seo={seoProps} {...layoutProps}>
-      <Hero {...heroProps} />
+    <DefaultLayout {...layout} seo={seoProps}>
+      {showHeader && <PageHero {...heroProps} />}
       <Section {...mainProps}>
-        <MDX {...mdx}>{children}</MDX>
+        <MDX {...(mdx as MDXProps)}>{children}</MDX>
       </Section>
+      {showFooter && <ContactSection on={pageId} as="footer" {...contact} />}
     </DefaultLayout>
   );
 };

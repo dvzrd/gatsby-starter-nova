@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import classNames from "classnames";
 
 import { Text, TextProps } from "components";
-import { useSiteNameData } from "graphql";
+import { useSiteMetadataQuery } from "graphql";
 
 export interface BrandNameProps extends TextProps {
   isShort?: boolean;
@@ -15,7 +15,7 @@ export const BrandName: FC<BrandNameProps> = ({
   isShort,
   ...rest
 }) => {
-  const { acronym, name } = useSiteNameData();
+  const { acronym, name } = useSiteMetadataQuery();
 
   return (
     <Text

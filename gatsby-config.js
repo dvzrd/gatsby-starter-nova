@@ -4,6 +4,10 @@ const { join } = require("path");
 
 const config = require("./site.config");
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   flags: {
     // DEV_SSR: true,
@@ -14,7 +18,6 @@ module.exports = {
   },
   plugins: [
     // plugins
-    "gatsby-plugin-advanced-sitemap",
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
     "gatsby-plugin-typescript",
@@ -25,11 +28,19 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-advanced-sitemap",
+      options: {
+        exclude: ["/dev-404-page", "/404", "/404.html", /(\/)?hash-\S*/],
+        createLinkInHead: true,
+        addUncaughtPages: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         background_color: "#fff",
         display: "minimal-ui",
-        icon: `${__dirname}/src/assets/images/logo-dark.png`,
+        icon: `${__dirname}/assets/media/logo-dark.png`,
         name: config.name,
         short_name: config.acronym,
         start_url: config.pathPrefix,
@@ -52,7 +63,6 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1280,
-              maxHeight: 720,
               linkImagesToOriginal: false,
             },
           },
@@ -114,12 +124,13 @@ module.exports = {
         components: join(__dirname, "src/components"),
         containers: join(__dirname, "src/containers"),
         contexts: join(__dirname, "src/contexts"),
+        data: join(__dirname, "data"),
         graphql: join(__dirname, "src/graphql"),
-        images: join(__dirname, "src/images"),
         layouts: join(__dirname, "src/layouts"),
+        media: join(__dirname, "assets/media"),
         pages: join(__dirname, "src/pages"),
         src: join(__dirname, "src"),
-        styles: join(__dirname, "src/assets/styles"),
+        styles: join(__dirname, "assets/styles"),
         templates: join(__dirname, "src/templates"),
         types: join(__dirname, "src/types"),
         utils: join(__dirname, "src/utils"),
@@ -129,8 +140,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: `${__dirname}/src/assets/images`,
+        name: "media",
+        path: `${__dirname}/assets/media`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "data",
+        path: `${__dirname}/data`,
       },
     },
     {

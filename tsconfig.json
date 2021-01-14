@@ -22,6 +22,6 @@
     "sourceMap": true,
     "strict": true
   },
-  "exclude": ["src/assets/*", "node_modules"],
+  "exclude": ["assets/*", "data/*", "node_modules"],
   "include": ["src"]
 }

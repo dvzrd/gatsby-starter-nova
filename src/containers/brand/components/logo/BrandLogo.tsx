@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { kebabCase } from "lodash";
 
 import { BoxProps } from "components";
-import { useLogoData, useSiteNameData } from "graphql";
+import { useLogoData, useSiteMetadataQuery } from "graphql";
 
 export type LogoName = "black" | "dark" | "light" | "white" | string;
 
@@ -14,7 +14,7 @@ export interface BrandLogoProps extends BoxProps {
 
 export const BrandLogo: FC<BrandLogoProps> = ({ className, logoName }) => {
   const { logo, logoBlack, logoDark, logoLight, logoWhite } = useLogoData();
-  const { name } = useSiteNameData();
+  const { name } = useSiteMetadataQuery();
 
   switch (logoName) {
     case "black":

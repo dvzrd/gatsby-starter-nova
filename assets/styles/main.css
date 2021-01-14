@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+
+@import "./palette.css";
+
+@import "./patterns.css";
+
+@import "./typography.css";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";

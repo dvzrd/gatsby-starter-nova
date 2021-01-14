@@ -11,10 +11,10 @@ const Page404: FC<PageProps> = ({ location }) => {
   };
 
   const heroProps: HeroProps = {
-    minH: "screen-1/2",
     caption: {
       heading: "404: Page Not Found",
     },
+    vh: "2/3",
   };
 
   return (

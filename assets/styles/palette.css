@@ -71,6 +71,8 @@
   --color-bg-primary-light-hover: var(--color-primary-200);
   --color-bg-primary-paper: var(--color-primary-300);
   --color-bg-primary-paper-hover: var(--color-primary-400);
+  /* dark theme background gradients */
+  --color-bg-gradient: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(17,17,17,0.75) 50%, rgba(17,17,17,0.5) 100%);
   /* dark theme secondary background colors */
   --color-bg-secondary: var(--color-secondary-500);
   --color-bg-secondary-hover: var(--color-secondary-600);
@@ -160,6 +162,8 @@
   --color-bg-primary-light-hover: var(--color-primary-200);
   --color-bg-primary-paper: var(--color-primary-300);
   --color-bg-primary-paper-hover: var(--color-primary-400);
+  /* light theme background gradients */
+  --color-bg-gradient: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.5) 100%);
   /* light theme secondary background colors */
   --color-bg-secondary: var(--color-secondary-500);
   --color-bg-secondary-hover: var(--color-secondary-600);

@@ -1,0 +1,19 @@
+.card {
+  @apply grid grid-cols-6 md:grid-cols-8 lg:grid-cols-6 gap-4 md:gap-6 xl:gap-8 items-center;
+}
+
+.image {
+  @apply col-span-2 lg:col-span-1 overflow-hidden rounded-full;
+}
+
+.info {
+  @apply col-span-4 md:col-span-6 lg:col-span-5;
+}
+
+.name {
+  @apply font-bold leading-normal;
+}
+
+.bio {
+  @apply mt-1 pt-2 md:pt-3 border-t border-solid leading-tight;
+}

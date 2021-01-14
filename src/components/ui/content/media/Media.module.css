@@ -16,8 +16,14 @@
   &.gradient {
     &::after {
       @apply absolute top-0 left-0 w-full h-full;
-      background: var(--color-background-gradient);
+      background: var(--color-bg-gradient);
       content: "";
     }
+  }
+}
+
+.pattern {
+  &.graph {
+    background: var(--pattern-graph);
   }
 }
