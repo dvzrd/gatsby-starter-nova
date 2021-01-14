@@ -21,11 +21,11 @@ export interface PageHeroProps extends Omit<HeroProps, "is"> {
 export const getPageHeroVerticalHeight = (pattern: PageHeroPattern) => {
   switch (pattern) {
     case "article":
-      return "1/2";
-    case "landing":
-      return "3/4";
-    case "default":
       return "2/3";
+    case "landing":
+      return "5/6";
+    case "default":
+      return "3/4";
     default:
       return "auto";
   }

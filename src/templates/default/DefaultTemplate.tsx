@@ -10,7 +10,7 @@ import {
   SectionProps,
 } from "components";
 import { ContactSection } from "containers";
-import { DefaultLayout } from "layouts";
+import { DefaultLayout, DefaultLayoutProps } from "layouts";
 
 import { DefaultPageProps } from "./types";
 
@@ -67,9 +67,26 @@ const DefaultTemplate: FC<DefaultPageProps> = ({
     ...seo,
   };
 
+  const layoutProps: DefaultLayoutProps = {
+    header: {
+      bgColor: "primary",
+      color: "primary",
+    },
+    location,
+    logo: {
+      logoDark: "black",
+      logoLight: "white",
+    },
+    themeSwitch: {
+      className: "text-primary",
+    },
+    ...layout,
+  };
+
   const heroProps: PageHeroProps = {
     on: pageId,
-    is: "landing",
+    bgColor: "primary",
+    color: "primary",
     ...hero,
     caption: {
       heading: title,
@@ -85,7 +102,7 @@ const DefaultTemplate: FC<DefaultPageProps> = ({
   };
 
   return (
-    <DefaultLayout {...layout} seo={seoProps}>
+    <DefaultLayout seo={seoProps} {...layoutProps}>
       {showHeader && <PageHero {...heroProps} />}
       <Section {...mainProps}>
         <MDX {...(mdx as MDXProps)}>{children}</MDX>

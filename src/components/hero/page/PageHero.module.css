@@ -1,8 +1,7 @@
 .hero {
-  @apply items-center text-center;
+  @apply items-center;
 }
 
 .caption {
-  @apply mx-auto my-4;
-  max-width: 800px;
+  @apply mx-auto my-6 md:my-8 xl:my-10;
 }

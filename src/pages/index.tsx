@@ -27,6 +27,7 @@ const PageIndex: FC<PageProps> = ({ location }) => {
       heading: description,
     },
     on: "page-home",
+    is: "landing",
   };
 
   return (
