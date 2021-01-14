@@ -10,6 +10,7 @@ import {
   Section,
   SectionProps,
 } from "components";
+import { useTheme } from "contexts";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
 
 export type PageFrontmatter = {
@@ -24,6 +25,7 @@ export type PageFrontmatter = {
 };
 
 export interface PageContext {
+  excerpt?: string;
   frontmatter: PageFrontmatter;
   slug: string;
 }
@@ -34,13 +36,45 @@ export interface DefaultTemplateProps extends PageProps {
 
 const DefaultTemplate: FC<DefaultTemplateProps> = ({
   children,
+  location,
   pageContext: {
+    excerpt,
     frontmatter: { description, hero, layout, main, mdx, seo, title },
   },
 }) => {
+  const { theme } = useTheme();
+
   const seoProps: GatsbySeoProps = {
-    description,
-    title,
+    title: seo?.title || title,
+    description: seo?.description
+      ? seo?.description
+      : description
+      ? description
+      : excerpt,
+    openGraph: {
+      title: seo?.title || title,
+      description: seo?.description
+        ? seo?.description
+        : description
+        ? description
+        : excerpt,
+      url: location?.href,
+      images: [
+        {
+          url: `${location?.origin}/logo.png`,
+          width: 800,
+          height: 800,
+          alt: title,
+        },
+        {
+          url: `${location?.origin}/logo-${theme}.png`,
+          width: 800,
+          height: 800,
+          alt: title,
+        },
+      ],
+      ...seo?.openGraph,
+    },
     ...seo,
   };
 
@@ -49,6 +83,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
       bgColor: "primary",
       color: "primary",
     },
+    location,
     logo: {
       logoDark: "black",
       logoLight: "white",

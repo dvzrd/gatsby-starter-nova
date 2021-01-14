@@ -37,6 +37,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   isHidden = false,
   left,
   leftProps,
+  location,
   logo,
   menu,
   position = "absolute",
@@ -125,6 +126,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
         <>
           <Brand {...logo} />
           <Link
+            activeClassName={styles.active}
             className={classNames(styles.link, "hidden lg:inline-flex")}
             text="caption"
             to="/about"
@@ -138,6 +140,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
       right={
         <>
           <Link
+            activeClassName={styles.active}
             className={classNames(styles.link, "hidden lg:inline-flex")}
             text="caption"
             to="/jsx"
@@ -145,6 +148,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
             JSX
           </Link>
           <Link
+            activeClassName={styles.active}
             className={classNames(styles.link, "hidden lg:inline-flex")}
             text="caption"
             to="/mdx"
@@ -170,11 +174,8 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
     >
       <Menu {...menuProps} isOpened={menuOpened}>
         <Link
-          className={classNames(
-            styles.link,
-            styles.button,
-            "p-2 sm:p-3 md:p-4"
-          )}
+          activeClassName={styles.active}
+          className={classNames(styles.link, styles.button)}
           size="inherit"
           to="/about"
           onClick={toggleMenu}
@@ -183,11 +184,8 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
           <Icon name="chevron-right" />
         </Link>
         <Link
-          className={classNames(
-            styles.link,
-            styles.button,
-            "p-2 sm:p-3 md:p-4"
-          )}
+          activeClassName={styles.active}
+          className={classNames(styles.link, styles.button)}
           size="inherit"
           to="/jsx"
           onClick={toggleMenu}
@@ -196,11 +194,8 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
           <Icon name="chevron-right" />
         </Link>
         <Link
-          className={classNames(
-            styles.link,
-            styles.button,
-            "p-2 sm:p-3 md:p-4"
-          )}
+          activeClassName={styles.active}
+          className={classNames(styles.link, styles.button)}
           size="inherit"
           to="/mdx"
           onClick={toggleMenu}

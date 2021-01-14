@@ -5,9 +5,11 @@ export type GatsbyImage = {
   name: string;
 };
 
-export type GatsbyLocation = {
-  key: string;
-  pathname: string;
-  search: string;
-  hash: string;
-};
+export type GatsbyLocation =
+  | {
+      key: string;
+      pathname: string;
+      search: string;
+      hash: string;
+    }
+  | WindowsLocation;

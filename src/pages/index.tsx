@@ -5,11 +5,12 @@ import { Card, Grid, Hero, HeroProps, Link, Section, Text } from "components";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
 import { useSiteMetadata } from "graphql";
 
-const PageIndex: FC<PageProps> = () => {
+const PageIndex: FC<PageProps> = ({ location }) => {
   const { description, title, name } = useSiteMetadata();
 
   const layoutProps: DefaultLayoutProps = {
     on: "page-home",
+    location,
   };
 
   const heroProps: HeroProps = {

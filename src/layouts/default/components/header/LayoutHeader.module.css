@@ -25,10 +25,14 @@
 
 .link {
   @apply items-center leading-loose no-underline uppercase;
+
+  &.active {
+    @apply underline;
+  }
 }
 
 .button {
-  @apply flex flex-full items-center justify-between hover:no-underline;
+  @apply flex flex-full justify-between hover:no-underline p-2 sm:p-3 md:p-4;
 }
 
 .switch {

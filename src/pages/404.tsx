@@ -4,9 +4,10 @@ import { PageProps } from "gatsby";
 import { Hero, HeroProps } from "components";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
 
-const Page404: FC<PageProps> = () => {
+const Page404: FC<PageProps> = ({ location }) => {
   const layoutProps: DefaultLayoutProps = {
     on: "page-404",
+    location,
   };
 
   const heroProps: HeroProps = {
