@@ -1,0 +1,7 @@
+.closed {
+  @apply invisible h-0;
+}
+
+.opened {
+  @apply visible h-auto;
+}

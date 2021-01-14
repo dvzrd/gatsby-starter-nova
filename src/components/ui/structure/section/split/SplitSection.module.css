@@ -1,0 +1,7 @@
+.wrapper {
+  @apply flex flex-row flex-wrap content-between items-center justify-between;
+}
+
+.split {
+  @apply flex flex-1;
+}

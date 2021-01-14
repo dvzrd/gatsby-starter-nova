@@ -1,1 +1,2 @@
-export * from "./Section";
+export * from "./default";
+export * from "./split";

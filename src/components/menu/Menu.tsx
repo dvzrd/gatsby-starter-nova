@@ -3,17 +3,17 @@ import classNames from "classnames";
 
 import { List, ListProps } from "components";
 
-import styles from "./LayoutMenu.module.css";
+import styles from "./Menu.module.css";
 
-export interface LayoutMenuProps extends ListProps {
+export interface MenuProps extends ListProps {
   isOpened?: boolean;
 }
 
-export const LayoutMenu: FC<LayoutMenuProps> = ({
+export const Menu: FC<MenuProps> = ({
   as = "aside",
   children,
   className,
-  isOpened,
+  isOpened = false,
   is = "menu",
   text = "title",
   ...rest
@@ -23,11 +23,7 @@ export const LayoutMenu: FC<LayoutMenuProps> = ({
     is={is}
     text={text}
     {...(rest as ListProps)}
-    className={classNames(
-      styles.menu,
-      isOpened ? styles.opened : styles.closed,
-      className
-    )}
+    className={classNames(isOpened ? styles.opened : styles.closed, className)}
   >
     {children}
   </List>

@@ -4,12 +4,14 @@ import classNames from "classnames";
 import { Link, Section, SectionProps, Text } from "components";
 import { useSiteMetadata } from "graphql";
 import { SiteMetadataAuthor, SiteMetadataOrganization } from "types/graphql";
+import { GatsbyLocation } from "types/gatsby";
 
-export type LayoutFooterPattern = "over" | "under" | "sticky";
+export type LayoutFooterModifier = "over" | "under" | "sticky";
 
 export interface LayoutFooterProps extends SectionProps {
   isHidden?: boolean;
-  mod?: LayoutFooterPattern;
+  location?: GatsbyLocation;
+  mod?: LayoutFooterModifier;
   showAuthor?: boolean;
   showOrg?: boolean;
 }

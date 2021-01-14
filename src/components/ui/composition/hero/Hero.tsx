@@ -33,11 +33,13 @@ export const Hero: FC<HeroProps> = ({
   children,
   className,
   is = "page",
+  vh = "1/4",
   ...rest
 }) => (
   <Section
     as={as}
     is="hero"
+    vh={vh}
     {...(rest as SectionProps)}
     className={classNames(styles[is], className)}
   >

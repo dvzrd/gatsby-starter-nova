@@ -65,7 +65,7 @@ const DefaultTemplate: FC<DefaultTemplateProps> = ({
     },
     bgColor: "primary",
     color: "primary",
-    minH: "screen-1/2",
+    vh: "2/3",
     ...hero,
   };
 

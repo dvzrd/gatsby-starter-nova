@@ -1,8 +1,7 @@
 // ui components
 export * from "./ui";
-// icon components
+// starter components
 export * from "./icon";
-// link components
 export * from "./link";
-// mdx components
 export * from "./mdx";
+export * from "./menu";

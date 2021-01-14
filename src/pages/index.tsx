@@ -17,7 +17,7 @@ const PageIndex: FC<PageProps> = () => {
       heading: description,
     },
     is: "page",
-    minH: "screen-2/3",
+    vh: "3/4",
   };
 
   return (

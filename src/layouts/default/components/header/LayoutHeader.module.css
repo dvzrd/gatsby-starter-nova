@@ -1,0 +1,36 @@
+.header {
+  @apply w-full z-10;
+}
+
+.affixed {
+  @apply fixed top-0 left-0 shadow;
+
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.opened {
+  @apply fixed top-0 left-0 h-screen lg:top-auto lg:left-auto lg:w-auto lg:h-auto;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+/* layout header components */
+
+.nav {
+  @apply content-center flex flex-1 items-center space-x-6 lg:space-x-8 xl:space-x-10;
+}
+
+.link {
+  @apply items-center leading-loose no-underline uppercase;
+}
+
+.button {
+  @apply flex flex-full items-center justify-between hover:no-underline;
+}
+
+.switch {
+  @apply text-bg-primary hover:text-bg-primary-hover;
+}

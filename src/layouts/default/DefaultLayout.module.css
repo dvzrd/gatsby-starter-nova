@@ -1,15 +1,7 @@
-.default {
-  @apply flex flex-col flex-wrap;
-}
-
 .layout {
-  @apply bg-default min-h-screen;
+  @apply bg-default flex flex-col flex-wrap min-h-screen;
 }
 
 .main {
   @apply flex-1;
-}
-
-.link {
-  @apply flex items-center justify-between;
 }

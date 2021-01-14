@@ -1,28 +1,19 @@
 import React, { FC } from "react";
 import classNames from "classnames";
+import { camelCase } from "lodash";
 
-import { Box, BoxProps } from "components";
+import { Box, BoxProps, Media, MediaProps } from "components";
 
 import styles from "./Section.module.css";
+import { SectionMod, SectionPattern, SectionVerticalHeight } from "./types";
 
-export type SectionPattern =
-  | "content"
-  | "cta"
-  | "error"
-  | "feature"
-  | "form"
-  | "heel"
-  | "hero"
-  | "navbar"
-  | string;
-
-export type SectionMod = "col" | "compact" | "fluid" | "full" | "row" | string;
-
-export interface SectionProps extends BoxProps {
+export interface SectionProps extends Omit<BoxProps, "media"> {
   container?: BoxProps;
   isContained?: boolean;
   is?: SectionPattern;
+  media?: MediaProps;
   mod?: SectionMod;
+  vh?: SectionVerticalHeight;
 }
 
 export const Section: FC<SectionProps> = ({
@@ -32,8 +23,9 @@ export const Section: FC<SectionProps> = ({
   container,
   is = "content",
   isContained,
+  media,
   mod,
-  on,
+  vh,
   ...rest
 }) => {
   const getModifiers = () => [mod?.split(" ").map((mod) => styles[mod])];
@@ -41,15 +33,21 @@ export const Section: FC<SectionProps> = ({
   return (
     <Box
       as={as}
-      on={on}
       {...(rest as BoxProps)}
       className={classNames(
         styles.default,
         styles[is],
+        vh && styles[`vh${camelCase(vh)}`],
         getModifiers(),
         className
       )}
     >
+      {media && (
+        <Media
+          {...(media as MediaProps)}
+          className={classNames(styles.media, media.className)}
+        />
+      )}
       <Box
         as="figure"
         {...(container as BoxProps)}

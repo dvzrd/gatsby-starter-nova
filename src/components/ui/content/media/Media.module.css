@@ -1,0 +1,23 @@
+.media {
+  @apply relative;
+
+  &.background {
+    @apply w-full h-screen;
+
+    & > div {
+      @apply w-full h-full;
+    }
+  }
+
+  &.blurry {
+    filter: blur(0.35rem);
+  }
+
+  &.gradient {
+    &::after {
+      @apply absolute top-0 left-0 w-full h-full;
+      background: var(--color-background-gradient);
+      content: "";
+    }
+  }
+}
