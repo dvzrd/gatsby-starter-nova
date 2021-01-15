@@ -1,42 +1,25 @@
 .default {
   @apply text-default bg-default content-start flex items-stretch justify-start overflow-hidden py-4 relative;
-
-  & .media {
-    @apply absolute top-0 left-0;
-  }
 }
 
 .content {
-  @apply content-start items-stretch justify-start py-8;
+  @apply content-start items-stretch justify-start py-16 md:py-18 xl:py-20;
 }
 
 .cta {
   @apply content-center items-stretch justify-center p-0;
-
-  & > .container {
-    @apply max-w-none p-0;
-  }
 }
 
 .feature {
-  @apply content-center items-center justify-center min-h-screen-1/4 py-16;
+  @apply content-center items-center justify-center min-h-screen-1/4 py-24 md:py-26 xl:py-28;
 }
 
 .heel {
-  @apply content-end items-end py-8;
+  @apply content-end items-end py-10 md:py-12 xl:py-14;
 }
 
 .hero {
-  @apply content-center items-center overflow-hidden justify-center py-20;
-
-  & .media {
-    @apply top-1/2 left-1/2;
-    transform: translate(-50%, -50%);
-  }
-
-  & .container {
-    @apply flex flex-col flex-nowrap;
-  }
+  @apply content-center items-center overflow-hidden justify-center;
 }
 
 .layout {
@@ -45,21 +28,13 @@
 
 .main {
   @apply content-start items-stretch justify-start p-0;
-
-  & > .container {
-    @apply max-w-none p-0;
-  }
 }
 
 .navbar {
-  @apply content-center flex-none items-start py-4 md:py-5 xl:py-6;
+  @apply content-center flex-none items-start py-4 md:py-5 xl:py-6 z-40;
 
   @media only screen and (min-width: 1024px) {
     overflow: inherit;
-  }
-
-  & .container {
-    @apply flex flex-row flex-wrap content-between justify-between h-full;
   }
 }
 

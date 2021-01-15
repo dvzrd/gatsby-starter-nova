@@ -1,5 +1,5 @@
 .header {
-  @apply w-full z-10;
+  @apply w-full;
 }
 
 .affixed {
@@ -10,7 +10,7 @@
 }
 
 .opened {
-  @apply fixed top-0 left-0 h-screen lg:top-auto lg:left-auto lg:w-auto lg:h-auto;
+  @apply fixed top-0 left-0 h-screen lg:top-auto lg:left-auto lg:w-auto lg:h-auto z-50;
 }
 
 .transparent {

@@ -35,10 +35,10 @@ const PostTemplate: FC<PostTemplateProps> = ({
         mdx,
         page,
         seo,
-        showAuthor = false,
+        showAuthor = true,
         showFooter = true,
         showHeader = true,
-        showRecommended = false,
+        showRecommended = true,
         subtitle,
         tags,
         title,
@@ -107,11 +107,12 @@ const PostTemplate: FC<PostTemplateProps> = ({
       subheading: subtitle,
     },
     media: {
+      ...hero?.media,
       image: {
         ...image,
         name: title,
+        ...hero?.media?.image,
       },
-      ...hero?.media,
     },
     ...hero,
   };

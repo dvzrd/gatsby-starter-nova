@@ -4,11 +4,13 @@ import classNames from "classnames";
 import { Icon, Link, List, Box, Section, SectionProps, Text } from "components";
 import { renderFooterLink } from "layouts";
 import { useSiteMetadataQuery } from "graphql";
+import { GatsbyLocation } from "types/gatsby";
 
 import styles from "./FormFooter.module.css";
 
 export interface FormFooterProps extends SectionProps {
   isHidden?: boolean;
+  location?: GatsbyLocation;
   showAuthor?: boolean;
   showOrg?: boolean;
 }
@@ -19,6 +21,7 @@ export const FormFooter: FC<FormFooterProps> = ({
   className,
   is = "navbar",
   isHidden = false,
+  location,
   showAuthor = true,
   showOrg = true,
   ...rest

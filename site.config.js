@@ -24,12 +24,11 @@ module.exports = {
   },
   description:
     "Nova is a gatsby starter made for quickly and easily launching SEO-friendly sites.",
-  footnote: "Stack: GatsbyJS, GraphQL, MDX, Netlify, TailwindCSS, TypeScript.",
+  footnote: "Stack: GatsbyJS, Netlify, TailwindCSS, TypeScript.",
   hours: ["Mo-Fr 09:00-17:00", "Sa-Su 10:00-16:00"],
   image: "static/logo.png",
   lang: "en",
-  memorial:
-    "In loving memory of Isam Machlovi (1986-2019). Without you, this wouldn't be possible.",
+  memorial: "In loving memory of Isam Machlovi (1986-2019).",
   name: "Gatsby Nova",
   organization: {
     email: "hello@withpulp.com",

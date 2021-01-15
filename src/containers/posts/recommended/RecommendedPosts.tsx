@@ -15,7 +15,7 @@ export interface RecommendedPostsProps extends SectionProps {
 
 export const RecommendedPosts: FC<RecommendedPostsProps> = ({
   children,
-  heading = "More news from HH Consulting",
+  heading = "More from the blog",
   nextPage,
   prevPage,
   subheading,

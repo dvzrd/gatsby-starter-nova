@@ -2,7 +2,8 @@
   @apply relative;
 
   &.background {
-    @apply w-full h-screen;
+    @apply absolute top-1/2 left-1/2 w-full h-screen;
+    transform: translate(-50%, -50%);
 
     & > div {
       @apply w-full h-full;

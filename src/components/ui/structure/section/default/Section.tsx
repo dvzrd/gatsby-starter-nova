@@ -52,6 +52,7 @@ export const Section: FC<SectionProps> = ({
         as="figure"
         {...(container as BoxProps)}
         className={classNames(
+          "z-10",
           isContained ? undefined : "container",
           container?.className
         )}

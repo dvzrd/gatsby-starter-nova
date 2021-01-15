@@ -1,13 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import {
-  Hero,
-  HeroProps,
-  HeroPattern,
-  HeroCaptionProps,
-  MediaProps,
-} from "components";
+import { Hero, HeroProps, HeroPattern, HeroCaptionProps } from "components";
 
 import styles from "./PageHero.module.css";
 
@@ -36,7 +30,6 @@ export const PageHero: FC<PageHeroProps> = ({
   children,
   className,
   hero = "page",
-  media,
   is = "default",
   vh,
   ...rest
@@ -47,16 +40,9 @@ export const PageHero: FC<PageHeroProps> = ({
     className: classNames(styles.caption, caption?.className),
   };
 
-  const mediaProps: MediaProps = {
-    is: "pattern",
-    mod: "background graph",
-    ...media,
-  };
-
   return (
     <Hero
       caption={captionProps}
-      media={mediaProps}
       is={hero}
       vh={vh || getPageHeroVerticalHeight(is)}
       {...(rest as HeroProps)}

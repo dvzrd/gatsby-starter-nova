@@ -32,15 +32,19 @@ export const Media: FC<MediaProps> = ({
   mod,
   ...rest
 }) => {
-  const getVariants = () => [
+  const getModifiers = () => [
     mod?.split(" ").map((mod) => styles[camelCase(mod)]),
   ];
 
   return (
     <Box
-      is={is}
       {...(rest as MediaProps)}
-      className={classNames(styles.media, getVariants(), styles[is], className)}
+      className={classNames(
+        styles.media,
+        getModifiers(),
+        styles[is],
+        className
+      )}
     >
       {image && (
         <Img

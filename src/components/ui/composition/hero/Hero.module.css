@@ -1,11 +1,11 @@
 .card {
-  @apply max-w-md;
+  @apply max-w-md py-14 md:py-16 xl:py-18;
 }
 
 .page {
-  @apply py-32;
+  @apply py-28 md:py-32 xl:py-36;
 }
 
 .section {
-  @apply py-20;
+  @apply py-20 md:py-20 xl:py-24;
 }

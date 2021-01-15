@@ -1,0 +1,7 @@
+.caption {
+  z-index: 1;
+}
+
+.subheading {
+  @apply font-thin leading-snug mt-4;
+}

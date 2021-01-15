@@ -290,6 +290,9 @@ module.exports = {
         "screen-2/3": "66.666667vw",
         "screen-3/4": "75vw",
       },
+      overflow: {
+        inherit: "inherit",
+      },
       spacing: {
         xs: "4px",
         sm: "8px",

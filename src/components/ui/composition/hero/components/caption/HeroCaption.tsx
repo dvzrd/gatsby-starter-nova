@@ -3,6 +3,8 @@ import classNames from "classnames";
 
 import { Box, BoxProps, Text, TextProps } from "components";
 
+import styles from "./HeroCaption.module.css";
+
 export interface HeroCaptionProps extends BoxProps {
   context?: ElementType;
   heading?: string;
@@ -28,24 +30,24 @@ export const HeroCaption: FC<HeroCaptionProps> = ({
   <Box
     as={as}
     {...(rest as BoxProps)}
-    className={classNames("hero-caption", className)}
+    className={classNames(styles.caption, className)}
   >
     {meta && (
-      <Text as="small" is="meta" {...metaProps}>
+      <Text as="small" is="meta" {...(metaProps as TextProps)}>
         {meta}
       </Text>
     )}
     {heading && (
-      <Text as="h1" is="hero" {...headingProps}>
+      <Text as="h1" is="hero" {...(headingProps as TextProps)}>
         {heading}
       </Text>
     )}
     {subheading && (
       <Text
         as="h2"
-        className="font-thin leading-snug mt-4"
         is="subheading"
-        {...subheadingProps}
+        {...(subheadingProps as TextProps)}
+        className={classNames(styles.subheading, subheadingProps?.className)}
       >
         {subheading}
       </Text>
