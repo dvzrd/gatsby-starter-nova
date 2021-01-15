@@ -45,6 +45,7 @@ export interface SiteMetadata {
       organization?: SiteMetadataOrganization;
       siteUrl: string;
       socialMedia?: SiteMetadataSocialMedia;
+      subscribeURL?: string;
       title: string;
     };
   };

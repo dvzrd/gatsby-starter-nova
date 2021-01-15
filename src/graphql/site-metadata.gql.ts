@@ -39,6 +39,7 @@ export const siteMetadataFragment = graphql`
         instagram
         twitter
       }
+      subscribeURL
       title
     }
   }

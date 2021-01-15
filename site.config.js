@@ -1,5 +1,9 @@
 "use strict";
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   acronym: "GN",
   address: {
@@ -39,5 +43,6 @@ module.exports = {
     instagram: "_withpulp",
     twitter: "_withpulp",
   },
+  subscribeURL: process.env.MAILCHIMP_SUBSCRIBE_URL,
   title: "Launch a new site fast",
 };

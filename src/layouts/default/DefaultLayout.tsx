@@ -15,7 +15,7 @@ import {
 } from "./components";
 import styles from "./DefaultLayout.module.css";
 
-export type LayoutPattern = "default" | "form";
+export type LayoutPattern = "default" | "landing";
 
 export interface LayoutLogoProps {
   logoName?: LogoName;
@@ -52,26 +52,28 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   const { theme } = useTheme();
 
   return (
-    <Box
-      {...(rest as BoxProps)}
-      className={classNames(styles.layout, styles[is], theme, className)}
-    >
+    <>
       <GatsbySeo {...seo} />
-      <LayoutHeader
-        location={location}
-        logo={logo}
-        menu={menu}
-        themeSwitch={themeSwitch}
-        {...header}
-      />
       <Box
-        as="main"
-        {...(main as BoxProps)}
-        className={classNames(styles.main, main?.className)}
+        {...(rest as BoxProps)}
+        className={classNames(styles.layout, styles[is], theme, className)}
       >
-        {children}
+        <LayoutHeader
+          location={location}
+          logo={logo}
+          menu={menu}
+          themeSwitch={themeSwitch}
+          {...header}
+        />
+        <Box
+          as="main"
+          {...(main as BoxProps)}
+          className={classNames(styles.main, main?.className)}
+        >
+          {children}
+        </Box>
+        <LayoutFooter {...footer} location={location} />
       </Box>
-      <LayoutFooter {...footer} location={location} />
-    </Box>
+    </>
   );
 };

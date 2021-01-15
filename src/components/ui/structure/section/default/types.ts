@@ -6,6 +6,7 @@ export type SectionPattern =
   | "form"
   | "heel"
   | "hero"
+  | "layout"
   | "navbar"
   | string;
 

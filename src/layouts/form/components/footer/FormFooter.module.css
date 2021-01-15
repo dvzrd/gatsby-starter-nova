@@ -1,0 +1,30 @@
+.footer {
+  @apply items-end text-center md:text-left;
+  background-color: transparent;
+}
+
+.link {
+  &:hover {
+    @apply no-underline;
+
+    &.facebook {
+      color: var(--color-brand-facebook);
+    }
+  
+    &.instagram {
+      color: var(--color-brand-instagram);
+    }
+  
+    &.linkedin {
+      color: var(--color-brand-linkedin);
+    }
+
+    &.twitter {
+      color: var(--color-brand-twitter);
+    }
+  
+    &.yelp {
+      color: var(--color-brand-yelp);
+    }
+  }
+}

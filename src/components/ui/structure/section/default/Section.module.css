@@ -39,6 +39,10 @@
   }
 }
 
+.layout {
+  @apply content-center items-center justify-center p-0;
+}
+
 .main {
   @apply content-start items-stretch justify-start p-0;
 
