@@ -1,0 +1,7 @@
+.hero {
+  @apply items-center text-center;
+}
+
+.caption {
+  @apply mt-16 md:mt-18 xl:mt-20;
+}

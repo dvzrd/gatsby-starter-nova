@@ -1,0 +1,27 @@
+.card {
+  @apply grid sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-4 gap-4 md:gap-6 xl:gap-8 items-center;
+
+  & .image {
+    @apply border-3 border-double sm:col-span-2 md:col-span-3 lg:col-span-1;
+
+    &:hover {
+      @apply border-3 border-solid border-bg-primary;
+    }
+  }
+
+  & .content {
+    @apply sm:col-span-4 md:col-span-5 lg:col-span-3;
+  }
+
+  & .title {
+    @apply border-b-2 border-solid hover:border-bg-primary leading-none mb-2 sm:mb-1 md:mb-2 xl:mb-3 pb-2 sm:pb-1 md:pb-2 xl:pb-3;
+  }
+
+  & .subtitle {
+    @apply leading-snug;
+  }
+}
+
+.effects {
+  @apply transition duration-150 ease-in-out;
+}

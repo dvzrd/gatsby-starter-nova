@@ -193,25 +193,13 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
       is="subheading"
       className="mt-8 mb-2 md:mt-10 md:mb-4 xl:mt-12 xl:mb-6 col-span-full"
     >
-      Grids are especially useful for making forms
+      Grids are especially useful for making forms:
     </Text>
-    <FormField
-      label="Checkout this text field"
-      name="text-field"
-      className="col-span-full"
-    />
+    <FormField label="Username" name="text-field" className="col-span-full" />
+    <FormField label="Password" name="text-field" />
+    <FormField label="Confirm Password" name="text-field" />
   </Grid>
 </Grid>
-
-<Text
-  as="h5"
-  is="subheading"
-  className="mt-8 mb-4 md:mt-10 md:mb-6 xl:mt-12 xl:mb-8"
->
-  Here's a working form container sample, try it out!
-</Text>
-
-<SampleForm col="col-span-full" cols="md:grid-cols-2" gap="gap-4" />
 
 <Hero
   as="section"

@@ -3,12 +3,10 @@ import { GatsbySeoProps } from "gatsby-plugin-next-seo";
 
 import { HeroProps, MDXProps, SectionProps } from "components";
 import { DefaultLayoutProps } from "layouts";
-import { MemberName } from "graphql";
 import { PageFields } from "templates";
 import { GatsbyImage } from "types/gatsby";
 
-export type PostFrontmatter = {
-  author?: MemberName;
+export type ProjectFrontmatter = {
   category?: string;
   date: string | number | Date;
   description?: string;
@@ -19,7 +17,6 @@ export type PostFrontmatter = {
   mdx?: MDXProps;
   page?: string;
   seo?: GatsbySeoProps;
-  showAuthor?: boolean;
   showFooter?: boolean;
   showHeader?: boolean;
   showRecommended?: boolean;
@@ -28,32 +25,32 @@ export type PostFrontmatter = {
   title: string;
 };
 
-export interface PostData {
+export interface ProjectData {
   body?: string;
   excerpt?: string;
-  frontmatter: PostFrontmatter;
+  frontmatter: ProjectFrontmatter;
   slug?: string;
 }
 
-export type PageContextFrontmatter = {
+export type ProjectContextFrontmatter = {
   category?: string;
   date?: string;
   image?: GatsbyImage;
   title: string;
 };
 
-export type PageContextData = {
+export type ProjectContextData = {
   excerpt?: string;
   fields: PageFields;
-  frontmatter: PageContextFrontmatter;
+  frontmatter: ProjectContextFrontmatter;
 };
 
-export interface PostTemplateProps extends PageProps {
+export interface ProjectTemplateProps extends PageProps {
   data: {
-    post: PostData;
+    project: ProjectData;
   };
   pageContext: {
-    nextPage?: PageContextData;
-    prevPage?: PageContextData;
+    nextPage?: ProjectContextData;
+    prevPage?: ProjectContextData;
   };
 }

@@ -151,9 +151,11 @@ exports.createPages = async ({
 
   // initialize when createPages method runs during build.
   return await Promise.all([
-    // create post pages
     createMarkdownPages({
       regex: "/data/posts/",
+    }),
+    createMarkdownPages({
+      regex: "/data/projects/",
     }),
   ]);
 };

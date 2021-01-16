@@ -60,9 +60,10 @@ import {
   PostAuthorProps,
   PostsListing,
   PostsListingProps,
+  ProjectsListing,
+  ProjectsListingProps,
   RecommendedPosts,
   RecommendedPostsProps,
-  SampleForm,
 } from "containers";
 
 import styles from "./MDX.module.css";
@@ -149,10 +150,12 @@ export const containerShortcodes = {
   ContactForm: (props: ContactFormProps) => <ContactForm {...props} />,
   PostAuthor: (props: PostAuthorProps) => <PostAuthor {...props} />,
   PostsListing: (props: PostsListingProps) => <PostsListing {...props} />,
+  ProjectsListing: (props: ProjectsListingProps) => (
+    <ProjectsListing {...props} />
+  ),
   RecommendedPosts: (props: RecommendedPostsProps) => (
     <RecommendedPosts {...props} />
   ),
-  SampleForm: (props: FormProps) => <SampleForm {...props} />,
 };
 
 export const shortcodes = {

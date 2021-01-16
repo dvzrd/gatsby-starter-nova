@@ -2,58 +2,48 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import { GatsbyImage } from "types/gatsby";
 
-export type PostFields = {
+export type ProjectFields = {
   slug: string;
 };
 
-export type PostFrontmatter = {
-  author?: string;
-  category: string;
-  date: string | number | Date;
-  description?: string;
-  image: GatsbyImage;
-  published: boolean;
-  tags?: string[];
+export type ProjectFrontmatter = {
+  image?: GatsbyImage;
+  subtitle?: string;
   title: string;
 };
 
-export type PostNode = {
+export type ProjectNode = {
   node: {
     excerpt: string;
-    fields: PostFields;
-    frontmatter: PostFrontmatter;
+    fields: ProjectFields;
+    frontmatter: ProjectFrontmatter;
     id: string;
   };
 };
 
-export interface PostsData {
-  posts: {
-    edges: PostNode[];
+export interface ProjectsData {
+  projects: {
+    edges: ProjectNode[];
   };
 }
 
-export const usePostsQuery = () => {
-  const { posts }: PostsData = useStaticQuery(
+export const useProjectsQuery = () => {
+  const { projects }: ProjectsData = useStaticQuery(
     graphql`
-      query PostsQuery {
-        posts: allMdx(
+      query ProjectsQuery {
+        projects: allMdx(
           filter: {
-            slug: { regex: "/posts/" }
+            slug: { regex: "/projects/" }
             frontmatter: { published: { eq: true } }
           }
           sort: { order: DESC, fields: frontmatter___date }
         ) {
           edges {
             node {
-              excerpt
               fields {
                 slug
               }
               frontmatter {
-                author
-                category
-                date(formatString: "MMMM DD, YYYY")
-                description
                 image {
                   childImageSharp {
                     fluid(maxWidth: 640, maxHeight: 480, quality: 90) {
@@ -62,8 +52,7 @@ export const usePostsQuery = () => {
                   }
                   name
                 }
-                published
-                tags
+                subtitle
                 title
               }
               id
@@ -74,5 +63,5 @@ export const usePostsQuery = () => {
     `
   );
 
-  return posts;
+  return projects;
 };
