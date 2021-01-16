@@ -158,9 +158,12 @@ const PostTemplate: FC<PostTemplateProps> = ({
 
 export const postBySlugQuery = graphql`
   query PostBySlug($slug: String!) {
-    post: mdx(slug: { regex: $slug }) {
+    post: mdx(fields: { slug: { eq: $slug } }) {
       body
       excerpt
+      fields {
+        slug
+      }
       frontmatter {
         author
         category
@@ -178,7 +181,6 @@ export const postBySlugQuery = graphql`
         tags
         title
       }
-      slug
     }
   }
 `;

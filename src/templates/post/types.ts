@@ -4,6 +4,7 @@ import { GatsbySeoProps } from "gatsby-plugin-next-seo";
 import { HeroProps, MDXProps, SectionProps } from "components";
 import { DefaultLayoutProps } from "layouts";
 import { MemberName } from "graphql";
+import { PageFields } from "templates";
 import { GatsbyImage } from "types/gatsby";
 
 export type PostFrontmatter = {
@@ -43,8 +44,8 @@ export type PageContextFrontmatter = {
 
 export type PageContextData = {
   excerpt?: string;
+  fields: PageFields;
   frontmatter: PageContextFrontmatter;
-  slug?: string;
 };
 
 export interface PostTemplateProps extends PageProps {

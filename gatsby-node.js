@@ -82,16 +82,15 @@ exports.createPages = async ({
             node {
               body
               excerpt
+              fields {
+                slug
+              }
               frontmatter {
                 category
-                date(formatString: "MMMM DD, YYYY")
                 description
-                page
                 template
                 title
-                subtitle
               }
-              slug
             }
           }
         }
@@ -109,8 +108,9 @@ exports.createPages = async ({
       (
         {
           node: {
-            frontmatter: { template },
-            slug,
+            excerpt,
+            fields: { slug },
+            frontmatter: { category, description, template, title },
           },
         },
         index
@@ -133,9 +133,13 @@ exports.createPages = async ({
             )}Template.tsx`
           ),
           context: {
+            category,
+            description,
+            excerpt,
             nextPage,
             prevPage,
             slug: pagePath,
+            title,
           },
           path: pagePath,
         });

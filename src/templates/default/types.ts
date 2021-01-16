@@ -5,6 +5,10 @@ import { PageHeroProps, MDXProps, SectionProps } from "components";
 import { ContactSectionProps } from "containers";
 import { DefaultLayoutProps } from "layouts";
 
+export type PageFields = {
+  slug: string;
+};
+
 export type PageFrontmatter = {
   contact?: ContactSectionProps;
   description?: string;
@@ -24,9 +28,9 @@ export type PageFrontmatter = {
 
 export interface PageContext {
   excerpt?: string;
+  fields?: PageFields;
   frontmatter: PageFrontmatter;
   id: string;
-  slug: string;
 }
 
 export interface DefaultPageProps extends PageProps {

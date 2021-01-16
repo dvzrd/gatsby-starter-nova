@@ -49,7 +49,7 @@ export const RecommendedPosts: FC<RecommendedPostsProps> = ({
             category={prevPage.frontmatter?.category}
             date={prevPage.frontmatter?.date}
             excerpt={prevPage.excerpt}
-            slug={prevPage.slug}
+            slug={prevPage.fields?.slug}
             title={prevPage.frontmatter?.title}
           />
         )}
@@ -59,7 +59,7 @@ export const RecommendedPosts: FC<RecommendedPostsProps> = ({
             category={nextPage.frontmatter?.category}
             date={nextPage.frontmatter?.date}
             excerpt={nextPage.excerpt}
-            slug={nextPage.slug}
+            slug={nextPage.fields?.slug}
             title={nextPage.frontmatter?.title}
           />
         )}

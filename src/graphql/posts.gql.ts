@@ -2,6 +2,10 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import { GatsbyImage } from "types/gatsby";
 
+export type PostFields = {
+  slug: string;
+};
+
 export type PostFrontmatter = {
   author?: string;
   category: string;
@@ -16,9 +20,9 @@ export type PostFrontmatter = {
 export type PostNode = {
   node: {
     excerpt: string;
+    fields: PostFields;
     frontmatter: PostFrontmatter;
     id: string;
-    slug: string;
   };
 };
 
@@ -42,6 +46,9 @@ export const usePostsQuery = () => {
           edges {
             node {
               excerpt
+              fields {
+                slug
+              }
               frontmatter {
                 author
                 category
@@ -60,7 +67,6 @@ export const usePostsQuery = () => {
                 title
               }
               id
-              slug
             }
           }
         }

@@ -35,9 +35,9 @@ export const PostsListing: FC<PostsListingProps> = ({
             ({
               node: {
                 excerpt,
+                fields: { slug },
                 frontmatter: { category, date, image, title },
                 id,
-                slug,
               },
             }) => (
               <PostCard

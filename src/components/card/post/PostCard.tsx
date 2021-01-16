@@ -36,7 +36,7 @@ export const PostCard: FC<PostCardProps> = ({
   >
     {image && (
       <Link
-        to={`/${slug}`}
+        to={slug}
         className={classNames(styles.image, styles.effects)}
         is="box"
       >
@@ -53,7 +53,7 @@ export const PostCard: FC<PostCardProps> = ({
           Posted on {date} in {category}
         </Text>
       )}
-      <Link to={`/${slug}`} is="box">
+      <Link to={slug} is="box">
         <Text
           as="h4"
           className={classNames(
