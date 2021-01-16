@@ -3,5 +3,5 @@
 }
 
 .caption {
-  @apply mx-auto my-6 md:my-8 xl:my-10;
+  @apply mx-auto my-16 md:my-18 xl:my-20;
 }

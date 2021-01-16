@@ -1,0 +1,11 @@
+.actions {
+  @apply col-span-full flex items-center justify-between mt-4 order-last;
+}
+
+.errorMessage {
+  @apply text-service-fail;
+}
+
+.successMessage {
+  @apply text-service-pass;
+}

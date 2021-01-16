@@ -60,8 +60,18 @@
   @apply flex-full mx-auto max-w-none;
 }
 
+.inherit {
+  background-color: inherit;
+  color: inherit;
+}
+
 .row {
   @apply flex flex-row flex-wrap;
+}
+
+.transparent {
+  background-color: transparent;
+  border-color: transparent;
 }
 
 /* vertical height */

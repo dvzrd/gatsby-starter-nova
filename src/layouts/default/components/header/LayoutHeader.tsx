@@ -171,6 +171,14 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
           >
             Blog
           </Link>
+          <Link
+            activeClassName={styles.active}
+            className={classNames(styles.link, "hidden lg:inline-flex")}
+            text="caption"
+            to="/contact"
+          >
+            Contact
+          </Link>
           <ThemeSwitch {...themeSwitchProps} />
           <Button
             className="lg:hidden"
@@ -217,6 +225,16 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
           onClick={toggleMenu}
         >
           Blog
+          <Icon name="chevron-right" />
+        </Link>
+        <Link
+          activeClassName={styles.active}
+          className={classNames(styles.link, styles.button)}
+          size="inherit"
+          to="/contact"
+          onClick={toggleMenu}
+        >
+          Contact
           <Icon name="chevron-right" />
         </Link>
         <Link

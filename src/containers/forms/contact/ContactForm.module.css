@@ -1,0 +1,12 @@
+.section {
+  background-color: transparent;
+  color: inherit;
+}
+
+.subheading {
+  @apply font-thin leading-snug;
+}
+
+.grid {
+  @apply col-span-full md:grid-cols-2 gap-4 my-8 md:my-10 xl:my-12;
+}

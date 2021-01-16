@@ -1,6 +1,6 @@
 ---
 name: contact
-action: /thank-you
+action: /thanks
 method: POST
 title: Contact
 description: Raise your questions, concerns or suggestions by filling out the contact form.

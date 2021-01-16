@@ -54,6 +54,8 @@ import {
 import {
   Brand,
   BrandProps,
+  ContactForm,
+  ContactFormProps,
   PostAuthor,
   PostAuthorProps,
   PostsListing,
@@ -144,6 +146,7 @@ export const componentShortcodes = {
 
 export const containerShortcodes = {
   Brand: (props: BrandProps) => <Brand {...props} />,
+  ContactForm: (props: ContactFormProps) => <ContactForm {...props} />,
   PostAuthor: (props: PostAuthorProps) => <PostAuthor {...props} />,
   PostsListing: (props: PostsListingProps) => <PostsListing {...props} />,
   RecommendedPosts: (props: RecommendedPostsProps) => (

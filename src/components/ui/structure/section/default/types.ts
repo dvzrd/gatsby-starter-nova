@@ -28,4 +28,12 @@ export type SectionVerticalHeight =
   | "full"
   | "zero";
 
-export type SectionMod = "col" | "compact" | "fluid" | "full" | "row" | string;
+export type SectionMod =
+  | "col"
+  | "compact"
+  | "fluid"
+  | "full"
+  | "inherit"
+  | "row"
+  | "transparent"
+  | string;

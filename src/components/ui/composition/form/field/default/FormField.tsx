@@ -2,18 +2,24 @@ import React, { FC } from "react";
 import classNames from "classnames";
 import { FieldError } from "react-hook-form";
 
-import { Box, BoxProps, Text } from "components";
+import {
+  InputRegister,
+  InputType,
+  Box,
+  BoxProps,
+  Text,
+  TextInput,
+} from "components";
 
 import styles from "./FormField.module.css";
-import { FieldRegister, FieldType } from "./types";
 
 export interface FormFieldProps extends BoxProps {
   error?: FieldError;
   errorMessage?: string;
   label?: string;
   name: string;
-  register?: FieldRegister;
-  type?: FieldType;
+  register?: InputRegister;
+  type?: InputType;
 }
 
 export const FormField: FC<FormFieldProps> = ({
@@ -29,21 +35,19 @@ export const FormField: FC<FormFieldProps> = ({
 }) => (
   <Box {...(rest as BoxProps)} className={classNames(styles.field, className)}>
     {label && (
-      <Text as="label" is="meta" className={styles.label} htmlFor={name}>
+      <Text as="label" pattern="meta" className={styles.label} htmlFor={name}>
         {label}
       </Text>
     )}
-    <input
-      className={classNames("p-2 md:p-3 xl:p-4", styles.input)}
-      name={name}
-      ref={register}
-      type={type}
-    />
+    {children ? (
+      children
+    ) : (
+      <TextInput name={name} register={register} type={type} />
+    )}
     {error && (
-      <Text is="meta" className={styles.error}>
+      <Text pattern="meta" className={styles.error}>
         {error.message || errorMessage}
       </Text>
     )}
-    {children}
   </Box>
 );

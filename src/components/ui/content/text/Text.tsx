@@ -15,7 +15,7 @@ export interface TextProps<Text extends HTMLElement = HTMLDivElement>
 export const getTextSize = (size: TextSize): TextPattern => {
   switch (size) {
     case "inherit":
-      return styles.inherit;
+      return "inherit";
     case "xs":
       return "caption";
     case "sm":
@@ -51,8 +51,8 @@ export const Text: FC<TextProps> = ({
     {...(rest as BoxProps)}
     className={classNames(
       styles.default,
-      styles[is],
-      getTextSize(size as TextSize),
+      is && styles[is],
+      size && styles[getTextSize(size as TextSize)],
       className
     )}
   >

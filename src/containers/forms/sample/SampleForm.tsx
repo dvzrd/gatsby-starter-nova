@@ -46,7 +46,7 @@ export const SampleForm: FC<FormProps> = (props: FormProps) => {
         register={register}
       />
       <Grid
-        className="flex col-span-full mt-4"
+        className="col-span-full mt-4"
         display="flex"
         alignItems="center"
         justifyContent="between"

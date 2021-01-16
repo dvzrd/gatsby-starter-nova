@@ -5,7 +5,7 @@
 }
 
 .panel {
-  @apply flex flex-col flex-nowrap xs:m-4 md:m-6 xl:m-8 px-4 xs:pt-2 xs:pb-6 sm:pt-4 sm:pb-8 md:pt-8 md:pb-10 xl:pb-12 bg-paper min-h-screen;
+  @apply flex flex-col flex-nowrap xs:m-4 md:m-6 xl:m-8 px-4 xs:pt-2 xs:pb-6 sm:pt-4 sm:pb-8 md:pt-8 md:pb-10 xl:pb-12 bg-paper text-paper min-h-screen;
 
   @media only screen and (min-width: 480px) {
     @apply shadow-md;
@@ -27,6 +27,7 @@
 }
 
 .main {
+  @apply flex-1;
   background-color: transparent;
 }
 

@@ -37,7 +37,7 @@ module.exports = {
     url: "https://withpulp.com",
   },
   pathPrefix: "/",
-  siteUrl: "https://gatsby-starter-nova.netlify.com",
+  siteUrl: "https://gatsby-starter-nova.netlify.app",
   socialMedia: {
     instagram: "_withpulp",
     twitter: "_withpulp",

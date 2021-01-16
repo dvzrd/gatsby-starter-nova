@@ -1,11 +1,27 @@
 .footer {
-  @apply items-end text-center md:text-left;
+  @apply items-end text-center lg:text-left;
   background-color: transparent;
 }
 
+/* form footer components */
+
+.wrapper {
+  @apply flex flex-col flex-nowrap lg:flex-row lg:flex-wrap content-between items-center lg:items-end justify-between;
+}
+
+.box {
+  @apply flex flex-col flex-nowrap flex-full lg:flex-1;
+}
+
+.list {
+  @apply flex flex-row flex-wrap space-x-4 md:space-x-5 xl:space-x-6;
+}
+
 .link {
+  @apply no-underline uppercase;
+
   &:hover {
-    @apply no-underline;
+    @apply underline;
 
     &.facebook {
       color: var(--color-brand-facebook);

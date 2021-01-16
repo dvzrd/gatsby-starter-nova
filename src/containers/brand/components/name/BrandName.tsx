@@ -9,7 +9,6 @@ export interface BrandNameProps extends TextProps {
 }
 
 export const BrandName: FC<BrandNameProps> = ({
-  as = "h1",
   children,
   className,
   isShort,
@@ -19,7 +18,6 @@ export const BrandName: FC<BrandNameProps> = ({
 
   return (
     <Text
-      as={as}
       className={classNames(
         "font-semibold leading-none tracking-tight uppercase",
         className

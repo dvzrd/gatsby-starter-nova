@@ -1,6 +1,8 @@
 User-agent: *
 
+Disallow: /static/*
+Disallow: /thanks
 Disallow: */categories/
 Disallow: */tags/
 
-Sitemap: https://damirvazgird.com/sitemap.xml
+Sitemap: https://gatsby-starter-nova.netlify.app/sitemap.xml
