@@ -14,7 +14,7 @@ import {
 
 import styles from "./Link.module.css";
 
-export type LinkPattern = "button" | "icon" | "text" | "wrapper";
+export type LinkPattern = "box" | "button" | "icon" | "text" | "wrapper";
 
 export type LinkTarget = "_blank" | "_parent" | "_self" | "_top";
 

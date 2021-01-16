@@ -1,7 +1,31 @@
 /* container */
 
 .mdx {
-  @apply content-start flex flex-col flex-wrap items-stretch justify-start;
+  @apply content-start flex-col flex-wrap items-stretch justify-start;
+
+  & > p {
+    & > span {
+      @apply my-4 xs:my-6 sm:my-8 md:my-10 lg:my-12 xl:my-14 overflow-hidden rounded-sm shadow-md;
+
+      margin-left: -1rem !important;
+      margin-right: -1rem !important;
+
+      @media only screen and (min-width: 480px) {
+        margin-left: -6rem !important;
+        margin-right: -6rem !important;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        margin-left: -4rem !important;
+        margin-right: -4rem !important;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        margin-left: -3rem !important;
+        margin-right: -3rem !important;
+      }
+    }
+  }
 }
 
 /* components */

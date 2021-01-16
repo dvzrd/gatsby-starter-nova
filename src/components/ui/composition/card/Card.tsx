@@ -5,7 +5,7 @@ import { Box, BoxProps } from "components";
 
 import styles from "./Card.module.css";
 
-export type CardPattern = "default";
+export type CardPattern = "bordered" | "default";
 
 export interface CardProps extends BoxProps {
   is?: CardPattern;

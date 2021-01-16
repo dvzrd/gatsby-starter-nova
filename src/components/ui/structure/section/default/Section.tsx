@@ -22,7 +22,7 @@ export const Section: FC<SectionProps> = ({
   className,
   container,
   is = "content",
-  isContained,
+  isContained = true,
   media,
   mod,
   vh,
@@ -53,7 +53,7 @@ export const Section: FC<SectionProps> = ({
         {...(container as BoxProps)}
         className={classNames(
           "z-10",
-          isContained ? undefined : "container",
+          isContained ? "container" : "flex-1 p-0",
           container?.className
         )}
       >

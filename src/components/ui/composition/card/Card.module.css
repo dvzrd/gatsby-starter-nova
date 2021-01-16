@@ -1,3 +1,13 @@
-.default {
-  @apply overflow-hidden relative border-2 xl:border-3 p-4 md:p-6 xl:p-8;
+.card {
+  @apply content-center justify-center;
+}
+
+.bordered {
+  @apply border-2 xl:border-3 p-4 md:p-6 xl:p-8;
+
+  min-height: 12rem;
+
+  @media only screen and (min-width: 768px) {
+    min-height: 16rem;
+  }
 }

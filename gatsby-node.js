@@ -85,8 +85,11 @@ exports.createPages = async ({
               frontmatter {
                 category
                 date(formatString: "MMMM DD, YYYY")
+                description
+                page
                 template
                 title
+                subtitle
               }
               slug
             }

@@ -5,7 +5,7 @@
     @apply border-3 border-double sm:col-span-2 md:col-span-3 lg:col-span-1;
 
     &:hover {
-      @apply border-3 border-solid border-primary;
+      @apply border-3 border-solid border-bg-primary;
     }
   }
 
@@ -18,7 +18,7 @@
   }
   
   & .title {
-    @apply border-b-2 border-solid hover:border-primary leading-none mb-2 sm:mb-1 md:mb-2 xl:mb-3 pb-2 sm:pb-1 md:pb-2 xl:pb-3;
+    @apply border-b-2 border-solid hover:border-bg-primary leading-none mb-2 sm:mb-1 md:mb-2 xl:mb-3 pb-2 sm:pb-1 md:pb-2 xl:pb-3;
   }
 
   & .excerpt {

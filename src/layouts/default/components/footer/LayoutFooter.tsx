@@ -1,7 +1,18 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { Box, Icon, Link, List, Section, SectionProps, Text } from "components";
+import {
+  Box,
+  BoxProps,
+  Icon,
+  Link,
+  LinkProps,
+  List,
+  ListProps,
+  Section,
+  SectionProps,
+  Text,
+} from "components";
 import { useSiteMetadataQuery } from "graphql";
 import { SiteMetadataAuthor, SiteMetadataOrganization } from "types/graphql";
 import { GatsbyLocation } from "types/gatsby";
@@ -11,9 +22,12 @@ import styles from "./LayoutFooter.module.css";
 export type LayoutFooterPattern = "default" | "over" | "under" | "sticky";
 
 export interface LayoutFooterProps extends Omit<SectionProps, "is"> {
+  box?: BoxProps;
   isHidden?: boolean;
   is?: LayoutFooterPattern;
+  link?: LinkProps;
   location?: GatsbyLocation;
+  nav?: ListProps;
   showAuthor?: boolean;
   showOrg?: boolean;
 }
@@ -22,7 +36,7 @@ export const renderFooterLink = (
   link?: SiteMetadataAuthor | SiteMetadataOrganization
 ) =>
   link ? (
-    <Link size="inherit" to={link?.url}>
+    <Link className={styles.link} size="inherit" to={link?.url}>
       {link?.name}
     </Link>
   ) : null;
@@ -30,14 +44,16 @@ export const renderFooterLink = (
 export const LayoutFooter: FC<LayoutFooterProps> = ({
   as = "footer",
   bgColor = "paper",
+  box,
   color = "paper",
   children,
   className,
   container,
   is = "default",
   isHidden = false,
+  link,
   location,
-  mod,
+  nav,
   showAuthor = true,
   showOrg = true,
   ...rest
@@ -69,7 +85,14 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
       className={classNames(styles.footer, is && styles[is], className)}
     >
       {copyright && (
-        <Box className={classNames(styles.box, "order-1 lg:order-none")}>
+        <Box
+          {...(box as BoxProps)}
+          className={classNames(
+            styles.box,
+            "order-1 lg:order-none",
+            box?.className
+          )}
+        >
           <Text as="p" is="caption">
             © {copyright.year ? copyright.year : currentYear},
             {copyright.message && ` ${copyright.message}`}
@@ -90,61 +113,82 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
         </Box>
       )}
       {children}
-      <Box className={classNames(styles.box, "items-center lg:items-end")}>
-        <List as="nav" className={classNames(styles.list, "mt-4")}>
+      <Box
+        {...(box as BoxProps)}
+        className={classNames(
+          styles.box,
+          "items-center lg:items-end",
+          box?.className
+        )}
+      >
+        <List
+          as="nav"
+          {...(nav as ListProps)}
+          className={classNames(styles.list, "mt-4", nav?.className)}
+        >
           <Link
             className={classNames(styles.link, styles.instagram)}
-            to={`https://www.instagram.com/${socialMedia?.instagram}`}
             is="button"
             button="icon"
+            to={`https://www.instagram.com/${socialMedia?.instagram}`}
           >
             <Icon name="instagram" size="sm" />
           </Link>
           <Link
             className={classNames(styles.link, styles.twitter)}
-            to={`https://twitter.com/${socialMedia?.twitter}`}
             is="button"
             button="icon"
+            to={`https://twitter.com/${socialMedia?.twitter}`}
           >
             <Icon name="twitter" size="sm" />
           </Link>
         </List>
         <List
           as="nav"
-          className={classNames(styles.list, "my-3 md:mt-4 lg:mb-0")}
+          {...(nav as ListProps)}
+          className={classNames(
+            styles.list,
+            "my-3 md:mt-4 lg:mb-0",
+            nav?.className
+          )}
         >
-          <Link className={styles.link} to="/about" is="button" text="caption">
+          <Link
+            activeClassName="hidden"
+            className={styles.link}
+            text="caption"
+            to="/about"
+          >
             About
           </Link>
-          <Link className={styles.link} to="/blog" is="button" text="caption">
-            Blog
-          </Link>
           <Link
+            activeClassName="hidden"
             className={styles.link}
-            to="/portfolio"
-            is="button"
             text="caption"
+            to="/portfolio"
           >
             Portfolio
           </Link>
-          {subscribeURL && (
-            <Link
-              className={styles.link}
-              to={subscribeURL}
-              is="button"
-              text="caption"
-            >
-              Subscribe
-            </Link>
-          )}
           <Link
+            activeClassName="hidden"
+            className={styles.link}
+            text="caption"
+            to="/blog"
+          >
+            Blog
+          </Link>
+          <Link
+            activeClassName="hidden"
             className={styles.link}
             to="/contact"
-            is="button"
             text="caption"
           >
             Contact
           </Link>
+          {subscribeURL && (
+            <Link className={styles.link} text="caption" to={subscribeURL}>
+              Subscribe
+            </Link>
+          )}
         </List>
       </Box>
     </Section>

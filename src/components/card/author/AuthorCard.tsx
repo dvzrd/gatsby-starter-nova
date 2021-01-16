@@ -30,13 +30,17 @@ export const AuthorCard: FC<AuthorCardProps> = ({
       {caption && (
         <Text
           as="small"
-          className="text-gray-400 dark:text-gray-300"
+          className="text-gray-400 dark:text-gray-100"
           is="caption"
         >
           {caption}
         </Text>
       )}
-      <Text as="h4" className={styles.name} is="subheading">
+      <Text
+        as="h4"
+        className={classNames(styles.name, "text-gray-800 dark:text-gray-25")}
+        is="subheading"
+      >
         {name}
       </Text>
       {bio && (

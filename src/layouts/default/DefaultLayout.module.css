@@ -1,5 +1,5 @@
 .layout {
-  @apply bg-default flex flex-col flex-wrap min-h-screen;
+  @apply bg-default flex flex-col flex-nowrap min-h-screen;
 }
 
 .main {

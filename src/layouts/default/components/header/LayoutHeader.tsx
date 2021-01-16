@@ -133,12 +133,6 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
           >
             About
           </Link>
-        </>
-      }
-      leftProps={leftProps}
-      position={position}
-      right={
-        <>
           <Link
             activeClassName={styles.active}
             className={classNames(styles.link, "hidden lg:inline-flex")}
@@ -154,6 +148,28 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
             to="/mdx"
           >
             MDX
+          </Link>
+        </>
+      }
+      leftProps={leftProps}
+      position={position}
+      right={
+        <>
+          <Link
+            activeClassName={styles.active}
+            className={classNames(styles.link, "hidden lg:inline-flex")}
+            text="caption"
+            to="/portfolio"
+          >
+            Portfolio
+          </Link>
+          <Link
+            activeClassName={styles.active}
+            className={classNames(styles.link, "hidden lg:inline-flex")}
+            text="caption"
+            to="/blog"
+          >
+            Blog
           </Link>
           <ThemeSwitch {...themeSwitchProps} />
           <Button
@@ -181,6 +197,26 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
           onClick={toggleMenu}
         >
           About
+          <Icon name="chevron-right" />
+        </Link>
+        <Link
+          activeClassName={styles.active}
+          className={classNames(styles.link, styles.button)}
+          size="inherit"
+          to="/portfolio"
+          onClick={toggleMenu}
+        >
+          Portfolio
+          <Icon name="chevron-right" />
+        </Link>
+        <Link
+          activeClassName={styles.active}
+          className={classNames(styles.link, styles.button)}
+          size="inherit"
+          to="/blog"
+          onClick={toggleMenu}
+        >
+          Blog
           <Icon name="chevron-right" />
         </Link>
         <Link

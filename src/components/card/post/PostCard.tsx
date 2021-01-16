@@ -59,7 +59,7 @@ export const PostCard: FC<PostCardProps> = ({
           className={classNames(
             styles.title,
             styles.effects,
-            "text-default hover:text-hover"
+            "text-default dark:text-gray-25 hover:text-hover dark:hover:text-bg-primary"
           )}
           is="title"
         >

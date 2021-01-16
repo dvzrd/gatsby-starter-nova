@@ -10,7 +10,6 @@ import {
   Section,
   Text,
 } from "components";
-import { PostsListing } from "containers";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
 import { useSiteMetadataQuery } from "graphql";
 
@@ -66,7 +65,7 @@ const PageIndex: FC<PageProps> = ({ location }) => {
           gap="gap-4 md:gap-5 xl:gap-6"
           className="mb-12 md:mb-13 xl:mb-14"
         >
-          <Card className="border-bg-primary">
+          <Card className="border-bg-primary" is="bordered">
             <Text
               as="h4"
               is="subheading"
@@ -80,7 +79,7 @@ const PageIndex: FC<PageProps> = ({ location }) => {
               which makes it much easier to build visually consistent UIs.
             </Text>
           </Card>
-          <Card className="border-bg-primary">
+          <Card className="border-bg-primary" is="bordered">
             <Text
               as="h4"
               is="subheading"
@@ -94,7 +93,7 @@ const PageIndex: FC<PageProps> = ({ location }) => {
               you rarely need to write new CSS.
             </Text>
           </Card>
-          <Card className="border-bg-primary">
+          <Card className="border-bg-primary" is="bordered">
             <Text
               as="h4"
               is="subheading"
@@ -126,8 +125,12 @@ const PageIndex: FC<PageProps> = ({ location }) => {
           See about page
         </Link>
       </Section>
-      <PostsListing />
-      <Section as="footer" is="heel" on="page-home">
+      <Section
+        as="footer"
+        is="heel"
+        on="page-home"
+        className="bg-gray-100 dark:bg-gray-600 dark:text-gray-75"
+      >
         <h3 className="leading-tight mt-12 md:mt-13 xl:mt-14 mb-4 md:mb-5 xl:mb-6">
           This gatsby starter uses TailwindCSS
         </h3>

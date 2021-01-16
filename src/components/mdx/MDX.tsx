@@ -4,10 +4,16 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import classNames from "classnames";
 
 import {
+  AuthorCard,
+  AuthorCardProps,
+  PostCard,
+  PostCardProps,
   Box,
   BoxProps,
   Button,
   ButtonProps,
+  Card,
+  CardProps,
   Element,
   ElementProps,
   Form,
@@ -18,6 +24,10 @@ import {
   GridProps,
   Hero,
   HeroProps,
+  HeroActions,
+  HeroActionsProps,
+  HeroCaption,
+  HeroCaptionProps,
   Icon,
   IconProps,
   Link,
@@ -26,14 +36,32 @@ import {
   ListProps,
   ListItem,
   ListItemProps,
+  Menu,
+  MenuProps,
+  PageHero,
+  PageHeroProps,
+  PostHero,
+  PostHeroProps,
   Pattern,
   PatternProps,
   Section,
   SectionProps,
+  SplitSection,
+  SplitSectionProps,
   Text,
   TextProps,
 } from "components";
-import { SampleForm } from "containers";
+import {
+  Brand,
+  BrandProps,
+  PostAuthor,
+  PostAuthorProps,
+  PostsListing,
+  PostsListingProps,
+  RecommendedPosts,
+  RecommendedPostsProps,
+  SampleForm,
+} from "containers";
 
 import styles from "./MDX.module.css";
 
@@ -42,7 +70,7 @@ export interface MDXProps extends BoxProps {
   components?: MDXProviderComponents;
 }
 
-export const mdxComponents: MDXProviderComponents = {
+export const components: MDXProviderComponents = {
   // default components
   a: (props: LinkProps) => <Link {...props} />,
   h1: (props: TextProps) => (
@@ -88,21 +116,50 @@ export const mdxComponents: MDXProviderComponents = {
   ul: (props: ListProps) => (
     <List className="mb-4 md:mb-6 xl:mb-8 pl-5" {...props} />
   ),
-  // component shortcodes
+};
+
+export const componentShortcodes = {
+  AuthorCard: (props: AuthorCardProps) => <AuthorCard {...props} />,
   Box: (props: BoxProps) => <Box {...props} />,
   Button: (props: ButtonProps) => <Button {...props} />,
+  Card: (props: CardProps) => <Card {...props} />,
   Element: (props: ElementProps) => <Element {...props} />,
   Form: (props: FormProps) => <Form {...props} />,
   FormField: (props: FormFieldProps) => <FormField {...props} />,
   Grid: (props: GridProps) => <Grid {...props} />,
   Hero: (props: HeroProps) => <Hero {...props} />,
+  HeroActions: (props: HeroActionsProps) => <HeroActions {...props} />,
+  HeroCaption: (props: HeroCaptionProps) => <HeroCaption {...props} />,
   Icon: (props: IconProps) => <Icon {...props} />,
   Link: (props: LinkProps) => <Link {...props} />,
+  Menu: (props: MenuProps) => <Menu {...props} />,
+  PageHero: (props: PageHeroProps) => <PageHero {...props} />,
+  PostHero: (props: PostHeroProps) => <PostHero {...props} />,
   Pattern: (props: PatternProps) => <Pattern {...props} />,
+  PostCard: (props: PostCardProps) => <PostCard {...props} />,
   Section: (props: SectionProps) => <Section {...props} />,
+  SplitSection: (props: SplitSectionProps) => <SplitSection {...props} />,
   Text: (props: TextProps) => <Text {...props} />,
-  // containers
+};
+
+export const containerShortcodes = {
+  Brand: (props: BrandProps) => <Brand {...props} />,
+  PostAuthor: (props: PostAuthorProps) => <PostAuthor {...props} />,
+  PostsListing: (props: PostsListingProps) => <PostsListing {...props} />,
+  RecommendedPosts: (props: RecommendedPostsProps) => (
+    <RecommendedPosts {...props} />
+  ),
   SampleForm: (props: FormProps) => <SampleForm {...props} />,
+};
+
+export const shortcodes = {
+  ...componentShortcodes,
+  ...containerShortcodes,
+};
+
+export const mdxComponents = {
+  ...components,
+  ...shortcodes,
 };
 
 export const MDX: FC<MDXProps> = ({

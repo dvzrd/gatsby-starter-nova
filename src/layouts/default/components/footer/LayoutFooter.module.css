@@ -23,8 +23,10 @@
 }
 
 .link {
+  @apply no-underline;
+
   &:hover {
-    @apply no-underline;
+    @apply underline;
 
     &.facebook {
       color: var(--color-brand-facebook);

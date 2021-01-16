@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import classNames from "classnames";
 
 import { AuthorCard, Section, SectionProps } from "components";
 import { MemberName, MemberNode, useMembersQuery } from "graphql";
@@ -24,6 +25,7 @@ export const PostAuthor: FC<PostAuthorProps> = ({
   author,
   caption = "Written & edited by",
   children,
+  className = "bg-paper",
   ...rest
 }) => {
   const { edges } = useMembersQuery();
@@ -34,7 +36,7 @@ export const PostAuthor: FC<PostAuthorProps> = ({
   const { bio, image, name } = member;
 
   return (
-    <Section {...(rest as SectionProps)}>
+    <Section {...(rest as SectionProps)} className={className}>
       <AuthorCard bio={bio} caption={caption} image={image} name={name} />
       {children}
     </Section>

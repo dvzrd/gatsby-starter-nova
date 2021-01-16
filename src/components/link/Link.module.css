@@ -4,6 +4,10 @@
   @apply underline;
 }
 
+.box {
+  @apply block no-underline hover:no-underline;
+}
+
 .button {
   @apply flex no-underline outline-none uppercase;
 }
@@ -13,7 +17,7 @@
 }
 
 .text {
-  @apply hover:underline;
+  @apply underline hover:underline;
 }
 
 .wrapper {

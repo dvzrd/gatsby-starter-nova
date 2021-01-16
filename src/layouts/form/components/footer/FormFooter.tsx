@@ -82,10 +82,17 @@ export const FormFooter: FC<FormFooterProps> = ({
           as="nav"
           className="space-x-4 md:space-x-5 xl:space-x-6 my-3 md:mt-4 md:mb-0"
         >
-          <Link className={styles.link} to="/about" is="button" text="caption">
+          <Link
+            activeClassName="hidden"
+            className={styles.link}
+            to="/about"
+            is="button"
+            text="caption"
+          >
             About
           </Link>
           <Link
+            activeClassName="hidden"
             className={styles.link}
             to="/portfolio"
             is="button"
@@ -93,7 +100,13 @@ export const FormFooter: FC<FormFooterProps> = ({
           >
             Portfolio
           </Link>
-          <Link className={styles.link} to="/blog" is="button" text="caption">
+          <Link
+            activeClassName="hidden"
+            className={styles.link}
+            to="/blog"
+            is="button"
+            text="caption"
+          >
             Blog
           </Link>
           {subscribeURL && (

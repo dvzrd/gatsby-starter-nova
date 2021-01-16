@@ -36,8 +36,13 @@ const DefaultTemplate: FC<DefaultPageProps> = ({
     },
   },
 }) => {
-  const pageId = page ? `page-${page}` : "page-default";
-  const mainPattern = !template ? "main" : "content";
+  const pageId = page
+    ? `page-${page}`
+    : template
+    ? `page-${template}`
+    : "page-default";
+  const mainPattern =
+    !main?.is && !template ? "main" : main?.is ? main.is : "content";
 
   const seoProps: GatsbySeoProps = {
     title: seo?.title || title,
@@ -98,6 +103,7 @@ const DefaultTemplate: FC<DefaultPageProps> = ({
   const mainProps: SectionProps = {
     on: pageId,
     is: mainPattern,
+    isContained: mainPattern === "content" ? true : false,
     ...main,
   };
 

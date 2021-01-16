@@ -13,15 +13,19 @@ export interface RecommendedPostsProps extends SectionProps {
   tags?: string[];
 }
 
+// TODO:
+// - render posts with matching author, category, and tags.
+
 export const RecommendedPosts: FC<RecommendedPostsProps> = ({
   children,
+  className = "bg-gray-75 dark:bg-gray-500",
   heading = "More from the blog",
   nextPage,
   prevPage,
   subheading,
   ...rest
 }) => (
-  <Section is="feature" {...(rest as SectionProps)}>
+  <Section is="feature" {...(rest as SectionProps)} className={className}>
     {heading && (
       <Text as="h3" className="mb-4 md:mb-5 xl:mb-6 font-light" is="heading">
         {heading}
