@@ -1,0 +1,17 @@
+.tag {
+  @apply mb-2 mr-2 md:mb-3 md:mr-3 xl:mb-4 xl:mr-4 py-2 px-4;
+}
+
+/* tag patterns */
+
+.default {
+  @apply bg-paper text-paper;
+}
+
+.primary {
+  @apply bg-primary-light text-primary-light;
+}
+
+.secondary {
+  @apply bg-secondary-light text-secondary-light;
+}

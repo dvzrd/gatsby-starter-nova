@@ -36,7 +36,7 @@ export const renderFooterLink = (
   link?: SiteMetadataAuthor | SiteMetadataOrganization
 ) =>
   link ? (
-    <Link className={styles.link} size="inherit" to={link?.url}>
+    <Link className="hover:text-hover" size="inherit" to={link?.url}>
       {link?.name}
     </Link>
   ) : null;

@@ -11,7 +11,7 @@ import {
   MDXProps,
   Section,
   SectionProps,
-  Text,
+  Tag,
 } from "components";
 import { PostAuthor, ContactSection, RecommendedPosts } from "containers";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
@@ -133,14 +133,9 @@ const PostTemplate: FC<PostTemplateProps> = ({
           {tags?.length && (
             <Box className="flex flex-row flex-wrap mt-4 md:mt-6 xl:mt-8">
               {tags.map((tag: string) => (
-                <Text
-                  as="span"
-                  className="mb-2 mr-2 md:mb-3 md:mr-3 xl:mb-4 xl:mr-4 py-2 px-4 bg-secondary-light text-secondary-light"
-                  is="caption"
-                  key={tag}
-                >
+                <Tag is="secondary" key={tag}>
                   {tag}
-                </Text>
+                </Tag>
               ))}
             </Box>
           )}

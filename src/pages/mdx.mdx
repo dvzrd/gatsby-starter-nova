@@ -17,7 +17,7 @@ import { OutboundLink } from "gatsby-plugin-google-gtag";
   This page is built with MDX
   <Box as="hr" className="border-t-2 border-bg-primary flex-full mt-2 mb-4" />
   <Text is="meta" className="block">
-    Last updated 01/09/2021
+    Last updated 01/15/2021
   </Text>
 </Box>
 
@@ -40,9 +40,9 @@ But using imports means you'll have to style them yourself and you want to avoid
 
 You can also write your own code in markdown, although that's not recommended you can technically do it. Go search for that though, I remember seeing an example a while back but I can't find it right now.
 
-<Section is="content" isContained className="py-8 md:py-10 xl:py-12">
+<Section is="content" isContained={false} className="py-8 md:py-10 xl:py-12">
 
-#### This is a contained content section component with vertical padding
+#### This is a content section component with no container and custom vertical padding
 
 <Box className="gap-4 grid md:grid-cols-3 my-6">
   <Text as="p" className="md:mb-6">
@@ -226,7 +226,7 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
         having a hero when you need one.
       </Text>
     ),
-    heading: "Sometimes you need a hero",
+    heading: "Sometimes you need another hero!",
   }}
   actions={{
     render: (
@@ -236,7 +236,7 @@ This is just a regular markdown paragraph. That's cool and all but shortcodes ar
         buttonProps={{ is: "outline", color: "inherit", size: "lg" }}
         className="border-bg-secondary text-bg-secondary hover:bg-secondary hover:border-bg-secondary hover:text-secondary my-4 md:my-5 xl:my-6"
       >
-        Take me home
+        Take me home, hero!
       </Link>
     ),
   }}

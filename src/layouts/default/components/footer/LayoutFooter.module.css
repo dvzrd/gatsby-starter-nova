@@ -23,7 +23,7 @@
 }
 
 .link {
-  @apply no-underline;
+  @apply no-underline uppercase;
 
   &:hover {
     @apply underline;
