@@ -14,7 +14,7 @@ export const PostsListing: FC<PostsListingProps> = ({
   subheading,
   ...rest
 }) => {
-  const { edges } = usePostsQuery();
+  const { nodes } = usePostsQuery();
 
   return (
     <Section is="feature" {...(rest as SectionProps)}>
@@ -29,16 +29,14 @@ export const PostsListing: FC<PostsListingProps> = ({
         </Text>
       )}
       {children}
-      {edges?.length && (
+      {nodes?.length && (
         <Grid gap="gap-14 md:gap-16 xl:gap-18">
-          {edges.map(
+          {nodes.map(
             ({
-              node: {
-                excerpt,
-                fields: { slug },
-                frontmatter: { category, date, image, title },
-                id,
-              },
+              excerpt,
+              fields: { slug },
+              frontmatter: { category, date, image, title },
+              id,
             }) => (
               <PostCard
                 key={id}

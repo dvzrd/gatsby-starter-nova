@@ -14,7 +14,7 @@ export const ProjectsListing: FC<ProjectsListingProps> = ({
   subheading,
   ...rest
 }) => {
-  const { edges } = useProjectsQuery();
+  const { nodes } = useProjectsQuery();
 
   return (
     <Section is="feature" {...(rest as SectionProps)}>
@@ -29,15 +29,13 @@ export const ProjectsListing: FC<ProjectsListingProps> = ({
         </Text>
       )}
       {children}
-      {edges?.length && (
+      {nodes?.length && (
         <Grid gap="gap-14 md:gap-16 xl:gap-18">
-          {edges.map(
+          {nodes.map(
             ({
-              node: {
-                fields: { slug },
-                frontmatter: { image, subtitle, title },
-                id,
-              },
+              fields: { slug },
+              frontmatter: { image, subtitle, title },
+              id,
             }) => (
               <ProjectCard
                 key={id}
