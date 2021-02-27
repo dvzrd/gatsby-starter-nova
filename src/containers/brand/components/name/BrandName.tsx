@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Text, TextProps } from "components";
 import { useSiteMetadataQuery } from "graphql";
@@ -18,7 +18,7 @@ export const BrandName: FC<BrandNameProps> = ({
 
   return (
     <Text
-      className={classNames(
+      className={clsx(
         "font-semibold leading-none tracking-tight uppercase",
         className
       )}

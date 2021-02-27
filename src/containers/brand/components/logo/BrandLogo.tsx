@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Img from "gatsby-image";
-import classNames from "classnames";
+import clsx from "clsx";
 import { kebabCase } from "lodash";
 
 import { BoxProps } from "components";
@@ -20,7 +20,7 @@ export const BrandLogo: FC<BrandLogoProps> = ({ className, logoName }) => {
     case "black":
       return (
         <Img
-          className={classNames("mr-2 w-10", className)}
+          className={clsx("mr-2 w-10", className)}
           alt={kebabCase(`${name}-${logoBlack.name}`)}
           {...logoBlack.childImageSharp}
         />
@@ -28,7 +28,7 @@ export const BrandLogo: FC<BrandLogoProps> = ({ className, logoName }) => {
     case "dark":
       return (
         <Img
-          className={classNames("mr-2 w-10", className)}
+          className={clsx("mr-2 w-10", className)}
           alt={kebabCase(`${name}-${logoDark.name}`)}
           {...logoDark.childImageSharp}
         />
@@ -36,7 +36,7 @@ export const BrandLogo: FC<BrandLogoProps> = ({ className, logoName }) => {
     case "light":
       return (
         <Img
-          className={classNames("mr-2 w-10", className)}
+          className={clsx("mr-2 w-10", className)}
           alt={kebabCase(`${name}-${logoLight.name}`)}
           {...logoLight.childImageSharp}
         />
@@ -44,7 +44,7 @@ export const BrandLogo: FC<BrandLogoProps> = ({ className, logoName }) => {
     case "white":
       return (
         <Img
-          className={classNames("mr-2 w-10", className)}
+          className={clsx("mr-2 w-10", className)}
           alt={kebabCase(`${name}-${logoWhite.name}`)}
           {...logoWhite.childImageSharp}
         />
@@ -54,7 +54,7 @@ export const BrandLogo: FC<BrandLogoProps> = ({ className, logoName }) => {
 
       return (
         <Img
-          className={classNames("mr-2 w-10", className)}
+          className={clsx("mr-2 w-10", className)}
           alt={kebabCase(`${name}-${logo.name}`)}
           {...logo.childImageSharp}
         />

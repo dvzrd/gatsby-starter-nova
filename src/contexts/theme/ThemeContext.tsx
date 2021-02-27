@@ -6,8 +6,9 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
 
-import { Button, ButtonProps, Icon } from "components";
+import { Button, ButtonProps } from "components";
 
 type Theme = "dark" | "light";
 
@@ -21,7 +22,7 @@ const prefersDarkMode = () =>
   window.matchMedia("(prefers-color-scheme: dark)").matches === true;
 
 const ThemeContext = createContext<ThemeContextProps>({
-  theme: "dark",
+  theme: "light",
   toggleTheme: () => {},
 });
 
@@ -51,17 +52,26 @@ export const ThemeProvider: FC = ({ children }) => {
   );
 };
 
-export const ThemeSwitch: FC<ButtonProps> = ({ children, ...rest }) => {
+export const ThemeSwitch: FC<ButtonProps> = ({
+  children,
+  className,
+  ...rest
+}) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <Button
+      className={className}
       color="transparent"
       is="icon"
       {...(rest as ButtonProps)}
       onClick={toggleTheme}
     >
-      {theme === "dark" ? <Icon name="sun" /> : <Icon name="moon" />}
+      {theme === "dark" ? (
+        <FaLightbulb className="w-5 h-5 md:w-6 md:h-6 xl:w-7 xl:h-7" />
+      ) : (
+        <FaRegLightbulb className="w-5 h-5 md:w-6 md:h-6 xl:w-7 xl:h-7" />
+      )}
       {children}
     </Button>
   );

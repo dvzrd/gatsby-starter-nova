@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { InputProps, Box, BoxProps } from "components";
 
@@ -26,7 +26,7 @@ export const TextInput: FC<TextInputProps> = ({
         innerRef={register}
         rows={rows}
         {...(rest as BoxProps)}
-        className={classNames(styles.input, className)}
+        className={clsx(styles.input, className)}
       />
     );
   }
@@ -38,7 +38,7 @@ export const TextInput: FC<TextInputProps> = ({
       innerRef={register}
       type={type}
       {...(rest as BoxProps)}
-      className={classNames(styles.input, className)}
+      className={clsx(styles.input, className)}
     />
   );
 };

@@ -1,8 +1,13 @@
-import { GatsbyImageProps } from "gatsby-image";
+import { FluidObject } from "gatsby-image";
+
+export type GatsbyDate = string | number | Date;
 
 export type GatsbyImage = {
-  childImageSharp: GatsbyImageProps;
-  name: string;
+  childImageSharp: {
+    fluid: FluidObject;
+  };
+  id?: string;
+  name?: string;
 };
 
 export type GatsbyLocation =

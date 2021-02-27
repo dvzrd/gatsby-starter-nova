@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Text, TextProps } from "components";
 
@@ -22,7 +22,7 @@ export const Tag: FC<TagProps> = ({
   <Text
     is={text}
     {...(rest as TextProps)}
-    className={classNames(styles.tag, is && styles[is], className)}
+    className={clsx(styles.tag, is && styles[is], className)}
   >
     {children}
   </Text>

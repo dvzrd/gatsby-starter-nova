@@ -1,0 +1,28 @@
+
+# Settings in the [build] context are global and are applied to all contexts
+# unless otherwise overridden by more specific contexts.
+
+# Build overrides for netlify browser app/gui
+[build]
+  command = "yarn build:prod"
+  # functions = ".netlify/functions"
+  publish = "public"
+  # ignore = "git log -1 --pretty=%B | grep dependabot"
+
+# Dev environment for netlify-cli
+# https://github.com/netlify/cli/blob/master/docs/netlify-dev.md
+
+[build.environment]
+  NODE_VERSION = "12.18.3"
+
+# Plugins
+# https://docs.netlify.com/configure-builds/build-plugins/?_ga=2.34268837.568125510.1590257312-454525180.1561835005
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
+
+# Redirects
+# Redirects and headers are GLOBAL for all builds – they do not get scoped to
+# contexts no matter where you define them in the file.
+# For context-specific rules, use _headers or _redirects files, which are
+# PER-DEPLOY.

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Box, Card, CardProps, Link, Media, Text } from "components";
 import { GatsbyImage } from "types/gatsby";
@@ -28,18 +28,14 @@ export const PostCard: FC<PostCardProps> = ({
 }) => (
   <Card
     {...(rest as CardProps)}
-    className={classNames(
+    className={clsx(
       styles.card,
       "text-gray-400 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-75",
       className
     )}
   >
     {image && (
-      <Link
-        to={slug}
-        className={classNames(styles.image, styles.effects)}
-        is="box"
-      >
+      <Link to={slug} className={clsx(styles.image, styles.effects)} is="box">
         <Media image={image} />
       </Link>
     )}
@@ -47,7 +43,7 @@ export const PostCard: FC<PostCardProps> = ({
       {category && date && (
         <Text
           as="small"
-          className={classNames(styles.meta, styles.effects)}
+          className={clsx(styles.meta, styles.effects)}
           is="meta"
         >
           Posted on {date} in {category}
@@ -56,7 +52,7 @@ export const PostCard: FC<PostCardProps> = ({
       <Link to={slug} is="box">
         <Text
           as="h4"
-          className={classNames(
+          className={clsx(
             styles.title,
             styles.effects,
             "text-default dark:text-gray-25 hover:text-hover dark:hover:text-bg-primary"
@@ -67,7 +63,7 @@ export const PostCard: FC<PostCardProps> = ({
         </Text>
       </Link>
       {excerpt && (
-        <Text as="p" className={classNames(styles.excerpt, styles.effects)}>
+        <Text as="p" className={clsx(styles.excerpt, styles.effects)}>
           {excerpt}
         </Text>
       )}

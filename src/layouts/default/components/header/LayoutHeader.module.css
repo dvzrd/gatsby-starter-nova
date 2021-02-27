@@ -1,34 +1,39 @@
 .header {
-  @apply w-full;
+  @apply w-full z-30;
 }
 
 .affixed {
-  @apply fixed top-0 left-0 shadow;
+  @apply fixed top-0 left-0;
 
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
 }
 
 .opened {
-  @apply fixed top-0 left-0 h-screen lg:top-auto lg:left-auto lg:w-auto lg:h-auto z-50;
+  @apply fixed top-0 left-0 h-screen z-50;
 }
 
 .transparent {
-  background-color: transparent;
+  background-color: transparent !important;
+}
+
+.headerContainer {
+  @apply h-full;
+  max-width: 1600px !important;
 }
 
 /* layout header components */
 
 .nav {
-  @apply content-center flex flex-1 items-center space-x-6 lg:space-x-8 xl:space-x-10;
+  @apply content-center flex flex-1 items-center space-x-4 md:space-x-5 xl:space-x-6;
+}
+
+.icon {
+  @apply w-6 h-6 md:w-8 md:h-8 xl:w-10 xl:h-10;
 }
 
 .link {
   @apply items-center leading-loose no-underline uppercase;
-
-  &.active {
-    @apply underline;
-  }
 }
 
 .button {

@@ -1,30 +1,26 @@
 import React, { FC } from "react";
 import { GatsbySeoProps } from "gatsby-plugin-next-seo";
 import { graphql } from "gatsby";
-import { kebabCase } from "lodash";
 
 import {
-  Box,
   PostHero,
   PostHeroProps,
   MDX,
   MDXProps,
   Section,
   SectionProps,
-  Tag,
 } from "components";
-import { PostAuthor, ContactSection, RecommendedPosts } from "containers";
+import { Contact, RecommendedBlog } from "containers";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
 
 import { PostTemplateProps } from "./types";
 
-const PostTemplate: FC<PostTemplateProps> = ({
+export const PostTemplate: FC<PostTemplateProps> = ({
   data: {
     post: {
       body,
       excerpt,
       frontmatter: {
-        author,
         category,
         date,
         description,
@@ -35,7 +31,6 @@ const PostTemplate: FC<PostTemplateProps> = ({
         mdx,
         page,
         seo,
-        showAuthor = true,
         showFooter = true,
         showHeader = true,
         showRecommended = true,
@@ -48,7 +43,9 @@ const PostTemplate: FC<PostTemplateProps> = ({
   location,
   pageContext: { nextPage, prevPage },
 }) => {
-  const pageId = page ? `page-${page}` : "page-post";
+  const pageId = page
+    ? `page-${page}-${seo?.title || title}`
+    : `page-post-${seo?.title || title}`;
 
   const seoProps: GatsbySeoProps = {
     title: seo?.title || title,
@@ -70,13 +67,13 @@ const PostTemplate: FC<PostTemplateProps> = ({
         publishedTime: new Date(date).toISOString(),
         modifiedTime: new Date(date).toISOString(),
         section: category,
-        authors: [`${location?.origin}/about/#${kebabCase(author)}`],
+        authors: [`${location?.origin}/about}`],
         tags,
         ...seo?.openGraph?.article,
       },
       images: [
         {
-          url: `${location?.origin}${image?.childImageSharp?.fluid?.src}`,
+          url: `${location?.origin}/${image?.childImageSharp?.fluid?.src}`,
           width: 1280,
           height: 1280,
           alt: title,
@@ -90,7 +87,6 @@ const PostTemplate: FC<PostTemplateProps> = ({
   const layoutProps: DefaultLayoutProps = {
     on: pageId,
     header: {
-      bgColor: "paper",
       color: "paper",
     },
     themeSwitch: {
@@ -124,34 +120,22 @@ const PostTemplate: FC<PostTemplateProps> = ({
 
   return (
     <DefaultLayout seo={seoProps} {...layoutProps}>
-      {showHeader && <PostHero {...heroProps} />}
-      <Section {...mainProps}>
-        <MDX {...(mdx as MDXProps)} body={body} />
-      </Section>
-      {showAuthor && (
-        <PostAuthor author={author} on={pageId}>
-          {tags?.length && (
-            <Box className="flex flex-row flex-wrap mt-4 md:mt-6 xl:mt-8">
-              {tags.map((tag: string) => (
-                <Tag is="secondary" key={tag}>
-                  {tag}
-                </Tag>
-              ))}
-            </Box>
-          )}
-        </PostAuthor>
-      )}
-      {showRecommended && (
-        <RecommendedPosts
-          on={pageId}
-          author={author}
-          category={category}
-          nextPage={nextPage}
-          prevPage={prevPage}
-          tags={tags}
-        />
-      )}
-      {showFooter && <ContactSection on={pageId} as="footer" />}
+      <>
+        {showHeader && <PostHero {...heroProps} />}
+        <Section {...mainProps}>
+          <MDX {...(mdx as MDXProps)} body={body} />
+        </Section>
+        {showRecommended && (
+          <RecommendedBlog
+            on={pageId}
+            category={category}
+            nextPage={nextPage}
+            prevPage={prevPage}
+            tags={tags}
+          />
+        )}
+        {showFooter && <Contact on={pageId} />}
+      </>
     </DefaultLayout>
   );
 };
@@ -165,7 +149,6 @@ export const postBySlugQuery = graphql`
         slug
       }
       frontmatter {
-        author
         category
         date(formatString: "MMMM DD, YYYY")
         description

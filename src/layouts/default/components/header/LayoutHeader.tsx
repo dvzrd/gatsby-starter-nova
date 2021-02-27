@@ -1,11 +1,14 @@
 import React, { FC, useEffect, useState } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
+import { BsFillGrid1X2Fill, BsFillGrid3X3GapFill } from "react-icons/bs";
+import { CgChevronRight, CgClose, CgLayoutGrid } from "react-icons/cg";
+import { animated, config, useSpring } from "react-spring";
+import { useMedia } from "react-use";
 
 import {
   BoxProps,
   Button,
   ButtonProps,
-  Icon,
   Link,
   Menu,
   MenuProps,
@@ -15,22 +18,29 @@ import {
 import { Brand } from "containers";
 import { ThemeSwitch } from "contexts";
 import { LayoutLogoProps } from "layouts";
-import { GatsbyLocation } from "types/gatsby";
+import { GatsbyLocation } from "types";
 
 import styles from "./LayoutHeader.module.css";
 
+// TODO:
+// - add chained animations and transitions: https://codesandbox.io/embed/2v716k56pr
+
 export interface LayoutHeaderProps extends SplitSectionProps {
+  activeClassName?: string;
   isFixed?: boolean;
   isHidden?: boolean;
   location?: GatsbyLocation;
   logo?: LayoutLogoProps;
   menu?: MenuProps;
+  textClassName?: string;
   themeSwitch?: ButtonProps;
   toggleMenu?: () => void;
 }
 
 export const LayoutHeader: FC<LayoutHeaderProps> = ({
+  activeClassName = "underline",
   as = "header",
+  className,
   container,
   is = "navbar",
   isFixed = false,
@@ -44,27 +54,36 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   right,
   rightProps,
   split,
+  textClassName,
   themeSwitch,
   ...rest
 }) => {
+  const isWide = useMedia("(min-width: 1024px)");
   const [menuOpened, setMenuOpened] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);
 
-  const toggleMenu = () => setMenuOpened(!menuOpened);
-
   if (isHidden) return null;
 
+  const toggleMenu = () => setMenuOpened(!menuOpened);
+
   const containerProps: BoxProps = {
-    className: "h-full",
+    className: styles.headerContainer,
     ...container,
   };
 
   const menuProps: MenuProps = {
+    as: animated.aside,
     order: 1,
+    style: useSpring({
+      config: config.stiff,
+      opacity: menuOpened ? 1 : 0,
+      transform: menuOpened
+        ? "translate3d(0, 0, 0)"
+        : "translate3d(0, -100%, 0)",
+    }),
     ...menu,
-    className: classNames(
-      "lg:hidden",
+    className: clsx(
       menuOpened && "mt-4 xs:mt-6 xs:mb-8 sm:mt-8 sm:mb-10 md:mt-10 md:mb-12",
       menu?.className
     ),
@@ -73,11 +92,11 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   const splitProps: BoxProps = {
     order: 0,
     ...split,
-    className: classNames(styles.nav, split?.className),
+    className: clsx(styles.nav, split?.className),
   };
 
   const themeSwitchProps: ButtonProps = {
-    className: styles.switch,
+    className: textClassName,
     ...themeSwitch,
   };
 
@@ -113,149 +132,83 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
       as={as}
       is={is}
       {...(rest as SplitSectionProps)}
-      className={classNames(
+      className={clsx(
         styles.header,
         menuOpened
           ? styles.opened
           : isFixed || headerFixed
           ? styles.affixed
-          : styles.transparent
+          : styles.transparent,
+        className
       )}
       container={containerProps}
-      left={
-        <>
-          <Brand {...logo} />
-          <Link
-            activeClassName={styles.active}
-            className={classNames(styles.link, "hidden lg:inline-flex")}
-            text="caption"
-            to="/about"
-          >
-            About
-          </Link>
-          <Link
-            activeClassName={styles.active}
-            className={classNames(styles.link, "hidden lg:inline-flex")}
-            text="caption"
-            to="/jsx"
-          >
-            JSX
-          </Link>
-          <Link
-            activeClassName={styles.active}
-            className={classNames(styles.link, "hidden lg:inline-flex")}
-            text="caption"
-            to="/mdx"
-          >
-            MDX
-          </Link>
-        </>
-      }
+      left={left ? left : <Brand {...logo} />}
       leftProps={leftProps}
       position={position}
       right={
-        <>
-          <Link
-            activeClassName={styles.active}
-            className={classNames(styles.link, "hidden lg:inline-flex")}
-            text="caption"
-            to="/portfolio"
-          >
-            Portfolio
-          </Link>
-          <Link
-            activeClassName={styles.active}
-            className={classNames(styles.link, "hidden lg:inline-flex")}
-            text="caption"
-            to="/blog"
-          >
-            Blog
-          </Link>
-          <Link
-            activeClassName={styles.active}
-            className={classNames(styles.link, "hidden lg:inline-flex")}
-            text="caption"
-            to="/contact"
-          >
-            Contact
-          </Link>
-          <ThemeSwitch {...themeSwitchProps} />
-          <Button
-            className="lg:hidden"
-            color="transparent"
-            is="icon"
-            onClick={toggleMenu}
-          >
-            {menuOpened ? <Icon name="x" /> : <Icon name="menu" />}
-          </Button>
-        </>
+        right ? (
+          right
+        ) : (
+          <>
+            <ThemeSwitch {...themeSwitchProps} />
+            <Button className={textClassName} is="icon" onClick={toggleMenu}>
+              {menuOpened ? (
+                <CgClose className={styles.icon} />
+              ) : isWide ? (
+                <BsFillGrid3X3GapFill className="w-8 h-7 xl:w-10 xl:h-8" />
+              ) : (
+                <BsFillGrid1X2Fill className="w-6 h-5 md:w-8 md:h-6" />
+              )}
+            </Button>
+          </>
+        )
       }
       rightProps={{
-        className: classNames(styles.nav, "justify-end"),
+        className: clsx(styles.nav, "justify-end"),
         ...rightProps,
       }}
       split={splitProps}
     >
       <Menu {...menuProps} isOpened={menuOpened}>
         <Link
-          activeClassName={styles.active}
-          className={classNames(styles.link, styles.button)}
+          activeClassName={activeClassName}
+          className={clsx(styles.link, styles.button, textClassName)}
           size="inherit"
           to="/about"
           onClick={toggleMenu}
         >
           About
-          <Icon name="chevron-right" />
+          <CgChevronRight />
         </Link>
         <Link
-          activeClassName={styles.active}
-          className={classNames(styles.link, styles.button)}
+          activeClassName={activeClassName}
+          className={clsx(styles.link, styles.button, textClassName)}
           size="inherit"
           to="/portfolio"
           onClick={toggleMenu}
         >
           Portfolio
-          <Icon name="chevron-right" />
+          <CgChevronRight />
         </Link>
         <Link
-          activeClassName={styles.active}
-          className={classNames(styles.link, styles.button)}
+          activeClassName={activeClassName}
+          className={clsx(styles.link, styles.button, textClassName)}
           size="inherit"
           to="/blog"
           onClick={toggleMenu}
         >
           Blog
-          <Icon name="chevron-right" />
+          <CgChevronRight />
         </Link>
         <Link
-          activeClassName={styles.active}
-          className={classNames(styles.link, styles.button)}
+          activeClassName={activeClassName}
+          className={clsx(styles.link, styles.button, textClassName)}
           size="inherit"
           to="/contact"
           onClick={toggleMenu}
         >
           Contact
-          <Icon name="chevron-right" />
-        </Link>
-        <Link
-          activeClassName={styles.active}
-          className={classNames(styles.link, styles.button)}
-          size="inherit"
-          to="/jsx"
-          onClick={toggleMenu}
-        >
-          JSX
-          <Icon name="chevron-right" />
-        </Link>
-        <Link
-          activeClassName={styles.active}
-          className={classNames(styles.link, styles.button)}
-          size="inherit"
-          to="/mdx"
-          onClick={toggleMenu}
-        >
-          MDX
-          <Icon name="chevron-right" />
+          <CgChevronRight />
         </Link>
       </Menu>
     </SplitSection>

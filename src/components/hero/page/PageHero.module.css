@@ -1,7 +1,13 @@
-.hero {
-  @apply items-center;
+.landingContainer {
+  @apply flex items-center;
+  min-height: 25vh;
+
+  @media only screen and (min-width: 768px) {
+    min-height: 50vh;
+  }
 }
 
-.caption {
-  @apply mx-auto my-16 md:my-18 xl:my-20;
+.media {
+  @apply order-last self-end;
+  max-width: 768px;
 }

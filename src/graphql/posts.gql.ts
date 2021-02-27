@@ -1,34 +1,32 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-import { GatsbyImage } from "types/gatsby";
+import { GatsbyDate, GatsbyImage } from "types";
 
 export type PostFields = {
   slug: string;
 };
 
 export type PostFrontmatter = {
-  author?: string;
   category: string;
-  date: string | number | Date;
+  date: GatsbyDate;
   description?: string;
   image: GatsbyImage;
-  published: boolean;
+  subtitle?: string;
   tags?: string[];
   title: string;
+  updated?: GatsbyDate;
 };
 
 export type PostNode = {
-  node: {
-    excerpt: string;
-    fields: PostFields;
-    frontmatter: PostFrontmatter;
-    id: string;
-  };
+  excerpt: string;
+  fields: PostFields;
+  frontmatter: PostFrontmatter;
+  id: string;
 };
 
 export interface PostsData {
   posts: {
-    edges: PostNode[];
+    nodes: PostNode[];
   };
 }
 
@@ -38,36 +36,32 @@ export const usePostsQuery = () => {
       query PostsQuery {
         posts: allMdx(
           filter: {
-            slug: { regex: "/posts/" }
-            frontmatter: { published: { eq: true } }
+            slug: { regex: "/blog/" }
+            frontmatter: { published: { eq: true }, template: { eq: "post" } }
           }
           sort: { order: DESC, fields: frontmatter___date }
         ) {
-          edges {
-            node {
-              excerpt
-              fields {
-                slug
-              }
-              frontmatter {
-                author
-                category
-                date(formatString: "MMMM DD, YYYY")
-                description
-                image {
-                  childImageSharp {
-                    fluid(maxWidth: 640, maxHeight: 480, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
-                  name
-                }
-                published
-                tags
-                title
-              }
-              id
+          nodes {
+            excerpt
+            fields {
+              slug
             }
+            frontmatter {
+              category
+              date(formatString: "MMMM DD, YYYY")
+              description
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 640, maxHeight: 480, quality: 90) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+                name
+              }
+              tags
+              title
+            }
+            id
           }
         }
       }

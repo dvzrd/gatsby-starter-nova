@@ -1,11 +1,12 @@
 import React, { FC } from "react";
 import { GatsbySeo, GatsbySeoProps } from "gatsby-plugin-next-seo";
-import classNames from "classnames";
+import { animated, useTransition } from "react-spring";
+import clsx from "clsx";
 
 import { ButtonProps, Box, BoxProps, MenuProps } from "components";
 import { LogoName } from "containers";
 import { useTheme } from "contexts";
-import { GatsbyLocation } from "types/gatsby";
+import { GatsbyLocation } from "types";
 
 import {
   LayoutFooter,
@@ -50,13 +51,30 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
   ...rest
 }) => {
   const { theme } = useTheme();
+  const transition = useTransition(children, location?.pathname, {
+    enter: { opacity: 1 },
+    from: { opacity: 0 },
+    leave: { opacity: 0 },
+  });
+
+  const footerProps: LayoutFooterProps = {
+    className: "bg-contrast text-contrast",
+    location,
+    ...footer,
+  };
+
+  const mainProps: BoxProps = {
+    as: animated.main,
+    ...main,
+    className: clsx(styles.main, main?.className),
+  };
 
   return (
     <>
       <GatsbySeo {...seo} />
       <Box
         {...(rest as BoxProps)}
-        className={classNames(styles.layout, styles[is], theme, className)}
+        className={clsx(styles.layout, styles[is], theme, className)}
       >
         <LayoutHeader
           location={location}
@@ -65,14 +83,12 @@ export const DefaultLayout: FC<DefaultLayoutProps> = ({
           themeSwitch={themeSwitch}
           {...header}
         />
-        <Box
-          as="main"
-          {...(main as BoxProps)}
-          className={classNames(styles.main, main?.className)}
-        >
-          {children}
-        </Box>
-        <LayoutFooter {...footer} location={location} />
+        {transition.map(({ key, props }) => (
+          <Box key={key} style={props} {...mainProps}>
+            {children}
+          </Box>
+        ))}
+        <LayoutFooter {...footerProps} />
       </Box>
     </>
   );

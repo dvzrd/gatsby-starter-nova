@@ -1,56 +1,53 @@
+import { ProjectHeroProps } from "components";
 import { PageProps } from "gatsby";
-import { GatsbySeoProps } from "gatsby-plugin-next-seo";
 
-import { HeroProps, MDXProps, SectionProps } from "components";
-import { DefaultLayoutProps } from "layouts";
-import { PageFields } from "templates";
-import { GatsbyImage } from "types/gatsby";
+import { GatsbyImage } from "types";
 
-export type ProjectFrontmatter = {
-  category?: string;
-  date: string | number | Date;
-  description?: string;
-  hero?: HeroProps;
-  image?: GatsbyImage;
-  layout?: DefaultLayoutProps;
-  main?: SectionProps;
-  mdx?: MDXProps;
-  page?: string;
-  seo?: GatsbySeoProps;
-  showFooter?: boolean;
-  showHeader?: boolean;
-  showRecommended?: boolean;
-  subtitle?: string;
-  tags?: string[];
-  title: string;
-};
+import {
+  PostContext,
+  PostContextFrontmatter,
+  PostData,
+  PostFrontmatter,
+} from "../post";
 
-export interface ProjectData {
-  body?: string;
-  excerpt?: string;
-  frontmatter: ProjectFrontmatter;
-  slug?: string;
+export interface ProjectDeviceMedia {
+  phone: GatsbyImage;
+  phoneLandscape?: GatsbyImage;
+  tablet?: GatsbyImage;
+  tabletLandscape?: GatsbyImage;
+  laptop: GatsbyImage;
+  desktop?: GatsbyImage;
 }
 
-export type ProjectContextFrontmatter = {
-  category?: string;
-  date?: string;
-  image?: GatsbyImage;
-  title: string;
-};
+export interface ProjectFrontmatter extends Omit<PostFrontmatter, "hero"> {
+  client?: string;
+  deviceMedia?: ProjectDeviceMedia;
+  hero?: ProjectHeroProps;
+  url?: string;
+}
 
-export type ProjectContextData = {
-  excerpt?: string;
-  fields: PageFields;
+export interface ProjectData extends Omit<PostData, "frontmatter"> {
+  frontmatter: ProjectFrontmatter;
+}
+
+export interface ProjectContextFrontmatter extends PostContextFrontmatter {
+  client?: string;
+  description?: string;
+  hero?: ProjectHeroProps;
+  subtitle?: string;
+  url?: string;
+}
+
+export interface ProjectContext extends Omit<PostContext, "frontmatter"> {
   frontmatter: ProjectContextFrontmatter;
-};
+}
 
 export interface ProjectTemplateProps extends PageProps {
   data: {
     project: ProjectData;
   };
   pageContext: {
-    nextPage?: ProjectContextData;
-    prevPage?: ProjectContextData;
+    nextPage?: ProjectContext;
+    prevPage?: ProjectContext;
   };
 }

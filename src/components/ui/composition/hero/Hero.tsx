@@ -1,14 +1,15 @@
 import React, { FC } from "react";
-import classNames from "classnames";
-
-import { Section, SectionProps } from "components";
+import clsx from "clsx";
 
 import {
-  HeroActions,
-  HeroActionsProps,
-  HeroCaption,
-  HeroCaptionProps,
-} from "./components";
+  BoxProps,
+  Caption,
+  CaptionProps,
+  Section,
+  SectionProps,
+} from "components";
+
+import { HeroActions, HeroActionsProps } from "./components";
 import styles from "./Hero.module.css";
 
 export type HeroPattern =
@@ -20,9 +21,12 @@ export type HeroPattern =
   | "page"
   | "section";
 
-export interface HeroProps extends Omit<SectionProps, "is"> {
+export type HeroColor = "primary" | "secondary";
+
+export interface HeroProps extends Omit<SectionProps, "color" | "is"> {
   actions?: HeroActionsProps;
-  caption?: HeroCaptionProps;
+  caption?: CaptionProps;
+  color?: HeroColor;
   is?: HeroPattern;
 }
 
@@ -31,7 +35,9 @@ export const Hero: FC<HeroProps> = ({
   as = "header",
   caption,
   children,
+  color,
   className,
+  container,
   is = "page",
   vh = "1/4",
   ...rest
@@ -41,9 +47,24 @@ export const Hero: FC<HeroProps> = ({
     is="hero"
     vh={vh}
     {...(rest as SectionProps)}
-    className={classNames(styles[is], className)}
+    container={{
+      ...(container as BoxProps),
+      className: clsx(styles.heroContainer, container?.className),
+    }}
+    className={clsx(
+      styles.hero,
+      is && styles[is],
+      color && styles[color],
+      className
+    )}
   >
-    {caption && <HeroCaption {...caption} />}
+    {caption && (
+      <Caption
+        {...caption}
+        headingProps={{ as: "h1", is: "hero", ...caption?.headingProps }}
+        subheadingProps={{ as: "h2", ...caption?.subheadingProps }}
+      />
+    )}
     {children}
     {actions && <HeroActions {...actions} />}
   </Section>

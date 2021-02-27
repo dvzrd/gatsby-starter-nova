@@ -1,2 +1,2 @@
-export * from "./DefaultLayout";
 export * from "./components";
+export * from "./DefaultLayout";

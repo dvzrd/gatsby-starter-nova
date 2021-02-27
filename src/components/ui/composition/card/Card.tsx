@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Box, BoxProps } from "components";
 
@@ -17,7 +17,7 @@ export const Card: FC<CardProps> = ({
   is = "default",
   ...rest
 }) => (
-  <Box {...(rest as BoxProps)} className={classNames(styles[is], className)}>
+  <Box {...(rest as BoxProps)} className={clsx(styles[is], className)}>
     {children}
   </Box>
 );

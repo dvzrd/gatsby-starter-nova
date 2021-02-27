@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import {
   Box,
@@ -60,7 +60,7 @@ export const Form: FC<FormProps> = ({
       {button && (
         <Grid
           {...(actions as GridProps)}
-          className={classNames(styles.actions, actions?.className)}
+          className={clsx(styles.actions, actions?.className)}
         >
           {isSubmitSuccessful
             ? successMessage && (

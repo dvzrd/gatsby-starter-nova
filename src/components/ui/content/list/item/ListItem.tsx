@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Text, TextProps, TextPattern } from "components";
 
@@ -25,7 +25,7 @@ export const ListItem: FC<ListItemProps> = ({
     as={as}
     is={text}
     {...(rest as TextProps)}
-    className={classNames(styles.default, is && styles[is])}
+    className={clsx(styles.default, is && styles[is])}
   >
     {children}
   </Text>

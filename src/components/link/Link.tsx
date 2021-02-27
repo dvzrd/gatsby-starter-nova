@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import { Link as GatsbyLink } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import {
   Button,
@@ -19,12 +19,13 @@ export type LinkPattern = "box" | "button" | "icon" | "text" | "wrapper";
 export type LinkTarget = "_blank" | "_parent" | "_self" | "_top";
 
 export interface LinkProps<Link extends HTMLElement = HTMLAnchorElement>
-  extends Omit<TextProps<Link>, "is" | "text" | "to"> {
+  extends Omit<TextProps<Link>, "align" | "is" | "ref" | "text" | "to"> {
   activeClassName?: string;
   button?: ButtonPattern;
   buttonProps?: ButtonProps;
   href?: string;
   is?: LinkPattern | string;
+  isDisabled?: boolean;
   target?: LinkTarget | string;
   text?: TextPattern;
   to: string;
@@ -40,6 +41,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
       className,
       href,
       is = "text",
+      isDisabled,
       target,
       text,
       to,
@@ -55,12 +57,12 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
       if (file) {
         return (
           <Text
-            as={as}
+            as={isDisabled ? "span" : as}
             is={text}
             href={link}
             target={target}
             {...(rest as TextProps)}
-            className={classNames(styles.link, styles[is], className)}
+            className={clsx(styles.link, styles[is], className)}
             innerRef={ref as any}
           >
             {is === "button" ? (
@@ -81,11 +83,11 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
 
       return (
         <Text
-          as={GatsbyLink}
+          as={isDisabled ? "span" : GatsbyLink}
           is={text}
           to={link}
           {...(rest as TextProps)}
-          className={classNames(styles.link, styles[is], className)}
+          className={clsx(styles.link, styles[is], className)}
           innerRef={ref as any}
         >
           {is === "button" ? (
@@ -106,12 +108,12 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps<HTMLAnchorElement>>(
 
     return (
       <Text
-        as={as}
+        as={isDisabled ? "span" : as}
         is={text}
         href={link}
         target={target || "_blank"}
         {...(rest as TextProps)}
-        className={classNames(styles.link, styles[is], className)}
+        className={clsx(styles.link, styles[is], className)}
         innerRef={ref as any}
       >
         {is === "button" ? (

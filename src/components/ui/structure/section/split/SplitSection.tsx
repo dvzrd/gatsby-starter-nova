@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Box, BoxProps, Section, SectionProps } from "components";
 
@@ -28,7 +28,7 @@ export const SplitSection: FC<SplitSectionProps> = ({
 }) => {
   const containerProps: BoxProps = {
     ...container,
-    className: classNames(styles.wrapper, container?.className),
+    className: clsx(styles.wrapper, container?.className),
   };
 
   const renderSplit = (node: ReactNode, props?: BoxProps) => {
@@ -42,7 +42,7 @@ export const SplitSection: FC<SplitSectionProps> = ({
     return (
       <Box
         {...(splitProps as BoxProps)}
-        className={classNames(styles.split, splitProps.className)}
+        className={clsx(styles.split, splitProps.className)}
       >
         {node}
       </Box>

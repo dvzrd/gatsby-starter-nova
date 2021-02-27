@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Box, BoxProps } from "components";
 
@@ -44,7 +44,7 @@ export const Grid: FC<GridProps> = ({
 }) => (
   <Box
     {...(rest as BoxProps)}
-    className={classNames(
+    className={clsx(
       autoCols && `auto-cols-${autoCols}`,
       autoFlow && `grid-flow-${autoFlow}`,
       autoRows && `auto-rows-${autoRows}`,

@@ -1,6 +1,6 @@
 import React, { ElementType, FC } from "react";
 import { Link, GatsbyLinkProps } from "gatsby";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { ElementProps, Box, BoxProps } from "components";
 
@@ -21,17 +21,14 @@ export const HeroActions: FC<HeroActionsProps> = ({
 }) => (
   <Box
     {...(rest as BoxProps)}
-    className={classNames(
+    className={clsx(
       "hero-actions flex flex-col flex-nowrap items-start",
       className
     )}
   >
     {buttons &&
       buttons.map((button) => (
-        <Link
-          className={classNames("hero-button", button.className)}
-          to={button.to}
-        >
+        <Link className={clsx("hero-button", button.className)} to={button.to}>
           {button.label}
         </Link>
       ))}

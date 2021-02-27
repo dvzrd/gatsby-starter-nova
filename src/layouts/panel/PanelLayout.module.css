@@ -1,0 +1,43 @@
+.layout {
+  @apply min-h-screen;
+  background: var(--pattern-graph);
+  background-color: var(--color-bg);
+}
+
+.panel {
+  @apply flex flex-col flex-nowrap min-h-screen;
+  @apply xs:m-4 md:m-6 xl:m-8;
+  @apply p-4 md:py-6 md:px-8 xl:py-8 xl:px-16;
+  @apply bg-paper text-paper;
+
+  @media only screen and (min-width: 480px) {
+    @apply shadow-md;
+    max-width: 480px;
+    min-height: auto;
+  }
+
+  @media only screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    max-width: 960px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    max-width: 1024px;
+  }
+}
+
+.main {
+  @apply flex-1;
+  background-color: transparent;
+}
+
+.link {
+  @apply flex items-center;
+}
+
+.button {
+  @apply flex-full justify-between;
+}

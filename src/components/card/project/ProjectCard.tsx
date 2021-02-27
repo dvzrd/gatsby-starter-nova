@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Box, Card, CardProps, Link, Media, Text } from "components";
 import { GatsbyImage } from "types/gatsby";
@@ -25,18 +25,14 @@ export const ProjectCard: FC<ProjectCardProps> = ({
 }) => (
   <Card
     {...(rest as CardProps)}
-    className={classNames(
+    className={clsx(
       styles.card,
       "text-gray-400 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-75",
       className
     )}
   >
     {image && (
-      <Link
-        to={slug}
-        className={classNames(styles.image, styles.effects)}
-        is="box"
-      >
+      <Link to={slug} className={clsx(styles.image, styles.effects)} is="box">
         <Media image={image} />
       </Link>
     )}
@@ -44,7 +40,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
       <Link to={slug} is="box">
         <Text
           as="h4"
-          className={classNames(
+          className={clsx(
             styles.title,
             styles.effects,
             "text-default dark:text-gray-25 hover:text-hover dark:hover:text-bg-primary"
@@ -55,7 +51,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
         </Text>
       </Link>
       {subtitle && (
-        <Text as="p" className={classNames(styles.subtitle, styles.effects)}>
+        <Text as="p" className={clsx(styles.subtitle, styles.effects)}>
           {subtitle}
         </Text>
       )}

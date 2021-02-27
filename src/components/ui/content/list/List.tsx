@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { random } from "lodash";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Text, TextProps, TextPattern } from "components";
 
@@ -29,7 +29,7 @@ export const List: FC<ListProps> = ({
     as={as}
     is={text}
     {...(rest as TextProps)}
-    className={classNames(styles.default, is && styles[is], className)}
+    className={clsx(styles.default, is && styles[is], className)}
   >
     {items?.length &&
       items.map(({ children, ...rest }) => (

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Box, Card, CardProps, Media, Text } from "components";
 import { MemberName } from "graphql";
@@ -23,7 +23,7 @@ export const AuthorCard: FC<AuthorCardProps> = ({
   name,
   ...rest
 }) => (
-  <Card {...(rest as CardProps)} className={classNames(styles.card, className)}>
+  <Card {...(rest as CardProps)} className={clsx(styles.card, className)}>
     {image && <Media className={styles.image} image={image} />}
     {children}
     <Box className={styles.info}>
@@ -38,7 +38,7 @@ export const AuthorCard: FC<AuthorCardProps> = ({
       )}
       <Text
         as="h4"
-        className={classNames(styles.name, "text-gray-800 dark:text-gray-25")}
+        className={clsx(styles.name, "text-gray-800 dark:text-gray-25")}
         is="subheading"
       >
         {name}
@@ -46,7 +46,7 @@ export const AuthorCard: FC<AuthorCardProps> = ({
       {bio && (
         <Text
           as="p"
-          className={classNames(styles.bio, "text-gray-400 dark:text-gray-100")}
+          className={clsx(styles.bio, "text-gray-400 dark:text-gray-100")}
         >
           {bio}
         </Text>

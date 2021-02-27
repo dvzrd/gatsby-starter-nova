@@ -1,5 +1,5 @@
 .media {
-  @apply relative;
+  @apply relative flex flex-col flex-nowrap content-center justify-center;
 
   &.background {
     @apply absolute top-1/2 left-1/2 w-full h-screen;
@@ -21,6 +21,10 @@
       content: "";
     }
   }
+}
+
+.image {
+  @apply w-full;
 }
 
 .pattern {

@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import {
+  CaptionProps,
   Hero,
   HeroProps,
   HeroPattern,
-  HeroCaptionProps,
   MediaProps,
 } from "components";
 
@@ -24,9 +24,9 @@ export const ProjectHero: FC<ProjectHeroProps> = ({
   vh = "3/4",
   ...rest
 }) => {
-  const captionProps: HeroCaptionProps = {
+  const captionProps: CaptionProps = {
     ...caption,
-    className: classNames(styles.caption, caption?.className),
+    className: clsx(styles.caption, caption?.className),
   };
 
   const mediaProps: MediaProps = {
@@ -42,7 +42,7 @@ export const ProjectHero: FC<ProjectHeroProps> = ({
       is={hero}
       vh={vh}
       {...(rest as HeroProps)}
-      className={classNames(styles.hero, className)}
+      className={clsx(styles.hero, className)}
     >
       {children}
     </Hero>

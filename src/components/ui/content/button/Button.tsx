@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import {
   Text,
@@ -44,7 +44,7 @@ export const Button: FC<ButtonProps> = ({
       as={as}
       is={textSize}
       {...(rest as TextProps)}
-      className={classNames(
+      className={clsx(
         "transition-colors duration-250 ease-in-out focus:outline-none",
         color !== undefined && styles[color],
         styles.default,

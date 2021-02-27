@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { AuthorCard, Section, SectionProps } from "components";
 import { MemberName, MemberNode, useMembersQuery } from "graphql";

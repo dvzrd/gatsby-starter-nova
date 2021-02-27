@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import {
@@ -81,7 +81,7 @@ export const ContactForm: FC<ContactFormProps> = ({
     <Section
       is={is}
       {...(rest as SectionProps)}
-      className={classNames(styles.section, className)}
+      className={clsx(styles.section, className)}
     >
       {(heading || subheading) && (
         <Box as="figcaption">
@@ -99,7 +99,7 @@ export const ContactForm: FC<ContactFormProps> = ({
       )}
       <Form
         {...formProps}
-        className={classNames(styles.form, formProps.className)}
+        className={clsx(styles.form, formProps.className)}
         onSubmit={handleSubmit(onSubmit)}
       >
         <input type="hidden" name="form-name" value={name} />

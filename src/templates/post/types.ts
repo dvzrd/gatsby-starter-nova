@@ -1,59 +1,46 @@
 import { PageProps } from "gatsby";
-import { GatsbySeoProps } from "gatsby-plugin-next-seo";
 
-import { HeroProps, MDXProps, SectionProps } from "components";
-import { DefaultLayoutProps } from "layouts";
-import { MemberName } from "graphql";
-import { PageFields } from "templates";
-import { GatsbyImage } from "types/gatsby";
+import { PostHeroProps } from "components";
+import { GatsbyDate, GatsbyImage } from "types";
 
-export type PostFrontmatter = {
-  author?: MemberName;
+import { PageContext, PageFrontmatter } from "../types";
+
+export interface PostFrontmatter extends Omit<PageFrontmatter, "hero"> {
   category?: string;
-  date: string | number | Date;
-  description?: string;
-  hero?: HeroProps;
+  date: GatsbyDate;
+  hero?: PostHeroProps;
   image?: GatsbyImage;
-  layout?: DefaultLayoutProps;
-  main?: SectionProps;
-  mdx?: MDXProps;
-  page?: string;
-  seo?: GatsbySeoProps;
-  showAuthor?: boolean;
-  showFooter?: boolean;
-  showHeader?: boolean;
   showRecommended?: boolean;
   subtitle?: string;
   tags?: string[];
-  title: string;
-};
-
-export interface PostData {
-  body?: string;
-  excerpt?: string;
-  frontmatter: PostFrontmatter;
-  slug?: string;
+  updated?: GatsbyDate;
 }
 
-export type PageContextFrontmatter = {
+export interface PostData extends Omit<PageContext, "frontmatter"> {
+  body?: string;
+  frontmatter: PostFrontmatter;
+}
+
+export interface PostContextFrontmatter {
   category?: string;
-  date?: string;
+  date?: GatsbyDate;
+  description?: string;
   image?: GatsbyImage;
   title: string;
-};
+  subtitle?: string;
+  updated?: GatsbyDate;
+}
 
-export type PageContextData = {
-  excerpt?: string;
-  fields: PageFields;
-  frontmatter: PageContextFrontmatter;
-};
+export interface PostContext extends Omit<PageContext, "frontmatter"> {
+  frontmatter: PostContextFrontmatter;
+}
 
 export interface PostTemplateProps extends PageProps {
   data: {
     post: PostData;
   };
   pageContext: {
-    nextPage?: PageContextData;
-    prevPage?: PageContextData;
+    nextPage?: PostContext;
+    prevPage?: PostContext;
   };
 }

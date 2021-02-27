@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Element, ElementProps } from "components";
 
@@ -108,7 +108,7 @@ export const Box: FC<BoxProps> = ({
   <Element
     as={as}
     {...(rest as ElementProps)}
-    className={classNames(
+    className={clsx(
       (bgColor || backgroundColor) && `bg-${bgColor || backgroundColor}`,
       color && `text-${color}`,
       display,

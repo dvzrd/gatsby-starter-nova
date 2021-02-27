@@ -1,0 +1,23 @@
+.caption {
+  @apply ml-0;
+  z-index: 1;
+  max-width: 800px;
+
+  @media only screen and (min-width: 1280px) {
+    max-width: 960px;
+  }
+}
+
+.meta {
+  @apply mb-4 md:mb-5 xl:mb-6;
+  @apply font-normal;
+}
+
+.heading {
+  @apply leading-tight tracking-wide;
+}
+
+.subheading {
+  @apply mt-4;
+  @apply font-thin tracking-wider;
+}

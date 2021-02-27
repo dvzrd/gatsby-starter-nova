@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Link } from "gatsby";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Pattern, PatternProps } from "components";
 import { useTheme } from "contexts";
@@ -66,11 +66,11 @@ export const Brand: FC<BrandProps> = ({
   return (
     <>
       {showLink ? (
-        <Link className={classNames(styles.brand, className)} to={linkTo}>
+        <Link className={clsx(styles.brand, className)} to={linkTo}>
           {renderBrand()}
         </Link>
       ) : (
-        <Pattern className={classNames(styles.brand, className)}>
+        <Pattern className={clsx(styles.brand, className)}>
           {renderBrand()}
         </Pattern>
       )}

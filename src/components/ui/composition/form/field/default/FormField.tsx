@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import { FieldError } from "react-hook-form";
 
 import {
@@ -33,7 +33,7 @@ export const FormField: FC<FormFieldProps> = ({
   type = "text",
   ...rest
 }) => (
-  <Box {...(rest as BoxProps)} className={classNames(styles.field, className)}>
+  <Box {...(rest as BoxProps)} className={clsx(styles.field, className)}>
     {label && (
       <Text as="label" pattern="meta" className={styles.label} htmlFor={name}>
         {label}

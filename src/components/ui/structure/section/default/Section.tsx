@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import { camelCase } from "lodash";
 
 import { Box, BoxProps, Media, MediaProps } from "components";
@@ -34,7 +34,7 @@ export const Section: FC<SectionProps> = ({
     <Box
       as={as}
       {...(rest as BoxProps)}
-      className={classNames(
+      className={clsx(
         styles.default,
         styles[is],
         vh && styles[`vh${camelCase(vh)}`],
@@ -45,13 +45,13 @@ export const Section: FC<SectionProps> = ({
       {media && (
         <Media
           {...(media as MediaProps)}
-          className={classNames(styles.media, media.className)}
+          className={clsx(styles.media, media.className)}
         />
       )}
       <Box
         as="figure"
         {...(container as BoxProps)}
-        className={classNames(
+        className={clsx(
           "z-10",
           isContained ? "container" : "flex-1 p-0",
           container?.className

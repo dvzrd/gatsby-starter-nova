@@ -10,15 +10,16 @@ require("dotenv").config({
 
 module.exports = {
   flags: {
-    // DEV_SSR: true,
-    // FAST_DEV: true,
-    FAST_REFRESH: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    DEV_SSR: false,
+    FAST_DEV: false,
+    FAST_REFRESH: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false,
     PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
     // plugins
     "gatsby-plugin-offline",
+    "gatsby-plugin-optimize-svgs",
     "gatsby-plugin-sharp",
     "gatsby-plugin-typescript",
     {
@@ -75,6 +76,9 @@ module.exports = {
       options: {
         canonical: config.siteUrl,
         description: config.description,
+        htmlAttributes: {
+          prefix: "og: https://ogp.me/ns#",
+        },
         openGraph: {
           description: config.description,
           images: [

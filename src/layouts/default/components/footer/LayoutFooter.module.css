@@ -1,5 +1,5 @@
 .footer {
-  @apply items-end text-center lg:text-left;
+  @apply items-end text-center md:text-left;
 }
 
 /* layout footer patterns */
@@ -11,21 +11,36 @@
 /* layout footer components */
 
 .wrapper {
-  @apply flex flex-col flex-nowrap lg:flex-row lg:flex-wrap content-between items-center lg:items-end justify-between;
+  @apply flex flex-col flex-nowrap md:flex-row md:flex-wrap;
+  @apply content-between items-center md:items-end justify-between;
 }
 
 .box {
-  @apply flex flex-col flex-nowrap flex-full lg:flex-1;
+  @apply flex flex-col flex-nowrap;
+  @apply flex-full md:flex-1;
+  @apply mt-4 md:mt-5 xl:mt-6;
 }
 
-.list {
-  @apply flex flex-row flex-wrap space-x-4 md:space-x-5 xl:space-x-6;
+.caption {
+  @apply flex space-x-1 mt-1;
+  @apply items-center justify-center md:justify-start;
+}
+
+.icon {
+  @apply inline-flex mr-1;
+}
+
+.nav {
+  @apply flex flex-row flex-wrap;
+  @apply items-center justify-center md:justify-start;
+  @apply mt-3 space-x-4 md:space-x-5 xl:space-x-6;
 }
 
 .link {
   @apply no-underline uppercase;
 
-  &:hover {
+  &:hover,
+  &.active {
     @apply underline;
 
     &.facebook {
@@ -40,6 +55,10 @@
       color: var(--color-brand-linkedin);
     }
 
+    &.mailchimp {
+      color: var(--color-brand-mailchimp);
+    }
+
     &.twitter {
       color: var(--color-brand-twitter);
     }
@@ -48,4 +67,12 @@
       color: var(--color-brand-yelp);
     }
   }
+}
+
+/* footer patterns */
+
+.under {
+  @apply fixed bottom-0;
+  @apply w-screen;
+  @apply z-10;
 }

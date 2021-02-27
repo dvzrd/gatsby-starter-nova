@@ -10,12 +10,12 @@ import {
   Section,
   SectionProps,
 } from "components";
-import { ContactSection } from "containers";
+import { Contact } from "containers";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
 
 import { ProjectTemplateProps } from "./types";
 
-const ProjectTemplate: FC<ProjectTemplateProps> = ({
+export const ProjectTemplate: FC<ProjectTemplateProps> = ({
   data: {
     project: {
       body,
@@ -71,7 +71,6 @@ const ProjectTemplate: FC<ProjectTemplateProps> = ({
   const layoutProps: DefaultLayoutProps = {
     on: pageId,
     header: {
-      bgColor: "paper",
       color: "paper",
     },
     themeSwitch: {
@@ -104,11 +103,13 @@ const ProjectTemplate: FC<ProjectTemplateProps> = ({
 
   return (
     <DefaultLayout seo={seoProps} {...layoutProps}>
-      {showHeader && <ProjectHero {...heroProps} />}
-      <Section {...mainProps}>
-        <MDX {...(mdx as MDXProps)} body={body} />
-      </Section>
-      {showFooter && <ContactSection on={pageId} as="footer" />}
+      <>
+        {showHeader && <ProjectHero {...heroProps} />}
+        <Section {...mainProps}>
+          <MDX {...(mdx as MDXProps)} body={body} />
+        </Section>
+        {showFooter && <Contact on={pageId} as="footer" />}
+      </>
     </DefaultLayout>
   );
 };

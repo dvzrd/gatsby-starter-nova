@@ -1,2 +1,2 @@
 export * from "./default";
-export * from "./form";
+export * from "./panel";

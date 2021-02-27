@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { MDXProvider, MDXProviderComponents } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import {
   AuthorCard,
@@ -12,6 +12,8 @@ import {
   BoxProps,
   Button,
   ButtonProps,
+  Caption,
+  CaptionProps,
   Card,
   CardProps,
   Element,
@@ -26,10 +28,6 @@ import {
   HeroProps,
   HeroActions,
   HeroActionsProps,
-  HeroCaption,
-  HeroCaptionProps,
-  Icon,
-  IconProps,
   Link,
   LinkProps,
   List,
@@ -54,6 +52,8 @@ import {
 import {
   Brand,
   BrandProps,
+  Contact,
+  ContactProps,
   ContactForm,
   ContactFormProps,
   PostAuthor,
@@ -104,7 +104,7 @@ export const components: MDXProviderComponents = {
   h6: (props: TextProps) => (
     <Text
       as="h6"
-      className={classNames(styles.h6, "my-4 md:my-6 xl:my-8")}
+      className={clsx(styles.h6, "my-4 md:my-6 xl:my-8")}
       is="body"
       {...props}
     />
@@ -125,6 +125,7 @@ export const componentShortcodes = {
   AuthorCard: (props: AuthorCardProps) => <AuthorCard {...props} />,
   Box: (props: BoxProps) => <Box {...props} />,
   Button: (props: ButtonProps) => <Button {...props} />,
+  Caption: (props: CaptionProps) => <Caption {...props} />,
   Card: (props: CardProps) => <Card {...props} />,
   Element: (props: ElementProps) => <Element {...props} />,
   Form: (props: FormProps) => <Form {...props} />,
@@ -132,8 +133,6 @@ export const componentShortcodes = {
   Grid: (props: GridProps) => <Grid {...props} />,
   Hero: (props: HeroProps) => <Hero {...props} />,
   HeroActions: (props: HeroActionsProps) => <HeroActions {...props} />,
-  HeroCaption: (props: HeroCaptionProps) => <HeroCaption {...props} />,
-  Icon: (props: IconProps) => <Icon {...props} />,
   Link: (props: LinkProps) => <Link {...props} />,
   Menu: (props: MenuProps) => <Menu {...props} />,
   PageHero: (props: PageHeroProps) => <PageHero {...props} />,
@@ -147,6 +146,7 @@ export const componentShortcodes = {
 
 export const containerShortcodes = {
   Brand: (props: BrandProps) => <Brand {...props} />,
+  Contact: (props: ContactProps) => <Contact {...props} />,
   ContactForm: (props: ContactFormProps) => <ContactForm {...props} />,
   PostAuthor: (props: PostAuthorProps) => <PostAuthor {...props} />,
   PostsListing: (props: PostsListingProps) => <PostsListing {...props} />,
@@ -176,11 +176,7 @@ export const MDX: FC<MDXProps> = ({
   components,
   ...rest
 }) => (
-  <Box
-    as={as}
-    {...(rest as BoxProps)}
-    className={classNames(styles.mdx, className)}
-  >
+  <Box as={as} {...(rest as BoxProps)} className={clsx(styles.mdx, className)}>
     <MDXProvider components={{ ...mdxComponents, ...components }}>
       {body && <MDXRenderer>{body}</MDXRenderer>}
       {children}

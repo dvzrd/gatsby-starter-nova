@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Box, BoxProps } from "components";
 
@@ -49,7 +49,7 @@ export const Text: FC<TextProps> = ({
   <Box
     as={as}
     {...(rest as BoxProps)}
-    className={classNames(
+    className={clsx(
       styles.default,
       is && styles[is],
       size && styles[getTextSize(size as TextSize)],

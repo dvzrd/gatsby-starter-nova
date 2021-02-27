@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Box, BoxProps } from "components";
 
@@ -59,7 +59,7 @@ export const Pattern: FC<PatternProps> = ({
     <Box
       as={as}
       {...(rest as BoxProps)}
-      className={classNames(getPattern(), getModifiers(), on, mod, className)}
+      className={clsx(getPattern(), getModifiers(), on, mod, className)}
       data-pattern-is={is}
       data-pattern-of={of}
       data-pattern-on={on}
