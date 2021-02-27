@@ -30,7 +30,7 @@ export const useClientsQuery = () => {
         clients: allMdx(
           filter: {
             frontmatter: { template: { eq: "project" } }
-            slug: { regex: "/portfolio/" }
+            slug: { regex: "/projects/" }
           }
           limit: 6
           sort: { order: DESC, fields: frontmatter___date }

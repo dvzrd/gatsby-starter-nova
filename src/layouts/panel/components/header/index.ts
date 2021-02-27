@@ -1,1 +1,1 @@
-export * from "./SplashHeader";
+export * from "./PanelHeader";

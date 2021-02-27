@@ -43,5 +43,5 @@ module.exports = {
     twitter: "_withpulp",
   },
   subscribeURL: process.env.MAILCHIMP_SUBSCRIBE_URL,
-  title: "Launch a new site fast",
+  title: "Launch a new site with ease",
 };

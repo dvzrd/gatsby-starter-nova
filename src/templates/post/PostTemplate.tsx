@@ -10,7 +10,7 @@ import {
   Section,
   SectionProps,
 } from "components";
-import { Contact, RecommendedBlog } from "containers";
+import { Contact, RecommendedPosts } from "containers";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
 
 import { PostTemplateProps } from "./types";
@@ -126,7 +126,7 @@ export const PostTemplate: FC<PostTemplateProps> = ({
           <MDX {...(mdx as MDXProps)} body={body} />
         </Section>
         {showRecommended && (
-          <RecommendedBlog
+          <RecommendedPosts
             on={pageId}
             category={category}
             nextPage={nextPage}

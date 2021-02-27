@@ -37,7 +37,7 @@ export const useProjectsQuery = () => {
       query ProjectsQuery {
         projects: allMdx(
           filter: {
-            slug: { regex: "/portfolio/" }
+            slug: { regex: "/projects/" }
             frontmatter: {
               published: { eq: true }
               template: { eq: "project" }

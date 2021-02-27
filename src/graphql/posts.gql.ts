@@ -36,7 +36,7 @@ export const usePostsQuery = () => {
       query PostsQuery {
         posts: allMdx(
           filter: {
-            slug: { regex: "/blog/" }
+            slug: { regex: "/posts/" }
             frontmatter: { published: { eq: true }, template: { eq: "post" } }
           }
           sort: { order: DESC, fields: frontmatter___date }
