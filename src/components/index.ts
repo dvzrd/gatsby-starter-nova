@@ -4,4 +4,5 @@ export * from "./ui";
 export * from "./link";
 export * from "./card";
 export * from "./hero";
+export * from "./motion";
 export * from "./mdx";

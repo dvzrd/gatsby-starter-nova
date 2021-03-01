@@ -19,13 +19,16 @@ export const InViewMotionBox: FC<MotionBoxProps> = ({
 
   useEffect(() => {
     if (inView) {
+      console.log("in view");
       controls.start("active");
     }
   }, [controls, inView]);
 
+  console.log(inView);
+
   return (
     <MotionBox
-      animate={animate ? animate : controls}
+      animate={controls}
       className={className}
       innerRef={ref}
       variants={{

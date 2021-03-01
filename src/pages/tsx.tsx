@@ -1,7 +1,15 @@
 import React, { FC } from "react";
 import { PageProps } from "gatsby";
 
-import { Hero, HeroProps, Link, Section, SectionProps, Text } from "components";
+import {
+  Hero,
+  HeroProps,
+  InViewMotionBox,
+  Link,
+  Section,
+  SectionProps,
+  Text,
+} from "components";
 import { DefaultLayout, DefaultLayoutProps } from "layouts";
 
 const PageTSX: FC<PageProps> = ({ location }) => {
@@ -32,6 +40,9 @@ const PageTSX: FC<PageProps> = ({ location }) => {
           This is why they called it TSX, after JSX which is the language most
           commonly used to write React components.
         </Text>
+        <InViewMotionBox>
+          <Text>In View Motion Box</Text>
+        </InViewMotionBox>
         <Link
           to="/"
           is="button"
