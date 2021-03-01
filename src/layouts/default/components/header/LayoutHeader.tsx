@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import clsx from "clsx";
 import { BsFillGrid1X2Fill, BsFillGrid3X3GapFill } from "react-icons/bs";
-import { CgChevronRight, CgClose, CgLayoutGrid } from "react-icons/cg";
+import { CgChevronRight, CgClose } from "react-icons/cg";
 import { animated, config, useSpring } from "react-spring";
 import { useMedia } from "react-use";
 

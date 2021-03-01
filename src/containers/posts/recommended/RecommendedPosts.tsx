@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 
 import { Grid, PostCard, Section, SectionProps, Text } from "components";
-import { PageContextData } from "templates";
+import { PageContext } from "templates";
 
 export interface RecommendedPostsProps extends SectionProps {
   author?: string;
   category?: string;
   heading?: string;
-  nextPage?: PageContextData;
-  prevPage?: PageContextData;
+  nextPage?: PageContext;
+  prevPage?: PageContext;
   subheading?: string;
   tags?: string[];
 }

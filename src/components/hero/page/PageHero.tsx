@@ -19,6 +19,7 @@ export type PageHeroPattern = "article" | "default" | "landing";
 export interface PageHeroProps extends Omit<HeroProps, "is"> {
   hero?: HeroPattern;
   is?: PageHeroPattern;
+  spring?: any;
 }
 
 export const getPageHeroVerticalHeight = (pattern: PageHeroPattern) => {
