@@ -19,14 +19,14 @@ export const MotionBox: FC<MotionBoxProps> = ({
   variants,
   ...rest
 }) => {
-  const AnimatedBox = motion(Box);
+  // const AnimatedBox = motion(BoxRef);
 
   return (
-    <AnimatedBox
+    <motion.div
       animate={animate}
       className={className}
       initial={initial}
-      transition={{ duration: 0.25, ...transition }}
+      transition={{ duration: 0.25, type: "spring", ...transition }}
       variants={{
         ...variants,
         active: {
@@ -38,9 +38,9 @@ export const MotionBox: FC<MotionBoxProps> = ({
           ...variants?.inactive,
         },
       }}
-      {...(rest as BoxProps)}
+      // {...(rest as BoxProps)}
     >
       {children}
-    </AnimatedBox>
+    </motion.div>
   );
 };

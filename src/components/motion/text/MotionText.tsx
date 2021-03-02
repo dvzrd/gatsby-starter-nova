@@ -26,7 +26,7 @@ export const MotionText: FC<MotionTextProps> = ({
       animate={animate}
       className={className}
       initial={initial}
-      transition={{ duration: 0.25, ...transition }}
+      transition={transition}
       variants={{
         ...variants,
         active: {
