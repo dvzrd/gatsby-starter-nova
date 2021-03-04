@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import { Box, BoxProps } from "components";
 
-import styles from "./Wrapper.module.css";
+import styles from "./Container.module.css";
 
 export type ContainerPattern = "content" | "fluid" | "wide";
 

@@ -119,6 +119,13 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        printRejected: true,
+        tailwind: true,
+      },
+    },
     // TODO:
     // - This seems like a maintenance nightmare.
     // - Replace this with a typescript config for root import.
