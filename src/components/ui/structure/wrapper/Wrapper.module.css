@@ -1,0 +1,27 @@
+.wrapper {
+  @apply relative flex items-stretch justify-start;
+}
+
+/* wrapper colors */
+
+.default {
+  @apply bg-default text-default;
+}
+
+.primary {
+  @apply bg-primary text-primary;
+}
+
+.secondary {
+  @apply bg-secondary text-secondary;
+}
+
+/* wrapper patterns */
+
+.col {
+  @apply flex-col flex-nowrap;
+}
+
+.row {
+  @apply flex-row flex-nowrap;
+}

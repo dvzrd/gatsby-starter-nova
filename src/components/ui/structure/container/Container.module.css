@@ -1,0 +1,12 @@
+/* container patterns */
+.content {
+  max-width: 800px !important;
+}
+
+.fluid {
+  max-width: none !important;
+}
+
+.wide {
+  max-width: 1280px !important;
+}
